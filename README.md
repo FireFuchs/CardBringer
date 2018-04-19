@@ -1,4 +1,4 @@
-# CardBrigner Readme
+# CardBringer Readme
 
 **CardBringer** je marketplace _Yu-Gi-Oh!_ karata koji omogućava igračima i kolekcionarima prodaju i kupovinu karata.
 Ovo je službeni repozitorij projekta gdje je moguće naći programski kod i dokumentaciju istog. Više informacija možete
