@@ -1,0 +1,11 @@
+c:\users\focho\documents\visual studio 2015\Projects\CardBringer_applikacija\CardBringer_applikacija\bin\Debug\CardBringer_applikacija.exe.config
+c:\users\focho\documents\visual studio 2015\Projects\CardBringer_applikacija\CardBringer_applikacija\obj\Debug\CardBringer_applikacija.csprojResolveAssemblyReference.cache
+c:\users\focho\documents\visual studio 2015\Projects\CardBringer_applikacija\CardBringer_applikacija\obj\Debug\CardBringer_applikacija.FormaLogin.resources
+c:\users\focho\documents\visual studio 2015\Projects\CardBringer_applikacija\CardBringer_applikacija\obj\Debug\CardBringer_applikacija.FormaRegistriraj.resources
+c:\users\focho\documents\visual studio 2015\Projects\CardBringer_applikacija\CardBringer_applikacija\obj\Debug\CardBringer_applikacija.PocetnaForma.resources
+c:\users\focho\documents\visual studio 2015\Projects\CardBringer_applikacija\CardBringer_applikacija\obj\Debug\CardBringer_applikacija.Properties.Resources.resources
+c:\users\focho\documents\visual studio 2015\Projects\CardBringer_applikacija\CardBringer_applikacija\obj\Debug\CardBringer_applikacija.csproj.GenerateResource.Cache
+c:\users\focho\documents\visual studio 2015\Projects\CardBringer_applikacija\CardBringer_applikacija\bin\Debug\CardBringer_applikacija.exe
+c:\users\focho\documents\visual studio 2015\Projects\CardBringer_applikacija\CardBringer_applikacija\bin\Debug\CardBringer_applikacija.pdb
+c:\users\focho\documents\visual studio 2015\Projects\CardBringer_applikacija\CardBringer_applikacija\obj\Debug\CardBringer_applikacija.exe
+c:\users\focho\documents\visual studio 2015\Projects\CardBringer_applikacija\CardBringer_applikacija\obj\Debug\CardBringer_applikacija.pdb
