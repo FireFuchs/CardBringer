@@ -10,17 +10,11 @@ using System.Windows.Forms;
 
 namespace CardBringer_applikacija
 {
-    public partial class FormaRegistriraj : Form
+    public partial class FormaPocetnaStranica : Form
     {
-        public FormaRegistriraj()
+        public FormaPocetnaStranica()
         {
             InitializeComponent();
-        }
-
-        private void unosGumbRegistrirajFormaRegistriraj_Click(object sender, EventArgs e)
-        {
-            FormaPocetnaStranica frmPocetStr = new FormaPocetnaStranica();
-            frmPocetStr.ShowDialog();
         }
     }
 }

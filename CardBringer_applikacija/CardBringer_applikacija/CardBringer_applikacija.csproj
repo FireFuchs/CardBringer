@@ -52,6 +52,12 @@
     <Compile Include="FormaLogin.Designer.cs">
       <DependentUpon>FormaLogin.cs</DependentUpon>
     </Compile>
+    <Compile Include="FormaPocetnaStranica.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormaPocetnaStranica.Designer.cs">
+      <DependentUpon>FormaPocetnaStranica.cs</DependentUpon>
+    </Compile>
     <Compile Include="FormaRegistriraj.cs">
       <SubType>Form</SubType>
     </Compile>

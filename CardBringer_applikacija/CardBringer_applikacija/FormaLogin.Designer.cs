@@ -75,6 +75,7 @@
             this.unosGumbLoginFormaLogin.TabIndex = 2;
             this.unosGumbLoginFormaLogin.Text = "Login";
             this.unosGumbLoginFormaLogin.UseVisualStyleBackColor = true;
+            this.unosGumbLoginFormaLogin.Click += new System.EventHandler(this.unosGumbLoginFormaLogin_Click);
             // 
             // FormaLogin
             // 

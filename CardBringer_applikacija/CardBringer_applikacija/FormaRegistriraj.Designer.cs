@@ -111,6 +111,7 @@
             this.unosGumbRegistrirajFormaRegistriraj.TabIndex = 2;
             this.unosGumbRegistrirajFormaRegistriraj.Text = "Register";
             this.unosGumbRegistrirajFormaRegistriraj.UseVisualStyleBackColor = true;
+            this.unosGumbRegistrirajFormaRegistriraj.Click += new System.EventHandler(this.unosGumbRegistrirajFormaRegistriraj_Click);
             // 
             // FormaRegistriraj
             // 

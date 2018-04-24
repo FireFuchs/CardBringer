@@ -16,5 +16,11 @@ namespace CardBringer_applikacija
         {
             InitializeComponent();
         }
+
+        private void unosGumbLoginFormaLogin_Click(object sender, EventArgs e)
+        {
+            FormaPocetnaStranica frmPocetStr = new FormaPocetnaStranica();
+            frmPocetStr.ShowDialog();
+        }
     }
 }

@@ -9,3 +9,14 @@ c:\users\focho\documents\visual studio 2015\Projects\CardBringer_applikacija\Car
 c:\users\focho\documents\visual studio 2015\Projects\CardBringer_applikacija\CardBringer_applikacija\bin\Debug\CardBringer_applikacija.pdb
 c:\users\focho\documents\visual studio 2015\Projects\CardBringer_applikacija\CardBringer_applikacija\obj\Debug\CardBringer_applikacija.exe
 c:\users\focho\documents\visual studio 2015\Projects\CardBringer_applikacija\CardBringer_applikacija\obj\Debug\CardBringer_applikacija.pdb
+C:\Users\Focho\Desktop\Faks PI\CardBringer_applikacija\CardBringer_applikacija\bin\Debug\CardBringer_applikacija.exe.config
+C:\Users\Focho\Desktop\Faks PI\CardBringer_applikacija\CardBringer_applikacija\obj\Debug\CardBringer_applikacija.exe
+C:\Users\Focho\Desktop\Faks PI\CardBringer_applikacija\CardBringer_applikacija\obj\Debug\CardBringer_applikacija.pdb
+C:\Users\Focho\Desktop\Faks PI\CardBringer_applikacija\CardBringer_applikacija\bin\Debug\CardBringer_applikacija.exe
+C:\Users\Focho\Desktop\Faks PI\CardBringer_applikacija\CardBringer_applikacija\bin\Debug\CardBringer_applikacija.pdb
+C:\Users\Focho\Desktop\Faks PI\CardBringer_applikacija\CardBringer_applikacija\obj\Debug\CardBringer_applikacija.csprojResolveAssemblyReference.cache
+C:\Users\Focho\Desktop\Faks PI\CardBringer_applikacija\CardBringer_applikacija\obj\Debug\CardBringer_applikacija.FormaLogin.resources
+C:\Users\Focho\Desktop\Faks PI\CardBringer_applikacija\CardBringer_applikacija\obj\Debug\CardBringer_applikacija.FormaRegistriraj.resources
+C:\Users\Focho\Desktop\Faks PI\CardBringer_applikacija\CardBringer_applikacija\obj\Debug\CardBringer_applikacija.PocetnaForma.resources
+C:\Users\Focho\Desktop\Faks PI\CardBringer_applikacija\CardBringer_applikacija\obj\Debug\CardBringer_applikacija.Properties.Resources.resources
+C:\Users\Focho\Desktop\Faks PI\CardBringer_applikacija\CardBringer_applikacija\obj\Debug\CardBringer_applikacija.csproj.GenerateResource.Cache
