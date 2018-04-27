@@ -33,6 +33,7 @@
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.unosGumbLoginFormaLogin = new System.Windows.Forms.Button();
+            this.unosGumbPovratakFormaLogin = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // textBox1
@@ -77,11 +78,22 @@
             this.unosGumbLoginFormaLogin.UseVisualStyleBackColor = true;
             this.unosGumbLoginFormaLogin.Click += new System.EventHandler(this.unosGumbLoginFormaLogin_Click);
             // 
+            // unosGumbPovratakFormaLogin
+            // 
+            this.unosGumbPovratakFormaLogin.Location = new System.Drawing.Point(41, 99);
+            this.unosGumbPovratakFormaLogin.Name = "unosGumbPovratakFormaLogin";
+            this.unosGumbPovratakFormaLogin.Size = new System.Drawing.Size(75, 23);
+            this.unosGumbPovratakFormaLogin.TabIndex = 3;
+            this.unosGumbPovratakFormaLogin.Text = "Back";
+            this.unosGumbPovratakFormaLogin.UseVisualStyleBackColor = true;
+            this.unosGumbPovratakFormaLogin.Click += new System.EventHandler(this.unosGumbPovratakFormaLogin_Click);
+            // 
             // FormaLogin
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(255, 111);
+            this.ClientSize = new System.Drawing.Size(255, 134);
+            this.Controls.Add(this.unosGumbPovratakFormaLogin);
             this.Controls.Add(this.unosGumbLoginFormaLogin);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
@@ -101,5 +113,6 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Button unosGumbLoginFormaLogin;
+        private System.Windows.Forms.Button unosGumbPovratakFormaLogin;
     }
 }

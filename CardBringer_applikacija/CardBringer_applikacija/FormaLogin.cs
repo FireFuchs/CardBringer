@@ -20,7 +20,15 @@ namespace CardBringer_applikacija
         private void unosGumbLoginFormaLogin_Click(object sender, EventArgs e)
         {
             FormaPocetnaStranica frmPocetStr = new FormaPocetnaStranica();
-            frmPocetStr.ShowDialog();
+            frmPocetStr.Show();
+            this.Close();
+        }
+
+        private void unosGumbPovratakFormaLogin_Click(object sender, EventArgs e)
+        {
+            PocetnaForma pocetnaFrm = new PocetnaForma();
+            pocetnaFrm.Show();
+            this.Close();
         }
     }
 }

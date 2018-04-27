@@ -20,13 +20,16 @@ namespace CardBringer_applikacija
         private void unosGumbRegistrirajPocetnaForma_Click(object sender, EventArgs e)
         {
             FormaRegistriraj frmRegistriraj = new FormaRegistriraj();
-            frmRegistriraj.ShowDialog();
+            frmRegistriraj.Show();
+            this.Hide();
         }
+
 
         private void unosGumbLoginPocetnaForma_Click(object sender, EventArgs e)
         {
             FormaLogin frmLogin = new FormaLogin();
-            frmLogin.ShowDialog();
+            frmLogin.Show();
+            this.Hide();
         }
     }
 }

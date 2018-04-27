@@ -37,6 +37,7 @@
             this.label3 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.unosGumbRegistrirajFormaRegistriraj = new System.Windows.Forms.Button();
+            this.unogGumbPovratakFormaRegistriraj = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // textBox1
@@ -113,11 +114,22 @@
             this.unosGumbRegistrirajFormaRegistriraj.UseVisualStyleBackColor = true;
             this.unosGumbRegistrirajFormaRegistriraj.Click += new System.EventHandler(this.unosGumbRegistrirajFormaRegistriraj_Click);
             // 
+            // unogGumbPovratakFormaRegistriraj
+            // 
+            this.unogGumbPovratakFormaRegistriraj.Location = new System.Drawing.Point(15, 155);
+            this.unogGumbPovratakFormaRegistriraj.Name = "unogGumbPovratakFormaRegistriraj";
+            this.unogGumbPovratakFormaRegistriraj.Size = new System.Drawing.Size(75, 23);
+            this.unogGumbPovratakFormaRegistriraj.TabIndex = 3;
+            this.unogGumbPovratakFormaRegistriraj.Text = "Back";
+            this.unogGumbPovratakFormaRegistriraj.UseVisualStyleBackColor = true;
+            this.unogGumbPovratakFormaRegistriraj.Click += new System.EventHandler(this.unogGumbPovratakFormaRegistriraj_Click);
+            // 
             // FormaRegistriraj
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(275, 166);
+            this.ClientSize = new System.Drawing.Size(275, 188);
+            this.Controls.Add(this.unogGumbPovratakFormaRegistriraj);
             this.Controls.Add(this.unosGumbRegistrirajFormaRegistriraj);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.label3);
@@ -145,5 +157,6 @@
         private System.Windows.Forms.TextBox textBox3;
         private System.Windows.Forms.TextBox textBox2;
         private System.Windows.Forms.Button unosGumbRegistrirajFormaRegistriraj;
+        private System.Windows.Forms.Button unogGumbPovratakFormaRegistriraj;
     }
 }
