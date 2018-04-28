@@ -138,5 +138,10 @@ namespace CardBringer2
             GlavniFrm.Show();
             this.Hide();
         }
+
+        private void LoginRegisterForma_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

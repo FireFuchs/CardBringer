@@ -1,3 +1,5 @@
+![CardBringer Logo](https://i.imgur.com/HXf9fPf.png)
+
 # CardBringer Readme
 
 **CardBringer** je marketplace _Yu-Gi-Oh!_ karata koji omogućava igračima i kolekcionarima prodaju i kupovinu karata.

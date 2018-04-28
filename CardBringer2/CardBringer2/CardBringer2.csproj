@@ -60,6 +60,9 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="GlavniIzbornikForma.resx">
+      <DependentUpon>GlavniIzbornikForma.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="LoginRegisterForma.resx">
       <DependentUpon>LoginRegisterForma.cs</DependentUpon>
     </EmbeddedResource>

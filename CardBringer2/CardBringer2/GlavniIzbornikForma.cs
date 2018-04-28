@@ -16,5 +16,7 @@ namespace CardBringer2
         {
             InitializeComponent();
         }
+
+       
     }
 }
