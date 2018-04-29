@@ -15,6 +15,7 @@ namespace CardBringer2
         public LoginRegisterForma()
         {
             InitializeComponent();
+
         }
 
         private void unosKorisnickoImeLoginLoginRegisterForma_Enter(object sender, EventArgs e)
@@ -137,6 +138,23 @@ namespace CardBringer2
             GlavniIzbornikForma GlavniFrm = new GlavniIzbornikForma();
             GlavniFrm.Show();
             this.Hide();
+        }
+
+        private void unosGumbHelpLoginRegisterForma_Click(object sender, EventArgs e)
+        {
+            string Help = "pocetna verzija help sustava, probni pokusaj";
+            HelpForm helpFrm = new HelpForm(Help);
+            helpFrm.Show();
+        }
+
+        private void LoginRegisterForma_KeyDown(object sender, KeyEventArgs e)
+        {
+            if(e.KeyCode == Keys.F1)
+            {
+                string Help = "pocetna verzija help sustava, probni pokusaj";
+                HelpForm helpFrm = new HelpForm(Help);
+                helpFrm.Show();
+            }
         }
     }
 }
