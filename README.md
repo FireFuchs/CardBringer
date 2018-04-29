@@ -14,5 +14,10 @@ pronaći na Wiki stranici projekta.
     * [**Proračun i budžet projekta**](https://github.com/foivz/r18030/wiki/Projektna-dokumentacija#4-prora%C4%8Dun-i-bud%C5%BEet-projekta)
     * [**Ponuda naručitelju**](https://github.com/foivz/r18030/wiki/Projektna-dokumentacija#5-ponuda-naru%C4%8Ditelju)
 * [**Tehnička dokumentacija**](https://github.com/foivz/r18030/wiki/Tehni%C4%8Dka-dokumentacija)
+    * [**Specifikacija zahtjeva**](https://github.com/foivz/r18030/wiki/Tehni%C4%8Dka-dokumentacija#1-specifikacija-zahtjeva)
+    * [**Općeniti opis**](https://github.com/foivz/r18030/wiki/Tehni%C4%8Dka-dokumentacija#2-op%C4%87eniti-opis)
+    * [**Eksterni zahtjevi sučelja**](https://github.com/foivz/r18030/wiki/Tehni%C4%8Dka-dokumentacija#3-eksterni-zahtjevi-su%C4%8Delja)
+    * [**Značajke sustava**](https://github.com/foivz/r18030/wiki/Tehni%C4%8Dka-dokumentacija#4-zna%C4%8Dajke-sustava)
+
 * [**Korisnička dokumentacija**](https://github.com/foivz/r18030/wiki/Korisni%C4%8Dka-dokumentacija)
 
