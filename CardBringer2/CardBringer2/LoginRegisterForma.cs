@@ -9,12 +9,16 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace CardBringer2
-{
+{   
     public partial class LoginRegisterForma : Form
     {
+        string helpTekst = "pocetna verzija help sustava, probni pokusaj";
+
+        GlavniIzbornikForma GlavniFrm = new GlavniIzbornikForma();
         public LoginRegisterForma()
         {
             InitializeComponent();
+
         }
 
         private void unosKorisnickoImeLoginLoginRegisterForma_Enter(object sender, EventArgs e)
@@ -127,16 +131,39 @@ namespace CardBringer2
 
         private void unosGumbLoginLoginRegisterForma_Click(object sender, EventArgs e)
         {
-            GlavniIzbornikForma GlavniFrm = new GlavniIzbornikForma();
+            
             GlavniFrm.Show();
             this.Hide();
         }
 
         private void unosGumbRegistrirajLoginRegisterForma_Click(object sender, EventArgs e)
         {
-            GlavniIzbornikForma GlavniFrm = new GlavniIzbornikForma();
             GlavniFrm.Show();
             this.Hide();
+        }
+
+        private void unosGumbHelpLoginRegisterForma_Click(object sender, EventArgs e)
+        {
+            HelpClass help = new HelpClass(helpTekst);
+        }
+
+        private void LoginRegisterForma_KeyDown(object sender, KeyEventArgs e)
+        {
+            if(e.KeyCode == Keys.F1)
+            {
+                HelpClass help = new HelpClass(helpTekst);
+            }
+        }
+        
+        private void UnosGumbGostLoginRegisterForma_Click(object sender, EventArgs e)
+        {
+            GlavniFrm.Show();
+            this.Hide();
+        }
+
+        private void LoginRegisterForma_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }
