@@ -79,5 +79,22 @@ namespace CardBringer2
             novaListaZelja.Show();
 
         }
+
+        private void unosGumbHelpGlavniIzbornikForma_Click(object sender, EventArgs e)
+        {
+            string Help = "pocetna verzija help sustava, probni pokusaj";
+            HelpForm helpFrm = new HelpForm(Help);
+            helpFrm.Show();
+        }
+
+        private void GlavniIzbornikForma_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.F1)
+            {
+                string Help = "pocetna verzija help sustava, probni pokusaj, ali ovaj puta s glavnog izbornika tak da mora biti malo drukčiji text.";
+                HelpForm helpFrm = new HelpForm(Help);
+                helpFrm.Show();
+            }
+        }
     }
 }

@@ -144,13 +144,20 @@ namespace CardBringer2
 
         private void unosGumbHelpLoginRegisterForma_Click(object sender, EventArgs e)
         {
+<<<<<<< HEAD
             HelpClass help = new HelpClass(helpTekst);
+=======
+            string Help = "pocetna verzija help sustava, probni pokusaj";
+            HelpForm helpFrm = new HelpForm(Help);
+            helpFrm.Show();
+>>>>>>> FilipAppUpdatge
         }
 
         private void LoginRegisterForma_KeyDown(object sender, KeyEventArgs e)
         {
             if(e.KeyCode == Keys.F1)
             {
+<<<<<<< HEAD
                 HelpClass help = new HelpClass(helpTekst);
             }
         }
@@ -165,5 +172,12 @@ namespace CardBringer2
         {
 
         }
+=======
+                string Help = "pocetna verzija help sustava, probni pokusaj";
+                HelpForm helpFrm = new HelpForm(Help);
+                helpFrm.Show();
+            }
+        }
+>>>>>>> FilipAppUpdatge
     }
 }
