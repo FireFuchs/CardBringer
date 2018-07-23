@@ -16,5 +16,15 @@ namespace CardBringer2
         {
             InitializeComponent();
         }
+
+        private void ListaZelja_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void ListaZeljaTrazi_TextChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }

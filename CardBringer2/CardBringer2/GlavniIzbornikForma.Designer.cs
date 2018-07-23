@@ -54,7 +54,7 @@
             // 
             this.unosGumbHelpGlavniIzbornikForma.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.unosGumbHelpGlavniIzbornikForma.ForeColor = System.Drawing.Color.White;
-            this.unosGumbHelpGlavniIzbornikForma.Location = new System.Drawing.Point(858, 0);
+            this.unosGumbHelpGlavniIzbornikForma.Location = new System.Drawing.Point(1182, 0);
             this.unosGumbHelpGlavniIzbornikForma.Name = "unosGumbHelpGlavniIzbornikForma";
             this.unosGumbHelpGlavniIzbornikForma.Size = new System.Drawing.Size(62, 50);
             this.unosGumbHelpGlavniIzbornikForma.TabIndex = 9;
@@ -75,8 +75,8 @@
             this.odjavaToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(208, 0);
             this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Padding = new System.Windows.Forms.Padding(5, 6, 300, 5);
-            this.menuStrip1.Size = new System.Drawing.Size(1019, 50);
+            this.menuStrip1.Padding = new System.Windows.Forms.Padding(5, 6, 350, 5);
+            this.menuStrip1.Size = new System.Drawing.Size(1307, 50);
             this.menuStrip1.TabIndex = 5;
             this.menuStrip1.Text = "menuStrip1";
             // 
@@ -120,7 +120,7 @@
             // 
             this.odjavaToolStripMenuItem.Alignment = System.Windows.Forms.ToolStripItemAlignment.Right;
             this.odjavaToolStripMenuItem.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
-            this.odjavaToolStripMenuItem.Margin = new System.Windows.Forms.Padding(195, 0, 0, 0);
+            this.odjavaToolStripMenuItem.Margin = new System.Windows.Forms.Padding(525, 0, 0, 0);
             this.odjavaToolStripMenuItem.Name = "odjavaToolStripMenuItem";
             this.odjavaToolStripMenuItem.Padding = new System.Windows.Forms.Padding(10);
             this.odjavaToolStripMenuItem.Size = new System.Drawing.Size(68, 39);
@@ -132,7 +132,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(48)))), ((int)(((byte)(48)))));
-            this.ClientSize = new System.Drawing.Size(920, 420);
+            this.ClientSize = new System.Drawing.Size(1243, 574);
             this.Controls.Add(this.unosGumbHelpGlavniIzbornikForma);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.menuStrip1);

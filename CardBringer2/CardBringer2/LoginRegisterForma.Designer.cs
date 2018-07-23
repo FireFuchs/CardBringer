@@ -51,7 +51,7 @@
             this.unosGumbLoginLoginRegisterForma.Location = new System.Drawing.Point(22, 148);
             this.unosGumbLoginLoginRegisterForma.Name = "unosGumbLoginLoginRegisterForma";
             this.unosGumbLoginLoginRegisterForma.Size = new System.Drawing.Size(214, 34);
-            this.unosGumbLoginLoginRegisterForma.TabIndex = 0;
+            this.unosGumbLoginLoginRegisterForma.TabIndex = 3;
             this.unosGumbLoginLoginRegisterForma.Text = "Prijava";
             this.unosGumbLoginLoginRegisterForma.UseVisualStyleBackColor = false;
             this.unosGumbLoginLoginRegisterForma.Click += new System.EventHandler(this.unosGumbLoginLoginRegisterForma_Click);
@@ -64,7 +64,7 @@
             this.unosGumbRegistrirajLoginRegisterForma.Location = new System.Drawing.Point(22, 309);
             this.unosGumbRegistrirajLoginRegisterForma.Name = "unosGumbRegistrirajLoginRegisterForma";
             this.unosGumbRegistrirajLoginRegisterForma.Size = new System.Drawing.Size(214, 34);
-            this.unosGumbRegistrirajLoginRegisterForma.TabIndex = 1;
+            this.unosGumbRegistrirajLoginRegisterForma.TabIndex = 8;
             this.unosGumbRegistrirajLoginRegisterForma.Text = "Register";
             this.unosGumbRegistrirajLoginRegisterForma.UseVisualStyleBackColor = false;
             this.unosGumbRegistrirajLoginRegisterForma.Click += new System.EventHandler(this.unosGumbRegistrirajLoginRegisterForma_Click);
@@ -75,7 +75,7 @@
             this.unosKorisnickoImeLoginLoginRegisterForma.Location = new System.Drawing.Point(22, 96);
             this.unosKorisnickoImeLoginLoginRegisterForma.Name = "unosKorisnickoImeLoginLoginRegisterForma";
             this.unosKorisnickoImeLoginLoginRegisterForma.Size = new System.Drawing.Size(214, 20);
-            this.unosKorisnickoImeLoginLoginRegisterForma.TabIndex = 2;
+            this.unosKorisnickoImeLoginLoginRegisterForma.TabIndex = 1;
             this.unosKorisnickoImeLoginLoginRegisterForma.Text = "Korisnicko Ime";
             this.unosKorisnickoImeLoginLoginRegisterForma.Enter += new System.EventHandler(this.unosKorisnickoImeLoginLoginRegisterForma_Enter);
             this.unosKorisnickoImeLoginLoginRegisterForma.Leave += new System.EventHandler(this.unosKorisnickoImeLoginLoginRegisterForma_Leave);
@@ -97,7 +97,7 @@
             this.unosKorisnickoImeRegisterLoginRegisterForma.Location = new System.Drawing.Point(22, 231);
             this.unosKorisnickoImeRegisterLoginRegisterForma.Name = "unosKorisnickoImeRegisterLoginRegisterForma";
             this.unosKorisnickoImeRegisterLoginRegisterForma.Size = new System.Drawing.Size(214, 20);
-            this.unosKorisnickoImeRegisterLoginRegisterForma.TabIndex = 3;
+            this.unosKorisnickoImeRegisterLoginRegisterForma.TabIndex = 5;
             this.unosKorisnickoImeRegisterLoginRegisterForma.Text = "Korisnicko Ime";
             this.unosKorisnickoImeRegisterLoginRegisterForma.Enter += new System.EventHandler(this.unosKorisnickoImeRegisterLoginRegisterForma_Enter);
             this.unosKorisnickoImeRegisterLoginRegisterForma.Leave += new System.EventHandler(this.unosKorisnickoImeRegisterLoginRegisterForma_Leave);
@@ -119,7 +119,7 @@
             this.unosPonovljeniPasswordRegisterLoginRegisterForma.Location = new System.Drawing.Point(22, 283);
             this.unosPonovljeniPasswordRegisterLoginRegisterForma.Name = "unosPonovljeniPasswordRegisterLoginRegisterForma";
             this.unosPonovljeniPasswordRegisterLoginRegisterForma.Size = new System.Drawing.Size(214, 20);
-            this.unosPonovljeniPasswordRegisterLoginRegisterForma.TabIndex = 5;
+            this.unosPonovljeniPasswordRegisterLoginRegisterForma.TabIndex = 7;
             this.unosPonovljeniPasswordRegisterLoginRegisterForma.Text = "Ponovljena Lozinka";
             this.unosPonovljeniPasswordRegisterLoginRegisterForma.Enter += new System.EventHandler(this.unosPonovljeniPasswordRegisterLoginRegisterForma_Enter);
             this.unosPonovljeniPasswordRegisterLoginRegisterForma.Leave += new System.EventHandler(this.unosPonovljeniPasswordRegisterLoginRegisterForma_Leave);
@@ -151,7 +151,7 @@
             this.unosGumbHelpLoginRegisterForma.Location = new System.Drawing.Point(204, 0);
             this.unosGumbHelpLoginRegisterForma.Name = "unosGumbHelpLoginRegisterForma";
             this.unosGumbHelpLoginRegisterForma.Size = new System.Drawing.Size(53, 23);
-            this.unosGumbHelpLoginRegisterForma.TabIndex = 8;
+            this.unosGumbHelpLoginRegisterForma.TabIndex = 10;
             this.unosGumbHelpLoginRegisterForma.Text = "Help";
             this.unosGumbHelpLoginRegisterForma.UseVisualStyleBackColor = true;
             this.unosGumbHelpLoginRegisterForma.Click += new System.EventHandler(this.unosGumbHelpLoginRegisterForma_Click);
@@ -163,7 +163,7 @@
             this.UnosGumbGostLoginRegisterForma.Location = new System.Drawing.Point(22, 368);
             this.UnosGumbGostLoginRegisterForma.Name = "UnosGumbGostLoginRegisterForma";
             this.UnosGumbGostLoginRegisterForma.Size = new System.Drawing.Size(214, 23);
-            this.UnosGumbGostLoginRegisterForma.TabIndex = 8;
+            this.UnosGumbGostLoginRegisterForma.TabIndex = 9;
             this.UnosGumbGostLoginRegisterForma.Text = "Gost pristup";
             this.UnosGumbGostLoginRegisterForma.UseVisualStyleBackColor = true;
             this.UnosGumbGostLoginRegisterForma.Click += new System.EventHandler(this.UnosGumbGostLoginRegisterForma_Click);

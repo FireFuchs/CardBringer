@@ -12,10 +12,12 @@ namespace CardBringer2
 {
     public partial class GlavniIzbornikForma : Form
     {
-        string helpTekst = "Help glavne forme";
+        string helpTekst = "Help Početne stranice";
+        int korisnikIme = 0;
 
-        public GlavniIzbornikForma()
+        public GlavniIzbornikForma(int ime)
         {
+            korisnikIme = ime;
             InitializeComponent();
 
         }
@@ -23,7 +25,10 @@ namespace CardBringer2
 
         private void GlavniIzbornikForma_KeyDown(object sender, KeyEventArgs e)
         {
-            HelpClass help = new HelpClass(helpTekst);
+            if ( e.KeyCode == Keys.F1)
+            {
+                HelpClass help = new HelpClass(helpTekst);
+            }
         }
 
         private void unosGumbHelpGlavniIzbornikForma_Click(object sender, EventArgs e)
@@ -39,27 +44,31 @@ namespace CardBringer2
 
         private void početnaToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            Pocetna novaPocetna = new Pocetna();
+            Pocetna novaPocetna = new Pocetna(korisnikIme);
             novaPocetna.MdiParent = this;
             novaPocetna.WindowState = FormWindowState.Maximized;
             novaPocetna.Show();
+            helpTekst = "Help Početne stranice";
 
         }
 
         private void mojProfilToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            MojProfil noviMojProfil = new MojProfil();
+            MojProfil noviMojProfil = new MojProfil(korisnikIme);
             noviMojProfil.MdiParent = this;
             noviMojProfil.WindowState = FormWindowState.Maximized;
             noviMojProfil.Show();
+            helpTekst = "Help MojProfil stranice";
         }
 
         private void GlavniIzbornikForma_Load(object sender, EventArgs e)
         {
-            Pocetna novaPocetna = new Pocetna();
+            Pocetna novaPocetna = new Pocetna(korisnikIme);
             novaPocetna.MdiParent = this;
-            novaPocetna.WindowState = FormWindowState.Maximized;
+            novaPocetna.WindowState =
+                FormWindowState.Maximized;
             novaPocetna.Show();
+            helpTekst = "Help Početne stranice";
 
         }
 
@@ -69,6 +78,7 @@ namespace CardBringer2
             novaKosarica.MdiParent = this;
             novaKosarica.WindowState = FormWindowState.Maximized;
             novaKosarica.Show();
+            helpTekst = "Help Kosarice";
         }
 
         private void listaŽeljaToolStripMenuItem_Click(object sender, EventArgs e)
@@ -77,24 +87,8 @@ namespace CardBringer2
             novaListaZelja.MdiParent = this;
             novaListaZelja.WindowState = FormWindowState.Maximized;
             novaListaZelja.Show();
+            helpTekst = "Help ListeŽelja";
 
-        }
-
-        private void unosGumbHelpGlavniIzbornikForma_Click(object sender, EventArgs e)
-        {
-            string Help = "pocetna verzija help sustava, probni pokusaj";
-            HelpForm helpFrm = new HelpForm(Help);
-            helpFrm.Show();
-        }
-
-        private void GlavniIzbornikForma_KeyDown(object sender, KeyEventArgs e)
-        {
-            if (e.KeyCode == Keys.F1)
-            {
-                string Help = "pocetna verzija help sustava, probni pokusaj, ali ovaj puta s glavnog izbornika tak da mora biti malo drukčiji text.";
-                HelpForm helpFrm = new HelpForm(Help);
-                helpFrm.Show();
-            }
         }
     }
 }

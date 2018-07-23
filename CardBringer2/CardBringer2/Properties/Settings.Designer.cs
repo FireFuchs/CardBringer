@@ -8,22 +8,63 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace CardBringer2.Properties
-{
-
-
+namespace CardBringer2.Properties {
+    
+    
     [global::System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
-    [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.VisualStudio.Editors.SettingsDesigner.SettingsSingleFileGenerator", "11.0.0.0")]
-    internal sealed partial class Settings : global::System.Configuration.ApplicationSettingsBase
-    {
-
+    [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.VisualStudio.Editors.SettingsDesigner.SettingsSingleFileGenerator", "15.7.0.0")]
+    internal sealed partial class Settings : global::System.Configuration.ApplicationSettingsBase {
+        
         private static Settings defaultInstance = ((Settings)(global::System.Configuration.ApplicationSettingsBase.Synchronized(new Settings())));
-
-        public static Settings Default
-        {
-            get
-            {
+        
+        public static Settings Default {
+            get {
                 return defaultInstance;
+            }
+        }
+        
+        [global::System.Configuration.ApplicationScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.SpecialSettingAttribute(global::System.Configuration.SpecialSetting.ConnectionString)]
+        [global::System.Configuration.DefaultSettingValueAttribute("Data Source=(LocalDB)\\MSSQLLocalDB;AttachDbFilename=|DataDirectory|\\PiBaza.mdf;In" +
+            "tegrated Security=True;Connect Timeout=30")]
+        public string PiBazaConnectionString {
+            get {
+                return ((string)(this["PiBazaConnectionString"]));
+            }
+        }
+        
+        [global::System.Configuration.ApplicationScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.SpecialSettingAttribute(global::System.Configuration.SpecialSetting.ConnectionString)]
+        [global::System.Configuration.DefaultSettingValueAttribute("Data Source=(LocalDB)\\MSSQLLocalDB;Initial Catalog=C:\\USERS\\FOCHO\\DESKTOP\\CARDBRI" +
+            "NGER2\\CARDBRINGER2\\DATABASE2.MDF;Integrated Security=True;Connect Timeout=30;Enc" +
+            "rypt=False;TrustServerCertificate=False")]
+        public string C__USERS_FOCHO_DESKTOP_CARDBRINGER2_CARDBRINGER2_DATABASE2_MDFConnectionString {
+            get {
+                return ((string)(this["C__USERS_FOCHO_DESKTOP_CARDBRINGER2_CARDBRINGER2_DATABASE2_MDFConnectionString"]));
+            }
+        }
+        
+        [global::System.Configuration.ApplicationScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.SpecialSettingAttribute(global::System.Configuration.SpecialSetting.ConnectionString)]
+        [global::System.Configuration.DefaultSettingValueAttribute("Data Source=(LocalDB)\\MSSQLLocalDB;AttachDbFilename=|DataDirectory|\\Database2.mdf" +
+            ";Integrated Security=True;Connect Timeout=30")]
+        public string Database2ConnectionString {
+            get {
+                return ((string)(this["Database2ConnectionString"]));
+            }
+        }
+        
+        [global::System.Configuration.ApplicationScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.SpecialSettingAttribute(global::System.Configuration.SpecialSetting.ConnectionString)]
+        [global::System.Configuration.DefaultSettingValueAttribute("Data Source=(LocalDB)\\MSSQLLocalDB;AttachDbFilename=C:\\Users\\Focho\\Desktop\\CardBr" +
+            "inger2\\Database2.mdf;Integrated Security=True;Connect Timeout=30")]
+        public string Database2ConnectionString1 {
+            get {
+                return ((string)(this["Database2ConnectionString1"]));
             }
         }
     }

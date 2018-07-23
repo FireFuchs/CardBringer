@@ -14,7 +14,6 @@ C:\Users\Focho\Desktop\CardBringer2\CardBringer2\obj\Debug\CardBringer2.exe
 C:\Users\Focho\Desktop\CardBringer2\CardBringer2\obj\Debug\CardBringer2.pdb
 C:\Users\Focho\Desktop\CardBringer2\CardBringer2\bin\Debug\CardBringer2.exe
 C:\Users\Focho\Desktop\CardBringer2\CardBringer2\bin\Debug\CardBringer2.pdb
-C:\Users\Focho\Desktop\CardBringer2\CardBringer2\obj\Debug\CardBringer2.csprojResolveAssemblyReference.cache
 C:\Users\Focho\Desktop\CardBringer2\CardBringer2\obj\Debug\CardBringer2.GlavniIzbornikForma.resources
 C:\Users\Focho\Desktop\CardBringer2\CardBringer2\obj\Debug\CardBringer2.HelpForm.resources
 C:\Users\Focho\Desktop\CardBringer2\CardBringer2\obj\Debug\CardBringer2.LoginRegisterForma.resources
@@ -24,3 +23,7 @@ C:\Users\Focho\Desktop\CardBringer2\CardBringer2\obj\Debug\CardBringer2.csproj.G
 C:\Users\Focho\Desktop\CardBringer2\CardBringer2\obj\Debug\CardBringer2.MojProfil.resources
 C:\Users\Focho\Desktop\CardBringer2\CardBringer2\obj\Debug\CardBringer2.Kosarica.resources
 C:\Users\Focho\Desktop\CardBringer2\CardBringer2\obj\Debug\CardBringer2.ListaZelja.resources
+C:\Users\Focho\Desktop\CardBringer2\CardBringer2\obj\Debug\CardBringer2.csprojAssemblyReference.cache
+C:\Users\Focho\Desktop\CardBringer2\CardBringer2\obj\Debug\CardBringer2.csproj.CoreCompileInputs.cache
+C:\Users\Focho\Desktop\CardBringer2\CardBringer2\bin\Debug\Database2.mdf
+C:\Users\Focho\Desktop\CardBringer2\CardBringer2\bin\Debug\Database2_log.ldf

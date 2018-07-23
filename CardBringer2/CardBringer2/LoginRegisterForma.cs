@@ -12,13 +12,13 @@ namespace CardBringer2
 {   
     public partial class LoginRegisterForma : Form
     {
+        Database2DataSetTableAdapters.korisnikTableAdapter korisnikTableAdapter;
         string helpTekst = "pocetna verzija help sustava, probni pokusaj";
-
-        GlavniIzbornikForma GlavniFrm = new GlavniIzbornikForma();
+        static int idKorisnika = 0;
         public LoginRegisterForma()
         {
             InitializeComponent();
-
+            korisnikTableAdapter = new Database2DataSetTableAdapters.korisnikTableAdapter();
         }
 
         private void unosKorisnickoImeLoginLoginRegisterForma_Enter(object sender, EventArgs e)
@@ -132,52 +132,62 @@ namespace CardBringer2
         private void unosGumbLoginLoginRegisterForma_Click(object sender, EventArgs e)
         {
             
-            GlavniFrm.Show();
-            this.Hide();
+            string korIme = unosKorisnickoImeLoginLoginRegisterForma.Text;
+            string korLozinka = unosPasswordLoginLoginRegisterForma.Text;
+            int loginBroj;
+            loginBroj = (int)korisnikTableAdapter.Login(korIme, korLozinka);
+            if (loginBroj == 1)
+            {
+
+                idKorisnika = (int)korisnikTableAdapter.idReturn(korIme);
+                GlavniIzbornikForma GlavniFrm = new GlavniIzbornikForma(idKorisnika);
+                GlavniFrm.Show();
+                this.Hide();
+            }
+            else
+            {
+                MessageBoxButtons button = MessageBoxButtons.OK;
+                MessageBox.Show("Kriva kombinacija Lozinke i Imena", "Greška", button);
+            }
         }
 
         private void unosGumbRegistrirajLoginRegisterForma_Click(object sender, EventArgs e)
         {
+            GlavniIzbornikForma GlavniFrm = new GlavniIzbornikForma(idKorisnika);
             GlavniFrm.Show();
             this.Hide();
         }
 
         private void unosGumbHelpLoginRegisterForma_Click(object sender, EventArgs e)
         {
-<<<<<<< HEAD
             HelpClass help = new HelpClass(helpTekst);
-=======
-            string Help = "pocetna verzija help sustava, probni pokusaj";
-            HelpForm helpFrm = new HelpForm(Help);
-            helpFrm.Show();
->>>>>>> FilipAppUpdatge
         }
 
         private void LoginRegisterForma_KeyDown(object sender, KeyEventArgs e)
         {
             if(e.KeyCode == Keys.F1)
             {
-<<<<<<< HEAD
                 HelpClass help = new HelpClass(helpTekst);
             }
         }
         
         private void UnosGumbGostLoginRegisterForma_Click(object sender, EventArgs e)
         {
+            GlavniIzbornikForma GlavniFrm = new GlavniIzbornikForma(idKorisnika);
             GlavniFrm.Show();
             this.Hide();
         }
 
         private void LoginRegisterForma_Load(object sender, EventArgs e)
         {
+            
+
 
         }
-=======
-                string Help = "pocetna verzija help sustava, probni pokusaj";
-                HelpForm helpFrm = new HelpForm(Help);
-                helpFrm.Show();
-            }
+
+        private void bindingSource1_CurrentChanged(object sender, EventArgs e)
+        {
+
         }
->>>>>>> FilipAppUpdatge
     }
 }
