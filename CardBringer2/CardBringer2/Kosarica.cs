@@ -16,5 +16,14 @@ namespace CardBringer2
         {
             InitializeComponent();
         }
+
+        private void Kosarica_Load(object sender, EventArgs e)
+        {
+            // TODO: This line of code loads data into the 'database2DataSet.medjuspremnikKosarica' table. You can move, or remove it, as needed.
+            this.medjuspremnikKosaricaTableAdapter.FillByKorisnik(this.database2DataSet.medjuspremnikKosarica);
+            Database2DataSetTableAdapters.medjuspremnikKosaricaTableAdapter medjuspremnik;
+            medjuspremnik = new Database2DataSetTableAdapters.medjuspremnikKosaricaTableAdapter();
+
+        }
     }
 }

@@ -28,13 +28,19 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.label1 = new System.Windows.Forms.Label();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.medjuspremnikKosaricaBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.database2DataSet = new CardBringer2.Database2DataSet();
             this.KosaricaLabelCijenaUnchanged = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
+            this.medjuspremnikKosaricaTableAdapter = new CardBringer2.Database2DataSetTableAdapters.medjuspremnikKosaricaTableAdapter();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.medjuspremnikKosaricaBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.database2DataSet)).BeginInit();
             this.SuspendLayout();
             // 
             // label1
@@ -48,11 +54,24 @@
             // 
             // dataGridView1
             // 
+            this.dataGridView1.AutoGenerateColumns = false;
+            this.dataGridView1.CausesValidation = false;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView1.DataSource = this.medjuspremnikKosaricaBindingSource;
             this.dataGridView1.Location = new System.Drawing.Point(12, 75);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.Size = new System.Drawing.Size(573, 447);
             this.dataGridView1.TabIndex = 1;
+            // 
+            // medjuspremnikKosaricaBindingSource
+            // 
+            this.medjuspremnikKosaricaBindingSource.DataMember = "medjuspremnikKosarica";
+            this.medjuspremnikKosaricaBindingSource.DataSource = this.database2DataSet;
+            // 
+            // database2DataSet
+            // 
+            this.database2DataSet.DataSetName = "Database2DataSet";
+            this.database2DataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
             // KosaricaLabelCijenaUnchanged
             // 
@@ -90,6 +109,10 @@
             this.label5.TabIndex = 2;
             this.label5.Text = "-";
             // 
+            // medjuspremnikKosaricaTableAdapter
+            // 
+            this.medjuspremnikKosaricaTableAdapter.ClearBeforeFill = true;
+            // 
             // Kosarica
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -104,7 +127,10 @@
             this.Controls.Add(this.label1);
             this.Name = "Kosarica";
             this.Text = "Kosarica";
+            this.Load += new System.EventHandler(this.Kosarica_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.medjuspremnikKosaricaBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.database2DataSet)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -113,10 +139,13 @@
         #endregion
 
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.DataGridView dataGridView1;
         private System.Windows.Forms.Label KosaricaLabelCijenaUnchanged;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label5;
+        private Database2DataSet database2DataSet;
+        private System.Windows.Forms.BindingSource medjuspremnikKosaricaBindingSource;
+        private Database2DataSetTableAdapters.medjuspremnikKosaricaTableAdapter medjuspremnikKosaricaTableAdapter;
+        private System.Windows.Forms.DataGridView dataGridView1;
     }
 }

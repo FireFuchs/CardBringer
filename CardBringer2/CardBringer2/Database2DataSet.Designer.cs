@@ -1521,10 +1521,6 @@ namespace CardBringer2 {
             
             private global::System.Data.DataColumn columnidKorisnik;
             
-            private global::System.Data.DataColumn columnkolicina;
-            
-            private global::System.Data.DataColumn columndatum;
-            
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             public kosaricaDataTable() {
@@ -1576,22 +1572,6 @@ namespace CardBringer2 {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public global::System.Data.DataColumn kolicinaColumn {
-                get {
-                    return this.columnkolicina;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public global::System.Data.DataColumn datumColumn {
-                get {
-                    return this.columndatum;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             [global::System.ComponentModel.Browsable(false)]
             public int Count {
                 get {
@@ -1627,13 +1607,11 @@ namespace CardBringer2 {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public kosaricaRow AddkosaricaRow(korisnikRow parentkorisnikRowByfk_kosarica_korisnik_1, int kolicina, System.DateTime datum) {
+            public kosaricaRow AddkosaricaRow(korisnikRow parentkorisnikRowByfk_kosarica_korisnik_1) {
                 kosaricaRow rowkosaricaRow = ((kosaricaRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
                         null,
-                        null,
-                        kolicina,
-                        datum};
+                        null};
                 if ((parentkorisnikRowByfk_kosarica_korisnik_1 != null)) {
                     columnValuesArray[1] = parentkorisnikRowByfk_kosarica_korisnik_1[0];
                 }
@@ -1668,8 +1646,6 @@ namespace CardBringer2 {
             internal void InitVars() {
                 this.columnidKosarice = base.Columns["idKosarice"];
                 this.columnidKorisnik = base.Columns["idKorisnik"];
-                this.columnkolicina = base.Columns["kolicina"];
-                this.columndatum = base.Columns["datum"];
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -1679,10 +1655,6 @@ namespace CardBringer2 {
                 base.Columns.Add(this.columnidKosarice);
                 this.columnidKorisnik = new global::System.Data.DataColumn("idKorisnik", typeof(int), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnidKorisnik);
-                this.columnkolicina = new global::System.Data.DataColumn("kolicina", typeof(int), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnkolicina);
-                this.columndatum = new global::System.Data.DataColumn("datum", typeof(global::System.DateTime), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columndatum);
                 this.Constraints.Add(new global::System.Data.UniqueConstraint("Constraint1", new global::System.Data.DataColumn[] {
                                 this.columnidKosarice}, true));
                 this.columnidKosarice.AutoIncrement = true;
@@ -1690,8 +1662,6 @@ namespace CardBringer2 {
                 this.columnidKosarice.ReadOnly = true;
                 this.columnidKosarice.Unique = true;
                 this.columnidKorisnik.AllowDBNull = false;
-                this.columnkolicina.AllowDBNull = false;
-                this.columndatum.AllowDBNull = false;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -1829,6 +1799,10 @@ namespace CardBringer2 {
             
             private global::System.Data.DataColumn columnidKosarica;
             
+            private global::System.Data.DataColumn columnKolicina;
+            
+            private global::System.Data.DataColumn columnDatum;
+            
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             public medjuspremnikKosaricaDataTable() {
@@ -1880,6 +1854,22 @@ namespace CardBringer2 {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public global::System.Data.DataColumn KolicinaColumn {
+                get {
+                    return this.columnKolicina;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public global::System.Data.DataColumn DatumColumn {
+                get {
+                    return this.columnDatum;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             [global::System.ComponentModel.Browsable(false)]
             public int Count {
                 get {
@@ -1915,11 +1905,13 @@ namespace CardBringer2 {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public medjuspremnikKosaricaRow AddmedjuspremnikKosaricaRow(korisnikKartaRow parentkorisnikKartaRowByfk_medjuspremnikKosarica_korisnikKarta_1, kosaricaRow parentkosaricaRowByfk_medjuspremnikKosarica_kosarica_1) {
+            public medjuspremnikKosaricaRow AddmedjuspremnikKosaricaRow(korisnikKartaRow parentkorisnikKartaRowByfk_medjuspremnikKosarica_korisnikKarta_1, kosaricaRow parentkosaricaRowByfk_medjuspremnikKosarica_kosarica_1, string Kolicina, string Datum) {
                 medjuspremnikKosaricaRow rowmedjuspremnikKosaricaRow = ((medjuspremnikKosaricaRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
                         null,
-                        null};
+                        null,
+                        Kolicina,
+                        Datum};
                 if ((parentkorisnikKartaRowByfk_medjuspremnikKosarica_korisnikKarta_1 != null)) {
                     columnValuesArray[0] = parentkorisnikKartaRowByfk_medjuspremnikKosarica_korisnikKarta_1[0];
                 }
@@ -1958,6 +1950,8 @@ namespace CardBringer2 {
             internal void InitVars() {
                 this.columnidKorisnikKarta = base.Columns["idKorisnikKarta"];
                 this.columnidKosarica = base.Columns["idKosarica"];
+                this.columnKolicina = base.Columns["Kolicina"];
+                this.columnDatum = base.Columns["Datum"];
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -1967,6 +1961,10 @@ namespace CardBringer2 {
                 base.Columns.Add(this.columnidKorisnikKarta);
                 this.columnidKosarica = new global::System.Data.DataColumn("idKosarica", typeof(int), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnidKosarica);
+                this.columnKolicina = new global::System.Data.DataColumn("Kolicina", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnKolicina);
+                this.columnDatum = new global::System.Data.DataColumn("Datum", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnDatum);
                 this.Constraints.Add(new global::System.Data.UniqueConstraint("Constraint1", new global::System.Data.DataColumn[] {
                                 this.columnidKorisnikKarta,
                                 this.columnidKosarica}, true));
@@ -1974,6 +1972,7 @@ namespace CardBringer2 {
                 this.columnidKosarica.AutoIncrementSeed = -1;
                 this.columnidKosarica.AutoIncrementStep = -1;
                 this.columnidKosarica.AllowDBNull = false;
+                this.columnDatum.MaxLength = 30;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -3016,28 +3015,6 @@ namespace CardBringer2 {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public int kolicina {
-                get {
-                    return ((int)(this[this.tablekosarica.kolicinaColumn]));
-                }
-                set {
-                    this[this.tablekosarica.kolicinaColumn] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public System.DateTime datum {
-                get {
-                    return ((global::System.DateTime)(this[this.tablekosarica.datumColumn]));
-                }
-                set {
-                    this[this.tablekosarica.datumColumn] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             public korisnikRow korisnikRow {
                 get {
                     return ((korisnikRow)(this.GetParentRow(this.Table.ParentRelations["fk_kosarica_korisnik_1"])));
@@ -3097,6 +3074,38 @@ namespace CardBringer2 {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public string Kolicina {
+                get {
+                    try {
+                        return ((string)(this[this.tablemedjuspremnikKosarica.KolicinaColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'Kolicina\' in table \'medjuspremnikKosarica\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tablemedjuspremnikKosarica.KolicinaColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public string Datum {
+                get {
+                    try {
+                        return ((string)(this[this.tablemedjuspremnikKosarica.DatumColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'Datum\' in table \'medjuspremnikKosarica\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tablemedjuspremnikKosarica.DatumColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             public korisnikKartaRow korisnikKartaRow {
                 get {
                     return ((korisnikKartaRow)(this.GetParentRow(this.Table.ParentRelations["fk_medjuspremnikKosarica_korisnikKarta_1"])));
@@ -3115,6 +3124,30 @@ namespace CardBringer2 {
                 set {
                     this.SetParentRow(value, this.Table.ParentRelations["fk_medjuspremnikKosarica_kosarica_1"]);
                 }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public bool IsKolicinaNull() {
+                return this.IsNull(this.tablemedjuspremnikKosarica.KolicinaColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public void SetKolicinaNull() {
+                this[this.tablemedjuspremnikKosarica.KolicinaColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public bool IsDatumNull() {
+                return this.IsNull(this.tablemedjuspremnikKosarica.DatumColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public void SetDatumNull() {
+                this[this.tablemedjuspremnikKosarica.DatumColumn] = global::System.Convert.DBNull;
             }
         }
         
@@ -4737,7 +4770,7 @@ SELECT idKorisnikKarta, idKorisnik, idKarta, cijena, kolicina FROM korisnikKarta
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
         private void InitCommandCollection() {
-            this._commandCollection = new global::System.Data.SqlClient.SqlCommand[4];
+            this._commandCollection = new global::System.Data.SqlClient.SqlCommand[5];
             this._commandCollection[0] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[0].Connection = this.Connection;
             this._commandCollection[0].CommandText = "SELECT idKorisnikKarta, idKorisnik, idKarta, cijena, kolicina FROM dbo.korisnikKa" +
@@ -4745,23 +4778,28 @@ SELECT idKorisnikKarta, idKorisnik, idKarta, cijena, kolicina FROM korisnikKarta
             this._commandCollection[0].CommandType = global::System.Data.CommandType.Text;
             this._commandCollection[1] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[1].Connection = this.Connection;
-            this._commandCollection[1].CommandText = "UPDATE [dbo].[korisnikKarta] SET [kolicina ] - @kolicina WHERE ([idKorisnikKarta]" +
-                " = @Original_idKorisnikKarta) \r\n";
+            this._commandCollection[1].CommandText = "SELECT kk.idKorisnikKarta, kk.idKorisnik,kk.idKarta,kk.cijena, kk.kolicina, k.ime" +
+                "Karte FROM dbo.korisnikKarta kk join karta k on kk.idKarta = k.idKarta where kk." +
+                "idKorisnik = @idkorisnik";
             this._commandCollection[1].CommandType = global::System.Data.CommandType.Text;
-            this._commandCollection[1].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@kolicina", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "kolicina", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._commandCollection[1].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_idKorisnikKarta", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "idKorisnikKarta", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._commandCollection[1].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@idkorisnik", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "idKorisnik", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._commandCollection[2] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[2].Connection = this.Connection;
             this._commandCollection[2].CommandText = "SELECT kk.idKorisnikKarta, kk.idKorisnik,kk.idKarta,kk.cijena, kk.kolicina, k.ime" +
-                "Karte FROM dbo.korisnikKarta kk join karta k on kk.idKarta = k.idKarta where kk." +
-                "idKorisnik = @idkorisnik";
+                "Karte FROM dbo.korisnikKarta kk join karta k on kk.idKarta = k.idKarta";
             this._commandCollection[2].CommandType = global::System.Data.CommandType.Text;
-            this._commandCollection[2].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@idkorisnik", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "idKorisnik", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._commandCollection[3] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[3].Connection = this.Connection;
-            this._commandCollection[3].CommandText = "SELECT kk.idKorisnikKarta, kk.idKorisnik,kk.idKarta,kk.cijena, kk.kolicina, k.ime" +
-                "Karte FROM dbo.korisnikKarta kk join karta k on kk.idKarta = k.idKarta";
+            this._commandCollection[3].CommandText = "SELECT kolicina FROM korisnikKarta where idKorisnikKarta = @ponuda";
             this._commandCollection[3].CommandType = global::System.Data.CommandType.Text;
+            this._commandCollection[3].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@ponuda", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "idKorisnikKarta", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._commandCollection[4] = new global::System.Data.SqlClient.SqlCommand();
+            this._commandCollection[4].Connection = this.Connection;
+            this._commandCollection[4].CommandText = "UPDATE [dbo].[korisnikKarta] SET  kolicina = @kolicina WHERE idKorisnikKarta = @p" +
+                "onuda\r\n";
+            this._commandCollection[4].CommandType = global::System.Data.CommandType.Text;
+            this._commandCollection[4].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@kolicina", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "kolicina", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._commandCollection[4].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@ponuda", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "idKorisnikKarta", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -4793,7 +4831,7 @@ SELECT idKorisnikKarta, idKorisnik, idKarta, cijena, kolicina FROM korisnikKarta
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, false)]
         public virtual int FillBykarteKorisnika(Database2DataSet.korisnikKartaDataTable dataTable, int idkorisnik) {
-            this.Adapter.SelectCommand = this.CommandCollection[2];
+            this.Adapter.SelectCommand = this.CommandCollection[1];
             this.Adapter.SelectCommand.Parameters[0].Value = ((int)(idkorisnik));
             if ((this.ClearBeforeFill == true)) {
                 dataTable.Clear();
@@ -4807,7 +4845,7 @@ SELECT idKorisnikKarta, idKorisnik, idKarta, cijena, kolicina FROM korisnikKarta
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, false)]
         public virtual Database2DataSet.korisnikKartaDataTable GetDataBykarteKorisnika(int idkorisnik) {
-            this.Adapter.SelectCommand = this.CommandCollection[2];
+            this.Adapter.SelectCommand = this.CommandCollection[1];
             this.Adapter.SelectCommand.Parameters[0].Value = ((int)(idkorisnik));
             Database2DataSet.korisnikKartaDataTable dataTable = new Database2DataSet.korisnikKartaDataTable();
             this.Adapter.Fill(dataTable);
@@ -4819,7 +4857,7 @@ SELECT idKorisnikKarta, idKorisnik, idKarta, cijena, kolicina FROM korisnikKarta
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, false)]
         public virtual int FillBySveKarte(Database2DataSet.korisnikKartaDataTable dataTable) {
-            this.Adapter.SelectCommand = this.CommandCollection[3];
+            this.Adapter.SelectCommand = this.CommandCollection[2];
             if ((this.ClearBeforeFill == true)) {
                 dataTable.Clear();
             }
@@ -4832,7 +4870,7 @@ SELECT idKorisnikKarta, idKorisnik, idKarta, cijena, kolicina FROM korisnikKarta
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, false)]
         public virtual Database2DataSet.korisnikKartaDataTable GetDataBySveKarte() {
-            this.Adapter.SelectCommand = this.CommandCollection[3];
+            this.Adapter.SelectCommand = this.CommandCollection[2];
             Database2DataSet.korisnikKartaDataTable dataTable = new Database2DataSet.korisnikKartaDataTable();
             this.Adapter.Fill(dataTable);
             return dataTable;
@@ -4961,11 +4999,40 @@ SELECT idKorisnikKarta, idKorisnik, idKarta, cijena, kolicina FROM korisnikKarta
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        public virtual object KosaricaDohvatiKolicinu(int ponuda) {
+            global::System.Data.SqlClient.SqlCommand command = this.CommandCollection[3];
+            command.Parameters[0].Value = ((int)(ponuda));
+            global::System.Data.ConnectionState previousConnectionState = command.Connection.State;
+            if (((command.Connection.State & global::System.Data.ConnectionState.Open) 
+                        != global::System.Data.ConnectionState.Open)) {
+                command.Connection.Open();
+            }
+            object returnValue;
+            try {
+                returnValue = command.ExecuteScalar();
+            }
+            finally {
+                if ((previousConnectionState == global::System.Data.ConnectionState.Closed)) {
+                    command.Connection.Close();
+                }
+            }
+            if (((returnValue == null) 
+                        || (returnValue.GetType() == typeof(global::System.DBNull)))) {
+                return null;
+            }
+            else {
+                return ((object)(returnValue));
+            }
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Update, false)]
-        public virtual int DodavanjeUKosaricu(int kolicina, int Original_idKorisnikKarta) {
-            global::System.Data.SqlClient.SqlCommand command = this.CommandCollection[1];
+        public virtual int KosaricaSpremiKolicinu(int kolicina, int ponuda) {
+            global::System.Data.SqlClient.SqlCommand command = this.CommandCollection[4];
             command.Parameters[0].Value = ((int)(kolicina));
-            command.Parameters[1].Value = ((int)(Original_idKorisnikKarta));
+            command.Parameters[1].Value = ((int)(ponuda));
             global::System.Data.ConnectionState previousConnectionState = command.Connection.State;
             if (((command.Connection.State & global::System.Data.ConnectionState.Open) 
                         != global::System.Data.ConnectionState.Open)) {
@@ -5107,42 +5174,33 @@ SELECT idKorisnikKarta, idKorisnik, idKarta, cijena, kolicina FROM korisnikKarta
             tableMapping.DataSetTable = "kosarica";
             tableMapping.ColumnMappings.Add("idKosarice", "idKosarice");
             tableMapping.ColumnMappings.Add("idKorisnik", "idKorisnik");
-            tableMapping.ColumnMappings.Add("kolicina", "kolicina");
-            tableMapping.ColumnMappings.Add("datum", "datum");
             this._adapter.TableMappings.Add(tableMapping);
             this._adapter.DeleteCommand = new global::System.Data.SqlClient.SqlCommand();
             this._adapter.DeleteCommand.Connection = this.Connection;
-            this._adapter.DeleteCommand.CommandText = "DELETE FROM [dbo].[kosarica] WHERE (([idKosarice] = @Original_idKosarice) AND ([i" +
-                "dKorisnik] = @Original_idKorisnik) AND ([kolicina] = @Original_kolicina) AND ([d" +
-                "atum] = @Original_datum))";
+            this._adapter.DeleteCommand.CommandText = "DELETE FROM [kosarica] WHERE (([idKosarice] = @Original_idKosarice) AND ([idKoris" +
+                "nik] = @Original_idKorisnik))";
             this._adapter.DeleteCommand.CommandType = global::System.Data.CommandType.Text;
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_idKosarice", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "idKosarice", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_idKorisnik", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "idKorisnik", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_kolicina", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "kolicina", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_datum", global::System.Data.SqlDbType.Date, 0, global::System.Data.ParameterDirection.Input, 0, 0, "datum", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.InsertCommand = new global::System.Data.SqlClient.SqlCommand();
             this._adapter.InsertCommand.Connection = this.Connection;
-            this._adapter.InsertCommand.CommandText = "INSERT INTO [dbo].[kosarica] ([idKosarice], [idKorisnik], [kolicina], [datum]) VA" +
-                "LUES (@idKosarice, @idKorisnik, @kolicina, @datum);\r\nSELECT idKosarice, idKorisn" +
-                "ik, kolicina, datum FROM kosarica WHERE (idKosarice = @idKosarice)";
+            this._adapter.InsertCommand.CommandText = "INSERT INTO [kosarica] ([idKosarice], [idKorisnik]) VALUES (@idKosarice, @idKoris" +
+                "nik);\r\nSELECT idKosarice, idKorisnik FROM kosarica WHERE (idKosarice = @idKosari" +
+                "ce)";
             this._adapter.InsertCommand.CommandType = global::System.Data.CommandType.Text;
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@idKosarice", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "idKosarice", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@idKorisnik", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "idKorisnik", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@kolicina", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "kolicina", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@datum", global::System.Data.SqlDbType.Date, 0, global::System.Data.ParameterDirection.Input, 0, 0, "datum", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand = new global::System.Data.SqlClient.SqlCommand();
             this._adapter.UpdateCommand.Connection = this.Connection;
-            this._adapter.UpdateCommand.CommandText = @"UPDATE [dbo].[kosarica] SET [idKosarice] = @idKosarice, [idKorisnik] = @idKorisnik, [kolicina] = @kolicina, [datum] = @datum WHERE (([idKosarice] = @Original_idKosarice) AND ([idKorisnik] = @Original_idKorisnik) AND ([kolicina] = @Original_kolicina) AND ([datum] = @Original_datum));
-SELECT idKosarice, idKorisnik, kolicina, datum FROM kosarica WHERE (idKosarice = @idKosarice)";
+            this._adapter.UpdateCommand.CommandText = "UPDATE [kosarica] SET [idKosarice] = @idKosarice, [idKorisnik] = @idKorisnik WHER" +
+                "E (([idKosarice] = @Original_idKosarice) AND ([idKorisnik] = @Original_idKorisni" +
+                "k));\r\nSELECT idKosarice, idKorisnik FROM kosarica WHERE (idKosarice = @idKosaric" +
+                "e)";
             this._adapter.UpdateCommand.CommandType = global::System.Data.CommandType.Text;
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@idKosarice", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "idKosarice", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@idKorisnik", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "idKorisnik", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@kolicina", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "kolicina", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@datum", global::System.Data.SqlDbType.Date, 0, global::System.Data.ParameterDirection.Input, 0, 0, "datum", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_idKosarice", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "idKosarice", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_idKorisnik", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "idKorisnik", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_kolicina", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "kolicina", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_datum", global::System.Data.SqlDbType.Date, 0, global::System.Data.ParameterDirection.Input, 0, 0, "datum", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -5155,28 +5213,16 @@ SELECT idKosarice, idKorisnik, kolicina, datum FROM kosarica WHERE (idKosarice =
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
         private void InitCommandCollection() {
-            this._commandCollection = new global::System.Data.SqlClient.SqlCommand[3];
+            this._commandCollection = new global::System.Data.SqlClient.SqlCommand[2];
             this._commandCollection[0] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[0].Connection = this.Connection;
-            this._commandCollection[0].CommandText = "SELECT idKosarice, idKorisnik, kolicina, datum FROM dbo.kosarica";
+            this._commandCollection[0].CommandText = "SELECT idKosarice, idKorisnik FROM kosarica";
             this._commandCollection[0].CommandType = global::System.Data.CommandType.Text;
             this._commandCollection[1] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[1].Connection = this.Connection;
-            this._commandCollection[1].CommandText = "INSERT INTO [dbo].[kosarica] ([idKosarice], [idKorisnik], [kolicina], [datum]) VA" +
-                "LUES (@idKosarice, @idKorisnik, @kolicina, @datum);\r\nselect SCOPE_IDENTITY()";
+            this._commandCollection[1].CommandText = "SELECT idKosarice FROM kosarica where idKorisnik = @idKorisnik";
             this._commandCollection[1].CommandType = global::System.Data.CommandType.Text;
-            this._commandCollection[1].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@idKosarice", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "idKosarice", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._commandCollection[1].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@idKorisnik", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "idKorisnik", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._commandCollection[1].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@kolicina", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "kolicina", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._commandCollection[1].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@datum", global::System.Data.SqlDbType.Date, 3, global::System.Data.ParameterDirection.Input, 0, 0, "datum", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._commandCollection[2] = new global::System.Data.SqlClient.SqlCommand();
-            this._commandCollection[2].Connection = this.Connection;
-            this._commandCollection[2].CommandText = "INSERT INTO [dbo].[kosarica] ( [idKorisnik], [kolicina], [datum]) VALUES ( @idkor" +
-                "isnika, @kolicina, @datum);\r\nSELECT SCOPE_IDENTITY()";
-            this._commandCollection[2].CommandType = global::System.Data.CommandType.Text;
-            this._commandCollection[2].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@idkorisnika", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "idKorisnik", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._commandCollection[2].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@kolicina", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "kolicina", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._commandCollection[2].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@datum", global::System.Data.SqlDbType.Date, 3, global::System.Data.ParameterDirection.Input, 0, 0, "datum", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -5236,11 +5282,9 @@ SELECT idKosarice, idKorisnik, kolicina, datum FROM kosarica WHERE (idKosarice =
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Delete, true)]
-        public virtual int Delete(int Original_idKosarice, int Original_idKorisnik, int Original_kolicina, System.DateTime Original_datum) {
+        public virtual int Delete(int Original_idKosarice, int Original_idKorisnik) {
             this.Adapter.DeleteCommand.Parameters[0].Value = ((int)(Original_idKosarice));
             this.Adapter.DeleteCommand.Parameters[1].Value = ((int)(Original_idKorisnik));
-            this.Adapter.DeleteCommand.Parameters[2].Value = ((int)(Original_kolicina));
-            this.Adapter.DeleteCommand.Parameters[3].Value = ((System.DateTime)(Original_datum));
             global::System.Data.ConnectionState previousConnectionState = this.Adapter.DeleteCommand.Connection.State;
             if (((this.Adapter.DeleteCommand.Connection.State & global::System.Data.ConnectionState.Open) 
                         != global::System.Data.ConnectionState.Open)) {
@@ -5261,11 +5305,9 @@ SELECT idKosarice, idKorisnik, kolicina, datum FROM kosarica WHERE (idKosarice =
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Insert, true)]
-        public virtual int Insert(int idKosarice, int idKorisnik, int kolicina, System.DateTime datum) {
+        public virtual int Insert(int idKosarice, int idKorisnik) {
             this.Adapter.InsertCommand.Parameters[0].Value = ((int)(idKosarice));
             this.Adapter.InsertCommand.Parameters[1].Value = ((int)(idKorisnik));
-            this.Adapter.InsertCommand.Parameters[2].Value = ((int)(kolicina));
-            this.Adapter.InsertCommand.Parameters[3].Value = ((System.DateTime)(datum));
             global::System.Data.ConnectionState previousConnectionState = this.Adapter.InsertCommand.Connection.State;
             if (((this.Adapter.InsertCommand.Connection.State & global::System.Data.ConnectionState.Open) 
                         != global::System.Data.ConnectionState.Open)) {
@@ -5286,15 +5328,11 @@ SELECT idKosarice, idKorisnik, kolicina, datum FROM kosarica WHERE (idKosarice =
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Update, true)]
-        public virtual int Update(int idKosarice, int idKorisnik, int kolicina, System.DateTime datum, int Original_idKosarice, int Original_idKorisnik, int Original_kolicina, System.DateTime Original_datum) {
+        public virtual int Update(int idKosarice, int idKorisnik, int Original_idKosarice, int Original_idKorisnik) {
             this.Adapter.UpdateCommand.Parameters[0].Value = ((int)(idKosarice));
             this.Adapter.UpdateCommand.Parameters[1].Value = ((int)(idKorisnik));
-            this.Adapter.UpdateCommand.Parameters[2].Value = ((int)(kolicina));
-            this.Adapter.UpdateCommand.Parameters[3].Value = ((System.DateTime)(datum));
-            this.Adapter.UpdateCommand.Parameters[4].Value = ((int)(Original_idKosarice));
-            this.Adapter.UpdateCommand.Parameters[5].Value = ((int)(Original_idKorisnik));
-            this.Adapter.UpdateCommand.Parameters[6].Value = ((int)(Original_kolicina));
-            this.Adapter.UpdateCommand.Parameters[7].Value = ((System.DateTime)(Original_datum));
+            this.Adapter.UpdateCommand.Parameters[2].Value = ((int)(Original_idKosarice));
+            this.Adapter.UpdateCommand.Parameters[3].Value = ((int)(Original_idKorisnik));
             global::System.Data.ConnectionState previousConnectionState = this.Adapter.UpdateCommand.Connection.State;
             if (((this.Adapter.UpdateCommand.Connection.State & global::System.Data.ConnectionState.Open) 
                         != global::System.Data.ConnectionState.Open)) {
@@ -5315,71 +5353,37 @@ SELECT idKosarice, idKorisnik, kolicina, datum FROM kosarica WHERE (idKosarice =
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Update, true)]
-        public virtual int Update(int idKorisnik, int kolicina, System.DateTime datum, int Original_idKosarice, int Original_idKorisnik, int Original_kolicina, System.DateTime Original_datum) {
-            return this.Update(Original_idKosarice, idKorisnik, kolicina, datum, Original_idKosarice, Original_idKorisnik, Original_kolicina, Original_datum);
+        public virtual int Update(int idKorisnik, int Original_idKosarice, int Original_idKorisnik) {
+            return this.Update(Original_idKosarice, idKorisnik, Original_idKosarice, Original_idKorisnik);
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Insert, false)]
-        public virtual int InsertQuery(int idKosarice, int idKorisnik, int kolicina, string datum) {
+        public virtual object returnKosaricaId(int idKorisnik) {
             global::System.Data.SqlClient.SqlCommand command = this.CommandCollection[1];
-            command.Parameters[0].Value = ((int)(idKosarice));
-            command.Parameters[1].Value = ((int)(idKorisnik));
-            command.Parameters[2].Value = ((int)(kolicina));
-            if ((datum == null)) {
-                throw new global::System.ArgumentNullException("datum");
-            }
-            else {
-                command.Parameters[3].Value = ((string)(datum));
-            }
+            command.Parameters[0].Value = ((int)(idKorisnik));
             global::System.Data.ConnectionState previousConnectionState = command.Connection.State;
             if (((command.Connection.State & global::System.Data.ConnectionState.Open) 
                         != global::System.Data.ConnectionState.Open)) {
                 command.Connection.Open();
             }
-            int returnValue;
+            object returnValue;
             try {
-                returnValue = command.ExecuteNonQuery();
+                returnValue = command.ExecuteScalar();
             }
             finally {
                 if ((previousConnectionState == global::System.Data.ConnectionState.Closed)) {
                     command.Connection.Close();
                 }
             }
-            return returnValue;
-        }
-        
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Insert, false)]
-        public virtual int KosaricaDodaj(int idkorisnika, int kolicina, string datum) {
-            global::System.Data.SqlClient.SqlCommand command = this.CommandCollection[2];
-            command.Parameters[0].Value = ((int)(idkorisnika));
-            command.Parameters[1].Value = ((int)(kolicina));
-            if ((datum == null)) {
-                throw new global::System.ArgumentNullException("datum");
+            if (((returnValue == null) 
+                        || (returnValue.GetType() == typeof(global::System.DBNull)))) {
+                return null;
             }
             else {
-                command.Parameters[2].Value = ((string)(datum));
+                return ((object)(returnValue));
             }
-            global::System.Data.ConnectionState previousConnectionState = command.Connection.State;
-            if (((command.Connection.State & global::System.Data.ConnectionState.Open) 
-                        != global::System.Data.ConnectionState.Open)) {
-                command.Connection.Open();
-            }
-            int returnValue;
-            try {
-                returnValue = command.ExecuteNonQuery();
-            }
-            finally {
-                if ((previousConnectionState == global::System.Data.ConnectionState.Closed)) {
-                    command.Connection.Close();
-                }
-            }
-            return returnValue;
         }
     }
     
@@ -5544,18 +5548,33 @@ SELECT idKorisnikKarta, idKosarica FROM medjuspremnikKosarica WHERE (idKorisnikK
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
         private void InitCommandCollection() {
-            this._commandCollection = new global::System.Data.SqlClient.SqlCommand[2];
+            this._commandCollection = new global::System.Data.SqlClient.SqlCommand[4];
             this._commandCollection[0] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[0].Connection = this.Connection;
-            this._commandCollection[0].CommandText = "SELECT idKorisnikKarta, idKosarica FROM dbo.medjuspremnikKosarica";
+            this._commandCollection[0].CommandText = "SELECT idKorisnikKarta, idKosarica FROM medjuspremnikKosarica";
             this._commandCollection[0].CommandType = global::System.Data.CommandType.Text;
             this._commandCollection[1] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[1].Connection = this.Connection;
-            this._commandCollection[1].CommandText = "INSERT INTO [dbo].[medjuspremnikKosarica] ([idKorisnikKarta], [idKosarica]) VALUE" +
-                "S (@idKorisnikKarta, @idKosarica);\r\n";
+            this._commandCollection[1].CommandText = "SELECT mk.idKorisnikKarta, k.imeKarte, mk.Kolicina, mk.Datum FROM medjuspremnikKo" +
+                "sarica as mk join korisnikKarta as kk on mk.idKorisnikKarta = kk.idKorisnikKarta" +
+                " join karta as k on k.idKarta = kk.idKarta ";
             this._commandCollection[1].CommandType = global::System.Data.CommandType.Text;
-            this._commandCollection[1].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@idKorisnikKarta", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "idKorisnikKarta", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._commandCollection[1].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@idKosarica", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "idKosarica", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._commandCollection[2] = new global::System.Data.SqlClient.SqlCommand();
+            this._commandCollection[2].Connection = this.Connection;
+            this._commandCollection[2].CommandText = "INSERT INTO [dbo].[medjuspremnikKosarica] ([idKorisnikKarta], [idKosarica],[Kolic" +
+                "ina],[Datum]) VALUES (@idKorisnikKarta, @idKosarica, @Kolicina,@Datum );\r\n";
+            this._commandCollection[2].CommandType = global::System.Data.CommandType.Text;
+            this._commandCollection[2].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@idKorisnikKarta", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "idKorisnikKarta", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._commandCollection[2].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@idKosarica", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "idKosarica", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._commandCollection[2].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Kolicina", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "Kolicina", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._commandCollection[2].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Datum", global::System.Data.SqlDbType.VarChar, 20, global::System.Data.ParameterDirection.Input, 0, 0, "Datum", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._commandCollection[3] = new global::System.Data.SqlClient.SqlCommand();
+            this._commandCollection[3].Connection = this.Connection;
+            this._commandCollection[3].CommandText = "INSERT INTO [dbo].[medjuspremnikKosarica] ([idKorisnikKarta], [idKosarica]) VALUE" +
+                "S (@idKorisnikKarta, @idKosarica);\r\n";
+            this._commandCollection[3].CommandType = global::System.Data.CommandType.Text;
+            this._commandCollection[3].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@idKorisnikKarta", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "idKorisnikKarta", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._commandCollection[3].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@idKosarica", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "idKosarica", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -5577,6 +5596,30 @@ SELECT idKorisnikKarta, idKosarica FROM medjuspremnikKosarica WHERE (idKorisnikK
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, true)]
         public virtual Database2DataSet.medjuspremnikKosaricaDataTable GetData() {
             this.Adapter.SelectCommand = this.CommandCollection[0];
+            Database2DataSet.medjuspremnikKosaricaDataTable dataTable = new Database2DataSet.medjuspremnikKosaricaDataTable();
+            this.Adapter.Fill(dataTable);
+            return dataTable;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, false)]
+        public virtual int FillByKorisnik(Database2DataSet.medjuspremnikKosaricaDataTable dataTable) {
+            this.Adapter.SelectCommand = this.CommandCollection[1];
+            if ((this.ClearBeforeFill == true)) {
+                dataTable.Clear();
+            }
+            int returnValue = this.Adapter.Fill(dataTable);
+            return returnValue;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, false)]
+        public virtual Database2DataSet.medjuspremnikKosaricaDataTable GetDataByKorisnik() {
+            this.Adapter.SelectCommand = this.CommandCollection[1];
             Database2DataSet.medjuspremnikKosaricaDataTable dataTable = new Database2DataSet.medjuspremnikKosaricaDataTable();
             this.Adapter.Fill(dataTable);
             return dataTable;
@@ -5714,15 +5757,47 @@ SELECT idKorisnikKarta, idKosarica FROM medjuspremnikKosarica WHERE (idKorisnikK
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Insert, false)]
-        public virtual int MedjuspremnikUnos(int idKorisnikKarta, global::System.Nullable<int> idKosarica) {
-            global::System.Data.SqlClient.SqlCommand command = this.CommandCollection[1];
+        public virtual int InsertQuery(int idKorisnikKarta, int idKosarica, global::System.Nullable<int> Kolicina, string Datum) {
+            global::System.Data.SqlClient.SqlCommand command = this.CommandCollection[2];
             command.Parameters[0].Value = ((int)(idKorisnikKarta));
-            if ((idKosarica.HasValue == true)) {
-                command.Parameters[1].Value = ((int)(idKosarica.Value));
+            command.Parameters[1].Value = ((int)(idKosarica));
+            if ((Kolicina.HasValue == true)) {
+                command.Parameters[2].Value = ((int)(Kolicina.Value));
             }
             else {
-                command.Parameters[1].Value = global::System.DBNull.Value;
+                command.Parameters[2].Value = global::System.DBNull.Value;
             }
+            if ((Datum == null)) {
+                command.Parameters[3].Value = global::System.DBNull.Value;
+            }
+            else {
+                command.Parameters[3].Value = ((string)(Datum));
+            }
+            global::System.Data.ConnectionState previousConnectionState = command.Connection.State;
+            if (((command.Connection.State & global::System.Data.ConnectionState.Open) 
+                        != global::System.Data.ConnectionState.Open)) {
+                command.Connection.Open();
+            }
+            int returnValue;
+            try {
+                returnValue = command.ExecuteNonQuery();
+            }
+            finally {
+                if ((previousConnectionState == global::System.Data.ConnectionState.Closed)) {
+                    command.Connection.Close();
+                }
+            }
+            return returnValue;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Insert, false)]
+        public virtual int MedjuspremnikUnos(int idKorisnikKarta, int idKosarica) {
+            global::System.Data.SqlClient.SqlCommand command = this.CommandCollection[3];
+            command.Parameters[0].Value = ((int)(idKorisnikKarta));
+            command.Parameters[1].Value = ((int)(idKosarica));
             global::System.Data.ConnectionState previousConnectionState = command.Connection.State;
             if (((command.Connection.State & global::System.Data.ConnectionState.Open) 
                         != global::System.Data.ConnectionState.Open)) {

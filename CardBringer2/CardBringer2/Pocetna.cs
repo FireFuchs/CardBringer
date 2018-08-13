@@ -9,6 +9,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
+
 namespace CardBringer2
 {
     public partial class Pocetna : Form
@@ -43,10 +44,7 @@ namespace CardBringer2
             int ponuda = (int)dataGridView1.SelectedRows[0].Cells[0].Value;
             Database2DataSetTableAdapters.kosaricaTableAdapter kosarica;
             kosarica = new Database2DataSetTableAdapters.kosaricaTableAdapter();
-            int KosaricaBroj = (int)kosarica.InsertQuery(default,IDkorisnik, 1, DateTime.Now.ToString());
-            //Database2DataSet ds = new Database2DataSet();
-            //kosarica.Fill(ds);
-            //kosarica.Update(ds);
+            int KosaricaBroj = (int)kosarica.returnKosaricaId(IDkorisnik);
             dodajMedjuspremnik(KosaricaBroj, ponuda);
             
             
@@ -55,12 +53,30 @@ namespace CardBringer2
         {
             int KosaricaBroj = Broj;
             int ponuda = ponud;
-            Database2DataSetTableAdapters.medjuspremnikKosaricaTableAdapter medjuspremnik;
-            medjuspremnik = new Database2DataSetTableAdapters.medjuspremnikKosaricaTableAdapter();
-            medjuspremnik.MedjuspremnikUnos(ponuda, KosaricaBroj);
+            Database2DataSet myDataSet;
+            myDataSet = new Database2DataSet();
+            DataTable t;
+            t = myDataSet.Tables["medjuspremnikKosarica"];
+
+            DataRow myRow;
+            myRow = t.NewRow();
+            myRow["idKorisnikKarta"] = ponuda;
+            myRow["idKosarica"] = IDkorisnik;
+            myRow["Kolicina"] = 1;
+            myRow["Datum"] = 1;
+            /*
+        Database2DataSetTableAdapters.medjuspremnikKosaricaTableAdapter medjuspremnik;
+        medjuspremnik = new Database2DataSetTableAdapters.medjuspremnikKosaricaTableAdapter();
+        medjuspremnik.InsertQuery(ponuda, KosaricaBroj, 1, DateTime.Now.ToString());
+        */
+            t.Rows.Add(myRow);
+            myDataSet.AcceptChanges();
+
             Database2DataSetTableAdapters.korisnikKartaTableAdapter korKarta;
             korKarta = new Database2DataSetTableAdapters.korisnikKartaTableAdapter();
-            korKarta.DodavanjeUKosaricu(1, ponuda);
+            int kolicina = (int)korKarta.KosaricaDohvatiKolicinu(ponuda);
+            kolicina -= 1;
+            korKarta.KosaricaSpremiKolicinu(kolicina, ponuda);
         }
     }
 }

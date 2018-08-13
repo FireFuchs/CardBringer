@@ -18,9 +18,16 @@ namespace CardBringer2
     }
 }
 
-namespace CardBringer2.Database2DataSetTableAdapters {
-    
-    
+namespace CardBringer2.Database2DataSetTableAdapters
+{
+    partial class medjuspremnikKosaricaTableAdapter
+    {
+    }
+
+    partial class kosaricaTableAdapter
+    {
+    }
+
     public partial class korisnikTableAdapter {
     }
 }
