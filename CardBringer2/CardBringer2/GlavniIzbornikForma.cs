@@ -13,11 +13,11 @@ namespace CardBringer2
     public partial class GlavniIzbornikForma : Form
     {
         string helpTekst = "Help Početne stranice";
-        int korisnikIme = 0;
+        int KorisnikID = 0;
 
-        public GlavniIzbornikForma(int ime)
+        public GlavniIzbornikForma(int ID)
         {
-            korisnikIme = ime;
+            KorisnikID = ID;
             InitializeComponent();
 
         }
@@ -44,7 +44,7 @@ namespace CardBringer2
 
         private void početnaToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            Pocetna novaPocetna = new Pocetna(korisnikIme);
+            Pocetna novaPocetna = new Pocetna(KorisnikID);
             novaPocetna.MdiParent = this;
             novaPocetna.WindowState = FormWindowState.Maximized;
             novaPocetna.Show();
@@ -54,7 +54,7 @@ namespace CardBringer2
 
         private void mojProfilToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            MojProfil noviMojProfil = new MojProfil(korisnikIme);
+            MojProfil noviMojProfil = new MojProfil(KorisnikID);
             noviMojProfil.MdiParent = this;
             noviMojProfil.WindowState = FormWindowState.Maximized;
             noviMojProfil.Show();
@@ -63,7 +63,7 @@ namespace CardBringer2
 
         private void GlavniIzbornikForma_Load(object sender, EventArgs e)
         {
-            Pocetna novaPocetna = new Pocetna(korisnikIme);
+            Pocetna novaPocetna = new Pocetna(KorisnikID);
             novaPocetna.MdiParent = this;
             novaPocetna.WindowState =
                 FormWindowState.Maximized;

@@ -43,14 +43,24 @@ namespace CardBringer2
             int ponuda = (int)dataGridView1.SelectedRows[0].Cells[0].Value;
             Database2DataSetTableAdapters.kosaricaTableAdapter kosarica;
             kosarica = new Database2DataSetTableAdapters.kosaricaTableAdapter();
-            int KosaricaBroj = (int)kosarica.KosaricaDodaj(IDkorisnik, 1, DateTime.Now.ToString());
+            int KosaricaBroj = (int)kosarica.InsertQuery(default,IDkorisnik, 1, DateTime.Now.ToString());
+            //Database2DataSet ds = new Database2DataSet();
+            //kosarica.Fill(ds);
+            //kosarica.Update(ds);
+            dodajMedjuspremnik(KosaricaBroj, ponuda);
+            
+            
+        }
+        private void dodajMedjuspremnik(int Broj, int ponud)
+        {
+            int KosaricaBroj = Broj;
+            int ponuda = ponud;
             Database2DataSetTableAdapters.medjuspremnikKosaricaTableAdapter medjuspremnik;
             medjuspremnik = new Database2DataSetTableAdapters.medjuspremnikKosaricaTableAdapter();
             medjuspremnik.MedjuspremnikUnos(ponuda, KosaricaBroj);
             Database2DataSetTableAdapters.korisnikKartaTableAdapter korKarta;
             korKarta = new Database2DataSetTableAdapters.korisnikKartaTableAdapter();
             korKarta.DodavanjeUKosaricu(1, ponuda);
-            
         }
     }
 }

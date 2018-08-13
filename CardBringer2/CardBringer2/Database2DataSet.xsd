@@ -182,7 +182,7 @@ SELECT idKorisnika, ime, lozinka, email, mjestoStanovanja, idUloga FROM korisnik
                   </DbCommand>
                 </SelectCommand>
               </DbSource>
-              <DbSource ConnectionRef="Database2ConnectionString (Settings)" DbObjectName="dbo.korisnik" DbObjectType="Table" GenerateShortCommands="true" GeneratorSourceName="ImeReturn" Modifier="Public" Name="ImeReturn" QueryType="Scalar" ScalarCallRetval="System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy5" UserSourceName="ImeReturn">
+              <DbSource ConnectionRef="Database2ConnectionString (Settings)" DbObjectName="dbo.korisnik" DbObjectType="Table" GenerateShortCommands="true" GeneratorSourceName="ImeReturn" Modifier="Public" Name="ImeReturn" QueryType="Scalar" ScalarCallRetval="System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy3" UserSourceName="ImeReturn">
                 <SelectCommand>
                   <DbCommand CommandType="Text" ModifiedByUser="true">
                     <CommandText>SELECT ime FROM korisnik WHERE idKorisnika = @idKorisnika</CommandText>
@@ -192,7 +192,7 @@ SELECT idKorisnika, ime, lozinka, email, mjestoStanovanja, idUloga FROM korisnik
                   </DbCommand>
                 </SelectCommand>
               </DbSource>
-              <DbSource ConnectionRef="Database2ConnectionString (Settings)" DbObjectType="Unknown" GenerateShortCommands="true" GeneratorSourceName="Login" Modifier="Public" Name="Login" QueryType="Scalar" ScalarCallRetval="System.Int32, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy3" UserSourceName="Login">
+              <DbSource ConnectionRef="Database2ConnectionString (Settings)" DbObjectType="Unknown" GenerateShortCommands="true" GeneratorSourceName="Login" Modifier="Public" Name="Login" QueryType="Scalar" ScalarCallRetval="System.Int32, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy4" UserSourceName="Login">
                 <SelectCommand>
                   <DbCommand CommandType="Text" ModifiedByUser="true">
                     <CommandText>SELECT COUNT(*) FROM korisnik where ime= @ime and lozinka = @lozinka</CommandText>
@@ -203,7 +203,7 @@ SELECT idKorisnika, ime, lozinka, email, mjestoStanovanja, idUloga FROM korisnik
                   </DbCommand>
                 </SelectCommand>
               </DbSource>
-              <DbSource ConnectionRef="Database2ConnectionString (Settings)" DbObjectName="dbo.korisnik" DbObjectType="Table" GenerateShortCommands="true" GeneratorSourceName="ulogaReturn" Modifier="Public" Name="ulogaReturn" QueryType="Scalar" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy4" UserSourceName="ulogaReturn">
+              <DbSource ConnectionRef="Database2ConnectionString (Settings)" DbObjectName="dbo.korisnik" DbObjectType="Table" GenerateShortCommands="true" GeneratorSourceName="ulogaReturn" Modifier="Public" Name="ulogaReturn" QueryType="Scalar" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy5" UserSourceName="ulogaReturn">
                 <SelectCommand>
                   <DbCommand CommandType="Text" ModifiedByUser="true">
                     <CommandText>SELECT idUloga FROM korisnik where idKorisnika = @idKorisnika</CommandText>
@@ -244,7 +244,7 @@ SELECT idKorisnikKarta, idKorisnik, idKarta, cijena, kolicina FROM korisnikKarta
                   </DbCommand>
                 </InsertCommand>
                 <SelectCommand>
-                  <DbCommand CommandType="Text" ModifiedByUser="false">
+                  <DbCommand CommandType="Text" ModifiedByUser="true">
                     <CommandText>SELECT idKorisnikKarta, idKorisnik, idKarta, cijena, kolicina FROM dbo.korisnikKarta</CommandText>
                     <Parameters />
                   </DbCommand>
@@ -336,7 +336,7 @@ SELECT idKosarice, idKorisnik, kolicina, datum FROM kosarica WHERE (idKosarice =
                   </DbCommand>
                 </InsertCommand>
                 <SelectCommand>
-                  <DbCommand CommandType="Text" ModifiedByUser="false">
+                  <DbCommand CommandType="Text" ModifiedByUser="true">
                     <CommandText>SELECT idKosarice, idKorisnik, kolicina, datum FROM dbo.kosarica</CommandText>
                     <Parameters />
                   </DbCommand>
@@ -366,6 +366,20 @@ SELECT idKosarice, idKorisnik, kolicina, datum FROM kosarica WHERE (idKosarice =
               <Mapping SourceColumn="datum" DataSetColumn="datum" />
             </Mappings>
             <Sources>
+              <DbSource ConnectionRef="Database2ConnectionString (Settings)" DbObjectName="" DbObjectType="Unknown" GenerateShortCommands="true" GeneratorSourceName="InsertQuery" Modifier="Public" Name="InsertQuery" QueryType="NoData" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy1" UserSourceName="InsertQuery">
+                <InsertCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="true">
+                    <CommandText>INSERT INTO [dbo].[kosarica] ([idKosarice], [idKorisnik], [kolicina], [datum]) VALUES (@idKosarice, @idKorisnik, @kolicina, @datum);
+select SCOPE_IDENTITY()</CommandText>
+                    <Parameters>
+                      <Parameter AllowDbNull="false" AutogeneratedName="idKosarice" ColumnName="idKosarice" DataSourceName="[C:\USERS\FOCHO\DESKTOP\CARDBRINGER2\CARDBRINGER2\DATABASE2.MDF].dbo.kosarica" DataTypeServer="int" DbType="Int32" Direction="Input" ParameterName="@idKosarice" Precision="0" ProviderType="Int" Scale="0" Size="4" SourceColumn="idKosarice" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="idKorisnik" ColumnName="idKorisnik" DataSourceName="[C:\USERS\FOCHO\DESKTOP\CARDBRINGER2\CARDBRINGER2\DATABASE2.MDF].dbo.kosarica" DataTypeServer="int" DbType="Int32" Direction="Input" ParameterName="@idKorisnik" Precision="0" ProviderType="Int" Scale="0" Size="4" SourceColumn="idKorisnik" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="kolicina" ColumnName="kolicina" DataSourceName="[C:\USERS\FOCHO\DESKTOP\CARDBRINGER2\CARDBRINGER2\DATABASE2.MDF].dbo.kosarica" DataTypeServer="int" DbType="Int32" Direction="Input" ParameterName="@kolicina" Precision="0" ProviderType="Int" Scale="0" Size="4" SourceColumn="kolicina" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="datum" ColumnName="datum" DataSourceName="[C:\USERS\FOCHO\DESKTOP\CARDBRINGER2\CARDBRINGER2\DATABASE2.MDF].dbo.kosarica" DataTypeServer="date" DbType="AnsiString" Direction="Input" ParameterName="@datum" Precision="0" ProviderType="Date" Scale="0" Size="3" SourceColumn="datum" SourceColumnNullMapping="false" SourceVersion="Current" />
+                    </Parameters>
+                  </DbCommand>
+                </InsertCommand>
+              </DbSource>
               <DbSource ConnectionRef="Database2ConnectionString (Settings)" DbObjectName="" DbObjectType="Unknown" GenerateShortCommands="true" GeneratorSourceName="KosaricaDodaj" Modifier="Public" Name="KosaricaDodaj" QueryType="NoData" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy" UserSourceName="KosaricaDodaj">
                 <InsertCommand>
                   <DbCommand CommandType="Text" ModifiedByUser="true">
@@ -389,7 +403,7 @@ SELECT SCOPE_IDENTITY()</CommandText>
                     <CommandText>DELETE FROM [dbo].[medjuspremnikKosarica] WHERE (([idKorisnikKarta] = @Original_idKorisnikKarta) AND ([idKosarica] = @Original_idKosarica))</CommandText>
                     <Parameters>
                       <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@Original_idKorisnikKarta" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="idKorisnikKarta" SourceColumnNullMapping="false" SourceVersion="Original" />
-                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@Original_idKosarica" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="idKosarica" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@Original_idKosarica" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="idKosarica" SourceColumnNullMapping="false" SourceVersion="Original" />
                     </Parameters>
                   </DbCommand>
                 </DeleteCommand>
@@ -399,12 +413,12 @@ SELECT SCOPE_IDENTITY()</CommandText>
 SELECT idKorisnikKarta, idKosarica FROM medjuspremnikKosarica WHERE (idKorisnikKarta = @idKorisnikKarta) AND (idKosarica = @idKosarica)</CommandText>
                     <Parameters>
                       <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@idKorisnikKarta" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="idKorisnikKarta" SourceColumnNullMapping="false" SourceVersion="Current" />
-                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@idKosarica" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="idKosarica" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@idKosarica" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="idKosarica" SourceColumnNullMapping="false" SourceVersion="Current" />
                     </Parameters>
                   </DbCommand>
                 </InsertCommand>
                 <SelectCommand>
-                  <DbCommand CommandType="Text" ModifiedByUser="false">
+                  <DbCommand CommandType="Text" ModifiedByUser="true">
                     <CommandText>SELECT idKorisnikKarta, idKosarica FROM dbo.medjuspremnikKosarica</CommandText>
                     <Parameters />
                   </DbCommand>
@@ -415,9 +429,9 @@ SELECT idKorisnikKarta, idKosarica FROM medjuspremnikKosarica WHERE (idKorisnikK
 SELECT idKorisnikKarta, idKosarica FROM medjuspremnikKosarica WHERE (idKorisnikKarta = @idKorisnikKarta) AND (idKosarica = @idKosarica)</CommandText>
                     <Parameters>
                       <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@idKorisnikKarta" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="idKorisnikKarta" SourceColumnNullMapping="false" SourceVersion="Current" />
-                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@idKosarica" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="idKosarica" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@idKosarica" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="idKosarica" SourceColumnNullMapping="false" SourceVersion="Current" />
                       <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@Original_idKorisnikKarta" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="idKorisnikKarta" SourceColumnNullMapping="false" SourceVersion="Original" />
-                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@Original_idKosarica" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="idKosarica" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@Original_idKosarica" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="idKosarica" SourceColumnNullMapping="false" SourceVersion="Original" />
                     </Parameters>
                   </DbCommand>
                 </UpdateCommand>
@@ -435,7 +449,7 @@ SELECT idKorisnikKarta, idKosarica FROM medjuspremnikKosarica WHERE (idKorisnikK
 </CommandText>
                     <Parameters>
                       <Parameter AllowDbNull="false" AutogeneratedName="idKorisnikKarta" ColumnName="idKorisnikKarta" DataSourceName="[C:\USERS\FOCHO\DESKTOP\CARDBRINGER2\CARDBRINGER2\DATABASE2.MDF].dbo.medjuspremnikKosarica" DataTypeServer="int" DbType="Int32" Direction="Input" ParameterName="@idKorisnikKarta" Precision="0" ProviderType="Int" Scale="0" Size="4" SourceColumn="idKorisnikKarta" SourceColumnNullMapping="false" SourceVersion="Current" />
-                      <Parameter AllowDbNull="false" AutogeneratedName="idKosarica" ColumnName="idKosarica" DataSourceName="[C:\USERS\FOCHO\DESKTOP\CARDBRINGER2\CARDBRINGER2\DATABASE2.MDF].dbo.medjuspremnikKosarica" DataTypeServer="int" DbType="Int32" Direction="Input" ParameterName="@idKosarica" Precision="0" ProviderType="Int" Scale="0" Size="4" SourceColumn="idKosarica" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="idKosarica" ColumnName="idKosarica" DataSourceName="[C:\USERS\FOCHO\DESKTOP\CARDBRINGER2\CARDBRINGER2\DATABASE2.MDF].dbo.medjuspremnikKosarica" DataTypeServer="int" DbType="Int32" Direction="Input" ParameterName="@idKosarica" Precision="0" ProviderType="Int" Scale="0" Size="4" SourceColumn="idKosarica" SourceColumnNullMapping="false" SourceVersion="Current" />
                     </Parameters>
                   </DbCommand>
                 </InsertCommand>
@@ -553,7 +567,7 @@ SELECT idKorisnik, idKarta, napomena FROM wishlist WHERE (idKarta = @idKarta) AN
   <xs:element name="Database2DataSet" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:EnableTableAdapterManager="True" msprop:Generator_DataSetName="Database2DataSet" msprop:Generator_UserDSName="Database2DataSet">
     <xs:complexType>
       <xs:choice minOccurs="0" maxOccurs="unbounded">
-        <xs:element name="karta" msprop:Generator_TableClassName="kartaDataTable" msprop:Generator_TableVarName="tablekarta" msprop:Generator_RowChangedName="kartaRowChanged" msprop:Generator_TablePropName="karta" msprop:Generator_RowDeletingName="kartaRowDeleting" msprop:Generator_RowChangingName="kartaRowChanging" msprop:Generator_RowEvHandlerName="kartaRowChangeEventHandler" msprop:Generator_RowDeletedName="kartaRowDeleted" msprop:Generator_RowClassName="kartaRow" msprop:Generator_UserTableName="karta" msprop:Generator_RowEvArgName="kartaRowChangeEvent">
+        <xs:element name="karta" msprop:Generator_TableClassName="kartaDataTable" msprop:Generator_TableVarName="tablekarta" msprop:Generator_TablePropName="karta" msprop:Generator_RowDeletingName="kartaRowDeleting" msprop:Generator_RowChangingName="kartaRowChanging" msprop:Generator_RowEvHandlerName="kartaRowChangeEventHandler" msprop:Generator_RowDeletedName="kartaRowDeleted" msprop:Generator_UserTableName="karta" msprop:Generator_RowChangedName="kartaRowChanged" msprop:Generator_RowEvArgName="kartaRowChangeEvent" msprop:Generator_RowClassName="kartaRow">
           <xs:complexType>
             <xs:sequence>
               <xs:element name="idKarta" msprop:Generator_ColumnVarNameInTable="columnidKarta" msprop:Generator_ColumnPropNameInRow="idKarta" msprop:Generator_ColumnPropNameInTable="idKartaColumn" msprop:Generator_UserColumnName="idKarta" type="xs:int" />
@@ -575,10 +589,10 @@ SELECT idKorisnik, idKarta, napomena FROM wishlist WHERE (idKarta = @idKarta) AN
             </xs:sequence>
           </xs:complexType>
         </xs:element>
-        <xs:element name="korisnik" msprop:Generator_TableClassName="korisnikDataTable" msprop:Generator_TableVarName="tablekorisnik" msprop:Generator_RowChangedName="korisnikRowChanged" msprop:Generator_TablePropName="korisnik" msprop:Generator_RowDeletingName="korisnikRowDeleting" msprop:Generator_RowChangingName="korisnikRowChanging" msprop:Generator_RowEvHandlerName="korisnikRowChangeEventHandler" msprop:Generator_RowDeletedName="korisnikRowDeleted" msprop:Generator_RowClassName="korisnikRow" msprop:Generator_UserTableName="korisnik" msprop:Generator_RowEvArgName="korisnikRowChangeEvent">
+        <xs:element name="korisnik" msprop:Generator_TableClassName="korisnikDataTable" msprop:Generator_TableVarName="tablekorisnik" msprop:Generator_TablePropName="korisnik" msprop:Generator_RowDeletingName="korisnikRowDeleting" msprop:Generator_RowChangingName="korisnikRowChanging" msprop:Generator_RowEvHandlerName="korisnikRowChangeEventHandler" msprop:Generator_RowDeletedName="korisnikRowDeleted" msprop:Generator_UserTableName="korisnik" msprop:Generator_RowChangedName="korisnikRowChanged" msprop:Generator_RowEvArgName="korisnikRowChangeEvent" msprop:Generator_RowClassName="korisnikRow">
           <xs:complexType>
             <xs:sequence>
-              <xs:element name="idKorisnika" msprop:Generator_ColumnVarNameInTable="columnidKorisnika" msprop:Generator_ColumnPropNameInRow="idKorisnika" msprop:Generator_ColumnPropNameInTable="idKorisnikaColumn" msprop:Generator_UserColumnName="idKorisnika" type="xs:int" />
+              <xs:element name="idKorisnika" msdata:AutoIncrement="true" msdata:AutoIncrementSeed="-1" msdata:AutoIncrementStep="-1" msprop:Generator_ColumnVarNameInTable="columnidKorisnika" msprop:Generator_ColumnPropNameInRow="idKorisnika" msprop:Generator_ColumnPropNameInTable="idKorisnikaColumn" msprop:Generator_UserColumnName="idKorisnika" type="xs:int" />
               <xs:element name="ime" msprop:Generator_ColumnVarNameInTable="columnime" msprop:Generator_ColumnPropNameInRow="ime" msprop:Generator_ColumnPropNameInTable="imeColumn" msprop:Generator_UserColumnName="ime">
                 <xs:simpleType>
                   <xs:restriction base="xs:string">
@@ -611,7 +625,7 @@ SELECT idKorisnik, idKarta, napomena FROM wishlist WHERE (idKarta = @idKarta) AN
             </xs:sequence>
           </xs:complexType>
         </xs:element>
-        <xs:element name="korisnikKarta" msprop:Generator_TableClassName="korisnikKartaDataTable" msprop:Generator_TableVarName="tablekorisnikKarta" msprop:Generator_RowChangedName="korisnikKartaRowChanged" msprop:Generator_TablePropName="korisnikKarta" msprop:Generator_RowDeletingName="korisnikKartaRowDeleting" msprop:Generator_RowChangingName="korisnikKartaRowChanging" msprop:Generator_RowEvHandlerName="korisnikKartaRowChangeEventHandler" msprop:Generator_RowDeletedName="korisnikKartaRowDeleted" msprop:Generator_RowClassName="korisnikKartaRow" msprop:Generator_UserTableName="korisnikKarta" msprop:Generator_RowEvArgName="korisnikKartaRowChangeEvent">
+        <xs:element name="korisnikKarta" msprop:Generator_TableClassName="korisnikKartaDataTable" msprop:Generator_TableVarName="tablekorisnikKarta" msprop:Generator_TablePropName="korisnikKarta" msprop:Generator_RowDeletingName="korisnikKartaRowDeleting" msprop:Generator_RowChangingName="korisnikKartaRowChanging" msprop:Generator_RowEvHandlerName="korisnikKartaRowChangeEventHandler" msprop:Generator_RowDeletedName="korisnikKartaRowDeleted" msprop:Generator_UserTableName="korisnikKarta" msprop:Generator_RowChangedName="korisnikKartaRowChanged" msprop:Generator_RowEvArgName="korisnikKartaRowChangeEvent" msprop:Generator_RowClassName="korisnikKartaRow">
           <xs:complexType>
             <xs:sequence>
               <xs:element name="idKorisnikKarta" msprop:Generator_ColumnVarNameInTable="columnidKorisnikKarta" msprop:Generator_ColumnPropNameInRow="idKorisnikKarta" msprop:Generator_ColumnPropNameInTable="idKorisnikKartaColumn" msprop:Generator_UserColumnName="idKorisnikKarta" type="xs:int" />
@@ -622,25 +636,25 @@ SELECT idKorisnik, idKarta, napomena FROM wishlist WHERE (idKarta = @idKarta) AN
             </xs:sequence>
           </xs:complexType>
         </xs:element>
-        <xs:element name="kosarica" msprop:Generator_TableClassName="kosaricaDataTable" msprop:Generator_TableVarName="tablekosarica" msprop:Generator_RowChangedName="kosaricaRowChanged" msprop:Generator_TablePropName="kosarica" msprop:Generator_RowDeletingName="kosaricaRowDeleting" msprop:Generator_RowChangingName="kosaricaRowChanging" msprop:Generator_RowEvHandlerName="kosaricaRowChangeEventHandler" msprop:Generator_RowDeletedName="kosaricaRowDeleted" msprop:Generator_RowClassName="kosaricaRow" msprop:Generator_UserTableName="kosarica" msprop:Generator_RowEvArgName="kosaricaRowChangeEvent">
+        <xs:element name="kosarica" msprop:Generator_TableClassName="kosaricaDataTable" msprop:Generator_TableVarName="tablekosarica" msprop:Generator_TablePropName="kosarica" msprop:Generator_RowDeletingName="kosaricaRowDeleting" msprop:Generator_RowChangingName="kosaricaRowChanging" msprop:Generator_RowEvHandlerName="kosaricaRowChangeEventHandler" msprop:Generator_RowDeletedName="kosaricaRowDeleted" msprop:Generator_UserTableName="kosarica" msprop:Generator_RowChangedName="kosaricaRowChanged" msprop:Generator_RowEvArgName="kosaricaRowChangeEvent" msprop:Generator_RowClassName="kosaricaRow">
           <xs:complexType>
             <xs:sequence>
-              <xs:element name="idKosarice" msprop:Generator_ColumnVarNameInTable="columnidKosarice" msprop:Generator_ColumnPropNameInRow="idKosarice" msprop:Generator_ColumnPropNameInTable="idKosariceColumn" msprop:Generator_UserColumnName="idKosarice" type="xs:int" />
+              <xs:element name="idKosarice" msdata:ReadOnly="true" msdata:AutoIncrement="true" msprop:Generator_ColumnVarNameInTable="columnidKosarice" msprop:Generator_ColumnPropNameInRow="idKosarice" msprop:Generator_ColumnPropNameInTable="idKosariceColumn" msprop:Generator_UserColumnName="idKosarice" type="xs:int" />
               <xs:element name="idKorisnik" msprop:Generator_ColumnVarNameInTable="columnidKorisnik" msprop:Generator_ColumnPropNameInRow="idKorisnik" msprop:Generator_ColumnPropNameInTable="idKorisnikColumn" msprop:Generator_UserColumnName="idKorisnik" type="xs:int" />
               <xs:element name="kolicina" msprop:Generator_ColumnVarNameInTable="columnkolicina" msprop:Generator_ColumnPropNameInRow="kolicina" msprop:Generator_ColumnPropNameInTable="kolicinaColumn" msprop:Generator_UserColumnName="kolicina" type="xs:int" />
               <xs:element name="datum" msprop:Generator_ColumnVarNameInTable="columndatum" msprop:Generator_ColumnPropNameInRow="datum" msprop:Generator_ColumnPropNameInTable="datumColumn" msprop:Generator_UserColumnName="datum" type="xs:dateTime" />
             </xs:sequence>
           </xs:complexType>
         </xs:element>
-        <xs:element name="medjuspremnikKosarica" msprop:Generator_TableClassName="medjuspremnikKosaricaDataTable" msprop:Generator_TableVarName="tablemedjuspremnikKosarica" msprop:Generator_RowChangedName="medjuspremnikKosaricaRowChanged" msprop:Generator_TablePropName="medjuspremnikKosarica" msprop:Generator_RowDeletingName="medjuspremnikKosaricaRowDeleting" msprop:Generator_RowChangingName="medjuspremnikKosaricaRowChanging" msprop:Generator_RowEvHandlerName="medjuspremnikKosaricaRowChangeEventHandler" msprop:Generator_RowDeletedName="medjuspremnikKosaricaRowDeleted" msprop:Generator_RowClassName="medjuspremnikKosaricaRow" msprop:Generator_UserTableName="medjuspremnikKosarica" msprop:Generator_RowEvArgName="medjuspremnikKosaricaRowChangeEvent">
+        <xs:element name="medjuspremnikKosarica" msprop:Generator_TableClassName="medjuspremnikKosaricaDataTable" msprop:Generator_TableVarName="tablemedjuspremnikKosarica" msprop:Generator_TablePropName="medjuspremnikKosarica" msprop:Generator_RowDeletingName="medjuspremnikKosaricaRowDeleting" msprop:Generator_RowChangingName="medjuspremnikKosaricaRowChanging" msprop:Generator_RowEvHandlerName="medjuspremnikKosaricaRowChangeEventHandler" msprop:Generator_RowDeletedName="medjuspremnikKosaricaRowDeleted" msprop:Generator_UserTableName="medjuspremnikKosarica" msprop:Generator_RowChangedName="medjuspremnikKosaricaRowChanged" msprop:Generator_RowEvArgName="medjuspremnikKosaricaRowChangeEvent" msprop:Generator_RowClassName="medjuspremnikKosaricaRow">
           <xs:complexType>
             <xs:sequence>
               <xs:element name="idKorisnikKarta" msprop:Generator_ColumnVarNameInTable="columnidKorisnikKarta" msprop:Generator_ColumnPropNameInRow="idKorisnikKarta" msprop:Generator_ColumnPropNameInTable="idKorisnikKartaColumn" msprop:Generator_UserColumnName="idKorisnikKarta" type="xs:int" />
-              <xs:element name="idKosarica" msprop:Generator_ColumnVarNameInTable="columnidKosarica" msprop:Generator_ColumnPropNameInRow="idKosarica" msprop:Generator_ColumnPropNameInTable="idKosaricaColumn" msprop:Generator_UserColumnName="idKosarica" type="xs:int" />
+              <xs:element name="idKosarica" msdata:AutoIncrementSeed="-1" msdata:AutoIncrementStep="-1" msprop:Generator_ColumnVarNameInTable="columnidKosarica" msprop:Generator_ColumnPropNameInRow="idKosarica" msprop:Generator_ColumnPropNameInTable="idKosaricaColumn" msprop:Generator_UserColumnName="idKosarica" type="xs:int" minOccurs="0" />
             </xs:sequence>
           </xs:complexType>
         </xs:element>
-        <xs:element name="uloga" msprop:Generator_TableClassName="ulogaDataTable" msprop:Generator_TableVarName="tableuloga" msprop:Generator_RowChangedName="ulogaRowChanged" msprop:Generator_TablePropName="uloga" msprop:Generator_RowDeletingName="ulogaRowDeleting" msprop:Generator_RowChangingName="ulogaRowChanging" msprop:Generator_RowEvHandlerName="ulogaRowChangeEventHandler" msprop:Generator_RowDeletedName="ulogaRowDeleted" msprop:Generator_RowClassName="ulogaRow" msprop:Generator_UserTableName="uloga" msprop:Generator_RowEvArgName="ulogaRowChangeEvent">
+        <xs:element name="uloga" msprop:Generator_TableClassName="ulogaDataTable" msprop:Generator_TableVarName="tableuloga" msprop:Generator_TablePropName="uloga" msprop:Generator_RowDeletingName="ulogaRowDeleting" msprop:Generator_RowChangingName="ulogaRowChanging" msprop:Generator_RowEvHandlerName="ulogaRowChangeEventHandler" msprop:Generator_RowDeletedName="ulogaRowDeleted" msprop:Generator_UserTableName="uloga" msprop:Generator_RowChangedName="ulogaRowChanged" msprop:Generator_RowEvArgName="ulogaRowChangeEvent" msprop:Generator_RowClassName="ulogaRow">
           <xs:complexType>
             <xs:sequence>
               <xs:element name="idUloga" msprop:Generator_ColumnVarNameInTable="columnidUloga" msprop:Generator_ColumnPropNameInRow="idUloga" msprop:Generator_ColumnPropNameInTable="idUlogaColumn" msprop:Generator_UserColumnName="idUloga" type="xs:int" />
@@ -654,7 +668,7 @@ SELECT idKorisnik, idKarta, napomena FROM wishlist WHERE (idKarta = @idKarta) AN
             </xs:sequence>
           </xs:complexType>
         </xs:element>
-        <xs:element name="wishlist" msprop:Generator_TableClassName="wishlistDataTable" msprop:Generator_TableVarName="tablewishlist" msprop:Generator_RowChangedName="wishlistRowChanged" msprop:Generator_TablePropName="wishlist" msprop:Generator_RowDeletingName="wishlistRowDeleting" msprop:Generator_RowChangingName="wishlistRowChanging" msprop:Generator_RowEvHandlerName="wishlistRowChangeEventHandler" msprop:Generator_RowDeletedName="wishlistRowDeleted" msprop:Generator_RowClassName="wishlistRow" msprop:Generator_UserTableName="wishlist" msprop:Generator_RowEvArgName="wishlistRowChangeEvent">
+        <xs:element name="wishlist" msprop:Generator_TableClassName="wishlistDataTable" msprop:Generator_TableVarName="tablewishlist" msprop:Generator_TablePropName="wishlist" msprop:Generator_RowDeletingName="wishlistRowDeleting" msprop:Generator_RowChangingName="wishlistRowChanging" msprop:Generator_RowEvHandlerName="wishlistRowChangeEventHandler" msprop:Generator_RowDeletedName="wishlistRowDeleted" msprop:Generator_UserTableName="wishlist" msprop:Generator_RowChangedName="wishlistRowChanged" msprop:Generator_RowEvArgName="wishlistRowChangeEvent" msprop:Generator_RowClassName="wishlistRow">
           <xs:complexType>
             <xs:sequence>
               <xs:element name="idKorisnik" msprop:Generator_ColumnVarNameInTable="columnidKorisnik" msprop:Generator_ColumnPropNameInRow="idKorisnik" msprop:Generator_ColumnPropNameInTable="idKorisnikColumn" msprop:Generator_UserColumnName="idKorisnik" type="xs:int" />
@@ -704,14 +718,14 @@ SELECT idKorisnik, idKarta, napomena FROM wishlist WHERE (idKarta = @idKarta) AN
   </xs:element>
   <xs:annotation>
     <xs:appinfo>
-      <msdata:Relationship name="fk_korisnik_uloga_1" msdata:parent="uloga" msdata:child="korisnik" msdata:parentkey="idUloga" msdata:childkey="idUloga" msprop:Generator_UserChildTable="korisnik" msprop:Generator_ChildPropName="GetkorisnikRows" msprop:Generator_UserRelationName="fk_korisnik_uloga_1" msprop:Generator_ParentPropName="ulogaRow" msprop:Generator_RelationVarName="relationfk_korisnik_uloga_1" msprop:Generator_UserParentTable="uloga" />
-      <msdata:Relationship name="fk_korisnikKarta_karta_1" msdata:parent="karta" msdata:child="korisnikKarta" msdata:parentkey="idKarta" msdata:childkey="idKarta" msprop:Generator_UserChildTable="korisnikKarta" msprop:Generator_ChildPropName="GetkorisnikKartaRows" msprop:Generator_UserRelationName="fk_korisnikKarta_karta_1" msprop:Generator_RelationVarName="relationfk_korisnikKarta_karta_1" msprop:Generator_UserParentTable="karta" msprop:Generator_ParentPropName="kartaRow" />
-      <msdata:Relationship name="fk_korisnikKarta_korisnik_1" msdata:parent="korisnik" msdata:child="korisnikKarta" msdata:parentkey="idKorisnika" msdata:childkey="idKorisnik" msprop:Generator_UserChildTable="korisnikKarta" msprop:Generator_ChildPropName="GetkorisnikKartaRows" msprop:Generator_UserRelationName="fk_korisnikKarta_korisnik_1" msprop:Generator_RelationVarName="relationfk_korisnikKarta_korisnik_1" msprop:Generator_UserParentTable="korisnik" msprop:Generator_ParentPropName="korisnikRow" />
-      <msdata:Relationship name="fk_kosarica_korisnik_1" msdata:parent="korisnik" msdata:child="kosarica" msdata:parentkey="idKorisnika" msdata:childkey="idKorisnik" msprop:Generator_UserChildTable="kosarica" msprop:Generator_ChildPropName="GetkosaricaRows" msprop:Generator_UserRelationName="fk_kosarica_korisnik_1" msprop:Generator_RelationVarName="relationfk_kosarica_korisnik_1" msprop:Generator_UserParentTable="korisnik" msprop:Generator_ParentPropName="korisnikRow" />
-      <msdata:Relationship name="fk_medjuspremnikKosarica_korisnikKarta_1" msdata:parent="korisnikKarta" msdata:child="medjuspremnikKosarica" msdata:parentkey="idKorisnikKarta" msdata:childkey="idKorisnikKarta" msprop:Generator_UserChildTable="medjuspremnikKosarica" msprop:Generator_ChildPropName="GetmedjuspremnikKosaricaRows" msprop:Generator_UserRelationName="fk_medjuspremnikKosarica_korisnikKarta_1" msprop:Generator_RelationVarName="relationfk_medjuspremnikKosarica_korisnikKarta_1" msprop:Generator_UserParentTable="korisnikKarta" msprop:Generator_ParentPropName="korisnikKartaRow" />
-      <msdata:Relationship name="fk_medjuspremnikKosarica_kosarica_1" msdata:parent="kosarica" msdata:child="medjuspremnikKosarica" msdata:parentkey="idKosarice" msdata:childkey="idKosarica" msprop:Generator_UserChildTable="medjuspremnikKosarica" msprop:Generator_ChildPropName="GetmedjuspremnikKosaricaRows" msprop:Generator_UserRelationName="fk_medjuspremnikKosarica_kosarica_1" msprop:Generator_RelationVarName="relationfk_medjuspremnikKosarica_kosarica_1" msprop:Generator_UserParentTable="kosarica" msprop:Generator_ParentPropName="kosaricaRow" />
-      <msdata:Relationship name="fk_wishlist_karta_1" msdata:parent="karta" msdata:child="wishlist" msdata:parentkey="idKarta" msdata:childkey="idKarta" msprop:Generator_UserChildTable="wishlist" msprop:Generator_ChildPropName="GetwishlistRows" msprop:Generator_UserRelationName="fk_wishlist_karta_1" msprop:Generator_RelationVarName="relationfk_wishlist_karta_1" msprop:Generator_UserParentTable="karta" msprop:Generator_ParentPropName="kartaRow" />
-      <msdata:Relationship name="fk_wishlist_korisnik_1" msdata:parent="korisnik" msdata:child="wishlist" msdata:parentkey="idKorisnika" msdata:childkey="idKorisnik" msprop:Generator_UserChildTable="wishlist" msprop:Generator_ChildPropName="GetwishlistRows" msprop:Generator_UserRelationName="fk_wishlist_korisnik_1" msprop:Generator_RelationVarName="relationfk_wishlist_korisnik_1" msprop:Generator_UserParentTable="korisnik" msprop:Generator_ParentPropName="korisnikRow" />
+      <msdata:Relationship name="fk_korisnik_uloga_1" msdata:parent="uloga" msdata:child="korisnik" msdata:parentkey="idUloga" msdata:childkey="idUloga" msprop:Generator_UserChildTable="korisnik" msprop:Generator_ChildPropName="GetkorisnikRows" msprop:Generator_UserRelationName="fk_korisnik_uloga_1" msprop:Generator_RelationVarName="relationfk_korisnik_uloga_1" msprop:Generator_UserParentTable="uloga" msprop:Generator_ParentPropName="ulogaRow" />
+      <msdata:Relationship name="fk_korisnikKarta_karta_1" msdata:parent="karta" msdata:child="korisnikKarta" msdata:parentkey="idKarta" msdata:childkey="idKarta" msprop:Generator_UserChildTable="korisnikKarta" msprop:Generator_ChildPropName="GetkorisnikKartaRows" msprop:Generator_UserRelationName="fk_korisnikKarta_karta_1" msprop:Generator_ParentPropName="kartaRow" msprop:Generator_RelationVarName="relationfk_korisnikKarta_karta_1" msprop:Generator_UserParentTable="karta" />
+      <msdata:Relationship name="fk_korisnikKarta_korisnik_1" msdata:parent="korisnik" msdata:child="korisnikKarta" msdata:parentkey="idKorisnika" msdata:childkey="idKorisnik" msprop:Generator_UserChildTable="korisnikKarta" msprop:Generator_ChildPropName="GetkorisnikKartaRows" msprop:Generator_UserRelationName="fk_korisnikKarta_korisnik_1" msprop:Generator_ParentPropName="korisnikRow" msprop:Generator_RelationVarName="relationfk_korisnikKarta_korisnik_1" msprop:Generator_UserParentTable="korisnik" />
+      <msdata:Relationship name="fk_kosarica_korisnik_1" msdata:parent="korisnik" msdata:child="kosarica" msdata:parentkey="idKorisnika" msdata:childkey="idKorisnik" msprop:Generator_UserChildTable="kosarica" msprop:Generator_ChildPropName="GetkosaricaRows" msprop:Generator_UserRelationName="fk_kosarica_korisnik_1" msprop:Generator_ParentPropName="korisnikRow" msprop:Generator_RelationVarName="relationfk_kosarica_korisnik_1" msprop:Generator_UserParentTable="korisnik" />
+      <msdata:Relationship name="fk_medjuspremnikKosarica_korisnikKarta_1" msdata:parent="korisnikKarta" msdata:child="medjuspremnikKosarica" msdata:parentkey="idKorisnikKarta" msdata:childkey="idKorisnikKarta" msprop:Generator_UserChildTable="medjuspremnikKosarica" msprop:Generator_ChildPropName="GetmedjuspremnikKosaricaRows" msprop:Generator_UserRelationName="fk_medjuspremnikKosarica_korisnikKarta_1" msprop:Generator_ParentPropName="korisnikKartaRow" msprop:Generator_RelationVarName="relationfk_medjuspremnikKosarica_korisnikKarta_1" msprop:Generator_UserParentTable="korisnikKarta" />
+      <msdata:Relationship name="fk_medjuspremnikKosarica_kosarica_1" msdata:parent="kosarica" msdata:child="medjuspremnikKosarica" msdata:parentkey="idKosarice" msdata:childkey="idKosarica" msprop:Generator_UserChildTable="medjuspremnikKosarica" msprop:Generator_ChildPropName="GetmedjuspremnikKosaricaRows" msprop:Generator_UserRelationName="fk_medjuspremnikKosarica_kosarica_1" msprop:Generator_ParentPropName="kosaricaRow" msprop:Generator_RelationVarName="relationfk_medjuspremnikKosarica_kosarica_1" msprop:Generator_UserParentTable="kosarica" />
+      <msdata:Relationship name="fk_wishlist_karta_1" msdata:parent="karta" msdata:child="wishlist" msdata:parentkey="idKarta" msdata:childkey="idKarta" msprop:Generator_UserChildTable="wishlist" msprop:Generator_ChildPropName="GetwishlistRows" msprop:Generator_UserRelationName="fk_wishlist_karta_1" msprop:Generator_ParentPropName="kartaRow" msprop:Generator_RelationVarName="relationfk_wishlist_karta_1" msprop:Generator_UserParentTable="karta" />
+      <msdata:Relationship name="fk_wishlist_korisnik_1" msdata:parent="korisnik" msdata:child="wishlist" msdata:parentkey="idKorisnika" msdata:childkey="idKorisnik" msprop:Generator_UserChildTable="wishlist" msprop:Generator_ChildPropName="GetwishlistRows" msprop:Generator_UserRelationName="fk_wishlist_korisnik_1" msprop:Generator_ParentPropName="korisnikRow" msprop:Generator_RelationVarName="relationfk_wishlist_korisnik_1" msprop:Generator_UserParentTable="korisnik" />
     </xs:appinfo>
   </xs:annotation>
 </xs:schema>
