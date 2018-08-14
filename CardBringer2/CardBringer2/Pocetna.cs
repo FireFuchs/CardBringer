@@ -51,32 +51,53 @@ namespace CardBringer2
         }
         private void dodajMedjuspremnik(int Broj, int ponud)
         {
+            
             int KosaricaBroj = Broj;
             int ponuda = ponud;
-            Database2DataSet myDataSet;
-            myDataSet = new Database2DataSet();
-            DataTable t;
-            t = myDataSet.Tables["medjuspremnikKosarica"];
-
-            DataRow myRow;
+            SqlConnection conn = new SqlConnection();
+            conn.ConnectionString = @"Data Source = (LocalDB)\MSSQLLocalDB;Initial Catalog = Database2; AttachDbFilename =C:\Users\Focho\Desktop\CardBringer2\CardBringer2\bin\Debug\Database2.mdf;Integrated Security = true";
+            conn.Open();
+            SqlCommand cmd = new SqlCommand();
+            cmd.Connection = conn;
+            cmd.CommandType = CommandType.Text;
+            cmd.CommandText = "INSERT INTO medjuspremnikKosarica ([idKorisnikKarta], [idKosarica]) VALUES ('" + ponuda + "' , '" + KosaricaBroj +  "')" ; 
+            /*cmd.Parameters.AddWithValue("idKorisnikKarta", ponuda);
+            cmd.Parameters.AddWithValue("idKosarica", KosaricaBroj);
+            cmd.Parameters.AddWithValue("Kolicina", 1);
+            cmd.Parameters.AddWithValue("Datum", 1);
+            */
+            cmd.ExecuteNonQuery();
+            conn.Close();
+            /*DataRow myRow;
             myRow = t.NewRow();
             myRow["idKorisnikKarta"] = ponuda;
             myRow["idKosarica"] = IDkorisnik;
             myRow["Kolicina"] = 1;
             myRow["Datum"] = 1;
-            /*
-        Database2DataSetTableAdapters.medjuspremnikKosaricaTableAdapter medjuspremnik;
-        medjuspremnik = new Database2DataSetTableAdapters.medjuspremnikKosaricaTableAdapter();
-        medjuspremnik.InsertQuery(ponuda, KosaricaBroj, 1, DateTime.Now.ToString());
-        */
-            t.Rows.Add(myRow);
-            myDataSet.AcceptChanges();
+            */
+            /*Database2DataSetTableAdapters.medjuspremnikKosaricaTableAdapter medjuspremnik;
+            medjuspremnik = new Database2DataSetTableAdapters.medjuspremnikKosaricaTableAdapter();
+                Database2DataSet.medjuspremnikKosaricaRow noviRed;
+                noviRed = database2DataSet.medjuspremnikKosarica.NewmedjuspremnikKosaricaRow();
+                noviRed.idKosarica = KosaricaBroj;
+                noviRed.idKorisnikKarta = ponuda;
+                noviRed.Kolicina = "1";
+                noviRed.Datum = DateTime.Now.ToString();
 
+                this.database2DataSet.medjuspremnikKosarica.Rows.Add(noviRed);
+                medjuspremnik.Update(database2DataSet.medjuspremnikKosarica);
+                */
+            /* t.Rows.Add(myRow);
+
+             myDataSet.AcceptChanges();
+             */
             Database2DataSetTableAdapters.korisnikKartaTableAdapter korKarta;
             korKarta = new Database2DataSetTableAdapters.korisnikKartaTableAdapter();
             int kolicina = (int)korKarta.KosaricaDohvatiKolicinu(ponuda);
             kolicina -= 1;
             korKarta.KosaricaSpremiKolicinu(kolicina, ponuda);
+            korKarta.Update(database2DataSet);
+            database2DataSet.AcceptChanges();
         }
     }
 }

@@ -67,5 +67,16 @@ namespace CardBringer2.Properties {
                 return ((string)(this["Database2ConnectionString1"]));
             }
         }
+        
+        [global::System.Configuration.ApplicationScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.SpecialSettingAttribute(global::System.Configuration.SpecialSetting.ConnectionString)]
+        [global::System.Configuration.DefaultSettingValueAttribute("Data Source=(LocalDB)\\MSSQLLocalDB;Initial Catalog=BazaYgo;Integrated Security=Tr" +
+            "ue;Connect Timeout=30;Encrypt=False;TrustServerCertificate=False")]
+        public string BazaYgoConnectionString {
+            get {
+                return ((string)(this["BazaYgoConnectionString"]));
+            }
+        }
     }
 }
