@@ -9,8 +9,8 @@ namespace CardBringer2
 {
     class DbInteraction
     {
-        private const string connString = @"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=C:\Users\Focho\Desktop\CardBringer2\BazaYgo.mdf;Integrated Security=True;Connect Timeout=30";
-        public SqlConnection connection = new SqlConnection(connString);
+        private const string ConnString = @"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=C:\Users\Focho\Desktop\pi\BazaYgo.mdf;Integrated Security=True;Connect Timeout=30";
+        public SqlConnection Connection = new SqlConnection(ConnString);
     }
 
     

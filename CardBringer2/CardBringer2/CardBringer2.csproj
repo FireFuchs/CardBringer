@@ -85,6 +85,12 @@
     <Compile Include="MojProfil.Designer.cs">
       <DependentUpon>MojProfil.cs</DependentUpon>
     </Compile>
+    <Compile Include="ObjaviOglas.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ObjaviOglas.Designer.cs">
+      <DependentUpon>ObjaviOglas.cs</DependentUpon>
+    </Compile>
     <Compile Include="Pocetna.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -129,6 +135,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="MojProfil.resx">
       <DependentUpon>MojProfil.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ObjaviOglas.resx">
+      <DependentUpon>ObjaviOglas.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Pocetna.resx">
       <DependentUpon>Pocetna.cs</DependentUpon>

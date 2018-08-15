@@ -89,5 +89,14 @@ namespace CardBringer2
             novaPocetna.Show();
             helpTekst = "Help Početne stranice";
         }
+
+        private void dodajPonuduToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            ObjaviOglas noviOglas = new ObjaviOglas(idKorisnika);
+            noviOglas.MdiParent = this;
+            noviOglas.WindowState = FormWindowState.Maximized;
+            noviOglas.Show();
+            helpTekst = "Help Početne stranice";
+        }
     }
 }

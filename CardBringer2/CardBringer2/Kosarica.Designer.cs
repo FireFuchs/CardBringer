@@ -41,7 +41,7 @@
             // 
             this.label5.AutoSize = true;
             this.label5.ForeColor = System.Drawing.Color.White;
-            this.label5.Location = new System.Drawing.Point(729, 146);
+            this.label5.Location = new System.Drawing.Point(894, 145);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(10, 13);
             this.label5.TabIndex = 5;
@@ -51,7 +51,7 @@
             // 
             this.label3.AutoSize = true;
             this.label3.ForeColor = System.Drawing.Color.White;
-            this.label3.Location = new System.Drawing.Point(729, 110);
+            this.label3.Location = new System.Drawing.Point(894, 109);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(10, 13);
             this.label3.TabIndex = 6;
@@ -61,7 +61,7 @@
             // 
             this.label4.AutoSize = true;
             this.label4.ForeColor = System.Drawing.Color.White;
-            this.label4.Location = new System.Drawing.Point(640, 146);
+            this.label4.Location = new System.Drawing.Point(805, 145);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(62, 13);
             this.label4.TabIndex = 7;
@@ -71,7 +71,7 @@
             // 
             this.KosaricaLabelCijenaUnchanged.AutoSize = true;
             this.KosaricaLabelCijenaUnchanged.ForeColor = System.Drawing.Color.White;
-            this.KosaricaLabelCijenaUnchanged.Location = new System.Drawing.Point(622, 110);
+            this.KosaricaLabelCijenaUnchanged.Location = new System.Drawing.Point(787, 109);
             this.KosaricaLabelCijenaUnchanged.Name = "KosaricaLabelCijenaUnchanged";
             this.KosaricaLabelCijenaUnchanged.Size = new System.Drawing.Size(80, 13);
             this.KosaricaLabelCijenaUnchanged.TabIndex = 8;
@@ -83,7 +83,7 @@
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView1.Location = new System.Drawing.Point(12, 72);
             this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(573, 447);
+            this.dataGridView1.Size = new System.Drawing.Size(755, 447);
             this.dataGridView1.TabIndex = 4;
             // 
             // label1

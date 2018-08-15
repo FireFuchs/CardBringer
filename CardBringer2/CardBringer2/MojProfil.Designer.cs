@@ -63,7 +63,7 @@
             this.dataGridView1.Location = new System.Drawing.Point(338, 82);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.ReadOnly = true;
-            this.dataGridView1.Size = new System.Drawing.Size(679, 422);
+            this.dataGridView1.Size = new System.Drawing.Size(772, 449);
             this.dataGridView1.TabIndex = 27;
             this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
             // 
@@ -130,7 +130,6 @@
             // label9
             // 
             this.label9.AutoSize = true;
-            this.label9.ForeColor = System.Drawing.Color.White;
             this.label9.Location = new System.Drawing.Point(74, 195);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(0, 13);
@@ -181,7 +180,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(53)))), ((int)(((byte)(53)))), ((int)(((byte)(53)))));
-            this.ClientSize = new System.Drawing.Size(1251, 603);
+            this.ClientSize = new System.Drawing.Size(1203, 603);
             this.Controls.Add(this.KorisnikoveKarteLabelUnchanged);
             this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.TipKorisnikaLabelUnchanged);
@@ -197,7 +196,6 @@
             this.Controls.Add(this.IDlabelUnchanged);
             this.Name = "MojProfil";
             this.Text = "MojProfil";
-            this.Load += new System.EventHandler(this.MojProfil_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
