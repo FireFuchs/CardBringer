@@ -77,6 +77,7 @@
             // PocetnaLabelSveKarte
             // 
             this.PocetnaLabelSveKarte.AutoSize = true;
+            this.PocetnaLabelSveKarte.ForeColor = System.Drawing.Color.White;
             this.PocetnaLabelSveKarte.Location = new System.Drawing.Point(9, 59);
             this.PocetnaLabelSveKarte.Name = "PocetnaLabelSveKarte";
             this.PocetnaLabelSveKarte.Size = new System.Drawing.Size(57, 13);
@@ -94,6 +95,7 @@
             this.Controls.Add(this.PocetnaPretragaGumbTrazi);
             this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.PocetnaLabelSveKarte);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Name = "Pocetna";
             this.Text = "Pocetna";
             this.Load += new System.EventHandler(this.Pocetna_Load);

@@ -17,6 +17,7 @@ namespace CardBringer2
         {
             InitializeComponent();
             idKorisnika = id;
+            this.ControlBox = false;
         }
 
         private void ListaZelja_Load(object sender, EventArgs e)
