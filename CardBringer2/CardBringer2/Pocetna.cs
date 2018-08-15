@@ -25,9 +25,6 @@ namespace CardBringer2
             var db = new DbInteraction();
             db.Connection.Open();
 
-            var dataAdapter = new SqlDataAdapter();
-
-            // HARDCODIRANO DA JE SAMO KUPAC (idUloga)
             var sql = $"SELECT kar.imeKarte AS 'Ime Karte' , kar.opisKarte AS 'Opis Karte', kk.cijena AS 'Cijena', kk.kolicina AS 'Kolicina', k.ime AS 'Ime Prodavača' FROM korisnikKarta kk JOIN karta kar ON kar.idKarta = kk.idKarta JOIN korisnik k ON kk.idKorisnik = k.idKorisnika;";
             var command = new SqlCommand(sql, db.Connection);
             var dataReader = command.ExecuteReader();
@@ -40,6 +37,11 @@ namespace CardBringer2
 
             command.Dispose();
             db.Connection.Close();
+        }
+
+        private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
         }
     }
 }

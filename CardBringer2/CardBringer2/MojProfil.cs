@@ -41,6 +41,19 @@ namespace CardBringer2
                 dataReader.Close();
                 command.Dispose();
             }
+            
+
+            sql = $"SELECT idKarta, imeKarte, opisKarte, slikaKarte FROM karta;";
+            command = new SqlCommand(sql, db.Connection);
+            dataReader = command.ExecuteReader();
+            DataTable dt = new DataTable();
+            dt.Load(dataReader);
+            dataGridView1.AutoGenerateColumns = true;
+            dataGridView1.DataSource = dt;
+            dataGridView1.Refresh();
+
+
+            command.Dispose();
             db.Connection.Close();
 
         }

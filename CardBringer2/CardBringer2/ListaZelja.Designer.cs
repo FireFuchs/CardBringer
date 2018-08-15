@@ -81,6 +81,7 @@
             this.SveKarteDatagrid.Name = "SveKarteDatagrid";
             this.SveKarteDatagrid.Size = new System.Drawing.Size(485, 453);
             this.SveKarteDatagrid.TabIndex = 9;
+            this.SveKarteDatagrid.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.SveKarteDatagrid_CellContentClick);
             // 
             // ListaZeljaDataGrid
             // 
