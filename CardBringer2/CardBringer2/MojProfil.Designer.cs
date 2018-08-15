@@ -61,10 +61,10 @@
             this.dataGridView1.AllowUserToDeleteRows = false;
             this.dataGridView1.CausesValidation = false;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.idKorisnik,
-            this.idKarta,
-            this.idKorisnikKarta});
+            //this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            //this.idKorisnik,
+            //this.idKarta,
+            //this.idKorisnikKarta});
             this.dataGridView1.Location = new System.Drawing.Point(451, 101);
             this.dataGridView1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.dataGridView1.Name = "dataGridView1";

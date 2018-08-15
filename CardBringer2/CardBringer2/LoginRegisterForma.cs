@@ -239,7 +239,6 @@ namespace CardBringer2
 
             db.Connection.Close();
         }
-
     }
     
 }

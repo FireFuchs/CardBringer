@@ -23,13 +23,13 @@ namespace CardBringer2
         private void Pocetna_Load(object sender, EventArgs e)
         {
             var db = new DbInteraction();
-            db.connection.Open();
+            db.Connection.Open();
 
             var dataAdapter = new SqlDataAdapter();
 
             // HARDCODIRANO DA JE SAMO KUPAC (idUloga)
             var sql = $"SELECT kar.imeKarte AS 'Ime Karte' , kar.opisKarte AS 'Opis Karte', kk.cijena AS 'Cijena', kk.kolicina AS 'Kolicina', k.ime AS 'Ime Prodavača' FROM korisnikKarta kk JOIN karta kar ON kar.idKarta = kk.idKarta JOIN korisnik k ON kk.idKorisnik = k.idKorisnika;";
-            var command = new SqlCommand(sql, db.connection);
+            var command = new SqlCommand(sql, db.Connection);
             var dataReader = command.ExecuteReader();
             DataTable dt = new DataTable();
             dt.Load(dataReader);
@@ -39,7 +39,7 @@ namespace CardBringer2
             
 
             command.Dispose();
-            db.connection.Close();
+            db.Connection.Close();
         }
     }
 }

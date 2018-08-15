@@ -17,6 +17,7 @@ namespace CardBringer2
         public MojProfil(int id)
         {
             InitializeComponent();
+            this.ControlBox = false;
             idKorisnika = id;
             var db = new DbInteraction();
             db.Connection.Open();
