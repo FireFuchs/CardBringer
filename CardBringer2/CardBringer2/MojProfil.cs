@@ -1,0 +1,27 @@
+﻿using System;
+using System.Collections.Generic;
+using System.ComponentModel;
+using System.Data;
+using System.Drawing;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+using System.Windows.Forms;
+
+namespace CardBringer2
+{
+    public partial class MojProfil : Form
+    {
+        int idKorisnika;
+        public MojProfil(int id)
+        {
+            InitializeComponent();
+            idKorisnika = id;
+        }
+
+        private void MojProfil_Load(object sender, EventArgs e)
+        {
+
+        }
+    }
+}

@@ -67,6 +67,30 @@
       <DependentUpon>BazaYgoDataSet.xsd</DependentUpon>
     </Compile>
     <Compile Include="DbInteraction.cs" />
+    <Compile Include="Kosarica.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Kosarica.Designer.cs">
+      <DependentUpon>Kosarica.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ListaZelja.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ListaZelja.Designer.cs">
+      <DependentUpon>ListaZelja.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MojProfil.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MojProfil.Designer.cs">
+      <DependentUpon>MojProfil.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Pocetna.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Pocetna.Designer.cs">
+      <DependentUpon>Pocetna.cs</DependentUpon>
+    </Compile>
     <Compile Include="GlavniIzbornikForma.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -94,8 +118,20 @@
     <EmbeddedResource Include="HelpForm.resx">
       <DependentUpon>HelpForm.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Kosarica.resx">
+      <DependentUpon>Kosarica.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ListaZelja.resx">
+      <DependentUpon>ListaZelja.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="LoginRegisterForma.resx">
       <DependentUpon>LoginRegisterForma.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MojProfil.resx">
+      <DependentUpon>MojProfil.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Pocetna.resx">
+      <DependentUpon>Pocetna.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>

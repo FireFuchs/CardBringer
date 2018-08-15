@@ -29,160 +29,138 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(GlavniIzbornikForma));
-            this.button1 = new System.Windows.Forms.Button();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.button3 = new System.Windows.Forms.Button();
-            this.button5 = new System.Windows.Forms.Button();
-            this.button8 = new System.Windows.Forms.Button();
-            this.button9 = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
             this.unosGumbHelpGlavniIzbornikForma = new System.Windows.Forms.Button();
+            this.menuStrip1 = new System.Windows.Forms.MenuStrip();
+            this.početnaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.mojProfilToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.košaricaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.listaŽeljaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.odjavaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
-            // 
-            // button1
-            // 
-            this.button1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(178)))), ((int)(((byte)(255)))));
-            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button1.ForeColor = System.Drawing.Color.White;
-            this.button1.Location = new System.Drawing.Point(214, 12);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(124, 34);
-            this.button1.TabIndex = 0;
-            this.button1.Text = "Početna ";
-            this.button1.UseMnemonic = false;
-            this.button1.UseVisualStyleBackColor = false;
             // 
             // pictureBox1
             // 
             this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
             this.pictureBox1.Location = new System.Drawing.Point(-4, 3);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(214, 50);
+            this.pictureBox1.Size = new System.Drawing.Size(226, 50);
             this.pictureBox1.TabIndex = 1;
             this.pictureBox1.TabStop = false;
-            // 
-            // textBox1
-            // 
-            this.textBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox1.Location = new System.Drawing.Point(227, 84);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(374, 29);
-            this.textBox1.TabIndex = 2;
-            this.textBox1.Text = "Pretraživanje";
-            // 
-            // button3
-            // 
-            this.button3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(178)))), ((int)(((byte)(255)))));
-            this.button3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button3.ForeColor = System.Drawing.Color.White;
-            this.button3.Location = new System.Drawing.Point(344, 12);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(124, 34);
-            this.button3.TabIndex = 0;
-            this.button3.Text = "Moj profil";
-            this.button3.UseMnemonic = false;
-            this.button3.UseVisualStyleBackColor = false;
-            // 
-            // button5
-            // 
-            this.button5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(178)))), ((int)(((byte)(255)))));
-            this.button5.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button5.ForeColor = System.Drawing.Color.White;
-            this.button5.Location = new System.Drawing.Point(474, 12);
-            this.button5.Name = "button5";
-            this.button5.Size = new System.Drawing.Size(124, 34);
-            this.button5.TabIndex = 0;
-            this.button5.Text = "Košarica";
-            this.button5.UseMnemonic = false;
-            this.button5.UseVisualStyleBackColor = false;
-            // 
-            // button8
-            // 
-            this.button8.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(178)))), ((int)(((byte)(255)))));
-            this.button8.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button8.ForeColor = System.Drawing.Color.White;
-            this.button8.Location = new System.Drawing.Point(604, 12);
-            this.button8.Name = "button8";
-            this.button8.Size = new System.Drawing.Size(124, 34);
-            this.button8.TabIndex = 0;
-            this.button8.Text = "Lista želja";
-            this.button8.UseMnemonic = false;
-            this.button8.UseVisualStyleBackColor = false;
-            // 
-            // button9
-            // 
-            this.button9.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(178)))), ((int)(((byte)(255)))));
-            this.button9.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button9.ForeColor = System.Drawing.Color.White;
-            this.button9.Location = new System.Drawing.Point(735, 12);
-            this.button9.Name = "button9";
-            this.button9.Size = new System.Drawing.Size(124, 34);
-            this.button9.TabIndex = 0;
-            this.button9.Text = "Odjava";
-            this.button9.UseMnemonic = false;
-            this.button9.UseVisualStyleBackColor = false;
-            // 
-            // button2
-            // 
-            this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button2.ForeColor = System.Drawing.Color.White;
-            this.button2.Image = ((System.Drawing.Image)(resources.GetObject("button2.Image")));
-            this.button2.Location = new System.Drawing.Point(607, 84);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(29, 29);
-            this.button2.TabIndex = 3;
-            this.button2.UseVisualStyleBackColor = true;
             // 
             // unosGumbHelpGlavniIzbornikForma
             // 
             this.unosGumbHelpGlavniIzbornikForma.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.unosGumbHelpGlavniIzbornikForma.ForeColor = System.Drawing.Color.White;
-            this.unosGumbHelpGlavniIzbornikForma.Location = new System.Drawing.Point(867, 0);
+            this.unosGumbHelpGlavniIzbornikForma.Location = new System.Drawing.Point(1151, 9);
             this.unosGumbHelpGlavniIzbornikForma.Name = "unosGumbHelpGlavniIzbornikForma";
-            this.unosGumbHelpGlavniIzbornikForma.Size = new System.Drawing.Size(53, 23);
+            this.unosGumbHelpGlavniIzbornikForma.Size = new System.Drawing.Size(80, 39);
             this.unosGumbHelpGlavniIzbornikForma.TabIndex = 9;
             this.unosGumbHelpGlavniIzbornikForma.Text = "Help";
             this.unosGumbHelpGlavniIzbornikForma.UseVisualStyleBackColor = true;
             this.unosGumbHelpGlavniIzbornikForma.Click += new System.EventHandler(this.unosGumbHelpGlavniIzbornikForma_Click);
+            // 
+            // menuStrip1
+            // 
+            this.menuStrip1.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.menuStrip1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(48)))), ((int)(((byte)(48)))));
+            this.menuStrip1.Dock = System.Windows.Forms.DockStyle.None;
+            this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.početnaToolStripMenuItem,
+            this.mojProfilToolStripMenuItem,
+            this.košaricaToolStripMenuItem,
+            this.listaŽeljaToolStripMenuItem,
+            this.odjavaToolStripMenuItem});
+            this.menuStrip1.Location = new System.Drawing.Point(215, 3);
+            this.menuStrip1.Name = "menuStrip1";
+            this.menuStrip1.Padding = new System.Windows.Forms.Padding(5, 6, 350, 5);
+            this.menuStrip1.Size = new System.Drawing.Size(1374, 50);
+            this.menuStrip1.TabIndex = 11;
+            this.menuStrip1.Text = "menuStrip1";
+            this.menuStrip1.ItemClicked += new System.Windows.Forms.ToolStripItemClickedEventHandler(this.menuStrip1_ItemClicked);
+            // 
+            // početnaToolStripMenuItem
+            // 
+            this.početnaToolStripMenuItem.AutoSize = false;
+            this.početnaToolStripMenuItem.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
+            this.početnaToolStripMenuItem.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
+            this.početnaToolStripMenuItem.Name = "početnaToolStripMenuItem";
+            this.početnaToolStripMenuItem.Size = new System.Drawing.Size(71, 39);
+            this.početnaToolStripMenuItem.Text = "Početna";
+            this.početnaToolStripMenuItem.Click += new System.EventHandler(this.početnaToolStripMenuItem_Click);
+            // 
+            // mojProfilToolStripMenuItem
+            // 
+            this.mojProfilToolStripMenuItem.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
+            this.mojProfilToolStripMenuItem.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
+            this.mojProfilToolStripMenuItem.Name = "mojProfilToolStripMenuItem";
+            this.mojProfilToolStripMenuItem.Size = new System.Drawing.Size(71, 39);
+            this.mojProfilToolStripMenuItem.Text = "Moj Profil";
+            this.mojProfilToolStripMenuItem.Click += new System.EventHandler(this.mojProfilToolStripMenuItem_Click);
+            // 
+            // košaricaToolStripMenuItem
+            // 
+            this.košaricaToolStripMenuItem.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
+            this.košaricaToolStripMenuItem.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
+            this.košaricaToolStripMenuItem.Name = "košaricaToolStripMenuItem";
+            this.košaricaToolStripMenuItem.Size = new System.Drawing.Size(63, 39);
+            this.košaricaToolStripMenuItem.Text = "Košarica";
+            this.košaricaToolStripMenuItem.Click += new System.EventHandler(this.košaricaToolStripMenuItem_Click);
+            // 
+            // listaŽeljaToolStripMenuItem
+            // 
+            this.listaŽeljaToolStripMenuItem.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
+            this.listaŽeljaToolStripMenuItem.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
+            this.listaŽeljaToolStripMenuItem.Name = "listaŽeljaToolStripMenuItem";
+            this.listaŽeljaToolStripMenuItem.Size = new System.Drawing.Size(71, 39);
+            this.listaŽeljaToolStripMenuItem.Text = "Lista Želja";
+            this.listaŽeljaToolStripMenuItem.Click += new System.EventHandler(this.listaŽeljaToolStripMenuItem_Click);
+            // 
+            // odjavaToolStripMenuItem
+            // 
+            this.odjavaToolStripMenuItem.Alignment = System.Windows.Forms.ToolStripItemAlignment.Right;
+            this.odjavaToolStripMenuItem.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
+            this.odjavaToolStripMenuItem.Margin = new System.Windows.Forms.Padding(525, 0, 0, 0);
+            this.odjavaToolStripMenuItem.Name = "odjavaToolStripMenuItem";
+            this.odjavaToolStripMenuItem.Size = new System.Drawing.Size(56, 39);
+            this.odjavaToolStripMenuItem.Text = "Odjava";
+            this.odjavaToolStripMenuItem.Click += new System.EventHandler(this.odjavaToolStripMenuItem_Click);
             // 
             // GlavniIzbornikForma
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(48)))), ((int)(((byte)(48)))));
-            this.ClientSize = new System.Drawing.Size(920, 363);
+            this.ClientSize = new System.Drawing.Size(1243, 574);
             this.Controls.Add(this.unosGumbHelpGlavniIzbornikForma);
-            this.Controls.Add(this.button2);
-            this.Controls.Add(this.textBox1);
             this.Controls.Add(this.pictureBox1);
-            this.Controls.Add(this.button9);
-            this.Controls.Add(this.button8);
-            this.Controls.Add(this.button5);
-            this.Controls.Add(this.button3);
-            this.Controls.Add(this.button1);
+            this.Controls.Add(this.menuStrip1);
+            this.IsMdiContainer = true;
             this.KeyPreview = true;
+            this.MainMenuStrip = this.menuStrip1;
             this.Name = "GlavniIzbornikForma";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "GlavniIzbornikForma";
+            this.Load += new System.EventHandler(this.GlavniIzbornikForma_Load);
             this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.GlavniIzbornikForma_KeyDown);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            this.menuStrip1.ResumeLayout(false);
+            this.menuStrip1.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
         }
 
         #endregion
-
-        private System.Windows.Forms.Button button1;
         private System.Windows.Forms.PictureBox pictureBox1;
-        private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.Button button3;
-        private System.Windows.Forms.Button button5;
-        private System.Windows.Forms.Button button8;
-        private System.Windows.Forms.Button button9;
-        private System.Windows.Forms.Button button2;
         private System.Windows.Forms.Button unosGumbHelpGlavniIzbornikForma;
+        private System.Windows.Forms.MenuStrip menuStrip1;
+        private System.Windows.Forms.ToolStripMenuItem početnaToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem mojProfilToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem košaricaToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem listaŽeljaToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem odjavaToolStripMenuItem;
     }
 }
