@@ -12,17 +12,14 @@ namespace CardBringer2
 {
     public partial class ListaZelja : Form
     {
-        public ListaZelja()
+        int idKorisnika;
+        public ListaZelja(int id)
         {
             InitializeComponent();
+            idKorisnika = id;
         }
 
         private void ListaZelja_Load(object sender, EventArgs e)
-        {
-
-        }
-
-        private void ListaZeljaTrazi_TextChanged(object sender, EventArgs e)
         {
 
         }

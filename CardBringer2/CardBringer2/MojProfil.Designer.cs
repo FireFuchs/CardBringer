@@ -28,8 +28,11 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
+            this.KorisnikoveKarteLabelUnchanged = new System.Windows.Forms.Label();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.idKorisnik = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.idKarta = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.idKorisnikKarta = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.TipKorisnikaLabelUnchanged = new System.Windows.Forms.Label();
             this.MojProfilLabelTipKorisnika = new System.Windows.Forms.Label();
             this.MojProfilLabelAdresa = new System.Windows.Forms.Label();
@@ -41,167 +44,33 @@
             this.NicknameLabelUnchanged = new System.Windows.Forms.Label();
             this.EmailLabelUnchanged = new System.Windows.Forms.Label();
             this.IDlabelUnchanged = new System.Windows.Forms.Label();
-            this.KorisnikoveKarteLabelUnchanged = new System.Windows.Forms.Label();
-            this.korisnikKartaBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.database2DataSet = new CardBringer2.Database2DataSet();
-            this.korisnikKartaTableAdapter = new CardBringer2.Database2DataSetTableAdapters.korisnikKartaTableAdapter();
-            this.cijenaDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.idKorisnik = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.idKarta = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.idKorisnikKarta = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.kolicinaDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.korisnikKartaBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.database2DataSet)).BeginInit();
             this.SuspendLayout();
+            // 
+            // KorisnikoveKarteLabelUnchanged
+            // 
+            this.KorisnikoveKarteLabelUnchanged.AutoSize = true;
+            this.KorisnikoveKarteLabelUnchanged.Location = new System.Drawing.Point(335, 66);
+            this.KorisnikoveKarteLabelUnchanged.Name = "KorisnikoveKarteLabelUnchanged";
+            this.KorisnikoveKarteLabelUnchanged.Size = new System.Drawing.Size(93, 13);
+            this.KorisnikoveKarteLabelUnchanged.TabIndex = 28;
+            this.KorisnikoveKarteLabelUnchanged.Text = "Korisnikove Karte:";
             // 
             // dataGridView1
             // 
             this.dataGridView1.AllowUserToAddRows = false;
             this.dataGridView1.AllowUserToDeleteRows = false;
-            this.dataGridView1.AutoGenerateColumns = false;
             this.dataGridView1.CausesValidation = false;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.cijenaDataGridViewTextBoxColumn,
             this.idKorisnik,
             this.idKarta,
-            this.idKorisnikKarta,
-            this.kolicinaDataGridViewTextBoxColumn});
-            this.dataGridView1.DataSource = this.korisnikKartaBindingSource;
-            this.dataGridView1.Location = new System.Drawing.Point(307, 66);
+            this.idKorisnikKarta});
+            this.dataGridView1.Location = new System.Drawing.Point(338, 82);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.ReadOnly = true;
             this.dataGridView1.Size = new System.Drawing.Size(802, 491);
-            this.dataGridView1.TabIndex = 14;
-            // 
-            // TipKorisnikaLabelUnchanged
-            // 
-            this.TipKorisnikaLabelUnchanged.AutoSize = true;
-            this.TipKorisnikaLabelUnchanged.Location = new System.Drawing.Point(15, 179);
-            this.TipKorisnikaLabelUnchanged.Name = "TipKorisnikaLabelUnchanged";
-            this.TipKorisnikaLabelUnchanged.Size = new System.Drawing.Size(71, 13);
-            this.TipKorisnikaLabelUnchanged.TabIndex = 8;
-            this.TipKorisnikaLabelUnchanged.Text = "Tip Korisnika:";
-            // 
-            // MojProfilLabelTipKorisnika
-            // 
-            this.MojProfilLabelTipKorisnika.AutoSize = true;
-            this.MojProfilLabelTipKorisnika.Location = new System.Drawing.Point(92, 179);
-            this.MojProfilLabelTipKorisnika.Name = "MojProfilLabelTipKorisnika";
-            this.MojProfilLabelTipKorisnika.Size = new System.Drawing.Size(10, 13);
-            this.MojProfilLabelTipKorisnika.TabIndex = 9;
-            this.MojProfilLabelTipKorisnika.Text = "-";
-            // 
-            // MojProfilLabelAdresa
-            // 
-            this.MojProfilLabelAdresa.AutoSize = true;
-            this.MojProfilLabelAdresa.Location = new System.Drawing.Point(92, 152);
-            this.MojProfilLabelAdresa.Name = "MojProfilLabelAdresa";
-            this.MojProfilLabelAdresa.Size = new System.Drawing.Size(10, 13);
-            this.MojProfilLabelAdresa.TabIndex = 10;
-            this.MojProfilLabelAdresa.Text = "-";
-            // 
-            // MojProfilLabelNickname
-            // 
-            this.MojProfilLabelNickname.AutoSize = true;
-            this.MojProfilLabelNickname.Location = new System.Drawing.Point(92, 95);
-            this.MojProfilLabelNickname.Name = "MojProfilLabelNickname";
-            this.MojProfilLabelNickname.Size = new System.Drawing.Size(10, 13);
-            this.MojProfilLabelNickname.TabIndex = 11;
-            this.MojProfilLabelNickname.Text = "-";
-            // 
-            // MojProfilLabelEmail
-            // 
-            this.MojProfilLabelEmail.AutoSize = true;
-            this.MojProfilLabelEmail.Location = new System.Drawing.Point(92, 123);
-            this.MojProfilLabelEmail.Name = "MojProfilLabelEmail";
-            this.MojProfilLabelEmail.Size = new System.Drawing.Size(10, 13);
-            this.MojProfilLabelEmail.TabIndex = 12;
-            this.MojProfilLabelEmail.Text = "-";
-            // 
-            // MojProfilLabelID
-            // 
-            this.MojProfilLabelID.AutoSize = true;
-            this.MojProfilLabelID.Location = new System.Drawing.Point(92, 66);
-            this.MojProfilLabelID.Name = "MojProfilLabelID";
-            this.MojProfilLabelID.Size = new System.Drawing.Size(10, 13);
-            this.MojProfilLabelID.TabIndex = 13;
-            this.MojProfilLabelID.Text = "-";
-            // 
-            // label9
-            // 
-            this.label9.AutoSize = true;
-            this.label9.Location = new System.Drawing.Point(43, 179);
-            this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(0, 13);
-            this.label9.TabIndex = 3;
-            // 
-            // AdresaLabelUnchanged
-            // 
-            this.AdresaLabelUnchanged.AutoSize = true;
-            this.AdresaLabelUnchanged.Location = new System.Drawing.Point(43, 152);
-            this.AdresaLabelUnchanged.Name = "AdresaLabelUnchanged";
-            this.AdresaLabelUnchanged.Size = new System.Drawing.Size(43, 13);
-            this.AdresaLabelUnchanged.TabIndex = 4;
-            this.AdresaLabelUnchanged.Text = "Adresa:";
-            // 
-            // NicknameLabelUnchanged
-            // 
-            this.NicknameLabelUnchanged.AutoSize = true;
-            this.NicknameLabelUnchanged.Location = new System.Drawing.Point(28, 95);
-            this.NicknameLabelUnchanged.Name = "NicknameLabelUnchanged";
-            this.NicknameLabelUnchanged.Size = new System.Drawing.Size(58, 13);
-            this.NicknameLabelUnchanged.TabIndex = 5;
-            this.NicknameLabelUnchanged.Text = "Nickname:";
-            // 
-            // EmailLabelUnchanged
-            // 
-            this.EmailLabelUnchanged.AutoSize = true;
-            this.EmailLabelUnchanged.Location = new System.Drawing.Point(51, 123);
-            this.EmailLabelUnchanged.Name = "EmailLabelUnchanged";
-            this.EmailLabelUnchanged.Size = new System.Drawing.Size(35, 13);
-            this.EmailLabelUnchanged.TabIndex = 6;
-            this.EmailLabelUnchanged.Text = "Email:";
-            // 
-            // IDlabelUnchanged
-            // 
-            this.IDlabelUnchanged.AutoSize = true;
-            this.IDlabelUnchanged.Location = new System.Drawing.Point(65, 66);
-            this.IDlabelUnchanged.Name = "IDlabelUnchanged";
-            this.IDlabelUnchanged.Size = new System.Drawing.Size(21, 13);
-            this.IDlabelUnchanged.TabIndex = 7;
-            this.IDlabelUnchanged.Text = "ID:";
-            // 
-            // KorisnikoveKarteLabelUnchanged
-            // 
-            this.KorisnikoveKarteLabelUnchanged.AutoSize = true;
-            this.KorisnikoveKarteLabelUnchanged.Location = new System.Drawing.Point(304, 50);
-            this.KorisnikoveKarteLabelUnchanged.Name = "KorisnikoveKarteLabelUnchanged";
-            this.KorisnikoveKarteLabelUnchanged.Size = new System.Drawing.Size(93, 13);
-            this.KorisnikoveKarteLabelUnchanged.TabIndex = 15;
-            this.KorisnikoveKarteLabelUnchanged.Text = "Korisnikove Karte:";
-            // 
-            // korisnikKartaBindingSource
-            // 
-            this.korisnikKartaBindingSource.DataMember = "korisnikKarta";
-            this.korisnikKartaBindingSource.DataSource = this.database2DataSet;
-            // 
-            // database2DataSet
-            // 
-            this.database2DataSet.DataSetName = "Database2DataSet";
-            this.database2DataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
-            // korisnikKartaTableAdapter
-            // 
-            this.korisnikKartaTableAdapter.ClearBeforeFill = true;
-            // 
-            // cijenaDataGridViewTextBoxColumn
-            // 
-            this.cijenaDataGridViewTextBoxColumn.DataPropertyName = "cijena";
-            this.cijenaDataGridViewTextBoxColumn.HeaderText = "cijena";
-            this.cijenaDataGridViewTextBoxColumn.Name = "cijenaDataGridViewTextBoxColumn";
-            this.cijenaDataGridViewTextBoxColumn.ReadOnly = true;
+            this.dataGridView1.TabIndex = 27;
             // 
             // idKorisnik
             // 
@@ -227,19 +96,110 @@
             this.idKorisnikKarta.ReadOnly = true;
             this.idKorisnikKarta.Visible = false;
             // 
-            // kolicinaDataGridViewTextBoxColumn
+            // TipKorisnikaLabelUnchanged
             // 
-            this.kolicinaDataGridViewTextBoxColumn.DataPropertyName = "kolicina";
-            this.kolicinaDataGridViewTextBoxColumn.HeaderText = "kolicina";
-            this.kolicinaDataGridViewTextBoxColumn.Name = "kolicinaDataGridViewTextBoxColumn";
-            this.kolicinaDataGridViewTextBoxColumn.ReadOnly = true;
+            this.TipKorisnikaLabelUnchanged.AutoSize = true;
+            this.TipKorisnikaLabelUnchanged.Location = new System.Drawing.Point(46, 195);
+            this.TipKorisnikaLabelUnchanged.Name = "TipKorisnikaLabelUnchanged";
+            this.TipKorisnikaLabelUnchanged.Size = new System.Drawing.Size(71, 13);
+            this.TipKorisnikaLabelUnchanged.TabIndex = 21;
+            this.TipKorisnikaLabelUnchanged.Text = "Tip Korisnika:";
+            // 
+            // MojProfilLabelTipKorisnika
+            // 
+            this.MojProfilLabelTipKorisnika.AutoSize = true;
+            this.MojProfilLabelTipKorisnika.Location = new System.Drawing.Point(123, 195);
+            this.MojProfilLabelTipKorisnika.Name = "MojProfilLabelTipKorisnika";
+            this.MojProfilLabelTipKorisnika.Size = new System.Drawing.Size(10, 13);
+            this.MojProfilLabelTipKorisnika.TabIndex = 22;
+            this.MojProfilLabelTipKorisnika.Text = "-";
+            // 
+            // MojProfilLabelAdresa
+            // 
+            this.MojProfilLabelAdresa.AutoSize = true;
+            this.MojProfilLabelAdresa.Location = new System.Drawing.Point(123, 168);
+            this.MojProfilLabelAdresa.Name = "MojProfilLabelAdresa";
+            this.MojProfilLabelAdresa.Size = new System.Drawing.Size(10, 13);
+            this.MojProfilLabelAdresa.TabIndex = 23;
+            this.MojProfilLabelAdresa.Text = "-";
+            // 
+            // MojProfilLabelNickname
+            // 
+            this.MojProfilLabelNickname.AutoSize = true;
+            this.MojProfilLabelNickname.Location = new System.Drawing.Point(123, 111);
+            this.MojProfilLabelNickname.Name = "MojProfilLabelNickname";
+            this.MojProfilLabelNickname.Size = new System.Drawing.Size(10, 13);
+            this.MojProfilLabelNickname.TabIndex = 24;
+            this.MojProfilLabelNickname.Text = "-";
+            // 
+            // MojProfilLabelEmail
+            // 
+            this.MojProfilLabelEmail.AutoSize = true;
+            this.MojProfilLabelEmail.Location = new System.Drawing.Point(123, 139);
+            this.MojProfilLabelEmail.Name = "MojProfilLabelEmail";
+            this.MojProfilLabelEmail.Size = new System.Drawing.Size(10, 13);
+            this.MojProfilLabelEmail.TabIndex = 25;
+            this.MojProfilLabelEmail.Text = "-";
+            // 
+            // MojProfilLabelID
+            // 
+            this.MojProfilLabelID.AutoSize = true;
+            this.MojProfilLabelID.Location = new System.Drawing.Point(123, 82);
+            this.MojProfilLabelID.Name = "MojProfilLabelID";
+            this.MojProfilLabelID.Size = new System.Drawing.Size(10, 13);
+            this.MojProfilLabelID.TabIndex = 26;
+            this.MojProfilLabelID.Text = "-";
+            // 
+            // label9
+            // 
+            this.label9.AutoSize = true;
+            this.label9.Location = new System.Drawing.Point(74, 195);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(0, 13);
+            this.label9.TabIndex = 16;
+            // 
+            // AdresaLabelUnchanged
+            // 
+            this.AdresaLabelUnchanged.AutoSize = true;
+            this.AdresaLabelUnchanged.Location = new System.Drawing.Point(74, 168);
+            this.AdresaLabelUnchanged.Name = "AdresaLabelUnchanged";
+            this.AdresaLabelUnchanged.Size = new System.Drawing.Size(43, 13);
+            this.AdresaLabelUnchanged.TabIndex = 17;
+            this.AdresaLabelUnchanged.Text = "Adresa:";
+            // 
+            // NicknameLabelUnchanged
+            // 
+            this.NicknameLabelUnchanged.AutoSize = true;
+            this.NicknameLabelUnchanged.Location = new System.Drawing.Point(59, 111);
+            this.NicknameLabelUnchanged.Name = "NicknameLabelUnchanged";
+            this.NicknameLabelUnchanged.Size = new System.Drawing.Size(58, 13);
+            this.NicknameLabelUnchanged.TabIndex = 18;
+            this.NicknameLabelUnchanged.Text = "Nickname:";
+            // 
+            // EmailLabelUnchanged
+            // 
+            this.EmailLabelUnchanged.AutoSize = true;
+            this.EmailLabelUnchanged.Location = new System.Drawing.Point(82, 139);
+            this.EmailLabelUnchanged.Name = "EmailLabelUnchanged";
+            this.EmailLabelUnchanged.Size = new System.Drawing.Size(35, 13);
+            this.EmailLabelUnchanged.TabIndex = 19;
+            this.EmailLabelUnchanged.Text = "Email:";
+            // 
+            // IDlabelUnchanged
+            // 
+            this.IDlabelUnchanged.AutoSize = true;
+            this.IDlabelUnchanged.Location = new System.Drawing.Point(96, 82);
+            this.IDlabelUnchanged.Name = "IDlabelUnchanged";
+            this.IDlabelUnchanged.Size = new System.Drawing.Size(21, 13);
+            this.IDlabelUnchanged.TabIndex = 20;
+            this.IDlabelUnchanged.Text = "ID:";
             // 
             // MojProfil
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1123, 569);
-            this.ControlBox = false;
+            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(53)))), ((int)(((byte)(53)))), ((int)(((byte)(53)))));
+            this.ClientSize = new System.Drawing.Size(1251, 603);
             this.Controls.Add(this.KorisnikoveKarteLabelUnchanged);
             this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.TipKorisnikaLabelUnchanged);
@@ -257,8 +217,6 @@
             this.Text = "MojProfil";
             this.Load += new System.EventHandler(this.MojProfil_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.korisnikKartaBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.database2DataSet)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -266,7 +224,11 @@
 
         #endregion
 
+        private System.Windows.Forms.Label KorisnikoveKarteLabelUnchanged;
         private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn idKorisnik;
+        private System.Windows.Forms.DataGridViewTextBoxColumn idKarta;
+        private System.Windows.Forms.DataGridViewTextBoxColumn idKorisnikKarta;
         private System.Windows.Forms.Label TipKorisnikaLabelUnchanged;
         private System.Windows.Forms.Label MojProfilLabelTipKorisnika;
         private System.Windows.Forms.Label MojProfilLabelAdresa;
@@ -278,14 +240,5 @@
         private System.Windows.Forms.Label NicknameLabelUnchanged;
         private System.Windows.Forms.Label EmailLabelUnchanged;
         private System.Windows.Forms.Label IDlabelUnchanged;
-        private System.Windows.Forms.Label KorisnikoveKarteLabelUnchanged;
-        private Database2DataSet database2DataSet;
-        private System.Windows.Forms.BindingSource korisnikKartaBindingSource;
-        private Database2DataSetTableAdapters.korisnikKartaTableAdapter korisnikKartaTableAdapter;
-        private System.Windows.Forms.DataGridViewTextBoxColumn cijenaDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn idKorisnik;
-        private System.Windows.Forms.DataGridViewTextBoxColumn idKarta;
-        private System.Windows.Forms.DataGridViewTextBoxColumn idKorisnikKarta;
-        private System.Windows.Forms.DataGridViewTextBoxColumn kolicinaDataGridViewTextBoxColumn;
     }
 }

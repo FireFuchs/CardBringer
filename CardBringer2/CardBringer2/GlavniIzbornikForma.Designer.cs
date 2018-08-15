@@ -44,9 +44,9 @@
             // pictureBox1
             // 
             this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
-            this.pictureBox1.Location = new System.Drawing.Point(0, 0);
+            this.pictureBox1.Location = new System.Drawing.Point(-4, 3);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(214, 50);
+            this.pictureBox1.Size = new System.Drawing.Size(226, 50);
             this.pictureBox1.TabIndex = 1;
             this.pictureBox1.TabStop = false;
             // 
@@ -54,9 +54,9 @@
             // 
             this.unosGumbHelpGlavniIzbornikForma.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.unosGumbHelpGlavniIzbornikForma.ForeColor = System.Drawing.Color.White;
-            this.unosGumbHelpGlavniIzbornikForma.Location = new System.Drawing.Point(1182, 0);
+            this.unosGumbHelpGlavniIzbornikForma.Location = new System.Drawing.Point(1151, 9);
             this.unosGumbHelpGlavniIzbornikForma.Name = "unosGumbHelpGlavniIzbornikForma";
-            this.unosGumbHelpGlavniIzbornikForma.Size = new System.Drawing.Size(62, 50);
+            this.unosGumbHelpGlavniIzbornikForma.Size = new System.Drawing.Size(80, 39);
             this.unosGumbHelpGlavniIzbornikForma.TabIndex = 9;
             this.unosGumbHelpGlavniIzbornikForma.Text = "Help";
             this.unosGumbHelpGlavniIzbornikForma.UseVisualStyleBackColor = true;
@@ -64,8 +64,8 @@
             // 
             // menuStrip1
             // 
-            this.menuStrip1.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.menuStrip1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(53)))), ((int)(((byte)(53)))), ((int)(((byte)(53)))));
+            this.menuStrip1.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.menuStrip1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(48)))), ((int)(((byte)(48)))));
             this.menuStrip1.Dock = System.Windows.Forms.DockStyle.None;
             this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.početnaToolStripMenuItem,
@@ -73,26 +73,28 @@
             this.košaricaToolStripMenuItem,
             this.listaŽeljaToolStripMenuItem,
             this.odjavaToolStripMenuItem});
-            this.menuStrip1.Location = new System.Drawing.Point(208, 0);
+            this.menuStrip1.Location = new System.Drawing.Point(215, 3);
             this.menuStrip1.Name = "menuStrip1";
             this.menuStrip1.Padding = new System.Windows.Forms.Padding(5, 6, 350, 5);
-            this.menuStrip1.Size = new System.Drawing.Size(1307, 50);
-            this.menuStrip1.TabIndex = 5;
+            this.menuStrip1.Size = new System.Drawing.Size(1374, 50);
+            this.menuStrip1.TabIndex = 11;
             this.menuStrip1.Text = "menuStrip1";
+            this.menuStrip1.ItemClicked += new System.Windows.Forms.ToolStripItemClickedEventHandler(this.menuStrip1_ItemClicked);
             // 
             // početnaToolStripMenuItem
             // 
+            this.početnaToolStripMenuItem.AutoSize = false;
             this.početnaToolStripMenuItem.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
-            this.početnaToolStripMenuItem.Margin = new System.Windows.Forms.Padding(10, 0, 10, 0);
+            this.početnaToolStripMenuItem.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
             this.početnaToolStripMenuItem.Name = "početnaToolStripMenuItem";
-            this.početnaToolStripMenuItem.Size = new System.Drawing.Size(62, 39);
+            this.početnaToolStripMenuItem.Size = new System.Drawing.Size(71, 39);
             this.početnaToolStripMenuItem.Text = "Početna";
             this.početnaToolStripMenuItem.Click += new System.EventHandler(this.početnaToolStripMenuItem_Click);
             // 
             // mojProfilToolStripMenuItem
             // 
             this.mojProfilToolStripMenuItem.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
-            this.mojProfilToolStripMenuItem.Margin = new System.Windows.Forms.Padding(0, 0, 10, 0);
+            this.mojProfilToolStripMenuItem.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
             this.mojProfilToolStripMenuItem.Name = "mojProfilToolStripMenuItem";
             this.mojProfilToolStripMenuItem.Size = new System.Drawing.Size(71, 39);
             this.mojProfilToolStripMenuItem.Text = "Moj Profil";
@@ -101,7 +103,7 @@
             // košaricaToolStripMenuItem
             // 
             this.košaricaToolStripMenuItem.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
-            this.košaricaToolStripMenuItem.Margin = new System.Windows.Forms.Padding(0, 0, 10, 0);
+            this.košaricaToolStripMenuItem.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
             this.košaricaToolStripMenuItem.Name = "košaricaToolStripMenuItem";
             this.košaricaToolStripMenuItem.Size = new System.Drawing.Size(63, 39);
             this.košaricaToolStripMenuItem.Text = "Košarica";
@@ -110,7 +112,7 @@
             // listaŽeljaToolStripMenuItem
             // 
             this.listaŽeljaToolStripMenuItem.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
-            this.listaŽeljaToolStripMenuItem.Margin = new System.Windows.Forms.Padding(0, 0, 50, 0);
+            this.listaŽeljaToolStripMenuItem.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
             this.listaŽeljaToolStripMenuItem.Name = "listaŽeljaToolStripMenuItem";
             this.listaŽeljaToolStripMenuItem.Size = new System.Drawing.Size(71, 39);
             this.listaŽeljaToolStripMenuItem.Text = "Lista Želja";
@@ -122,8 +124,7 @@
             this.odjavaToolStripMenuItem.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
             this.odjavaToolStripMenuItem.Margin = new System.Windows.Forms.Padding(525, 0, 0, 0);
             this.odjavaToolStripMenuItem.Name = "odjavaToolStripMenuItem";
-            this.odjavaToolStripMenuItem.Padding = new System.Windows.Forms.Padding(10);
-            this.odjavaToolStripMenuItem.Size = new System.Drawing.Size(68, 39);
+            this.odjavaToolStripMenuItem.Size = new System.Drawing.Size(56, 39);
             this.odjavaToolStripMenuItem.Text = "Odjava";
             this.odjavaToolStripMenuItem.Click += new System.EventHandler(this.odjavaToolStripMenuItem_Click);
             // 

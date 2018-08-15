@@ -12,7 +12,6 @@
     <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
-    <IsWebBootstrapper>false</IsWebBootstrapper>
     <PublishUrl>publish\</PublishUrl>
     <Install>true</Install>
     <InstallFrom>Disk</InstallFrom>
@@ -25,6 +24,7 @@
     <MapFileExtensions>true</MapFileExtensions>
     <ApplicationRevision>0</ApplicationRevision>
     <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
     <UseApplicationTrust>false</UseApplicationTrust>
     <BootstrapperEnabled>true</BootstrapperEnabled>
   </PropertyGroup>
@@ -37,7 +37,6 @@
     <DefineConstants>DEBUG;TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
-    <LangVersion>7.1</LangVersion>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
     <PlatformTarget>AnyCPU</PlatformTarget>
@@ -47,7 +46,6 @@
     <DefineConstants>TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
-    <LangVersion>7.1</LangVersion>
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="System" />
@@ -63,46 +61,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Database2DataSet.cs">
-      <DependentUpon>Database2DataSet.xsd</DependentUpon>
-    </Compile>
-    <Compile Include="Database2DataSet.Designer.cs">
+    <Compile Include="BazaYgoDataSet.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>Database2DataSet.xsd</DependentUpon>
+      <DependentUpon>BazaYgoDataSet.xsd</DependentUpon>
     </Compile>
-    <Compile Include="DataSet1.cs">
-      <DependentUpon>DataSet1.xsd</DependentUpon>
-    </Compile>
-    <Compile Include="DataSet1.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>DataSet1.xsd</DependentUpon>
-    </Compile>
-    <Compile Include="DataSet2.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>DataSet2.xsd</DependentUpon>
-    </Compile>
-    <Compile Include="DataSet3.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>DataSet3.xsd</DependentUpon>
-    </Compile>
-    <Compile Include="GlavniIzbornikForma.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="GlavniIzbornikForma.Designer.cs">
-      <DependentUpon>GlavniIzbornikForma.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Help.cs" />
-    <Compile Include="HelpClass.cs" />
-    <Compile Include="HelpForm.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="HelpForm.Designer.cs">
-      <DependentUpon>HelpForm.cs</DependentUpon>
-    </Compile>
+    <Compile Include="DbInteraction.cs" />
     <Compile Include="Kosarica.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -115,12 +79,6 @@
     <Compile Include="ListaZelja.Designer.cs">
       <DependentUpon>ListaZelja.cs</DependentUpon>
     </Compile>
-    <Compile Include="LoginRegisterForma.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="LoginRegisterForma.Designer.cs">
-      <DependentUpon>LoginRegisterForma.cs</DependentUpon>
-    </Compile>
     <Compile Include="MojProfil.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -132,6 +90,25 @@
     </Compile>
     <Compile Include="Pocetna.Designer.cs">
       <DependentUpon>Pocetna.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GlavniIzbornikForma.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GlavniIzbornikForma.Designer.cs">
+      <DependentUpon>GlavniIzbornikForma.cs</DependentUpon>
+    </Compile>
+    <Compile Include="HelpClass.cs" />
+    <Compile Include="HelpForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="HelpForm.Designer.cs">
+      <DependentUpon>HelpForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="LoginRegisterForma.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="LoginRegisterForma.Designer.cs">
+      <DependentUpon>LoginRegisterForma.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -165,53 +142,17 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
-    <None Include="Database2DataSet.xsc">
-      <DependentUpon>Database2DataSet.xsd</DependentUpon>
+    <None Include="BazaYgoDataSet.xsc">
+      <DependentUpon>BazaYgoDataSet.xsd</DependentUpon>
     </None>
-    <None Include="Database2DataSet.xsd">
+    <None Include="BazaYgoDataSet.xsd">
       <Generator>MSDataSetGenerator</Generator>
-      <LastGenOutput>Database2DataSet.Designer.cs</LastGenOutput>
+      <LastGenOutput>BazaYgoDataSet.Designer.cs</LastGenOutput>
       <SubType>Designer</SubType>
     </None>
-    <None Include="Database2DataSet.xss">
-      <DependentUpon>Database2DataSet.xsd</DependentUpon>
+    <None Include="BazaYgoDataSet.xss">
+      <DependentUpon>BazaYgoDataSet.xsd</DependentUpon>
     </None>
-    <None Include="DataSet1.xsc">
-      <DependentUpon>DataSet1.xsd</DependentUpon>
-    </None>
-    <None Include="DataSet1.xsd">
-      <SubType>Designer</SubType>
-      <Generator>MSDataSetGenerator</Generator>
-      <LastGenOutput>DataSet1.Designer.cs</LastGenOutput>
-    </None>
-    <None Include="DataSet1.xss">
-      <DependentUpon>DataSet1.xsd</DependentUpon>
-    </None>
-    <None Include="DataSet2.xsc">
-      <DependentUpon>DataSet2.xsd</DependentUpon>
-    </None>
-    <None Include="DataSet2.xsd">
-      <SubType>Designer</SubType>
-      <Generator>MSDataSetGenerator</Generator>
-      <LastGenOutput>DataSet2.Designer.cs</LastGenOutput>
-    </None>
-    <None Include="DataSet2.xss">
-      <DependentUpon>DataSet2.xsd</DependentUpon>
-    </None>
-    <None Include="DataSet3.xsc">
-      <DependentUpon>DataSet3.xsd</DependentUpon>
-    </None>
-    <None Include="DataSet3.xsd">
-      <SubType>Designer</SubType>
-      <Generator>MSDataSetGenerator</Generator>
-      <LastGenOutput>DataSet3.Designer.cs</LastGenOutput>
-    </None>
-    <None Include="DataSet3.xss">
-      <DependentUpon>DataSet3.xsd</DependentUpon>
-    </None>
-    <None Include="Properties\DataSources\CardBringer2.DataSet1TableAdapters.kartaTableAdapter.datasource" />
-    <None Include="Properties\DataSources\CardBringer2.DataSet1TableAdapters.korisnikKartaTableAdapter.datasource" />
-    <None Include="Properties\DataSources\CardBringer2.DataSet1TableAdapters.korisnikTableAdapter.datasource" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -226,6 +167,15 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="BazaYgo.mdf">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="BazaYgo_log.ldf">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      <DependentUpon>BazaYgo.mdf</DependentUpon>
+    </Content>
+  </ItemGroup>
+  <ItemGroup>
     <BootstrapperPackage Include=".NETFramework,Version=v4.5.2">
       <Visible>False</Visible>
       <ProductName>Microsoft .NET Framework 4.5.2 %28x86 and x64%29</ProductName>
@@ -236,15 +186,6 @@
       <ProductName>.NET Framework 3.5 SP1</ProductName>
       <Install>false</Install>
     </BootstrapperPackage>
-  </ItemGroup>
-  <ItemGroup>
-    <Content Include="Database2.mdf">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Database2_log.ldf">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-      <DependentUpon>Database2.mdf</DependentUpon>
-    </Content>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
