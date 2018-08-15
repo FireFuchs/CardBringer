@@ -17,6 +17,12 @@ namespace CardBringer2
         {
             InitializeComponent();
             idKorisnik = id;
+            this.ControlBox = false;
+        }
+
+        private void Kosarica_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }

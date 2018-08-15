@@ -40,6 +40,7 @@
             // label5
             // 
             this.label5.AutoSize = true;
+            this.label5.ForeColor = System.Drawing.Color.White;
             this.label5.Location = new System.Drawing.Point(729, 146);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(10, 13);
@@ -49,6 +50,7 @@
             // label3
             // 
             this.label3.AutoSize = true;
+            this.label3.ForeColor = System.Drawing.Color.White;
             this.label3.Location = new System.Drawing.Point(729, 110);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(10, 13);
@@ -58,6 +60,7 @@
             // label4
             // 
             this.label4.AutoSize = true;
+            this.label4.ForeColor = System.Drawing.Color.White;
             this.label4.Location = new System.Drawing.Point(640, 146);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(62, 13);
@@ -67,6 +70,7 @@
             // KosaricaLabelCijenaUnchanged
             // 
             this.KosaricaLabelCijenaUnchanged.AutoSize = true;
+            this.KosaricaLabelCijenaUnchanged.ForeColor = System.Drawing.Color.White;
             this.KosaricaLabelCijenaUnchanged.Location = new System.Drawing.Point(622, 110);
             this.KosaricaLabelCijenaUnchanged.Name = "KosaricaLabelCijenaUnchanged";
             this.KosaricaLabelCijenaUnchanged.Size = new System.Drawing.Size(80, 13);
@@ -85,6 +89,7 @@
             // label1
             // 
             this.label1.AutoSize = true;
+            this.label1.ForeColor = System.Drawing.Color.White;
             this.label1.Location = new System.Drawing.Point(12, 56);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(83, 13);
@@ -105,6 +110,7 @@
             this.Controls.Add(this.label1);
             this.Name = "Kosarica";
             this.Text = "Kosarica";
+            this.Load += new System.EventHandler(this.Kosarica_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();

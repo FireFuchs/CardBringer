@@ -30,9 +30,6 @@
         {
             this.KorisnikoveKarteLabelUnchanged = new System.Windows.Forms.Label();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.idKorisnik = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.idKarta = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.idKorisnikKarta = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.TipKorisnikaLabelUnchanged = new System.Windows.Forms.Label();
             this.MojProfilLabelTipKorisnika = new System.Windows.Forms.Label();
             this.MojProfilLabelAdresa = new System.Windows.Forms.Label();
@@ -50,6 +47,7 @@
             // KorisnikoveKarteLabelUnchanged
             // 
             this.KorisnikoveKarteLabelUnchanged.AutoSize = true;
+            this.KorisnikoveKarteLabelUnchanged.ForeColor = System.Drawing.Color.White;
             this.KorisnikoveKarteLabelUnchanged.Location = new System.Drawing.Point(335, 66);
             this.KorisnikoveKarteLabelUnchanged.Name = "KorisnikoveKarteLabelUnchanged";
             this.KorisnikoveKarteLabelUnchanged.Size = new System.Drawing.Size(93, 13);
@@ -62,43 +60,17 @@
             this.dataGridView1.AllowUserToDeleteRows = false;
             this.dataGridView1.CausesValidation = false;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.idKorisnik,
-            this.idKarta,
-            this.idKorisnikKarta});
             this.dataGridView1.Location = new System.Drawing.Point(338, 82);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.ReadOnly = true;
-            this.dataGridView1.Size = new System.Drawing.Size(802, 491);
+            this.dataGridView1.Size = new System.Drawing.Size(679, 422);
             this.dataGridView1.TabIndex = 27;
-            // 
-            // idKorisnik
-            // 
-            this.idKorisnik.DataPropertyName = "idKorisnik";
-            this.idKorisnik.HeaderText = "idKorisnik";
-            this.idKorisnik.Name = "idKorisnik";
-            this.idKorisnik.ReadOnly = true;
-            this.idKorisnik.Visible = false;
-            // 
-            // idKarta
-            // 
-            this.idKarta.DataPropertyName = "idKarta";
-            this.idKarta.HeaderText = "idKarta";
-            this.idKarta.Name = "idKarta";
-            this.idKarta.ReadOnly = true;
-            this.idKarta.Visible = false;
-            // 
-            // idKorisnikKarta
-            // 
-            this.idKorisnikKarta.DataPropertyName = "idKorisnikKarta";
-            this.idKorisnikKarta.HeaderText = "idKorisnikKarta";
-            this.idKorisnikKarta.Name = "idKorisnikKarta";
-            this.idKorisnikKarta.ReadOnly = true;
-            this.idKorisnikKarta.Visible = false;
+            this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
             // 
             // TipKorisnikaLabelUnchanged
             // 
             this.TipKorisnikaLabelUnchanged.AutoSize = true;
+            this.TipKorisnikaLabelUnchanged.ForeColor = System.Drawing.Color.White;
             this.TipKorisnikaLabelUnchanged.Location = new System.Drawing.Point(46, 195);
             this.TipKorisnikaLabelUnchanged.Name = "TipKorisnikaLabelUnchanged";
             this.TipKorisnikaLabelUnchanged.Size = new System.Drawing.Size(71, 13);
@@ -108,6 +80,7 @@
             // MojProfilLabelTipKorisnika
             // 
             this.MojProfilLabelTipKorisnika.AutoSize = true;
+            this.MojProfilLabelTipKorisnika.ForeColor = System.Drawing.Color.White;
             this.MojProfilLabelTipKorisnika.Location = new System.Drawing.Point(123, 195);
             this.MojProfilLabelTipKorisnika.Name = "MojProfilLabelTipKorisnika";
             this.MojProfilLabelTipKorisnika.Size = new System.Drawing.Size(10, 13);
@@ -117,6 +90,7 @@
             // MojProfilLabelAdresa
             // 
             this.MojProfilLabelAdresa.AutoSize = true;
+            this.MojProfilLabelAdresa.ForeColor = System.Drawing.Color.White;
             this.MojProfilLabelAdresa.Location = new System.Drawing.Point(123, 168);
             this.MojProfilLabelAdresa.Name = "MojProfilLabelAdresa";
             this.MojProfilLabelAdresa.Size = new System.Drawing.Size(10, 13);
@@ -126,6 +100,7 @@
             // MojProfilLabelNickname
             // 
             this.MojProfilLabelNickname.AutoSize = true;
+            this.MojProfilLabelNickname.ForeColor = System.Drawing.Color.White;
             this.MojProfilLabelNickname.Location = new System.Drawing.Point(123, 111);
             this.MojProfilLabelNickname.Name = "MojProfilLabelNickname";
             this.MojProfilLabelNickname.Size = new System.Drawing.Size(10, 13);
@@ -135,6 +110,7 @@
             // MojProfilLabelEmail
             // 
             this.MojProfilLabelEmail.AutoSize = true;
+            this.MojProfilLabelEmail.ForeColor = System.Drawing.Color.White;
             this.MojProfilLabelEmail.Location = new System.Drawing.Point(123, 139);
             this.MojProfilLabelEmail.Name = "MojProfilLabelEmail";
             this.MojProfilLabelEmail.Size = new System.Drawing.Size(10, 13);
@@ -144,6 +120,7 @@
             // MojProfilLabelID
             // 
             this.MojProfilLabelID.AutoSize = true;
+            this.MojProfilLabelID.ForeColor = System.Drawing.Color.White;
             this.MojProfilLabelID.Location = new System.Drawing.Point(123, 82);
             this.MojProfilLabelID.Name = "MojProfilLabelID";
             this.MojProfilLabelID.Size = new System.Drawing.Size(10, 13);
@@ -153,6 +130,7 @@
             // label9
             // 
             this.label9.AutoSize = true;
+            this.label9.ForeColor = System.Drawing.Color.White;
             this.label9.Location = new System.Drawing.Point(74, 195);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(0, 13);
@@ -161,6 +139,7 @@
             // AdresaLabelUnchanged
             // 
             this.AdresaLabelUnchanged.AutoSize = true;
+            this.AdresaLabelUnchanged.ForeColor = System.Drawing.Color.White;
             this.AdresaLabelUnchanged.Location = new System.Drawing.Point(74, 168);
             this.AdresaLabelUnchanged.Name = "AdresaLabelUnchanged";
             this.AdresaLabelUnchanged.Size = new System.Drawing.Size(43, 13);
@@ -170,6 +149,7 @@
             // NicknameLabelUnchanged
             // 
             this.NicknameLabelUnchanged.AutoSize = true;
+            this.NicknameLabelUnchanged.ForeColor = System.Drawing.Color.White;
             this.NicknameLabelUnchanged.Location = new System.Drawing.Point(59, 111);
             this.NicknameLabelUnchanged.Name = "NicknameLabelUnchanged";
             this.NicknameLabelUnchanged.Size = new System.Drawing.Size(58, 13);
@@ -179,6 +159,7 @@
             // EmailLabelUnchanged
             // 
             this.EmailLabelUnchanged.AutoSize = true;
+            this.EmailLabelUnchanged.ForeColor = System.Drawing.Color.White;
             this.EmailLabelUnchanged.Location = new System.Drawing.Point(82, 139);
             this.EmailLabelUnchanged.Name = "EmailLabelUnchanged";
             this.EmailLabelUnchanged.Size = new System.Drawing.Size(35, 13);
@@ -188,6 +169,7 @@
             // IDlabelUnchanged
             // 
             this.IDlabelUnchanged.AutoSize = true;
+            this.IDlabelUnchanged.ForeColor = System.Drawing.Color.White;
             this.IDlabelUnchanged.Location = new System.Drawing.Point(96, 82);
             this.IDlabelUnchanged.Name = "IDlabelUnchanged";
             this.IDlabelUnchanged.Size = new System.Drawing.Size(21, 13);
@@ -226,9 +208,6 @@
 
         private System.Windows.Forms.Label KorisnikoveKarteLabelUnchanged;
         private System.Windows.Forms.DataGridView dataGridView1;
-        private System.Windows.Forms.DataGridViewTextBoxColumn idKorisnik;
-        private System.Windows.Forms.DataGridViewTextBoxColumn idKarta;
-        private System.Windows.Forms.DataGridViewTextBoxColumn idKorisnikKarta;
         private System.Windows.Forms.Label TipKorisnikaLabelUnchanged;
         private System.Windows.Forms.Label MojProfilLabelTipKorisnika;
         private System.Windows.Forms.Label MojProfilLabelAdresa;

@@ -67,6 +67,7 @@
             this.menuStrip1.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.menuStrip1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(48)))), ((int)(((byte)(48)))));
             this.menuStrip1.Dock = System.Windows.Forms.DockStyle.None;
+            this.menuStrip1.ImeMode = System.Windows.Forms.ImeMode.NoControl;
             this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.početnaToolStripMenuItem,
             this.mojProfilToolStripMenuItem,
@@ -76,6 +77,7 @@
             this.menuStrip1.Location = new System.Drawing.Point(215, 3);
             this.menuStrip1.Name = "menuStrip1";
             this.menuStrip1.Padding = new System.Windows.Forms.Padding(5, 6, 350, 5);
+            this.menuStrip1.ShowItemToolTips = true;
             this.menuStrip1.Size = new System.Drawing.Size(1374, 50);
             this.menuStrip1.TabIndex = 11;
             this.menuStrip1.Text = "menuStrip1";
@@ -84,7 +86,7 @@
             // početnaToolStripMenuItem
             // 
             this.početnaToolStripMenuItem.AutoSize = false;
-            this.početnaToolStripMenuItem.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
+            this.početnaToolStripMenuItem.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(178)))), ((int)(((byte)(255)))));
             this.početnaToolStripMenuItem.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
             this.početnaToolStripMenuItem.Name = "početnaToolStripMenuItem";
             this.početnaToolStripMenuItem.Size = new System.Drawing.Size(71, 39);
@@ -93,7 +95,7 @@
             // 
             // mojProfilToolStripMenuItem
             // 
-            this.mojProfilToolStripMenuItem.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
+            this.mojProfilToolStripMenuItem.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(178)))), ((int)(((byte)(255)))));
             this.mojProfilToolStripMenuItem.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
             this.mojProfilToolStripMenuItem.Name = "mojProfilToolStripMenuItem";
             this.mojProfilToolStripMenuItem.Size = new System.Drawing.Size(71, 39);
@@ -102,7 +104,7 @@
             // 
             // košaricaToolStripMenuItem
             // 
-            this.košaricaToolStripMenuItem.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
+            this.košaricaToolStripMenuItem.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(178)))), ((int)(((byte)(255)))));
             this.košaricaToolStripMenuItem.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
             this.košaricaToolStripMenuItem.Name = "košaricaToolStripMenuItem";
             this.košaricaToolStripMenuItem.Size = new System.Drawing.Size(63, 39);
@@ -111,7 +113,7 @@
             // 
             // listaŽeljaToolStripMenuItem
             // 
-            this.listaŽeljaToolStripMenuItem.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
+            this.listaŽeljaToolStripMenuItem.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(178)))), ((int)(((byte)(255)))));
             this.listaŽeljaToolStripMenuItem.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
             this.listaŽeljaToolStripMenuItem.Name = "listaŽeljaToolStripMenuItem";
             this.listaŽeljaToolStripMenuItem.Size = new System.Drawing.Size(71, 39);
@@ -121,7 +123,7 @@
             // odjavaToolStripMenuItem
             // 
             this.odjavaToolStripMenuItem.Alignment = System.Windows.Forms.ToolStripItemAlignment.Right;
-            this.odjavaToolStripMenuItem.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
+            this.odjavaToolStripMenuItem.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(178)))), ((int)(((byte)(255)))));
             this.odjavaToolStripMenuItem.Margin = new System.Windows.Forms.Padding(525, 0, 0, 0);
             this.odjavaToolStripMenuItem.Name = "odjavaToolStripMenuItem";
             this.odjavaToolStripMenuItem.Size = new System.Drawing.Size(56, 39);
