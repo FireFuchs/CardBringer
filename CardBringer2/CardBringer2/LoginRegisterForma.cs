@@ -136,10 +136,10 @@ namespace CardBringer2
             var password = unosPasswordLoginLoginRegisterForma.Text;
 
             var db = new DbInteraction();
-            db.connection.Open();
+            db.Connection.Open();
             
             var sql = $"SELECT lozinka FROM korisnik WHERE ime = '{username}';";
-            var command = new SqlCommand(sql, db.connection);
+            var command = new SqlCommand(sql, db.Connection);
             var dataReader = command.ExecuteReader();
             if (dataReader.HasRows)
             {
@@ -163,7 +163,7 @@ namespace CardBringer2
             }
             dataReader.Close();
             command.Dispose();
-            db.connection.Close();
+            db.Connection.Close();
         }
 
         private void unosGumbRegistrirajLoginRegisterForma_Click(object sender, EventArgs e)
@@ -178,18 +178,18 @@ namespace CardBringer2
             if (password == rePassword)
             {
                 var db = new DbInteraction();
-                db.connection.Open();
+                db.Connection.Open();
 
                 var dataAdapter = new SqlDataAdapter();
 
                 // HARDCODIRANO DA JE SAMO KUPAC (idUloga)
                 var sql = $"INSERT INTO korisnik (ime, lozinka, email, mjestoStanovanja, idUloga) VALUES('{username}', '{password}', '{email}', '{mjestoStanovanja}', 1);";
-                var command = new SqlCommand(sql, db.connection);
-                dataAdapter.InsertCommand = new SqlCommand(sql, db.connection);
+                var command = new SqlCommand(sql, db.Connection);
+                dataAdapter.InsertCommand = new SqlCommand(sql, db.Connection);
                 dataAdapter.InsertCommand.ExecuteNonQuery();
 
                 command.Dispose();
-                db.connection.Close();
+                db.Connection.Close();
                 OtvoriGlavnuFormu(username);
             }
             else
@@ -226,10 +226,10 @@ namespace CardBringer2
         private void OtvoriGlavnuFormu(string username)
         {
             var db = new DbInteraction();
-            db.connection.Open();
+            db.Connection.Open();
             
             var sql = $"SELECT idKorisnika FROM korisnik WHERE ime = '{username}';";
-            var command = new SqlCommand(sql, db.connection);
+            var command = new SqlCommand(sql, db.Connection);
             var dataReader = command.ExecuteReader();
             dataReader.Read();
             var idKorisnika = dataReader.GetInt32(0);
@@ -237,7 +237,7 @@ namespace CardBringer2
             GlavniFrm.Show();
             this.Hide();
 
-            db.connection.Close();
+            db.Connection.Close();
         }
 
     }
