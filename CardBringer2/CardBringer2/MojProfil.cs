@@ -43,5 +43,10 @@ namespace CardBringer2
             db.Connection.Close();
 
         }
+
+        private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
     }
 }

@@ -30,9 +30,6 @@
         {
             this.KorisnikoveKarteLabelUnchanged = new System.Windows.Forms.Label();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.idKorisnik = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.idKarta = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.idKorisnikKarta = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.TipKorisnikaLabelUnchanged = new System.Windows.Forms.Label();
             this.MojProfilLabelTipKorisnika = new System.Windows.Forms.Label();
             this.MojProfilLabelAdresa = new System.Windows.Forms.Label();
@@ -74,30 +71,7 @@
             this.dataGridView1.ReadOnly = true;
             this.dataGridView1.Size = new System.Drawing.Size(1069, 604);
             this.dataGridView1.TabIndex = 27;
-            // 
-            // idKorisnik
-            // 
-            this.idKorisnik.DataPropertyName = "idKorisnik";
-            this.idKorisnik.HeaderText = "idKorisnik";
-            this.idKorisnik.Name = "idKorisnik";
-            this.idKorisnik.ReadOnly = true;
-            this.idKorisnik.Visible = false;
-            // 
-            // idKarta
-            // 
-            this.idKarta.DataPropertyName = "idKarta";
-            this.idKarta.HeaderText = "idKarta";
-            this.idKarta.Name = "idKarta";
-            this.idKarta.ReadOnly = true;
-            this.idKarta.Visible = false;
-            // 
-            // idKorisnikKarta
-            // 
-            this.idKorisnikKarta.DataPropertyName = "idKorisnikKarta";
-            this.idKorisnikKarta.HeaderText = "idKorisnikKarta";
-            this.idKorisnikKarta.Name = "idKorisnikKarta";
-            this.idKorisnikKarta.ReadOnly = true;
-            this.idKorisnikKarta.Visible = false;
+            this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
             // 
             // TipKorisnikaLabelUnchanged
             // 
@@ -250,9 +224,6 @@
 
         private System.Windows.Forms.Label KorisnikoveKarteLabelUnchanged;
         private System.Windows.Forms.DataGridView dataGridView1;
-        private System.Windows.Forms.DataGridViewTextBoxColumn idKorisnik;
-        private System.Windows.Forms.DataGridViewTextBoxColumn idKarta;
-        private System.Windows.Forms.DataGridViewTextBoxColumn idKorisnikKarta;
         private System.Windows.Forms.Label TipKorisnikaLabelUnchanged;
         private System.Windows.Forms.Label MojProfilLabelTipKorisnika;
         private System.Windows.Forms.Label MojProfilLabelAdresa;
