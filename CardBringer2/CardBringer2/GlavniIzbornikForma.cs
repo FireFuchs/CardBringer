@@ -18,16 +18,20 @@ namespace CardBringer2
         {
             InitializeComponent();
         }
-        
+        public GlavniIzbornikForma(int id)
+        {
+            InitializeComponent();
+            var idKorisnika = id;
+        }
 
         private void GlavniIzbornikForma_KeyDown(object sender, KeyEventArgs e)
         {
-            HelpClass help = new HelpClass(helpTekst);
+            var help = new HelpClass(helpTekst);
         }
 
         private void unosGumbHelpGlavniIzbornikForma_Click(object sender, EventArgs e)
         {
-            HelpClass help = new HelpClass(helpTekst);
+            var help = new HelpClass(helpTekst);
 
         }
     }

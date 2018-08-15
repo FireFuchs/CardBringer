@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Data.SqlClient;
 using System.Drawing;
 using System.Linq;
 using System.Text;
@@ -9,16 +10,16 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace CardBringer2
-{   
+{
     public partial class LoginRegisterForma : Form
     {
         string helpTekst = "pocetna verzija help sustava, probni pokusaj";
 
         GlavniIzbornikForma GlavniFrm = new GlavniIzbornikForma();
+
         public LoginRegisterForma()
         {
             InitializeComponent();
-
         }
 
         private void unosKorisnickoImeLoginLoginRegisterForma_Enter(object sender, EventArgs e)
@@ -68,38 +69,30 @@ namespace CardBringer2
 
         private void unosEmailRegisterLoginRegisterForma_Leave(object sender, EventArgs e)
         {
-            if (unosEmailRegisterLoginRegisterForma.Text == "")
-            {
-                unosEmailRegisterLoginRegisterForma.Text = "E-Mail";
-                unosEmailRegisterLoginRegisterForma.ForeColor = Color.Gray;
-            }
+            if (unosEmailRegisterLoginRegisterForma.Text != "") return;
+            unosEmailRegisterLoginRegisterForma.Text = "E-Mail";
+            unosEmailRegisterLoginRegisterForma.ForeColor = Color.Gray;
         }
 
         private void unosKorisnickoImeRegisterLoginRegisterForma_Enter(object sender, EventArgs e)
         {
-            if (unosKorisnickoImeRegisterLoginRegisterForma.Text == "Korisnicko Ime")
-            {
-                unosKorisnickoImeRegisterLoginRegisterForma.Text = "";
-                unosKorisnickoImeRegisterLoginRegisterForma.ForeColor = Color.Black;
-            }
+            if (unosKorisnickoImeRegisterLoginRegisterForma.Text != "Korisnicko Ime") return;
+            unosKorisnickoImeRegisterLoginRegisterForma.Text = "";
+            unosKorisnickoImeRegisterLoginRegisterForma.ForeColor = Color.Black;
         }
 
         private void unosKorisnickoImeRegisterLoginRegisterForma_Leave(object sender, EventArgs e)
         {
-            if (unosKorisnickoImeRegisterLoginRegisterForma.Text == "")
-            {
-                unosKorisnickoImeRegisterLoginRegisterForma.Text = "Korisnicko Ime";
-                unosKorisnickoImeRegisterLoginRegisterForma.ForeColor = Color.Gray;
-            }
+            if (unosKorisnickoImeRegisterLoginRegisterForma.Text != "") return;
+            unosKorisnickoImeRegisterLoginRegisterForma.Text = "Korisnicko Ime";
+            unosKorisnickoImeRegisterLoginRegisterForma.ForeColor = Color.Gray;
         }
 
         private void unosPasswordRegisterLoginRegisterForma_Enter(object sender, EventArgs e)
         {
-            if (unosPasswordRegisterLoginRegisterForma.Text == "Lozinka")
-            {
-                unosPasswordRegisterLoginRegisterForma.Text = "";
-                unosPasswordRegisterLoginRegisterForma.ForeColor = Color.Black;
-            }
+            if (unosPasswordRegisterLoginRegisterForma.Text != "Lozinka") return;
+            unosPasswordRegisterLoginRegisterForma.Text = "";
+            unosPasswordRegisterLoginRegisterForma.ForeColor = Color.Black;
         }
 
         private void unosPasswordRegisterLoginRegisterForma_Leave(object sender, EventArgs e)
@@ -113,48 +106,100 @@ namespace CardBringer2
 
         private void unosPonovljeniPasswordRegisterLoginRegisterForma_Enter(object sender, EventArgs e)
         {
-            if (unosPonovljeniPasswordRegisterLoginRegisterForma.Text == "Ponovljena Lozinka")
-            {
-                unosPonovljeniPasswordRegisterLoginRegisterForma.Text = "";
-                unosPonovljeniPasswordRegisterLoginRegisterForma.ForeColor = Color.Black;
-            }
+            if (unosPonovljeniPasswordRegisterLoginRegisterForma.Text != "Ponovljena Lozinka") return;
+            unosPonovljeniPasswordRegisterLoginRegisterForma.Text = "";
+            unosPonovljeniPasswordRegisterLoginRegisterForma.ForeColor = Color.Black;
         }
 
         private void unosPonovljeniPasswordRegisterLoginRegisterForma_Leave(object sender, EventArgs e)
         {
-            if (unosPonovljeniPasswordRegisterLoginRegisterForma.Text == "")
-            {
-                unosPonovljeniPasswordRegisterLoginRegisterForma.Text = "Ponovljena Lozinka";
-                unosPonovljeniPasswordRegisterLoginRegisterForma.ForeColor = Color.Gray;
-            }
+            if (unosPonovljeniPasswordRegisterLoginRegisterForma.Text != "") return;
+            unosPonovljeniPasswordRegisterLoginRegisterForma.Text = "Ponovljena Lozinka";
+            unosPonovljeniPasswordRegisterLoginRegisterForma.ForeColor = Color.Gray;
         }
 
         private void unosGumbLoginLoginRegisterForma_Click(object sender, EventArgs e)
         {
+            var db = new DbInteraction();
+            db.connection.Open();
+
+            SqlDataReader dataReader;
+            SqlCommand command;
+            string sql, output="";
+
+
+            var username = unosKorisnickoImeLoginLoginRegisterForma.Text;
+            var password = unosPasswordLoginLoginRegisterForma.Text;
+
+
+            sql = $"SELECT lozinka FROM korisnik WHERE ime = '{username}';";
+            command = new SqlCommand(sql, db.connection);
+            dataReader = command.ExecuteReader();
+            if (dataReader.HasRows)
+            {
+                dataReader.Read();
+                var realPassword = dataReader.GetString(0);
+                if (password == realPassword)
+                {
+                    //funkcija za dohvacanje ID-a i njegovo passanje u GlavniForm
+                    OtvoriGlavnuFormu(username);
+                }
+                else
+                {
+                    MessageBoxButtons button = MessageBoxButtons.OK;
+                    MessageBox.Show("Kriva lozinka", "Greška", button);
+                }
+            }
+            else
+            {
+                MessageBoxButtons button = MessageBoxButtons.OK;
+                MessageBox.Show("Ne postoji taj korisnik", "Greška", button);
+            }
+                
             
-            GlavniFrm.Show();
-            this.Hide();
+            //int loginBroj;
+            //loginBroj = (int)korisnikTableAdapter.Login(korIme, korLozinka);
+            //if (loginBroj == 1)
+            //{
+
+            //    idKorisnika = (int)korisnikTableAdapter.idReturn(korIme);
+            //    GlavniIzbornikForma GlavniFrm = new GlavniIzbornikForma(idKorisnika);
+            //    GlavniFrm.Show();
+            //    this.Hide();
+            //}
+            //else
+            //{
+            //    MessageBoxButtons button = MessageBoxButtons.OK;
+            //    MessageBox.Show("Kriva kombinacija Lozinke i Imena", "Greška", button);
+            //}
+
+
+            db.connection.Close();
         }
 
         private void unosGumbRegistrirajLoginRegisterForma_Click(object sender, EventArgs e)
         {
-            GlavniFrm.Show();
-            this.Hide();
+            //GlavniFrm.Show();
+            //this.Hide();
+
+            var db = new DbInteraction();
+            db.connection.Open();
+            db.connection.Close();
         }
 
         private void unosGumbHelpLoginRegisterForma_Click(object sender, EventArgs e)
         {
-            HelpClass help = new HelpClass(helpTekst);
+            var help = new HelpClass(helpTekst);
         }
 
         private void LoginRegisterForma_KeyDown(object sender, KeyEventArgs e)
         {
-            if(e.KeyCode == Keys.F1)
+            if (e.KeyCode == Keys.F1)
             {
-                HelpClass help = new HelpClass(helpTekst);
+                var help = new HelpClass(helpTekst);
             }
         }
-        
+
         private void UnosGumbGostLoginRegisterForma_Click(object sender, EventArgs e)
         {
             GlavniFrm.Show();
@@ -163,7 +208,26 @@ namespace CardBringer2
 
         private void LoginRegisterForma_Load(object sender, EventArgs e)
         {
+        }
 
+        // FUNKCIJE
+
+        private void OtvoriGlavnuFormu(string username)
+        {
+            var db = new DbInteraction();
+            db.connection.Open();
+
+            var output = "";
+
+            var sql = $"SELECT idKorisnika FROM korisnik WHERE ime = '{username}';";
+            var command = new SqlCommand(sql, db.connection);
+            var dataReader = command.ExecuteReader();
+            dataReader.Read();
+            var idKorisnika = dataReader.GetInt32(0);
+            var GlavniFrm = new GlavniIzbornikForma(idKorisnika);
+            GlavniFrm.Show();
+            this.Hide();
         }
     }
+    
 }
