@@ -79,6 +79,8 @@
             this.unosKorisnickoImeLoginLoginRegisterForma.TabIndex = 0;
             this.unosKorisnickoImeLoginLoginRegisterForma.Text = "Korisnicko Ime";
             this.unosKorisnickoImeLoginLoginRegisterForma.Enter += new System.EventHandler(this.unosKorisnickoImeLoginLoginRegisterForma_Enter);
+            this.unosKorisnickoImeLoginLoginRegisterForma.KeyDown += new System.Windows.Forms.KeyEventHandler(this.unosKorisnickoImeLoginLoginRegisterForma_KeyDown);
+            this.unosKorisnickoImeLoginLoginRegisterForma.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.unosKorisnickoImeLoginLoginRegisterForma_KeyPress);
             this.unosKorisnickoImeLoginLoginRegisterForma.Leave += new System.EventHandler(this.unosKorisnickoImeLoginLoginRegisterForma_Leave);
             // 
             // unosPasswordLoginLoginRegisterForma
@@ -90,6 +92,7 @@
             this.unosPasswordLoginLoginRegisterForma.TabIndex = 1;
             this.unosPasswordLoginLoginRegisterForma.Text = "Lozinka";
             this.unosPasswordLoginLoginRegisterForma.Enter += new System.EventHandler(this.unosPasswordLoginLoginRegisterForma_Enter);
+            this.unosPasswordLoginLoginRegisterForma.KeyDown += new System.Windows.Forms.KeyEventHandler(this.unosPasswordLoginLoginRegisterForma_KeyDown);
             this.unosPasswordLoginLoginRegisterForma.Leave += new System.EventHandler(this.unosPasswordLoginLoginRegisterForma_Leave);
             // 
             // unosKorisnickoImeRegisterLoginRegisterForma
@@ -101,6 +104,7 @@
             this.unosKorisnickoImeRegisterLoginRegisterForma.TabIndex = 4;
             this.unosKorisnickoImeRegisterLoginRegisterForma.Text = "Korisnicko Ime";
             this.unosKorisnickoImeRegisterLoginRegisterForma.Enter += new System.EventHandler(this.unosKorisnickoImeRegisterLoginRegisterForma_Enter);
+            this.unosKorisnickoImeRegisterLoginRegisterForma.KeyDown += new System.Windows.Forms.KeyEventHandler(this.unosKorisnickoImeRegisterLoginRegisterForma_KeyDown);
             this.unosKorisnickoImeRegisterLoginRegisterForma.Leave += new System.EventHandler(this.unosKorisnickoImeRegisterLoginRegisterForma_Leave);
             // 
             // unosEmailRegisterLoginRegisterForma
@@ -112,6 +116,7 @@
             this.unosEmailRegisterLoginRegisterForma.TabIndex = 3;
             this.unosEmailRegisterLoginRegisterForma.Text = "E-Mail";
             this.unosEmailRegisterLoginRegisterForma.Enter += new System.EventHandler(this.unosEmailRegisterLoginRegisterForma_Enter);
+            this.unosEmailRegisterLoginRegisterForma.KeyDown += new System.Windows.Forms.KeyEventHandler(this.unosEmailRegisterLoginRegisterForma_KeyDown);
             this.unosEmailRegisterLoginRegisterForma.Leave += new System.EventHandler(this.unosEmailRegisterLoginRegisterForma_Leave);
             // 
             // unosPonovljeniPasswordRegisterLoginRegisterForma
@@ -123,6 +128,7 @@
             this.unosPonovljeniPasswordRegisterLoginRegisterForma.TabIndex = 6;
             this.unosPonovljeniPasswordRegisterLoginRegisterForma.Text = "Ponovljena Lozinka";
             this.unosPonovljeniPasswordRegisterLoginRegisterForma.Enter += new System.EventHandler(this.unosPonovljeniPasswordRegisterLoginRegisterForma_Enter);
+            this.unosPonovljeniPasswordRegisterLoginRegisterForma.KeyDown += new System.Windows.Forms.KeyEventHandler(this.unosPonovljeniPasswordRegisterLoginRegisterForma_KeyDown);
             this.unosPonovljeniPasswordRegisterLoginRegisterForma.Leave += new System.EventHandler(this.unosPonovljeniPasswordRegisterLoginRegisterForma_Leave);
             // 
             // unosPasswordRegisterLoginRegisterForma
@@ -134,6 +140,7 @@
             this.unosPasswordRegisterLoginRegisterForma.TabIndex = 5;
             this.unosPasswordRegisterLoginRegisterForma.Text = "Lozinka";
             this.unosPasswordRegisterLoginRegisterForma.Enter += new System.EventHandler(this.unosPasswordRegisterLoginRegisterForma_Enter);
+            this.unosPasswordRegisterLoginRegisterForma.KeyDown += new System.Windows.Forms.KeyEventHandler(this.unosPasswordRegisterLoginRegisterForma_KeyDown);
             this.unosPasswordRegisterLoginRegisterForma.Leave += new System.EventHandler(this.unosPasswordRegisterLoginRegisterForma_Leave);
             // 
             // pictureBox1
@@ -178,6 +185,7 @@
             this.unosMjestoStanovanjaRegisterLoginRegisterForma.TabIndex = 7;
             this.unosMjestoStanovanjaRegisterLoginRegisterForma.Text = "Mjesto stanovanja";
             this.unosMjestoStanovanjaRegisterLoginRegisterForma.Enter += new System.EventHandler(this.unosMjestoStanovanjaRegisterLoginRegisterForma_Enter);
+            this.unosMjestoStanovanjaRegisterLoginRegisterForma.KeyDown += new System.Windows.Forms.KeyEventHandler(this.unosMjestoStanovanjaRegisterLoginRegisterForma_KeyDown);
             this.unosMjestoStanovanjaRegisterLoginRegisterForma.Leave += new System.EventHandler(this.unosMjestoStanovanjaRegisterLoginRegisterForma_Leave);
             // 
             // LoginRegisterForma

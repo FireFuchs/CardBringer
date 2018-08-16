@@ -48,6 +48,7 @@
             this.ListaZeljaGumbMakni.TabIndex = 14;
             this.ListaZeljaGumbMakni.Text = "---> Makni";
             this.ListaZeljaGumbMakni.UseVisualStyleBackColor = true;
+            this.ListaZeljaGumbMakni.Click += new System.EventHandler(this.ListaZeljaGumbMakni_Click);
             // 
             // ListaZeljaButtonTrazi
             // 
@@ -66,6 +67,7 @@
             this.button1.TabIndex = 12;
             this.button1.Text = "<--- Dodaj";
             this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // ListaZeljaTrazi
             // 
@@ -79,6 +81,7 @@
             this.SveKarteDatagrid.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.SveKarteDatagrid.Location = new System.Drawing.Point(725, 104);
             this.SveKarteDatagrid.Name = "SveKarteDatagrid";
+            this.SveKarteDatagrid.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.SveKarteDatagrid.Size = new System.Drawing.Size(485, 453);
             this.SveKarteDatagrid.TabIndex = 9;
             this.SveKarteDatagrid.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.SveKarteDatagrid_CellContentClick);
@@ -88,6 +91,7 @@
             this.ListaZeljaDataGrid.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.ListaZeljaDataGrid.Location = new System.Drawing.Point(33, 104);
             this.ListaZeljaDataGrid.Name = "ListaZeljaDataGrid";
+            this.ListaZeljaDataGrid.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.ListaZeljaDataGrid.Size = new System.Drawing.Size(485, 453);
             this.ListaZeljaDataGrid.TabIndex = 10;
             // 
