@@ -121,28 +121,5 @@ namespace CardBringer2
             db.Connection.Close();
             loadDatagridView();
         }
-        private void PocetanGumbDodajUKosaricu_Click(object sender, EventArgs e)
-        {
-            var db = new DbInteraction();
-            db.Connection.Open();
-
-            var dataAdapter = new SqlDataAdapter();
-            int idKarteZaKosaricu = (int)dataGridView1.SelectedRows[0].Cells[0].Value;
-            string vrijeme = DateTime.Today.ToString("yyyy-MM-dd");
-            var sql = $"INSERT INTO medjuspremnikKosarica ( idKosarica, idKorisnikKarta, Kolicina, datum) VALUES('{idKorisnika}', '{idKarteZaKosaricu}', '{1}', '{vrijeme}');";
-            var command = new SqlCommand(sql, db.Connection);
-            dataAdapter.InsertCommand = new SqlCommand(sql, db.Connection);
-            dataAdapter.InsertCommand.ExecuteNonQuery();
-
-
-            int kolicinaUpdate = (int)dataGridView1.SelectedRows[0].Cells[4].Value;
-            kolicinaUpdate -= 1;
-            sql = "UPDATE korisnikKarta SET kolicina = " + kolicinaUpdate + " where idKorisnikKarta = " + idKarteZaKosaricu + ";";
-            dataAdapter.UpdateCommand = new SqlCommand(sql, db.Connection);
-            dataAdapter.UpdateCommand.ExecuteNonQuery();
-            command.Dispose();
-            db.Connection.Close();
-            loadDatagridView();
-        }
     }
 }
