@@ -12,10 +12,10 @@ namespace CardBringer2
 {
     public partial class HelpForm : Form
     {
-        public HelpForm(string Help)
+        public HelpForm(string help)
         {
             InitializeComponent();
-            izlazHelpTextHelpForm.Text = Help;
+            izlazHelpTextHelpForm.Text = help;
         }
     }
 }

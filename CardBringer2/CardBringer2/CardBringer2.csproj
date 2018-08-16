@@ -67,6 +67,7 @@
       <DependentUpon>BazaYgoDataSet.xsd</DependentUpon>
     </Compile>
     <Compile Include="DbInteraction.cs" />
+    <Compile Include="FormControls.cs" />
     <Compile Include="Kosarica.cs">
       <SubType>Form</SubType>
     </Compile>

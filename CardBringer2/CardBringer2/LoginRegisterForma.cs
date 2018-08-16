@@ -13,9 +13,9 @@ namespace CardBringer2
 {
     public partial class LoginRegisterForma : Form
     {
-        string helpTekst = "pocetna verzija help sustava, probni pokusaj";
+        readonly string _helpTekst = "pocetna verzija help sustava, probni pokusaj";
 
-        GlavniIzbornikForma GlavniFrm = new GlavniIzbornikForma();
+        readonly GlavniIzbornikForma _glavniFrm = new GlavniIzbornikForma();
 
         public LoginRegisterForma()
         {
@@ -144,20 +144,20 @@ namespace CardBringer2
 
         private void unosGumbHelpLoginRegisterForma_Click(object sender, EventArgs e)
         {
-            var help = new HelpClass(helpTekst);
+            var help = new HelpClass(_helpTekst);
         }
 
         private void LoginRegisterForma_KeyDown(object sender, KeyEventArgs e)
         {
             if (e.KeyCode == Keys.F1)
             {
-                var help = new HelpClass(helpTekst);
+                var help = new HelpClass(_helpTekst);
             }
         }
 
         private void UnosGumbGostLoginRegisterForma_Click(object sender, EventArgs e)
         {
-            GlavniFrm.Show();
+            _glavniFrm.Show();
             this.Hide();
         }
 
@@ -175,8 +175,8 @@ namespace CardBringer2
             var dataReader = command.ExecuteReader();
             dataReader.Read();
             var idKorisnika = dataReader.GetInt32(0);
-            var GlavniFrm = new GlavniIzbornikForma(idKorisnika);
-            GlavniFrm.Show();
+            var glavniFrm = new GlavniIzbornikForma(idKorisnika);
+            glavniFrm.Show();
             this.Hide();
 
             db.Connection.Close();

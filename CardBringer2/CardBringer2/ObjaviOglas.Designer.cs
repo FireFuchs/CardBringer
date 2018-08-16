@@ -42,11 +42,11 @@
             // 
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView1.GridColor = System.Drawing.Color.Gray;
-            this.dataGridView1.Location = new System.Drawing.Point(16, 103);
+            this.dataGridView1.Location = new System.Drawing.Point(16, 108);
             this.dataGridView1.Margin = new System.Windows.Forms.Padding(4);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dataGridView1.Size = new System.Drawing.Size(861, 443);
+            this.dataGridView1.Size = new System.Drawing.Size(861, 442);
             this.dataGridView1.TabIndex = 0;
             // 
             // label2
@@ -66,7 +66,7 @@
             this.label1.AutoSize = true;
             this.label1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(53)))), ((int)(((byte)(53)))), ((int)(((byte)(53)))));
             this.label1.ForeColor = System.Drawing.Color.White;
-            this.label1.Location = new System.Drawing.Point(943, 118);
+            this.label1.Location = new System.Drawing.Point(402, 569);
             this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(137, 17);
@@ -75,7 +75,7 @@
             // 
             // unosCijeneKarteObjaviOglas
             // 
-            this.unosCijeneKarteObjaviOglas.Location = new System.Drawing.Point(947, 138);
+            this.unosCijeneKarteObjaviOglas.Location = new System.Drawing.Point(547, 569);
             this.unosCijeneKarteObjaviOglas.Margin = new System.Windows.Forms.Padding(4);
             this.unosCijeneKarteObjaviOglas.Name = "unosCijeneKarteObjaviOglas";
             this.unosCijeneKarteObjaviOglas.Size = new System.Drawing.Size(159, 22);
@@ -86,7 +86,7 @@
             this.label3.AutoSize = true;
             this.label3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(53)))), ((int)(((byte)(53)))), ((int)(((byte)(53)))));
             this.label3.ForeColor = System.Drawing.Color.White;
-            this.label3.Location = new System.Drawing.Point(943, 208);
+            this.label3.Location = new System.Drawing.Point(384, 615);
             this.label3.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(155, 17);
@@ -95,7 +95,7 @@
             // 
             // unosKolicineKarteObjaviOglas
             // 
-            this.unosKolicineKarteObjaviOglas.Location = new System.Drawing.Point(947, 228);
+            this.unosKolicineKarteObjaviOglas.Location = new System.Drawing.Point(547, 615);
             this.unosKolicineKarteObjaviOglas.Margin = new System.Windows.Forms.Padding(4);
             this.unosKolicineKarteObjaviOglas.Name = "unosKolicineKarteObjaviOglas";
             this.unosKolicineKarteObjaviOglas.Size = new System.Drawing.Size(159, 22);
@@ -104,7 +104,7 @@
             // buttonObjaviOglas
             // 
             this.buttonObjaviOglas.ForeColor = System.Drawing.Color.Black;
-            this.buttonObjaviOglas.Location = new System.Drawing.Point(947, 286);
+            this.buttonObjaviOglas.Location = new System.Drawing.Point(718, 569);
             this.buttonObjaviOglas.Margin = new System.Windows.Forms.Padding(4);
             this.buttonObjaviOglas.Name = "buttonObjaviOglas";
             this.buttonObjaviOglas.Size = new System.Drawing.Size(160, 69);

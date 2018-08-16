@@ -13,17 +13,20 @@ namespace CardBringer2
 {
     public partial class MojProfil : Form
     {
-        int idKorisnika;
+        private static int _idKorisnika;
+        private readonly string _reloadSql;
+        private readonly string _loggedInSql;
+
         public MojProfil(int id)
         {
             InitializeComponent();
             this.ControlBox = false;
-            idKorisnika = id;
+            _idKorisnika = id;
+            _loggedInSql = $"SELECT k.ime, k.email, k.mjestoStanovanja, u.nazivUloge FROM korisnik k JOIN uloga u ON k.idUloga = u.idUloga WHERE k.idKorisnika = '{_idKorisnika}';";
+            _reloadSql = $"SELECT kk.idKorisnikKarta AS 'ID Ponude', kar.imeKarte AS 'Ime Karte' , kar.opisKarte AS 'Opis Karte', kk.cijena AS 'Cijena', kk.kolicina AS 'Kolicina', k.ime AS 'Ime Prodavača' FROM korisnikKarta kk JOIN karta kar ON kar.idKarta = kk.idKarta JOIN korisnik k ON kk.idKorisnik = k.idKorisnika WHERE k.idKorisnika = {_idKorisnika};";
             var db = new DbInteraction();
             db.Connection.Open();
-
-            var sql = $"SELECT k.ime, k.email, k.mjestoStanovanja, u.nazivUloge FROM korisnik k JOIN uloga u ON k.idUloga = u.idUloga WHERE k.idKorisnika = '{idKorisnika}';";
-            var command = new SqlCommand(sql, db.Connection);
+            var command = new SqlCommand(_loggedInSql, db.Connection);
             var dataReader = command.ExecuteReader();
             if (dataReader.HasRows)
             {
@@ -33,36 +36,41 @@ namespace CardBringer2
                 var mjestoStanovanja = dataReader.GetString(2);
                 var tipKorisnika = dataReader.GetString(3);
 
-                MojProfilLabelID.Text = idKorisnika.ToString();
+                MojProfilLabelID.Text = _idKorisnika.ToString();
                 MojProfilLabelNickname.Text = username;
                 MojProfilLabelEmail.Text = email;
                 MojProfilLabelAdresa.Text = mjestoStanovanja;
                 MojProfilLabelTipKorisnika.Text = tipKorisnika;
-                
+
             }
             dataReader.Close();
             command.Dispose();
 
-            //sql = $"SELECT k.idKarta, k.imeKarte, k.opisKarte, k.slikaKarte FROM karta k JOIN korisnik kor ON kor.idKorisnika = '{idKorisnika}';"; 
-            // krenut od korisnikKarta
-            sql = $"SELECT kk.idKorisnikKarta AS 'ID Ponude', kar.imeKarte AS 'Ime Karte' , kar.opisKarte AS 'Opis Karte', kk.cijena AS 'Cijena', kk.kolicina AS 'Kolicina', k.ime AS 'Ime Prodavača' FROM korisnikKarta kk JOIN karta kar ON kar.idKarta = kk.idKarta JOIN korisnik k ON kk.idKorisnik = k.idKorisnika WHERE k.idKorisnika = {idKorisnika};";
-            command = new SqlCommand(sql, db.Connection);
-            dataReader = command.ExecuteReader();
-            var dt = new DataTable();
-            dt.Load(dataReader);
-            dataGridView1.AutoGenerateColumns = true;
-            dataGridView1.DataSource = dt;
-            dataGridView1.Refresh();
-
-            dataReader.Close();
-            command.Dispose();
-            db.Connection.Close();
+            FormControls.LoadDatagridView(dataGridView1, _reloadSql);
 
         }
+        
+        
 
-        private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        private void buttonUkloniOglas_Click(object sender, EventArgs e)
         {
+            var db = new DbInteraction();
+            db.Connection.Open();
 
+            var dataAdapter = new SqlDataAdapter();
+            var idKorisnikKarta = (int)dataGridView1.SelectedRows[0].Cells[0].Value;
+            var sql = $"DELETE korisnikKarta WHERE idKorisnikKarta = '{idKorisnikKarta}';";
+            var command = new SqlCommand(sql, db.Connection);
+            dataAdapter.DeleteCommand = new SqlCommand(sql, db.Connection);
+            dataAdapter.DeleteCommand.ExecuteNonQuery();
+            command.Dispose();
+            db.Connection.Close();
+            FormControls.LoadDatagridView(dataGridView1, _reloadSql);
+        }
+
+        private void MojProfil_Load(object sender, EventArgs e)
+        {
+            
         }
     }
 }

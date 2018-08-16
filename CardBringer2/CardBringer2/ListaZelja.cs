@@ -13,11 +13,11 @@ namespace CardBringer2
 {
     public partial class ListaZelja : Form
     {
-        int idKorisnika;
+        private readonly int _idKorisnika;
         public ListaZelja(int id)
         {
             InitializeComponent();
-            idKorisnika = id;
+            _idKorisnika = id;
             this.ControlBox = false;
         }
 
@@ -29,7 +29,7 @@ namespace CardBringer2
             var sql = $"SELECT idKarta, imeKarte, opisKarte, slikaKarte FROM karta;";
             var command = new SqlCommand(sql, db.Connection);
             var dataReader = command.ExecuteReader();
-            DataTable dt = new DataTable();
+            var dt = new DataTable();
             dt.Load(dataReader);
             SveKarteDatagrid.AutoGenerateColumns = true;
             SveKarteDatagrid.DataSource = dt;
@@ -38,7 +38,7 @@ namespace CardBringer2
 
             command.Dispose();
             db.Connection.Close();
-            updateDatagrid();
+            UpdateDatagrid();
         }
 
         private void SveKarteDatagrid_CellContentClick(object sender, DataGridViewCellEventArgs e)
@@ -48,23 +48,23 @@ namespace CardBringer2
 
         private void button1_Click(object sender, EventArgs e)
         {
-            int KartaId = (int)SveKarteDatagrid.SelectedRows[0].Cells[0].Value;
+            int kartaId = (int)SveKarteDatagrid.SelectedRows[0].Cells[0].Value;
             var db = new DbInteraction();
             db.Connection.Open();
             var dataAdapter = new SqlDataAdapter();
-            var sql = $"INSERT INTO wishlist (idKorisnik, idKarta, napomena) VALUES('{idKorisnika}','{KartaId}','{1}'); ";
+            var sql = $"INSERT INTO wishlist (idKorisnik, idKarta, napomena) VALUES('{_idKorisnika}','{kartaId}','{1}'); ";
             dataAdapter.UpdateCommand = new SqlCommand(sql, db.Connection);
             dataAdapter.UpdateCommand.ExecuteNonQuery();
             db.Connection.Close();
-            updateDatagrid();
+            UpdateDatagrid();
 
         }
-        private void updateDatagrid()
+        private void UpdateDatagrid()
         {
             var db = new DbInteraction();
             db.Connection.Open();
 
-            var sql = $"SELECT w.idWishlist, kart.idKarta, kart.imeKarte, kart.opisKarte, kart.slikaKarte FROM karta kart JOIN wishlist w ON w.idKarta = kart.idKarta JOIN korisnik k ON k.idKorisnika = w.idKorisnik WHERE idKorisnik = '{idKorisnika}';";
+            var sql = $"SELECT w.idWishlist, kart.idKarta, kart.imeKarte, kart.opisKarte, kart.slikaKarte FROM karta kart JOIN wishlist w ON w.idKarta = kart.idKarta JOIN korisnik k ON k.idKorisnika = w.idKorisnik WHERE idKorisnik = '{_idKorisnika}';";
             var command = new SqlCommand(sql, db.Connection);
             var dataReader = command.ExecuteReader();
             DataTable dt = new DataTable();
@@ -88,7 +88,7 @@ namespace CardBringer2
             command.ExecuteNonQuery();
             command.Dispose();
             db.Connection.Close();
-            updateDatagrid();
+            UpdateDatagrid();
         }
     }
 }
