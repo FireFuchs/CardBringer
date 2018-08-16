@@ -26,7 +26,11 @@ namespace CardBringer2
 
         private void GlavniIzbornikForma_KeyDown(object sender, KeyEventArgs e)
         {
-            var help = new HelpClass(helpTekst);
+            if (e.KeyCode == Keys.F1)
+            {
+                var help = new HelpClass(helpTekst);
+            }
+
         }
 
         private void unosGumbHelpGlavniIzbornikForma_Click(object sender, EventArgs e)

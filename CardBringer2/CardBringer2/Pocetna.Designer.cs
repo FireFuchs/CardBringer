@@ -44,6 +44,7 @@
             this.PocetanGumbDodajUKosaricu.TabIndex = 15;
             this.PocetanGumbDodajUKosaricu.Text = "U Kosaricu";
             this.PocetanGumbDodajUKosaricu.UseVisualStyleBackColor = true;
+            this.PocetanGumbDodajUKosaricu.Click += new System.EventHandler(this.PocetanGumbDodajUKosaricu_Click);
             // 
             // PocetnaPretragaText
             // 
