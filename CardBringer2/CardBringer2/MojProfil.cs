@@ -38,21 +38,23 @@ namespace CardBringer2
                 MojProfilLabelEmail.Text = email;
                 MojProfilLabelAdresa.Text = mjestoStanovanja;
                 MojProfilLabelTipKorisnika.Text = tipKorisnika;
-                dataReader.Close();
-                command.Dispose();
+                
             }
-            
+            dataReader.Close();
+            command.Dispose();
 
-            sql = $"SELECT idKarta, imeKarte, opisKarte, slikaKarte FROM karta;";
+            //sql = $"SELECT k.idKarta, k.imeKarte, k.opisKarte, k.slikaKarte FROM karta k JOIN korisnik kor ON kor.idKorisnika = '{idKorisnika}';"; 
+            // krenut od korisnikKarta
+            sql = $"SELECT kk.idKorisnikKarta AS 'ID Ponude', kar.imeKarte AS 'Ime Karte' , kar.opisKarte AS 'Opis Karte', kk.cijena AS 'Cijena', kk.kolicina AS 'Kolicina', k.ime AS 'Ime Prodavača' FROM korisnikKarta kk JOIN karta kar ON kar.idKarta = kk.idKarta JOIN korisnik k ON kk.idKorisnik = k.idKorisnika WHERE k.idKorisnika = {idKorisnika};";
             command = new SqlCommand(sql, db.Connection);
             dataReader = command.ExecuteReader();
-            DataTable dt = new DataTable();
+            var dt = new DataTable();
             dt.Load(dataReader);
             dataGridView1.AutoGenerateColumns = true;
             dataGridView1.DataSource = dt;
             dataGridView1.Refresh();
 
-
+            dataReader.Close();
             command.Dispose();
             db.Connection.Close();
 
