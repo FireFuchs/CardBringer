@@ -15,3 +15,5 @@ C:\Users\Focho\Desktop\CardBringer2\CardBringer2\obj\Debug\CardBringer2.csproj.G
 C:\Users\Focho\Desktop\CardBringer2\CardBringer2\obj\Debug\CardBringer2.csproj.CoreCompileInputs.cache
 C:\Users\Focho\Desktop\CardBringer2\CardBringer2\obj\Debug\CardBringer2.exe
 C:\Users\Focho\Desktop\CardBringer2\CardBringer2\obj\Debug\CardBringer2.pdb
+C:\Users\Focho\Desktop\CardBringer2\CardBringer2\obj\Debug\CardBringer2.UnosKartice.resources
+C:\Users\Focho\Desktop\CardBringer2\CardBringer2\obj\Debug\CardBringer2.MojeKupnje.resources

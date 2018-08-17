@@ -102,5 +102,14 @@ namespace CardBringer2
             noviOglas.Show();
             _helpTekst = "Help Početne stranice";
         }
+
+        private void mojeKupnjeToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            var mojeKupnje = new MojeKupnje(_idKorisnika);
+            mojeKupnje.MdiParent = this;
+            mojeKupnje.WindowState = FormWindowState.Maximized;
+            mojeKupnje.Show();
+            _helpTekst = "Help Početne stranice";
+        }
     }
 }

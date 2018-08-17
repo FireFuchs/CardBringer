@@ -23,10 +23,36 @@ namespace CardBringer2
 
         private void Kosarica_Load(object sender, EventArgs e)
         {
+            Refresaj();
+        }
+
+        private void GumbKupi_Click(object sender, EventArgs e)
+        {
+            var db = new DbInteraction();
+            db.Connection.Open();
+            UnosKartice popup = new UnosKartice();
+            popup.ShowDialog();
+            var sql = $"INSERT INTO obavljenaKupnja ( idKorisnik, kolicinaKarata, ukupnaCijena, datum) VALUES('{_idKorisnik}','{Convert.ToInt32(KolicinaKarataLabela.Text.ToString())}', '{Convert.ToInt32(ukupnaCijenaLabela.Text.ToString())}', '{DateTime.Today.ToString("yyyy-MM-dd")}');";
+            var command = new SqlCommand(sql, db.Connection);
+            var dataAdapter = new SqlDataAdapter();
+            dataAdapter.InsertCommand = new SqlCommand(sql, db.Connection);
+            dataAdapter.InsertCommand.ExecuteNonQuery();
+            command.Dispose();
+            sql = $"DELETE FROM medjuspremnikKosarica WHERE idKorisnika = '{_idKorisnik}';";
+            command = new SqlCommand(sql, db.Connection);
+            command.ExecuteNonQuery();
+            command.Dispose();
+            db.Connection.Close();
+            Refresaj();
+
+        }
+
+        private void Refresaj()
+        {
             var db = new DbInteraction();
             db.Connection.Open();
 
-            var sql = $"SELECT  kart.slikaKarte, kart.imeKarte, kart.opisKarte, k.ime, kk.cijena, mk.kolicina, mk.datum FROM karta kart join korisnikKarta kk on kart.idKarta = kk.idKarta join medjuspremnikKosarica mk on mk.idKorisnikKarta = kk.idKorisnikKarta join korisnik k on k.idKorisnika = kk.idKorisnik WHERE mk.idKosarica = {_idKorisnik};";
+            var sql = $"SELECT  kart.slikaKarte, kart.imeKarte, kart.opisKarte, k.ime, kk.cijena, mk.kolicina, mk.datum FROM karta kart join korisnikKarta kk on kart.idKarta = kk.idKarta join medjuspremnikKosarica mk on mk.idKorisnikKarta = kk.idKorisnikKarta join korisnik k on k.idKorisnika = kk.idKorisnik WHERE mk.idKorisnika = {_idKorisnik};";
             var command = new SqlCommand(sql, db.Connection);
             var dataReader = command.ExecuteReader();
             DataTable dt = new DataTable();

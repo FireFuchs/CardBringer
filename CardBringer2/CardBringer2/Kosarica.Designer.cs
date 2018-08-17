@@ -34,6 +34,7 @@
             this.KosaricaLabelCijenaUnchanged = new System.Windows.Forms.Label();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.label1 = new System.Windows.Forms.Label();
+            this.GumbKupi = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -97,12 +98,23 @@
             this.label1.TabIndex = 3;
             this.label1.Text = "Karte u košarici:";
             // 
+            // GumbKupi
+            // 
+            this.GumbKupi.Location = new System.Drawing.Point(790, 213);
+            this.GumbKupi.Name = "GumbKupi";
+            this.GumbKupi.Size = new System.Drawing.Size(114, 48);
+            this.GumbKupi.TabIndex = 9;
+            this.GumbKupi.Text = "Kupi!!";
+            this.GumbKupi.UseVisualStyleBackColor = true;
+            this.GumbKupi.Click += new System.EventHandler(this.GumbKupi_Click);
+            // 
             // Kosarica
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(53)))), ((int)(((byte)(53)))), ((int)(((byte)(53)))));
             this.ClientSize = new System.Drawing.Size(1251, 603);
+            this.Controls.Add(this.GumbKupi);
             this.Controls.Add(this.KolicinaKarataLabela);
             this.Controls.Add(this.ukupnaCijenaLabela);
             this.Controls.Add(this.label4);
@@ -126,5 +138,6 @@
         private System.Windows.Forms.Label KosaricaLabelCijenaUnchanged;
         private System.Windows.Forms.DataGridView dataGridView1;
         private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Button GumbKupi;
     }
 }

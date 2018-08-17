@@ -71,7 +71,7 @@ namespace CardBringer2
                 dataReader.Close();
                 //------------------------------------UPDATE--------------------------------
                 int kolicinaKarataKojeImamo = 0;
-                sql = $"SELECT kolicina FROM medjuspremnikKosarica WHERE idKorisnikKarta = '{idKarteZaKosaricu}' and idKosarica = '{_idKorisnika}';";
+                sql = $"SELECT kolicina FROM medjuspremnikKosarica WHERE idKorisnikKarta = '{idKarteZaKosaricu}' and idKorisnika = '{_idKorisnika}';";
                 command = new SqlCommand(sql, db.Connection);
                 dataReader = command.ExecuteReader();
                 while (dataReader.Read())
@@ -98,7 +98,7 @@ namespace CardBringer2
                 dataReader.Close();
                 var dataAdapter = new SqlDataAdapter();
                 dataAdapter = new SqlDataAdapter();
-                sql = $"INSERT INTO medjuspremnikKosarica ( idKosarica, idKorisnikKarta, Kolicina, datum) VALUES('{_idKorisnika}', '{idKarteZaKosaricu}', '{1}', '{vrijeme}');";
+                sql = $"INSERT INTO medjuspremnikKosarica ( idKorisnika, idKorisnikKarta, Kolicina, datum) VALUES('{_idKorisnika}', '{idKarteZaKosaricu}', '{1}', '{vrijeme}');";
                 dataAdapter.InsertCommand = new SqlCommand(sql, db.Connection);
                 dataAdapter.InsertCommand.ExecuteNonQuery();
                 command.Dispose();
@@ -160,6 +160,16 @@ namespace CardBringer2
             if (e.KeyCode == Keys.Enter)
             {
                 trazi();
+            }
+        }
+
+        private void dataGridView1_RowEnter(object sender, DataGridViewCellEventArgs e)
+        {
+            if (dataGridView1.SelectedRows.Count > 0)
+            {
+                CijenaKarte.Text = dataGridView1.SelectedRows[0].Cells[3].Value.ToString();
+                ProdavacKarte.Text = dataGridView1.SelectedRows[0].Cells[5].Value.ToString();
+                OpisKarte.Text = dataGridView1.SelectedRows[0].Cells[2].Value.ToString();
             }
         }
     }
