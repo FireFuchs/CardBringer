@@ -161,32 +161,6 @@ namespace CardBringer2
             this.Hide();
         }
 
-
-
-        // FUNKCIJE
-
-        private void OtvoriGlavnuFormu(string username)
-        {
-            var db = new DbInteraction();
-            db.Connection.Open();
-            
-            var sql = $"SELECT idKorisnika FROM korisnik WHERE ime = '{username}';";
-            var command = new SqlCommand(sql, db.Connection);
-            var dataReader = command.ExecuteReader();
-            dataReader.Read();
-            var idKorisnika = dataReader.GetInt32(0);
-            var glavniFrm = new GlavniIzbornikForma(idKorisnika);
-            glavniFrm.Show();
-            this.Hide();
-
-            db.Connection.Close();
-        }
-
-        private void unosKorisnickoImeLoginLoginRegisterForma_KeyPress(object sender, KeyPressEventArgs e)
-        {
-        
-        }
-
         private void unosKorisnickoImeLoginLoginRegisterForma_KeyDown(object sender, KeyEventArgs e)
         {
             if(e.KeyCode == Keys.Enter)
@@ -194,79 +168,12 @@ namespace CardBringer2
                 Login();
             }
         }
-        private void Login()
-        {
-            var username = unosKorisnickoImeLoginLoginRegisterForma.Text;
-            var password = unosPasswordLoginLoginRegisterForma.Text;
-
-            var db = new DbInteraction();
-            db.Connection.Open();
-
-            var sql = $"SELECT lozinka FROM korisnik WHERE ime = '{username}';";
-            var command = new SqlCommand(sql, db.Connection);
-            var dataReader = command.ExecuteReader();
-            if (dataReader.HasRows)
-            {
-                dataReader.Read();
-                var realPassword = dataReader.GetString(0);
-                if (password == realPassword)
-                {
-                    //funkcija za dohvacanje ID-a i njegovo passanje u GlavniForm
-                    OtvoriGlavnuFormu(username);
-                }
-                else
-                {
-                    const MessageBoxButtons button = MessageBoxButtons.OK;
-                    MessageBox.Show("Kriva lozinka", "Greška", button);
-                }
-            }
-            else
-            {
-                const MessageBoxButtons button = MessageBoxButtons.OK;
-                MessageBox.Show("Ne postoji taj korisnik", "Greška", button);
-            }
-            dataReader.Close();
-            command.Dispose();
-            db.Connection.Close();
-        }
 
         private void unosPasswordLoginLoginRegisterForma_KeyDown(object sender, KeyEventArgs e)
         {
             if (e.KeyCode == Keys.Enter)
             {
                 Login();
-            }
-        }
-
-        private void Register()
-        {
-            var email = unosEmailRegisterLoginRegisterForma.Text;
-            var username = unosKorisnickoImeRegisterLoginRegisterForma.Text;
-            var password = unosPasswordRegisterLoginRegisterForma.Text;
-            var rePassword = unosPonovljeniPasswordRegisterLoginRegisterForma.Text;
-            var mjestoStanovanja = unosMjestoStanovanjaRegisterLoginRegisterForma.Text;
-
-            if (password == rePassword)
-            {
-                var db = new DbInteraction();
-                db.Connection.Open();
-
-                var dataAdapter = new SqlDataAdapter();
-
-                // HARDCODIRANO DA JE SAMO KUPAC (idUloga)
-                var sql = $"INSERT INTO korisnik (ime, lozinka, email, mjestoStanovanja, idUloga) VALUES('{username}', '{password}', '{email}', '{mjestoStanovanja}', 1);";
-                var command = new SqlCommand(sql, db.Connection);
-                dataAdapter.InsertCommand = new SqlCommand(sql, db.Connection);
-                dataAdapter.InsertCommand.ExecuteNonQuery();
-
-                command.Dispose();
-                db.Connection.Close();
-                OtvoriGlavnuFormu(username);
-            }
-            else
-            {
-                const MessageBoxButtons button = MessageBoxButtons.OK;
-                MessageBox.Show("Lozinke se ne podudaraju", "Greška", button);
             }
         }
 
@@ -308,6 +215,89 @@ namespace CardBringer2
             {
                 Register();
             }
+        }
+
+        private void Login()
+        {
+            var username = unosKorisnickoImeLoginLoginRegisterForma.Text;
+            var password = unosPasswordLoginLoginRegisterForma.Text;
+
+            var db = new DbInteraction();
+            db.Connection.Open();
+
+            var sql = $"SELECT lozinka FROM korisnik WHERE ime = '{username}';";
+            var command = new SqlCommand(sql, db.Connection);
+            var dataReader = command.ExecuteReader();
+            if (dataReader.HasRows)
+            {
+                dataReader.Read();
+                var realPassword = dataReader.GetString(0);
+                if (password == realPassword)
+                {
+                    OtvoriGlavnuFormu(username);
+                }
+                else
+                {
+                    const MessageBoxButtons button = MessageBoxButtons.OK;
+                    MessageBox.Show("Kriva lozinka", "Greška", button);
+                }
+            }
+            else
+            {
+                const MessageBoxButtons button = MessageBoxButtons.OK;
+                MessageBox.Show("Ne postoji taj korisnik", "Greška", button);
+            }
+            dataReader.Close();
+            command.Dispose();
+            db.Connection.Close();
+        }
+
+        private void Register()
+        {
+            var email = unosEmailRegisterLoginRegisterForma.Text;
+            var username = unosKorisnickoImeRegisterLoginRegisterForma.Text;
+            var password = unosPasswordRegisterLoginRegisterForma.Text;
+            var rePassword = unosPonovljeniPasswordRegisterLoginRegisterForma.Text;
+            var mjestoStanovanja = unosMjestoStanovanjaRegisterLoginRegisterForma.Text;
+
+            if (password == rePassword)
+            {
+                var db = new DbInteraction();
+                db.Connection.Open();
+
+                var dataAdapter = new SqlDataAdapter();
+
+                // HARDCODIRANO DA JE SAMO KUPAC (idUloga)
+                var sql = $"INSERT INTO korisnik (ime, lozinka, email, mjestoStanovanja, idUloga) VALUES('{username}', '{password}', '{email}', '{mjestoStanovanja}', 1);";
+                var command = new SqlCommand(sql, db.Connection);
+                dataAdapter.InsertCommand = new SqlCommand(sql, db.Connection);
+                dataAdapter.InsertCommand.ExecuteNonQuery();
+
+                command.Dispose();
+                db.Connection.Close();
+                OtvoriGlavnuFormu(username);
+            }
+            else
+            {
+                const MessageBoxButtons button = MessageBoxButtons.OK;
+                MessageBox.Show("Lozinke se ne podudaraju", "Greška", button);
+            }
+        }
+
+        private void OtvoriGlavnuFormu(string username)
+        {
+            var db = new DbInteraction();
+            db.Connection.Open();
+
+            var sql = $"SELECT idKorisnika FROM korisnik WHERE ime = '{username}';";
+            var command = new SqlCommand(sql, db.Connection);
+            var dataReader = command.ExecuteReader();
+            dataReader.Read();
+            var idKorisnika = dataReader.GetInt32(0);
+            var glavniFrm = new GlavniIzbornikForma(idKorisnika);
+            glavniFrm.Show();
+            this.Hide();
+            db.Connection.Close();
         }
     }
     

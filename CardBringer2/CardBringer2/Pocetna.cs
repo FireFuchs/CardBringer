@@ -13,7 +13,8 @@ namespace CardBringer2
 {
     public partial class Pocetna : Form
     {
-        readonly int _idKorisnika;
+        private readonly int _idKorisnika;
+        private readonly string _reloadSql = $"SELECT kk.idKorisnikKarta AS 'ID Ponude', kar.imeKarte AS 'Ime Karte' , kar.opisKarte AS 'Opis Karte', kk.cijena AS 'Cijena', kk.kolicina AS 'Kolicina', k.ime AS 'Ime Prodavača' FROM korisnikKarta kk JOIN karta kar ON kar.idKarta = kk.idKarta JOIN korisnik k ON kk.idKorisnik = k.idKorisnika;";
         public Pocetna(int id)
         {
             InitializeComponent();
@@ -23,42 +24,21 @@ namespace CardBringer2
 
         private void Pocetna_Load(object sender, EventArgs e)
         {
-            LoadDatagridView();
+            FormControls.LoadDatagridView(dataGridView1, _reloadSql);
         }
-
-        private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
-
-        }
-        private void LoadDatagridView()
-        {
-            var db = new DbInteraction();
-            db.Connection.Open();
-
-            var sql = $"SELECT kk.idKorisnikKarta AS 'ID Ponude', kar.imeKarte AS 'Ime Karte' , kar.opisKarte AS 'Opis Karte', kk.cijena AS 'Cijena', kk.kolicina AS 'Kolicina', k.ime AS 'Ime Prodavača' FROM korisnikKarta kk JOIN karta kar ON kar.idKarta = kk.idKarta JOIN korisnik k ON kk.idKorisnik = k.idKorisnika;";
-            var command = new SqlCommand(sql, db.Connection);
-            var dataReader = command.ExecuteReader();
-            DataTable dt = new DataTable();
-            dt.Load(dataReader);
-            dataGridView1.AutoGenerateColumns = true;
-            dataGridView1.DataSource = dt;
-            dataGridView1.Refresh();
-
-
-            command.Dispose();
-            db.Connection.Close();
-        }
+        
         private void PocetanGumbDodajUKosaricu_Click(object sender, EventArgs e)
         {
             var db = new DbInteraction();
             db.Connection.Open();
-            string vrijeme = DateTime.Today.ToString("yyyy-MM-dd");
-            int idKarteZaKosaricu = (int)dataGridView1.SelectedRows[0].Cells[0].Value;
-            
+            var dataAdapter = new SqlDataAdapter();
+
+            var vrijeme = DateTime.Today.ToString("yyyy-MM-dd");
+            var idKarteZaKosaricu = (int)dataGridView1.SelectedRows[0].Cells[0].Value;
             var sql = $"SELECT COUNT(1) FROM medjuspremnikKosarica where idkorisnikKarta = '{idKarteZaKosaricu}';";
             var command = new SqlCommand(sql, db.Connection);
             var dataReader = command.ExecuteReader();
-            int postoji = 0;
+            var postoji = 0;
             while (dataReader.Read())
             {
                 postoji = dataReader.GetInt32(0);
@@ -67,23 +47,22 @@ namespace CardBringer2
             command.Dispose();
             if ( postoji == 1)
             {
-                
                 dataReader.Close();
                 //------------------------------------UPDATE--------------------------------
-                int kolicinaKarataKojeImamo = 0;
-                sql = $"SELECT kolicina FROM medjuspremnikKosarica WHERE idKorisnikKarta = '{idKarteZaKosaricu}' and idKosarica = '{_idKorisnika}';";
+                var kolicinaKarataKojeImamo = 0;
+                sql = $"SELECT kolicina FROM medjuspremnikKosarica WHERE idKorisnikKarta = '{idKarteZaKosaricu}' and idKorisnika = '{_idKorisnika}';";
                 command = new SqlCommand(sql, db.Connection);
                 dataReader = command.ExecuteReader();
                 while (dataReader.Read())
                 {
                     kolicinaKarataKojeImamo = dataReader.GetInt32(0);
                 }
-                    command.Dispose();
+                command.Dispose();
                 dataReader.Close();
 
 
                 //------------------------------------UNOS------------------------------------
-                var dataAdapter = new SqlDataAdapter();
+                
                 kolicinaKarataKojeImamo += 1;
                 sql = $"UPDATE medjuspremnikKosarica SET kolicina = '{kolicinaKarataKojeImamo}' WHERE idKorisnikKarta = '{idKarteZaKosaricu}'";
                 dataAdapter.UpdateCommand = new SqlCommand(sql, db.Connection);
@@ -96,39 +75,67 @@ namespace CardBringer2
             else
             {
                 dataReader.Close();
-                var dataAdapter = new SqlDataAdapter();
                 dataAdapter = new SqlDataAdapter();
-                sql = $"INSERT INTO medjuspremnikKosarica ( idKosarica, idKorisnikKarta, Kolicina, datum) VALUES('{_idKorisnika}', '{idKarteZaKosaricu}', '{1}', '{vrijeme}');";
+                sql = $"INSERT INTO medjuspremnikKosarica ( idKorisnika, idKorisnikKarta, Kolicina, datum) VALUES('{_idKorisnika}', '{idKarteZaKosaricu}', '{1}', '{vrijeme}');";
                 dataAdapter.InsertCommand = new SqlCommand(sql, db.Connection);
                 dataAdapter.InsertCommand.ExecuteNonQuery();
                 command.Dispose();
                 UpdatePocetnaDataGrid();
                 db.Connection.Close();
             }
-               
-            
-
-            
-
-
         }
+
         private void UpdatePocetnaDataGrid()
         {
             var db = new DbInteraction();
             db.Connection.Open();
             var dataAdapter = new SqlDataAdapter();
-            int idKarteZaKosaricu = (int)dataGridView1.SelectedRows[0].Cells[0].Value;
-            var sql = "";
-            int kolicinaUpdate = (int)dataGridView1.SelectedRows[0].Cells[4].Value;
+            var idKarteZaKosaricu = (int)dataGridView1.SelectedRows[0].Cells[0].Value;
+            var kolicinaUpdate = (int)dataGridView1.SelectedRows[0].Cells[4].Value;
             kolicinaUpdate -= 1;
-            sql = "UPDATE korisnikKarta SET kolicina = " + kolicinaUpdate + " where idKorisnikKarta = " + idKarteZaKosaricu + ";";
+            var sql = "UPDATE korisnikKarta SET kolicina = " + kolicinaUpdate + " where idKorisnikKarta = " + idKarteZaKosaricu + ";";
             var command = new SqlCommand(sql, db.Connection);
             dataAdapter.UpdateCommand = new SqlCommand(sql, db.Connection);
             dataAdapter.UpdateCommand.ExecuteNonQuery();
             command.Dispose();
             db.Connection.Close();
-            
-            LoadDatagridView();
+
+            FormControls.LoadDatagridView(dataGridView1, _reloadSql);
+        }
+        
+
+        private void PocetnaResetGumb_Click(object sender, EventArgs e)
+        {
+            FormControls.LoadDatagridView(dataGridView1, _reloadSql);
+        }
+        
+
+        private void dataGridView1_RowEnter(object sender, DataGridViewCellEventArgs e)
+        {
+            if (dataGridView1.SelectedRows.Count <= 0) return;
+            CijenaKarte.Text = dataGridView1.SelectedRows[0].Cells[3].Value.ToString();
+            ProdavacKarte.Text = dataGridView1.SelectedRows[0].Cells[5].Value.ToString();
+            OpisKarte.Text = dataGridView1.SelectedRows[0].Cells[2].Value.ToString();
+        }
+
+        private void PocetnaPretragaGumbTrazi_Click(object sender, EventArgs e)
+        {
+            Trazi();
+        }
+
+        private void PocetnaPretragaText_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                Trazi();
+            }
+        }
+
+        private void Trazi()
+        {
+            var imeTrazenja = PocetnaPretragaText.Text;
+            var sql = $"SELECT kk.idKorisnikKarta AS 'ID Ponude', kar.imeKarte AS 'Ime Karte' , kar.opisKarte AS 'Opis Karte', kk.cijena AS 'Cijena', kk.kolicina AS 'Kolicina', k.ime AS 'Ime Prodavača' FROM korisnikKarta kk JOIN karta kar ON kar.idKarta = kk.idKarta JOIN korisnik k ON kk.idKorisnik = k.idKorisnika WHERE kar.imeKarte = '{imeTrazenja}';";
+            FormControls.LoadDatagridView(dataGridView1, sql);
         }
     }
 }

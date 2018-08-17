@@ -224,7 +224,6 @@
             this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "MojProfil";
             this.Text = "MojProfil";
-            this.Load += new System.EventHandler(this.MojProfil_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();

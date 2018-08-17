@@ -13,20 +13,18 @@ namespace CardBringer2
 {
     public partial class MojProfil : Form
     {
-        private static int _idKorisnika;
         private readonly string _reloadSql;
-        private readonly string _loggedInSql;
 
         public MojProfil(int id)
         {
             InitializeComponent();
             this.ControlBox = false;
-            _idKorisnika = id;
-            _loggedInSql = $"SELECT k.ime, k.email, k.mjestoStanovanja, u.nazivUloge FROM korisnik k JOIN uloga u ON k.idUloga = u.idUloga WHERE k.idKorisnika = '{_idKorisnika}';";
-            _reloadSql = $"SELECT kk.idKorisnikKarta AS 'ID Ponude', kar.imeKarte AS 'Ime Karte' , kar.opisKarte AS 'Opis Karte', kk.cijena AS 'Cijena', kk.kolicina AS 'Kolicina', k.ime AS 'Ime Prodavača' FROM korisnikKarta kk JOIN karta kar ON kar.idKarta = kk.idKarta JOIN korisnik k ON kk.idKorisnik = k.idKorisnika WHERE k.idKorisnika = {_idKorisnika};";
+            var idKorisnika = id;
+            var loggedInSql = $"SELECT k.ime, k.email, k.mjestoStanovanja, u.nazivUloge FROM korisnik k JOIN uloga u ON k.idUloga = u.idUloga WHERE k.idKorisnika = '{idKorisnika}';";
+            _reloadSql = $"SELECT kk.idKorisnikKarta AS 'ID Ponude', kar.imeKarte AS 'Ime Karte' , kar.opisKarte AS 'Opis Karte', kk.cijena AS 'Cijena', kk.kolicina AS 'Kolicina', k.ime AS 'Ime Prodavača' FROM korisnikKarta kk JOIN karta kar ON kar.idKarta = kk.idKarta JOIN korisnik k ON kk.idKorisnik = k.idKorisnika WHERE k.idKorisnika = {idKorisnika};";
             var db = new DbInteraction();
             db.Connection.Open();
-            var command = new SqlCommand(_loggedInSql, db.Connection);
+            var command = new SqlCommand(loggedInSql, db.Connection);
             var dataReader = command.ExecuteReader();
             if (dataReader.HasRows)
             {
@@ -36,7 +34,7 @@ namespace CardBringer2
                 var mjestoStanovanja = dataReader.GetString(2);
                 var tipKorisnika = dataReader.GetString(3);
 
-                MojProfilLabelID.Text = _idKorisnika.ToString();
+                MojProfilLabelID.Text = idKorisnika.ToString();
                 MojProfilLabelNickname.Text = username;
                 MojProfilLabelEmail.Text = email;
                 MojProfilLabelAdresa.Text = mjestoStanovanja;
@@ -45,12 +43,8 @@ namespace CardBringer2
             }
             dataReader.Close();
             command.Dispose();
-
             FormControls.LoadDatagridView(dataGridView1, _reloadSql);
-
         }
-        
-        
 
         private void buttonUkloniOglas_Click(object sender, EventArgs e)
         {
@@ -66,11 +60,6 @@ namespace CardBringer2
             command.Dispose();
             db.Connection.Close();
             FormControls.LoadDatagridView(dataGridView1, _reloadSql);
-        }
-
-        private void MojProfil_Load(object sender, EventArgs e)
-        {
-            
         }
     }
 }
