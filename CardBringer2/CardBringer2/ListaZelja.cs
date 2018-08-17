@@ -13,7 +13,7 @@ namespace CardBringer2
 {
     public partial class ListaZelja : Form
     {
-        
+
         private readonly int _idKorisnika;
         public ListaZelja(int id)
         {
@@ -23,6 +23,11 @@ namespace CardBringer2
         }
 
         private void ListaZelja_Load(object sender, EventArgs e)
+        {
+            listaZeljaLoadGridGlavni();
+        }
+
+        private void listaZeljaLoadGridGlavni()
         {
             var db = new DbInteraction();
             db.Connection.Open();
@@ -55,7 +60,7 @@ namespace CardBringer2
             var sql = $"SELECT COUNT(idKarta) FROM wishlist WHERE idKorisnik = '{_idKorisnika}' AND idKarta = '{kartaId}';";
             var command = new SqlCommand(sql, db.Connection);
             var dataReader = command.ExecuteReader();
-            int broj= 0;
+            int broj = 0;
             while (dataReader.Read())
             {
                 broj = dataReader.GetInt32(0);
@@ -92,7 +97,7 @@ namespace CardBringer2
                 UpdateDatagrid();
 
             }
-            
+
 
         }
         private void UpdateDatagrid()
@@ -123,6 +128,44 @@ namespace CardBringer2
             var sql = $"DELETE FROM wishlist WHERE idKorisnik = '{_idKorisnika}' AND idKarta = '{idKarte}';";
             var command = new SqlCommand(sql, db.Connection);
             command.ExecuteNonQuery();
+            command.Dispose();
+            db.Connection.Close();
+            UpdateDatagrid();
+        }
+
+        private void ListaZeljaButtonTrazi_Click(object sender, EventArgs e)
+        {
+            Filter();
+        }
+
+        private void GumbResetListaZelja_Click(object sender, EventArgs e)
+        {
+            listaZeljaLoadGridGlavni();
+        }
+
+        private void ListaZeljaTrazi_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                Filter();
+            }
+        }
+        private void Filter()
+        {
+            var db = new DbInteraction();
+            db.Connection.Open();
+            var kartaIme = ListaZeljaTrazi.Text;
+
+            var sql = $"SELECT idKarta, imeKarte, opisKarte, slikaKarte FROM karta WHERE imeKarte = '{kartaIme}';";
+            var command = new SqlCommand(sql, db.Connection);
+            var dataReader = command.ExecuteReader();
+            var dt = new DataTable();
+            dt.Load(dataReader);
+            SveKarteDatagrid.AutoGenerateColumns = true;
+            SveKarteDatagrid.DataSource = dt;
+            SveKarteDatagrid.Refresh();
+
+
             command.Dispose();
             db.Connection.Close();
             UpdateDatagrid();
