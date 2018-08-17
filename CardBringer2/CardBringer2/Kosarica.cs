@@ -26,7 +26,7 @@ namespace CardBringer2
             var db = new DbInteraction();
             db.Connection.Open();
 
-            var sql = $"SELECT  kart.slikaKarte, kart.imeKarte, kart.opisKarte, k.ime, mk.kolicina, mk.datum FROM karta kart join korisnikKarta kk on kart.idKarta = kk.idKarta join medjuspremnikKosarica mk on mk.idKorisnikKarta = kk.idKorisnikKarta join korisnik k on k.idKorisnika = kk.idKorisnik WHERE mk.idKosarica = {_idKorisnik};";
+            var sql = $"SELECT  kart.slikaKarte, kart.imeKarte, kart.opisKarte, k.ime, kk.cijena, mk.kolicina, mk.datum FROM karta kart join korisnikKarta kk on kart.idKarta = kk.idKarta join medjuspremnikKosarica mk on mk.idKorisnikKarta = kk.idKorisnikKarta join korisnik k on k.idKorisnika = kk.idKorisnik WHERE mk.idKosarica = {_idKorisnik};";
             var command = new SqlCommand(sql, db.Connection);
             var dataReader = command.ExecuteReader();
             DataTable dt = new DataTable();
@@ -34,8 +34,15 @@ namespace CardBringer2
             dataGridView1.AutoGenerateColumns = true;
             dataGridView1.DataSource = dt;
             dataGridView1.Refresh();
-
-
+            int sumaNovaca = 0;
+            int kolicinaKarata = 0;
+            for (int i = 0; i < dataGridView1.Rows.Count; i++)
+            {
+                sumaNovaca += Convert.ToInt32(dataGridView1.Rows[i].Cells[4].Value) * Convert.ToInt32(dataGridView1.Rows[i].Cells[5].Value);
+                kolicinaKarata += Convert.ToInt32(dataGridView1.Rows[i].Cells[5].Value);
+            }
+            ukupnaCijenaLabela.Text = sumaNovaca.ToString();
+            KolicinaKarataLabela.Text = kolicinaKarata.ToString();
             command.Dispose();
             db.Connection.Close();
         }

@@ -28,8 +28,8 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.label5 = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
+            this.KolicinaKarataLabela = new System.Windows.Forms.Label();
+            this.ukupnaCijenaLabela = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.KosaricaLabelCijenaUnchanged = new System.Windows.Forms.Label();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
@@ -37,25 +37,25 @@
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
-            // label5
+            // KolicinaKarataLabela
             // 
-            this.label5.AutoSize = true;
-            this.label5.ForeColor = System.Drawing.Color.White;
-            this.label5.Location = new System.Drawing.Point(894, 145);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(10, 13);
-            this.label5.TabIndex = 5;
-            this.label5.Text = "-";
+            this.KolicinaKarataLabela.AutoSize = true;
+            this.KolicinaKarataLabela.ForeColor = System.Drawing.Color.White;
+            this.KolicinaKarataLabela.Location = new System.Drawing.Point(894, 145);
+            this.KolicinaKarataLabela.Name = "KolicinaKarataLabela";
+            this.KolicinaKarataLabela.Size = new System.Drawing.Size(10, 13);
+            this.KolicinaKarataLabela.TabIndex = 5;
+            this.KolicinaKarataLabela.Text = "-";
             // 
-            // label3
+            // ukupnaCijenaLabela
             // 
-            this.label3.AutoSize = true;
-            this.label3.ForeColor = System.Drawing.Color.White;
-            this.label3.Location = new System.Drawing.Point(894, 109);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(10, 13);
-            this.label3.TabIndex = 6;
-            this.label3.Text = "-";
+            this.ukupnaCijenaLabela.AutoSize = true;
+            this.ukupnaCijenaLabela.ForeColor = System.Drawing.Color.White;
+            this.ukupnaCijenaLabela.Location = new System.Drawing.Point(894, 109);
+            this.ukupnaCijenaLabela.Name = "ukupnaCijenaLabela";
+            this.ukupnaCijenaLabela.Size = new System.Drawing.Size(10, 13);
+            this.ukupnaCijenaLabela.TabIndex = 6;
+            this.ukupnaCijenaLabela.Text = "-";
             // 
             // label4
             // 
@@ -103,8 +103,8 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(53)))), ((int)(((byte)(53)))), ((int)(((byte)(53)))));
             this.ClientSize = new System.Drawing.Size(1251, 603);
-            this.Controls.Add(this.label5);
-            this.Controls.Add(this.label3);
+            this.Controls.Add(this.KolicinaKarataLabela);
+            this.Controls.Add(this.ukupnaCijenaLabela);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.KosaricaLabelCijenaUnchanged);
             this.Controls.Add(this.dataGridView1);
@@ -120,8 +120,8 @@
 
         #endregion
 
-        private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Label KolicinaKarataLabela;
+        private System.Windows.Forms.Label ukupnaCijenaLabela;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label KosaricaLabelCijenaUnchanged;
         private System.Windows.Forms.DataGridView dataGridView1;
