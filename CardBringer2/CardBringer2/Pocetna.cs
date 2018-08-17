@@ -58,10 +58,16 @@ namespace CardBringer2
             var sql = $"SELECT COUNT(1) FROM medjuspremnikKosarica where idkorisnikKarta = '{idKarteZaKosaricu}';";
             var command = new SqlCommand(sql, db.Connection);
             var dataReader = command.ExecuteReader();
+            int postoji = 0;
+            while (dataReader.Read())
+            {
+                postoji = dataReader.GetInt32(0);
+            }
             
             command.Dispose();
-            if (dataReader.HasRows)
+            if ( postoji == 1)
             {
+                
                 dataReader.Close();
                 //------------------------------------UPDATE--------------------------------
                 int kolicinaKarataKojeImamo = 0;
@@ -89,14 +95,15 @@ namespace CardBringer2
             }
             else
             {
+                dataReader.Close();
                 var dataAdapter = new SqlDataAdapter();
                 dataAdapter = new SqlDataAdapter();
                 sql = $"INSERT INTO medjuspremnikKosarica ( idKosarica, idKorisnikKarta, Kolicina, datum) VALUES('{_idKorisnika}', '{idKarteZaKosaricu}', '{1}', '{vrijeme}');";
                 dataAdapter.InsertCommand = new SqlCommand(sql, db.Connection);
                 dataAdapter.InsertCommand.ExecuteNonQuery();
-
+                command.Dispose();
                 UpdatePocetnaDataGrid();
-                
+                db.Connection.Close();
             }
                
             
@@ -120,6 +127,7 @@ namespace CardBringer2
             dataAdapter.UpdateCommand.ExecuteNonQuery();
             command.Dispose();
             db.Connection.Close();
+            
             LoadDatagridView();
         }
     }
