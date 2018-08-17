@@ -45,43 +45,50 @@ namespace CardBringer2
             }
             
             command.Dispose();
-            if ( postoji == 1)
+            if ((int)dataGridView1.SelectedRows[0].Cells[4].Value > 0)
             {
-                dataReader.Close();
-                //------------------------------------UPDATE--------------------------------
-                var kolicinaKarataKojeImamo = 0;
-                sql = $"SELECT kolicina FROM medjuspremnikKosarica WHERE idKorisnikKarta = '{idKarteZaKosaricu}' and idKorisnika = '{_idKorisnika}';";
-                command = new SqlCommand(sql, db.Connection);
-                dataReader = command.ExecuteReader();
-                while (dataReader.Read())
+                if (postoji == 1)
                 {
-                    kolicinaKarataKojeImamo = dataReader.GetInt32(0);
+                    dataReader.Close();
+                    //------------------------------------UPDATE--------------------------------
+                    var kolicinaKarataKojeImamo = 0;
+                    sql = $"SELECT kolicina FROM medjuspremnikKosarica WHERE idKorisnikKarta = '{idKarteZaKosaricu}' and idKorisnika = '{_idKorisnika}';";
+                    command = new SqlCommand(sql, db.Connection);
+                    dataReader = command.ExecuteReader();
+                    while (dataReader.Read())
+                    {
+                        kolicinaKarataKojeImamo = dataReader.GetInt32(0);
+                    }
+                    command.Dispose();
+                    dataReader.Close();
+
+
+                    //------------------------------------UNOS------------------------------------
+
+                    kolicinaKarataKojeImamo += 1;
+                    sql = $"UPDATE medjuspremnikKosarica SET kolicina = '{kolicinaKarataKojeImamo}' WHERE idKorisnikKarta = '{idKarteZaKosaricu}'";
+                    dataAdapter.UpdateCommand = new SqlCommand(sql, db.Connection);
+                    dataAdapter.UpdateCommand.ExecuteNonQuery();
+
+                    UpdatePocetnaDataGrid();
+                    dataReader.Close();
+
                 }
-                command.Dispose();
-                dataReader.Close();
-
-
-                //------------------------------------UNOS------------------------------------
-                
-                kolicinaKarataKojeImamo += 1;
-                sql = $"UPDATE medjuspremnikKosarica SET kolicina = '{kolicinaKarataKojeImamo}' WHERE idKorisnikKarta = '{idKarteZaKosaricu}'";
-                dataAdapter.UpdateCommand = new SqlCommand(sql, db.Connection);
-                dataAdapter.UpdateCommand.ExecuteNonQuery();
-
-                UpdatePocetnaDataGrid();
-                dataReader.Close();
-
+                else
+                {
+                    dataReader.Close();
+                    dataAdapter = new SqlDataAdapter();
+                    sql = $"INSERT INTO medjuspremnikKosarica ( idKorisnika, idKorisnikKarta, Kolicina, datum) VALUES('{_idKorisnika}', '{idKarteZaKosaricu}', '{1}', '{vrijeme}');";
+                    dataAdapter.InsertCommand = new SqlCommand(sql, db.Connection);
+                    dataAdapter.InsertCommand.ExecuteNonQuery();
+                    command.Dispose();
+                    UpdatePocetnaDataGrid();
+                    db.Connection.Close();
+                }
             }
             else
             {
-                dataReader.Close();
-                dataAdapter = new SqlDataAdapter();
-                sql = $"INSERT INTO medjuspremnikKosarica ( idKorisnika, idKorisnikKarta, Kolicina, datum) VALUES('{_idKorisnika}', '{idKarteZaKosaricu}', '{1}', '{vrijeme}');";
-                dataAdapter.InsertCommand = new SqlCommand(sql, db.Connection);
-                dataAdapter.InsertCommand.ExecuteNonQuery();
-                command.Dispose();
-                UpdatePocetnaDataGrid();
-                db.Connection.Close();
+                MessageBox.Show("Nema vise dostupnih karata!");
             }
         }
 
@@ -92,6 +99,7 @@ namespace CardBringer2
             var dataAdapter = new SqlDataAdapter();
             var idKarteZaKosaricu = (int)dataGridView1.SelectedRows[0].Cells[0].Value;
             var kolicinaUpdate = (int)dataGridView1.SelectedRows[0].Cells[4].Value;
+            if (kolicinaUpdate > 0) { 
             kolicinaUpdate -= 1;
             var sql = "UPDATE korisnikKarta SET kolicina = " + kolicinaUpdate + " where idKorisnikKarta = " + idKarteZaKosaricu + ";";
             var command = new SqlCommand(sql, db.Connection);
@@ -99,6 +107,8 @@ namespace CardBringer2
             dataAdapter.UpdateCommand.ExecuteNonQuery();
             command.Dispose();
             db.Connection.Close();
+            }
+           
 
             FormControls.LoadDatagridView(dataGridView1, _reloadSql);
         }
@@ -134,7 +144,7 @@ namespace CardBringer2
         private void Trazi()
         {
             var imeTrazenja = PocetnaPretragaText.Text;
-            var sql = $"SELECT kk.idKorisnikKarta AS 'ID Ponude', kar.imeKarte AS 'Ime Karte' , kar.opisKarte AS 'Opis Karte', kk.cijena AS 'Cijena', kk.kolicina AS 'Kolicina', k.ime AS 'Ime Prodavača' FROM korisnikKarta kk JOIN karta kar ON kar.idKarta = kk.idKarta JOIN korisnik k ON kk.idKorisnik = k.idKorisnika WHERE kar.imeKarte = '{imeTrazenja}';";
+            var sql = $"SELECT kk.idKorisnikKarta AS 'ID Ponude', kar.imeKarte AS 'Ime Karte' , kar.opisKarte AS 'Opis Karte', kk.cijena AS 'Cijena', kk.kolicina AS 'Kolicina', k.ime AS 'Ime Prodavača' FROM korisnikKarta kk JOIN karta kar ON kar.idKarta = kk.idKarta JOIN korisnik k ON kk.idKorisnik = k.idKorisnika WHERE kar.imeKarte LIKE '%{imeTrazenja}%';";
             FormControls.LoadDatagridView(dataGridView1, sql);
         }
     }

@@ -112,7 +112,7 @@ namespace CardBringer2
         private void Filter()
         {
             var kartaIme = ListaZeljaTrazi.Text;
-            var sql = $"SELECT idKarta, imeKarte, opisKarte, slikaKarte FROM karta WHERE imeKarte = '{kartaIme}';";
+            var sql = $"SELECT idKarta, imeKarte, opisKarte, slikaKarte FROM karta WHERE imeKarte LIKE '%{kartaIme}%';";
             FormControls.LoadDatagridView(SveKarteDatagrid, sql);
             FormControls.LoadDatagridView(ListaZeljaDataGrid, _reloadSql);
         }
