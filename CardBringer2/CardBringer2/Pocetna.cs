@@ -12,24 +12,25 @@ using System.Windows.Forms;
 namespace CardBringer2
 {
     public partial class Pocetna : Form
-    { int idKorisnika;
+    {
+        readonly int _idKorisnika;
         public Pocetna(int id)
         {
             InitializeComponent();
-            idKorisnika = id;
+            _idKorisnika = id;
             this.ControlBox = false;
         }
 
         private void Pocetna_Load(object sender, EventArgs e)
         {
-            loadDatagridView();
+            LoadDatagridView();
         }
 
         private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
 
         }
-        private void loadDatagridView()
+        private void LoadDatagridView()
         {
             var db = new DbInteraction();
             db.Connection.Open();
@@ -57,19 +58,25 @@ namespace CardBringer2
             var sql = $"SELECT COUNT(1) FROM medjuspremnikKosarica where idkorisnikKarta = '{idKarteZaKosaricu}';";
             var command = new SqlCommand(sql, db.Connection);
             var dataReader = command.ExecuteReader();
+            int postoji = 0;
+            while (dataReader.Read())
+            {
+                postoji = dataReader.GetInt32(0);
+            }
             
             command.Dispose();
-            if (dataReader.HasRows)
+            if ( postoji == 1)
             {
+                
                 dataReader.Close();
                 //------------------------------------UPDATE--------------------------------
-                int KolicinaKarataKojeImamo = 0;
-                sql = $"SELECT kolicina FROM medjuspremnikKosarica WHERE idKorisnikKarta = '{idKarteZaKosaricu}' and idKosarica = '{idKorisnika}';";
+                int kolicinaKarataKojeImamo = 0;
+                sql = $"SELECT kolicina FROM medjuspremnikKosarica WHERE idKorisnikKarta = '{idKarteZaKosaricu}' and idKosarica = '{_idKorisnika}';";
                 command = new SqlCommand(sql, db.Connection);
                 dataReader = command.ExecuteReader();
                 while (dataReader.Read())
                 {
-                    KolicinaKarataKojeImamo = dataReader.GetInt32(0);
+                    kolicinaKarataKojeImamo = dataReader.GetInt32(0);
                 }
                     command.Dispose();
                 dataReader.Close();
@@ -77,25 +84,26 @@ namespace CardBringer2
 
                 //------------------------------------UNOS------------------------------------
                 var dataAdapter = new SqlDataAdapter();
-                KolicinaKarataKojeImamo += 1;
-                sql = $"UPDATE medjuspremnikKosarica SET kolicina = '{KolicinaKarataKojeImamo}' WHERE idKorisnikKarta = '{idKarteZaKosaricu}'";
+                kolicinaKarataKojeImamo += 1;
+                sql = $"UPDATE medjuspremnikKosarica SET kolicina = '{kolicinaKarataKojeImamo}' WHERE idKorisnikKarta = '{idKarteZaKosaricu}'";
                 dataAdapter.UpdateCommand = new SqlCommand(sql, db.Connection);
                 dataAdapter.UpdateCommand.ExecuteNonQuery();
 
-                updatePocetnaDataGrid();
+                UpdatePocetnaDataGrid();
                 dataReader.Close();
 
             }
             else
             {
+                dataReader.Close();
                 var dataAdapter = new SqlDataAdapter();
                 dataAdapter = new SqlDataAdapter();
-                sql = $"INSERT INTO medjuspremnikKosarica ( idKosarica, idKorisnikKarta, Kolicina, datum) VALUES('{idKorisnika}', '{idKarteZaKosaricu}', '{1}', '{vrijeme}');";
+                sql = $"INSERT INTO medjuspremnikKosarica ( idKosarica, idKorisnikKarta, Kolicina, datum) VALUES('{_idKorisnika}', '{idKarteZaKosaricu}', '{1}', '{vrijeme}');";
                 dataAdapter.InsertCommand = new SqlCommand(sql, db.Connection);
                 dataAdapter.InsertCommand.ExecuteNonQuery();
-
-                updatePocetnaDataGrid();
-                
+                command.Dispose();
+                UpdatePocetnaDataGrid();
+                db.Connection.Close();
             }
                
             
@@ -104,7 +112,7 @@ namespace CardBringer2
 
 
         }
-        private void updatePocetnaDataGrid()
+        private void UpdatePocetnaDataGrid()
         {
             var db = new DbInteraction();
             db.Connection.Open();
@@ -119,7 +127,8 @@ namespace CardBringer2
             dataAdapter.UpdateCommand.ExecuteNonQuery();
             command.Dispose();
             db.Connection.Close();
-            loadDatagridView();
+            
+            LoadDatagridView();
         }
     }
 }

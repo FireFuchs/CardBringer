@@ -7,11 +7,9 @@ using System.Threading.Tasks;
 
 namespace CardBringer2
 {
-    class DbInteraction
+    internal class DbInteraction
     {
-        private const string ConnString = @"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=C:\Users\Focho\Desktop\pi\BazaYgo.mdf;Integrated Security=True;Connect Timeout=30";
+        private const string ConnString = @"Server=tcp:cardbringerdb.database.windows.net,1433;Initial Catalog=CardBringerDB;Persist Security Info=False;User ID=cardbringer;Password=YuGiOh!1;MultipleActiveResultSets=False;Encrypt=True;TrustServerCertificate=False;Connection Timeout=30;";
         public SqlConnection Connection = new SqlConnection(ConnString);
     }
-
-    
 }

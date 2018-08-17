@@ -13,41 +13,38 @@ namespace CardBringer2
 {
     public partial class ObjaviOglas : Form
     {
-        int idKorisnika;
+        private readonly int _idKorisnika;
+        private readonly string _reloadSql = $"SELECT idKarta, imeKarte, opisKarte, slikaKarte FROM karta;";
         public ObjaviOglas(int id)
         {
             InitializeComponent();
             ControlBox = false;
-            idKorisnika = id;
+            _idKorisnika = id;
         }
 
         private void ObjaviOglas_Load(object sender, EventArgs e)
         {
+            FormControls.LoadDatagridView(dataGridView1, _reloadSql);
+        }
+        
+        private void buttonObjaviOglas_Click(object sender, EventArgs e)
+        {
             var db = new DbInteraction();
             db.Connection.Open();
 
-            var sql = $"SELECT idKarta, imeKarte, opisKarte, slikaKarte FROM karta;";
+            var dataAdapter = new SqlDataAdapter();
+            var idKarta = (int)dataGridView1.SelectedRows[0].Cells[0].Value;
+            var cijena = unosCijeneKarteObjaviOglas.Text;
+            var kolicina = Convert.ToDecimal(unosKolicineKarteObjaviOglas.Text);
+            var sql = $"INSERT INTO korisnikKarta (idKorisnik, idKarta, cijena, kolicina) VALUES('{_idKorisnika}', '{idKarta}', '{cijena}', '{kolicina}');";
             var command = new SqlCommand(sql, db.Connection);
-            var dataReader = command.ExecuteReader();
-            DataTable dt = new DataTable();
-            dt.Load(dataReader);
-            dataGridView1.AutoGenerateColumns = true;
-            dataGridView1.DataSource = dt;
-            dataGridView1.Refresh();
-
-
+            dataAdapter.InsertCommand = new SqlCommand(sql, db.Connection);
+            dataAdapter.InsertCommand.ExecuteNonQuery();
             command.Dispose();
             db.Connection.Close();
+
+            FormControls.LoadDatagridView(dataGridView1, _reloadSql);
         }
-
-        private void label2_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
-
-        }
+        
     }
 }
