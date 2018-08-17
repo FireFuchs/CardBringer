@@ -9,7 +9,7 @@ namespace CardBringer2
 {
     internal class DbInteraction
     {
-        private const string ConnString = @"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=C:\Users\bro\Documents\r18030\CardBringer2\CardBringer2\BazaYgo.mdf;Integrated Security=True;Connect Timeout=30";
+        private const string ConnString = @"Server=tcp:cardbringerdb.database.windows.net,1433;Initial Catalog=CardBringerDB;Persist Security Info=False;User ID=cardbringer;Password=YuGiOh!1;MultipleActiveResultSets=False;Encrypt=True;TrustServerCertificate=False;Connection Timeout=30;";
         public SqlConnection Connection = new SqlConnection(ConnString);
     }
 }
