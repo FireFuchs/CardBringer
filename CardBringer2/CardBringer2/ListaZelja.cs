@@ -13,6 +13,7 @@ namespace CardBringer2
 {
     public partial class ListaZelja : Form
     {
+        
         private readonly int _idKorisnika;
         public ListaZelja(int id)
         {
@@ -51,20 +52,56 @@ namespace CardBringer2
             int kartaId = (int)SveKarteDatagrid.SelectedRows[0].Cells[0].Value;
             var db = new DbInteraction();
             db.Connection.Open();
-            var dataAdapter = new SqlDataAdapter();
-            var sql = $"INSERT INTO wishlist (idKorisnik, idKarta, napomena) VALUES('{_idKorisnika}','{kartaId}','{1}'); ";
-            dataAdapter.UpdateCommand = new SqlCommand(sql, db.Connection);
-            dataAdapter.UpdateCommand.ExecuteNonQuery();
-            db.Connection.Close();
-            UpdateDatagrid();
+            var sql = $"SELECT COUNT(idKarta) FROM wishlist WHERE idKorisnik = '{_idKorisnika}' AND idKarta = '{kartaId}';";
+            var command = new SqlCommand(sql, db.Connection);
+            var dataReader = command.ExecuteReader();
+            int broj= 0;
+            while (dataReader.Read())
+            {
+                broj = dataReader.GetInt32(0);
+            }
+            dataReader.Close();
+            command.Dispose();
+            if (broj == 1)
+            {
+                int kolKarti = 0;
+                sql = $"SELECT kolicina FROM wishlist WHERE idKorisnik = '{_idKorisnika}' AND idKarta = '{kartaId}';";
+                command = new SqlCommand(sql, db.Connection);
+                dataReader = command.ExecuteReader();
+                while (dataReader.Read())
+                {
+                    kolKarti = dataReader.GetInt32(0);
+                }
+                kolKarti = kolKarti + 1;
+                dataReader.Close();
+                command.Dispose();
+                sql = $"UPDATE wishlist SET kolicina = '{kolKarti}' WHERE idKorisnik = '{_idKorisnika}' AND idKarta = '{kartaId}';";
+                var dataAdapter = new SqlDataAdapter();
+                dataAdapter.UpdateCommand = new SqlCommand(sql, db.Connection);
+                dataAdapter.UpdateCommand.ExecuteNonQuery();
+                UpdateDatagrid();
+                db.Connection.Close();
+            }
+            else
+            {
+                var dataAdapter = new SqlDataAdapter();
+                sql = $"INSERT INTO wishlist (idKorisnik, idKarta, napomena, kolicina) VALUES('{_idKorisnika}','{kartaId}','{1}','{1}'); ";
+                dataAdapter.UpdateCommand = new SqlCommand(sql, db.Connection);
+                dataAdapter.UpdateCommand.ExecuteNonQuery();
+                db.Connection.Close();
+                UpdateDatagrid();
+
+            }
+            
 
         }
         private void UpdateDatagrid()
         {
+            ListaZeljaDataGrid.DataSource = null;
             var db = new DbInteraction();
             db.Connection.Open();
 
-            var sql = $"SELECT w.idWishlist, kart.idKarta, kart.imeKarte, kart.opisKarte, kart.slikaKarte FROM karta kart JOIN wishlist w ON w.idKarta = kart.idKarta JOIN korisnik k ON k.idKorisnika = w.idKorisnik WHERE idKorisnik = '{_idKorisnika}';";
+            var sql = $"SELECT kart.idKarta, kart.imeKarte, kart.opisKarte, kart.slikaKarte, w.kolicina FROM karta kart JOIN wishlist w ON w.idKarta = kart.idKarta JOIN korisnik k ON k.idKorisnika = w.idKorisnik WHERE idKorisnik = '{_idKorisnika}';";
             var command = new SqlCommand(sql, db.Connection);
             var dataReader = command.ExecuteReader();
             DataTable dt = new DataTable();
@@ -82,8 +119,8 @@ namespace CardBringer2
         {
             var db = new DbInteraction();
             db.Connection.Open();
-            int idWishlist = (int)ListaZeljaDataGrid.SelectedRows[0].Cells[0].Value;
-            var sql = $"DELETE FROM wishlist WHERE idWishlist = '{idWishlist}'";
+            int idKarte = (int)ListaZeljaDataGrid.SelectedRows[0].Cells[0].Value;
+            var sql = $"DELETE FROM wishlist WHERE idKorisnik = '{_idKorisnika}' AND idKarta = '{idKarte}';";
             var command = new SqlCommand(sql, db.Connection);
             command.ExecuteNonQuery();
             command.Dispose();

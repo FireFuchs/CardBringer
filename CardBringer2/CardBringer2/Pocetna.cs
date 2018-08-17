@@ -130,5 +130,37 @@ namespace CardBringer2
             
             LoadDatagridView();
         }
+
+        private void PocetnaPretragaGumbTrazi_Click(object sender, EventArgs e)
+        {
+            trazi();
+        }
+
+        private void PocetnaResetGumb_Click(object sender, EventArgs e)
+        {
+            LoadDatagridView();
+        }
+
+        private void trazi()
+        {
+            var db = new DbInteraction();
+            db.Connection.Open();
+            string imeTrazenja = PocetnaPretragaText.Text;
+            var sql = $"SELECT kk.idKorisnikKarta AS 'ID Ponude', kar.imeKarte AS 'Ime Karte' , kar.opisKarte AS 'Opis Karte', kk.cijena AS 'Cijena', kk.kolicina AS 'Kolicina', k.ime AS 'Ime Prodavača' FROM korisnikKarta kk JOIN karta kar ON kar.idKarta = kk.idKarta JOIN korisnik k ON kk.idKorisnik = k.idKorisnika WHERE kar.imeKarte = '{imeTrazenja}';";
+            var command = new SqlCommand(sql, db.Connection);
+            var dataReader = command.ExecuteReader();
+            DataTable dt = new DataTable();
+            dt.Load(dataReader);
+            dataGridView1.AutoGenerateColumns = true;
+            dataGridView1.DataSource = dt;
+        }
+
+        private void PocetnaPretragaText_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                trazi();
+            }
+        }
     }
 }

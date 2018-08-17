@@ -33,6 +33,7 @@
             this.PocetnaPretragaGumbTrazi = new System.Windows.Forms.Button();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.PocetnaLabelSveKarte = new System.Windows.Forms.Label();
+            this.PocetnaResetGumb = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -48,19 +49,21 @@
             // 
             // PocetnaPretragaText
             // 
-            this.PocetnaPretragaText.Location = new System.Drawing.Point(449, 59);
+            this.PocetnaPretragaText.Location = new System.Drawing.Point(390, 61);
             this.PocetnaPretragaText.Name = "PocetnaPretragaText";
             this.PocetnaPretragaText.Size = new System.Drawing.Size(168, 20);
             this.PocetnaPretragaText.TabIndex = 14;
+            this.PocetnaPretragaText.KeyDown += new System.Windows.Forms.KeyEventHandler(this.PocetnaPretragaText_KeyDown);
             // 
             // PocetnaPretragaGumbTrazi
             // 
-            this.PocetnaPretragaGumbTrazi.Location = new System.Drawing.Point(623, 57);
+            this.PocetnaPretragaGumbTrazi.Location = new System.Drawing.Point(564, 59);
             this.PocetnaPretragaGumbTrazi.Name = "PocetnaPretragaGumbTrazi";
             this.PocetnaPretragaGumbTrazi.Size = new System.Drawing.Size(48, 23);
             this.PocetnaPretragaGumbTrazi.TabIndex = 13;
             this.PocetnaPretragaGumbTrazi.Text = "Trazi!";
             this.PocetnaPretragaGumbTrazi.UseVisualStyleBackColor = true;
+            this.PocetnaPretragaGumbTrazi.Click += new System.EventHandler(this.PocetnaPretragaGumbTrazi_Click);
             // 
             // dataGridView1
             // 
@@ -86,12 +89,23 @@
             this.PocetnaLabelSveKarte.TabIndex = 11;
             this.PocetnaLabelSveKarte.Text = "Sve Karte:";
             // 
+            // PocetnaResetGumb
+            // 
+            this.PocetnaResetGumb.Location = new System.Drawing.Point(618, 59);
+            this.PocetnaResetGumb.Name = "PocetnaResetGumb";
+            this.PocetnaResetGumb.Size = new System.Drawing.Size(53, 23);
+            this.PocetnaResetGumb.TabIndex = 16;
+            this.PocetnaResetGumb.Text = "Reset";
+            this.PocetnaResetGumb.UseVisualStyleBackColor = true;
+            this.PocetnaResetGumb.Click += new System.EventHandler(this.PocetnaResetGumb_Click);
+            // 
             // Pocetna
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(53)))), ((int)(((byte)(53)))), ((int)(((byte)(53)))));
             this.ClientSize = new System.Drawing.Size(1251, 603);
+            this.Controls.Add(this.PocetnaResetGumb);
             this.Controls.Add(this.PocetanGumbDodajUKosaricu);
             this.Controls.Add(this.PocetnaPretragaText);
             this.Controls.Add(this.PocetnaPretragaGumbTrazi);
@@ -114,5 +128,6 @@
         private System.Windows.Forms.Button PocetnaPretragaGumbTrazi;
         private System.Windows.Forms.DataGridView dataGridView1;
         private System.Windows.Forms.Label PocetnaLabelSveKarte;
+        private System.Windows.Forms.Button PocetnaResetGumb;
     }
 }
