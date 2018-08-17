@@ -35,18 +35,21 @@
             // DataGridZaKupljene
             // 
             this.DataGridZaKupljene.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.DataGridZaKupljene.Location = new System.Drawing.Point(61, 84);
+            this.DataGridZaKupljene.Location = new System.Drawing.Point(81, 103);
+            this.DataGridZaKupljene.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.DataGridZaKupljene.Name = "DataGridZaKupljene";
-            this.DataGridZaKupljene.Size = new System.Drawing.Size(708, 382);
+            this.DataGridZaKupljene.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.DataGridZaKupljene.Size = new System.Drawing.Size(944, 470);
             this.DataGridZaKupljene.TabIndex = 0;
             // 
             // MojeKupnje
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(53)))), ((int)(((byte)(53)))), ((int)(((byte)(53)))));
-            this.ClientSize = new System.Drawing.Size(1251, 603);
+            this.ClientSize = new System.Drawing.Size(1668, 742);
             this.Controls.Add(this.DataGridZaKupljene);
+            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.Name = "MojeKupnje";
             this.Text = "MojeKupnje";
             this.Load += new System.EventHandler(this.MojeKupnje_Load);
