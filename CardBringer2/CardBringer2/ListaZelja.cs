@@ -112,14 +112,14 @@ namespace CardBringer2
         private void Filter()
         {
             var kartaIme = ListaZeljaTrazi.Text;
-            var sql = $"SELECT idKarta, imeKarte, opisKarte, slikaKarte FROM karta WHERE imeKarte LIKE '%{kartaIme}%';";
+            var sql = $"SELECT imeKarte, opisKarte FROM karta WHERE imeKarte LIKE '%{kartaIme}%';";
             FormControls.LoadDatagridView(SveKarteDatagrid, sql);
             FormControls.LoadDatagridView(ListaZeljaDataGrid, _reloadSql);
         }
 
         private void ListaZeljaLoadGridGlavni()
         {
-            var sql = $"SELECT idKarta, imeKarte, opisKarte, slikaKarte FROM karta;";
+            var sql = $"SELECT imeKarte, opisKarte FROM karta;";
             FormControls.LoadDatagridView(SveKarteDatagrid, sql);
             FormControls.LoadDatagridView(ListaZeljaDataGrid, _reloadSql);
         }

@@ -257,7 +257,7 @@ namespace CardBringer2
 
                 var dataAdapter = new SqlDataAdapter();
 
-                // HARDCODIRANO DA JE SAMO KUPAC (idUloga)
+                // Registriranjem korisniku se po defaultu dodjeljuje uloga "korisnik"
                 var sql = $"INSERT INTO korisnik (ime, lozinka, email, mjestoStanovanja, idUloga) VALUES('{username}', '{password}', '{email}', '{mjestoStanovanja}', 1);";
                 var command = new SqlCommand(sql, db.Connection);
                 dataAdapter.InsertCommand = new SqlCommand(sql, db.Connection);

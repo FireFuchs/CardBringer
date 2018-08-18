@@ -14,7 +14,7 @@ namespace CardBringer2
     public partial class Pocetna : Form
     {
         private readonly int _idKorisnika;
-        private readonly string _reloadSql = $"SELECT kk.idKorisnikKarta AS 'ID Ponude', kar.imeKarte AS 'Ime Karte' , kar.opisKarte AS 'Opis Karte', kk.cijena AS 'Cijena', kk.kolicina AS 'Kolicina', k.ime AS 'Ime Prodavača' FROM korisnikKarta kk JOIN karta kar ON kar.idKarta = kk.idKarta JOIN korisnik k ON kk.idKorisnik = k.idKorisnika;";
+        private readonly string _reloadSql = $"SELECT kk.idKorisnikKarta AS 'ID Ponude', kar.imeKarte AS 'Ime Karte' , kar.opisKarte AS 'Opis Karte', kk.cijena AS 'Cijena', kk.kolicina AS 'Kolicina', k.ime AS 'Ime Prodavača', kar.slikaKarte FROM korisnikKarta kk JOIN karta kar ON kar.idKarta = kk.idKarta JOIN korisnik k ON kk.idKorisnik = k.idKorisnika;";
         public Pocetna(int id)
         {
             InitializeComponent();
@@ -123,9 +123,13 @@ namespace CardBringer2
         private void dataGridView1_RowEnter(object sender, DataGridViewCellEventArgs e)
         {
             if (dataGridView1.SelectedRows.Count <= 0) return;
-            CijenaKarte.Text = dataGridView1.SelectedRows[0].Cells[3].Value.ToString();
-            ProdavacKarte.Text = dataGridView1.SelectedRows[0].Cells[5].Value.ToString();
-            OpisKarte.Text = dataGridView1.SelectedRows[0].Cells[2].Value.ToString();
+            imeKarte.Text = dataGridView1.SelectedRows[0].Cells[1].Value.ToString();
+            cijenaKarte.Text = dataGridView1.SelectedRows[0].Cells[3].Value.ToString();
+            kolicinaKarata.Text = dataGridView1.SelectedRows[0].Cells[4].Value.ToString();
+            prodavacKarte.Text = dataGridView1.SelectedRows[0].Cells[5].Value.ToString();
+            opisKarte.Text = dataGridView1.SelectedRows[0].Cells[2].Value.ToString();
+            var slikaKarte = FormControls.DohvatiSlikuKarte(dataGridView1.SelectedRows[0].Cells[6].Value.ToString());
+            pictureBoxSlikaKarte.Image = Image.FromStream(slikaKarte);
         }
 
         private void PocetnaPretragaGumbTrazi_Click(object sender, EventArgs e)
@@ -146,6 +150,13 @@ namespace CardBringer2
             var imeTrazenja = PocetnaPretragaText.Text;
             var sql = $"SELECT kk.idKorisnikKarta AS 'ID Ponude', kar.imeKarte AS 'Ime Karte' , kar.opisKarte AS 'Opis Karte', kk.cijena AS 'Cijena', kk.kolicina AS 'Kolicina', k.ime AS 'Ime Prodavača' FROM korisnikKarta kk JOIN karta kar ON kar.idKarta = kk.idKarta JOIN korisnik k ON kk.idKorisnik = k.idKorisnika WHERE kar.imeKarte LIKE '%{imeTrazenja}%';";
             FormControls.LoadDatagridView(dataGridView1, sql);
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            var novaKarta = new NovaKartaAdmin();
+            novaKarta.WindowState = FormWindowState.Maximized;
+            novaKarta.Show();
         }
     }
 }

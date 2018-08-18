@@ -1,9 +1,13 @@
-﻿using System;
+﻿using Microsoft.WindowsAzure.Storage;
+using Microsoft.WindowsAzure.Storage.Auth;
+using Microsoft.WindowsAzure.Storage.Blob;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Data.SqlClient;
 using System.Drawing;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -14,7 +18,7 @@ namespace CardBringer2
     public partial class ObjaviOglas : Form
     {
         private readonly int _idKorisnika;
-        private readonly string _reloadSql = $"SELECT idKarta, imeKarte, opisKarte, slikaKarte FROM karta;";
+        private readonly string _reloadSql = $"SELECT idKarta, imeKarte, opisKarte FROM karta;";
         public ObjaviOglas(int id)
         {
             InitializeComponent();
@@ -42,9 +46,33 @@ namespace CardBringer2
             dataAdapter.InsertCommand.ExecuteNonQuery();
             command.Dispose();
             db.Connection.Close();
-
             FormControls.LoadDatagridView(dataGridView1, _reloadSql);
         }
-        
+
+        private void dataGridView1_RowEnter(object sender, DataGridViewCellEventArgs e)
+        {
+            if (dataGridView1.SelectedRows.Count <= 0) return;
+            
+            var idKarta = (int)dataGridView1.SelectedRows[0].Cells[0].Value;
+            var sql = $"SELECT imeKarte, opisKarte, slikaKarte from karta WHERE idKarta = '{idKarta}';";
+
+            var db = new DbInteraction();
+            db.Connection.Open();
+            
+            var command = new SqlCommand(sql, db.Connection);
+            var dataReader = command.ExecuteReader();
+            dataReader.Read();
+
+            if (dataReader.HasRows)
+            {
+                ImeKarte.Text = dataReader[0].ToString();
+                OpisKarte.Text = dataReader[1].ToString();
+                var slikaKarte = FormControls.DohvatiSlikuKarte(dataReader[2].ToString());
+                pictureBoxSlikaKarte.Image = Image.FromStream(slikaKarte);
+            }
+            command.Dispose();
+            dataReader.Close();
+            db.Connection.Close();
+        }
     }
 }
