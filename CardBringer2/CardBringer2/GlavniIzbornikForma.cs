@@ -13,7 +13,7 @@ namespace CardBringer2
     public partial class GlavniIzbornikForma : Form
     {
         string _helpTekst = "Help glavne forme";
-        readonly int _idKorisnika;
+        private readonly int _idKorisnika;
         public GlavniIzbornikForma()
         {
             InitializeComponent();

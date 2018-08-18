@@ -24,47 +24,37 @@ namespace CardBringer2
 
         private void unosKorisnickoImeLoginLoginRegisterForma_Enter(object sender, EventArgs e)
         {
-            if (unosKorisnickoImeLoginLoginRegisterForma.Text == "Korisnicko Ime")
-            {
-                unosKorisnickoImeLoginLoginRegisterForma.Text = "";
-                unosKorisnickoImeLoginLoginRegisterForma.ForeColor = Color.Black;
-            }
+            if (unosKorisnickoImeLoginLoginRegisterForma.Text != "Korisnicko Ime") return;
+            unosKorisnickoImeLoginLoginRegisterForma.Text = "";
+            unosKorisnickoImeLoginLoginRegisterForma.ForeColor = Color.Black;
         }
 
         private void unosKorisnickoImeLoginLoginRegisterForma_Leave(object sender, EventArgs e)
         {
-            if (unosKorisnickoImeLoginLoginRegisterForma.Text == "")
-            {
-                unosKorisnickoImeLoginLoginRegisterForma.Text = "Korisnicko Ime";
-                unosKorisnickoImeLoginLoginRegisterForma.ForeColor = Color.Gray;
-            }
+            if (unosKorisnickoImeLoginLoginRegisterForma.Text != "") return;
+            unosKorisnickoImeLoginLoginRegisterForma.Text = "Korisnicko Ime";
+            unosKorisnickoImeLoginLoginRegisterForma.ForeColor = Color.Gray;
         }
 
         private void unosPasswordLoginLoginRegisterForma_Enter(object sender, EventArgs e)
         {
-            if (unosPasswordLoginLoginRegisterForma.Text == "Lozinka")
-            {
-                unosPasswordLoginLoginRegisterForma.Text = "";
-                unosPasswordLoginLoginRegisterForma.ForeColor = Color.Black;
-            }
+            if (unosPasswordLoginLoginRegisterForma.Text != "Lozinka") return;
+            unosPasswordLoginLoginRegisterForma.Text = "";
+            unosPasswordLoginLoginRegisterForma.ForeColor = Color.Black;
         }
 
         private void unosPasswordLoginLoginRegisterForma_Leave(object sender, EventArgs e)
         {
-            if (unosPasswordLoginLoginRegisterForma.Text == "")
-            {
-                unosPasswordLoginLoginRegisterForma.Text = "Lozinka";
-                unosPasswordLoginLoginRegisterForma.ForeColor = Color.Gray;
-            }
+            if (unosPasswordLoginLoginRegisterForma.Text != "") return;
+            unosPasswordLoginLoginRegisterForma.Text = "Lozinka";
+            unosPasswordLoginLoginRegisterForma.ForeColor = Color.Gray;
         }
 
         private void unosEmailRegisterLoginRegisterForma_Enter(object sender, EventArgs e)
         {
-            if (unosEmailRegisterLoginRegisterForma.Text == "E-Mail")
-            {
-                unosEmailRegisterLoginRegisterForma.Text = "";
-                unosEmailRegisterLoginRegisterForma.ForeColor = Color.Black;
-            }
+            if (unosEmailRegisterLoginRegisterForma.Text != "E-Mail") return;
+            unosEmailRegisterLoginRegisterForma.Text = "";
+            unosEmailRegisterLoginRegisterForma.ForeColor = Color.Black;
         }
 
         private void unosEmailRegisterLoginRegisterForma_Leave(object sender, EventArgs e)

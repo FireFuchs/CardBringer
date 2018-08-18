@@ -38,7 +38,7 @@ namespace CardBringer2
             dataAdapter.InsertCommand = new SqlCommand(sql, db.Connection);
             dataAdapter.InsertCommand.ExecuteNonQuery();
             command.Dispose();
-            for (int i = 0; i < dataGridView1.Rows.Count; i++)
+            for (var i = 0; i < dataGridView1.Rows.Count; i++)
             {
                 sql = $"DELETE FROM medjuspremnikKosarica WHERE idKorisnikKarta = '{dataGridView1.Rows[i].Cells[7].Value}'; ";
                 command = new SqlCommand(sql, db.Connection);
@@ -76,8 +76,7 @@ namespace CardBringer2
 
         private void GumbMakni(object sender, EventArgs e)
         {
-            int kolicinaKarata = (int)dataGridView1.SelectedRows[0].Cells[5].Value;
-            int idKK = (int)dataGridView1.SelectedRows[0].Cells[7].Value;
+            var kolicinaKarata = (int)dataGridView1.SelectedRows[0].Cells[5].Value;
             var db = new DbInteraction();
             db.Connection.Open();
             var sql = $"DELETE FROM medjuspremnikKosarica WHERE idKorisnikKarta = '{(int)dataGridView1.SelectedRows[0].Cells[7].Value}'; ";
@@ -87,7 +86,7 @@ namespace CardBringer2
 
             sql = $"SELECT kolicina FROM korisnikKarta WHERE idKorisnikKarta = '{(int)dataGridView1.SelectedRows[0].Cells[7].Value}' ;";
             command = new SqlCommand(sql, db.Connection);
-            int kolKarti = 0;
+            var kolKarti = 0;
             var dataReader = command.ExecuteReader();
             while (dataReader.Read())
             {
