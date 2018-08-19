@@ -20,11 +20,13 @@ namespace CardBringer2
             InitializeComponent();
             _idKorisnika = id;
             this.ControlBox = false;
+            
         }
 
         private void Pocetna_Load(object sender, EventArgs e)
         {
             FormControls.LoadDatagridView(dataGridView1, _reloadSql);
+            dataGridView1.Columns["slikaKarte"].Visible = false;
         }
         
         private void PocetanGumbDodajUKosaricu_Click(object sender, EventArgs e)
@@ -90,6 +92,7 @@ namespace CardBringer2
             {
                 MessageBox.Show("Nema vise dostupnih karata!");
             }
+            
         }
 
         private void UpdatePocetnaDataGrid()
@@ -111,12 +114,14 @@ namespace CardBringer2
            
 
             FormControls.LoadDatagridView(dataGridView1, _reloadSql);
+            dataGridView1.Columns["slikaKarte"].Visible = false;
         }
         
 
         private void PocetnaResetGumb_Click(object sender, EventArgs e)
         {
             FormControls.LoadDatagridView(dataGridView1, _reloadSql);
+
         }
         
 
@@ -130,6 +135,7 @@ namespace CardBringer2
             opisKarte.Text = dataGridView1.SelectedRows[0].Cells[2].Value.ToString();
             var slikaKarte = FormControls.DohvatiSlikuKarte(dataGridView1.SelectedRows[0].Cells[6].Value.ToString());
             pictureBoxSlikaKarte.Image = Image.FromStream(slikaKarte);
+            pictureBoxSlikaKarte.SizeMode = PictureBoxSizeMode.StretchImage;
         }
 
         private void PocetnaPretragaGumbTrazi_Click(object sender, EventArgs e)
@@ -154,9 +160,8 @@ namespace CardBringer2
 
         private void button1_Click(object sender, EventArgs e)
         {
-            var novaKarta = new NovaKartaAdmin();
-            novaKarta.WindowState = FormWindowState.Maximized;
-            novaKarta.Show();
+            
+
         }
     }
 }

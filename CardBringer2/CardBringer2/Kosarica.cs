@@ -38,18 +38,31 @@ namespace CardBringer2
             dataAdapter.InsertCommand = new SqlCommand(sql, db.Connection);
             dataAdapter.InsertCommand.ExecuteNonQuery();
             command.Dispose();
-            for (var i = 0; i < dataGridView1.Rows.Count; i++)
+            
+
+            for (var i = 0; i < (dataGridView1.Rows.Count-1); i++)
             {
-                sql = $"DELETE FROM medjuspremnikKosarica WHERE idKorisnikKarta = '{dataGridView1.Rows[i].Cells[7].Value}'; ";
-                command = new SqlCommand(sql, db.Connection);
-                command.ExecuteNonQuery();
-                command.Dispose();
-                sql = $"DELETE FROM korisnikKarta WHERE idKorisnikKarta = '{dataGridView1.Rows[i].Cells[7].Value}'; ";
-                command = new SqlCommand(sql, db.Connection);
-                command.ExecuteNonQuery();
-                command.Dispose();
+                sql = $"SELECT kolicina FROM korisnikKarta WHERE idKorisnikKarta = '{(int)dataGridView1.Rows[i].Cells[7].Value}' ;";
+            command = new SqlCommand(sql, db.Connection);
+            var kolKarata = 0;
+            var dataReader = command.ExecuteReader();
+            while (dataReader.Read())
+            {
+                kolKarata = dataReader.GetInt32(0);
             }
 
+
+                if (kolKarata == 0)
+                {
+               
+                    sql = $"DELETE FROM korisnikKarta WHERE idKorisnikKarta = '{dataGridView1.Rows[i].Cells[7].Value}'; ";
+                    command = new SqlCommand(sql, db.Connection);
+                    command.ExecuteNonQuery();
+                    command.Dispose();
+                }
+                dataReader.Close();
+
+            }
             sql = $"DELETE FROM medjuspremnikKosarica WHERE idKorisnika = '{_idKorisnik}';";
             command = new SqlCommand(sql, db.Connection);
             command.ExecuteNonQuery();
@@ -63,6 +76,8 @@ namespace CardBringer2
         {
             var sql = $"SELECT  kart.slikaKarte, kart.imeKarte, kart.opisKarte, k.ime, kk.cijena, mk.kolicina, mk.datum, kk.idKorisnikKarta FROM karta kart join korisnikKarta kk on kart.idKarta = kk.idKarta join medjuspremnikKosarica mk on mk.idKorisnikKarta = kk.idKorisnikKarta join korisnik k on k.idKorisnika = kk.idKorisnik WHERE mk.idKorisnika = {_idKorisnik};";
             FormControls.LoadDatagridView(dataGridView1, sql);
+            //dataGridView1.Columns["slikaKarte"].Visible = false;
+            //dataGridView1.Columns["idKorisnikKarta"].Visible = false;
             var sumaNovaca = 0;
             var kolicinaKarata = 0;
             for (var i = 0; i < dataGridView1.Rows.Count; i++)

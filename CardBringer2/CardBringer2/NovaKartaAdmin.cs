@@ -17,9 +17,12 @@ namespace CardBringer2
 {
     public partial class NovaKartaAdmin : Form
     {
-        public NovaKartaAdmin()
+        int _idKorisnik;
+        public NovaKartaAdmin(int id)
         {
             InitializeComponent();
+            _idKorisnik = id;
+            this.ControlBox = false;
         }
         private string _imgLocation = "";
 

@@ -111,5 +111,14 @@ namespace CardBringer2
             mojeKupnje.Show();
             _helpTekst = "Help Početne stranice";
         }
+
+        private void administratorToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            var Administracija = new NovaKartaAdmin(_idKorisnika);
+            Administracija.MdiParent = this;
+            Administracija.WindowState = FormWindowState.Maximized;
+            Administracija.Show();
+            _helpTekst = "Help administracijske stranice";
+        }
     }
 }

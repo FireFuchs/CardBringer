@@ -69,6 +69,7 @@ namespace CardBringer2
                 OpisKarte.Text = dataReader[1].ToString();
                 var slikaKarte = FormControls.DohvatiSlikuKarte(dataReader[2].ToString());
                 pictureBoxSlikaKarte.Image = Image.FromStream(slikaKarte);
+                pictureBoxSlikaKarte.SizeMode = PictureBoxSizeMode.StretchImage;
             }
             command.Dispose();
             dataReader.Close();
