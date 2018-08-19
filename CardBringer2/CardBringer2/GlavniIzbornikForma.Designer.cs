@@ -39,6 +39,7 @@
             this.listaŽeljaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.odjavaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.mojeKupnjeToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.administratorToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
@@ -77,12 +78,13 @@
             this.košaricaToolStripMenuItem,
             this.listaŽeljaToolStripMenuItem,
             this.odjavaToolStripMenuItem,
-            this.mojeKupnjeToolStripMenuItem});
-            this.menuStrip1.Location = new System.Drawing.Point(215, 3);
+            this.mojeKupnjeToolStripMenuItem,
+            this.administratorToolStripMenuItem});
+            this.menuStrip1.Location = new System.Drawing.Point(214, 3);
             this.menuStrip1.Name = "menuStrip1";
             this.menuStrip1.Padding = new System.Windows.Forms.Padding(5, 6, 350, 5);
             this.menuStrip1.ShowItemToolTips = true;
-            this.menuStrip1.Size = new System.Drawing.Size(1391, 50);
+            this.menuStrip1.Size = new System.Drawing.Size(1273, 50);
             this.menuStrip1.TabIndex = 11;
             this.menuStrip1.Text = "menuStrip1";
             this.menuStrip1.ItemClicked += new System.Windows.Forms.ToolStripItemClickedEventHandler(this.menuStrip1_ItemClicked);
@@ -137,7 +139,7 @@
             // 
             this.odjavaToolStripMenuItem.Alignment = System.Windows.Forms.ToolStripItemAlignment.Right;
             this.odjavaToolStripMenuItem.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(178)))), ((int)(((byte)(255)))));
-            this.odjavaToolStripMenuItem.Margin = new System.Windows.Forms.Padding(350, 0, 0, 0);
+            this.odjavaToolStripMenuItem.Margin = new System.Windows.Forms.Padding(250, 0, 0, 0);
             this.odjavaToolStripMenuItem.Name = "odjavaToolStripMenuItem";
             this.odjavaToolStripMenuItem.Size = new System.Drawing.Size(56, 39);
             this.odjavaToolStripMenuItem.Text = "Odjava";
@@ -151,6 +153,15 @@
             this.mojeKupnjeToolStripMenuItem.Size = new System.Drawing.Size(86, 39);
             this.mojeKupnjeToolStripMenuItem.Text = "Moje Kupnje";
             this.mojeKupnjeToolStripMenuItem.Click += new System.EventHandler(this.mojeKupnjeToolStripMenuItem_Click);
+            // 
+            // administratorToolStripMenuItem
+            // 
+            this.administratorToolStripMenuItem.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(178)))), ((int)(((byte)(255)))));
+            this.administratorToolStripMenuItem.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
+            this.administratorToolStripMenuItem.Name = "administratorToolStripMenuItem";
+            this.administratorToolStripMenuItem.Size = new System.Drawing.Size(92, 39);
+            this.administratorToolStripMenuItem.Text = "Administrator";
+            this.administratorToolStripMenuItem.Click += new System.EventHandler(this.administratorToolStripMenuItem_Click);
             // 
             // GlavniIzbornikForma
             // 
@@ -188,5 +199,6 @@
         private System.Windows.Forms.ToolStripMenuItem odjavaToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem dodajPonuduToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem mojeKupnjeToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem administratorToolStripMenuItem;
     }
 }

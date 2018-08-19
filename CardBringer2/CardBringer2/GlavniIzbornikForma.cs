@@ -13,7 +13,7 @@ namespace CardBringer2
     public partial class GlavniIzbornikForma : Form
     {
         string _helpTekst = "Help glavne forme";
-        readonly int _idKorisnika;
+        private readonly int _idKorisnika;
         public GlavniIzbornikForma()
         {
             InitializeComponent();
@@ -110,6 +110,15 @@ namespace CardBringer2
             mojeKupnje.WindowState = FormWindowState.Maximized;
             mojeKupnje.Show();
             _helpTekst = "Help Početne stranice";
+        }
+
+        private void administratorToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            var Administracija = new Administracija(_idKorisnika);
+            Administracija.MdiParent = this;
+            Administracija.WindowState = FormWindowState.Maximized;
+            Administracija.Show();
+            _helpTekst = "Help administracijske stranice";
         }
     }
 }
