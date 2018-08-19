@@ -114,7 +114,7 @@ namespace CardBringer2
 
         private void administratorToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            var Administracija = new NovaKartaAdmin(_idKorisnika);
+            var Administracija = new Administracija(_idKorisnika);
             Administracija.MdiParent = this;
             Administracija.WindowState = FormWindowState.Maximized;
             Administracija.Show();

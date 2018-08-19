@@ -20,6 +20,7 @@ namespace CardBringer2
         public LoginRegisterForma()
         {
             InitializeComponent();
+            
         }
 
         private void unosKorisnickoImeLoginLoginRegisterForma_Enter(object sender, EventArgs e)
@@ -41,6 +42,7 @@ namespace CardBringer2
             if (unosPasswordLoginLoginRegisterForma.Text != "Lozinka") return;
             unosPasswordLoginLoginRegisterForma.Text = "";
             unosPasswordLoginLoginRegisterForma.ForeColor = Color.Black;
+            unosPasswordLoginLoginRegisterForma.PasswordChar = '•';
         }
 
         private void unosPasswordLoginLoginRegisterForma_Leave(object sender, EventArgs e)
@@ -48,6 +50,7 @@ namespace CardBringer2
             if (unosPasswordLoginLoginRegisterForma.Text != "") return;
             unosPasswordLoginLoginRegisterForma.Text = "Lozinka";
             unosPasswordLoginLoginRegisterForma.ForeColor = Color.Gray;
+            unosPasswordLoginLoginRegisterForma.PasswordChar = '\0';
         }
 
         private void unosEmailRegisterLoginRegisterForma_Enter(object sender, EventArgs e)
@@ -83,6 +86,7 @@ namespace CardBringer2
             if (unosPasswordRegisterLoginRegisterForma.Text != "Lozinka") return;
             unosPasswordRegisterLoginRegisterForma.Text = "";
             unosPasswordRegisterLoginRegisterForma.ForeColor = Color.Black;
+            unosPasswordRegisterLoginRegisterForma.PasswordChar = '•';
         }
 
         private void unosPasswordRegisterLoginRegisterForma_Leave(object sender, EventArgs e)
@@ -90,6 +94,7 @@ namespace CardBringer2
             if (unosPasswordRegisterLoginRegisterForma.Text != "") return;
             unosPasswordRegisterLoginRegisterForma.Text = "Lozinka";
             unosPasswordRegisterLoginRegisterForma.ForeColor = Color.Gray;
+            unosPasswordRegisterLoginRegisterForma.PasswordChar = '\0';
         }
 
         private void unosPonovljeniPasswordRegisterLoginRegisterForma_Enter(object sender, EventArgs e)
@@ -97,6 +102,7 @@ namespace CardBringer2
             if (unosPonovljeniPasswordRegisterLoginRegisterForma.Text != "Ponovljena Lozinka") return;
             unosPonovljeniPasswordRegisterLoginRegisterForma.Text = "";
             unosPonovljeniPasswordRegisterLoginRegisterForma.ForeColor = Color.Black;
+            unosPonovljeniPasswordRegisterLoginRegisterForma.PasswordChar = '•';
         }
 
         private void unosPonovljeniPasswordRegisterLoginRegisterForma_Leave(object sender, EventArgs e)
@@ -104,6 +110,7 @@ namespace CardBringer2
             if (unosPonovljeniPasswordRegisterLoginRegisterForma.Text != "") return;
             unosPonovljeniPasswordRegisterLoginRegisterForma.Text = "Ponovljena Lozinka";
             unosPonovljeniPasswordRegisterLoginRegisterForma.ForeColor = Color.Gray;
+            unosPonovljeniPasswordRegisterLoginRegisterForma.PasswordChar = '\0';
         }
         private void unosMjestoStanovanjaRegisterLoginRegisterForma_Enter(object sender, EventArgs e)
         {
@@ -288,6 +295,11 @@ namespace CardBringer2
             glavniFrm.Show();
             this.Hide();
             db.Connection.Close();
+        }
+
+        private void unosPasswordLoginLoginRegisterForma_TextChanged(object sender, EventArgs e)
+        {
+            
         }
     }
     

@@ -160,6 +160,8 @@ namespace CardBringer2
 
         private void button1_Click(object sender, EventArgs e)
         {
+            var Administracija = new NovaKartaAdmin();
+            Administracija.Show();
             
 
         }
