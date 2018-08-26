@@ -90,7 +90,7 @@ namespace CardBringer2
             }
             else
             {
-                MessageBox.Show("Nema vise dostupnih karata!");
+                MessageBox.Show("Nema vise dostupnih karata!", "Greška", MessageBoxButtons.OK);
             }
             
         }
@@ -157,13 +157,6 @@ namespace CardBringer2
             var sql = $"SELECT kk.idKorisnikKarta AS 'ID Ponude', kar.imeKarte AS 'Ime Karte' , kar.opisKarte AS 'Opis Karte', kk.cijena AS 'Cijena', kk.kolicina AS 'Kolicina', k.ime AS 'Ime Prodavača' FROM korisnikKarta kk JOIN karta kar ON kar.idKarta = kk.idKarta JOIN korisnik k ON kk.idKorisnik = k.idKorisnika WHERE kar.imeKarte LIKE '%{imeTrazenja}%';";
             FormControls.LoadDatagridView(dataGridView1, sql);
         }
-
-        private void button1_Click(object sender, EventArgs e)
-        {
-            var Administracija = new NovaKartaAdmin();
-            Administracija.Show();
-            
-
-        }
+        
     }
 }

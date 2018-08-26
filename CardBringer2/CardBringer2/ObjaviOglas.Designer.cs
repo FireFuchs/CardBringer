@@ -47,7 +47,7 @@
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView1.GridColor = System.Drawing.Color.Gray;
             this.dataGridView1.Location = new System.Drawing.Point(16, 108);
-            this.dataGridView1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.dataGridView1.Margin = new System.Windows.Forms.Padding(4);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dataGridView1.Size = new System.Drawing.Size(595, 442);
@@ -81,7 +81,7 @@
             // unosCijeneKarteObjaviOglas
             // 
             this.unosCijeneKarteObjaviOglas.Location = new System.Drawing.Point(281, 558);
-            this.unosCijeneKarteObjaviOglas.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.unosCijeneKarteObjaviOglas.Margin = new System.Windows.Forms.Padding(4);
             this.unosCijeneKarteObjaviOglas.Name = "unosCijeneKarteObjaviOglas";
             this.unosCijeneKarteObjaviOglas.Size = new System.Drawing.Size(159, 22);
             this.unosCijeneKarteObjaviOglas.TabIndex = 1;
@@ -101,7 +101,7 @@
             // unosKolicineKarteObjaviOglas
             // 
             this.unosKolicineKarteObjaviOglas.Location = new System.Drawing.Point(281, 605);
-            this.unosKolicineKarteObjaviOglas.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.unosKolicineKarteObjaviOglas.Margin = new System.Windows.Forms.Padding(4);
             this.unosKolicineKarteObjaviOglas.Name = "unosKolicineKarteObjaviOglas";
             this.unosKolicineKarteObjaviOglas.Size = new System.Drawing.Size(159, 22);
             this.unosKolicineKarteObjaviOglas.TabIndex = 2;
@@ -110,7 +110,7 @@
             // 
             this.buttonObjaviOglas.ForeColor = System.Drawing.Color.Black;
             this.buttonObjaviOglas.Location = new System.Drawing.Point(451, 558);
-            this.buttonObjaviOglas.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.buttonObjaviOglas.Margin = new System.Windows.Forms.Padding(4);
             this.buttonObjaviOglas.Name = "buttonObjaviOglas";
             this.buttonObjaviOglas.Size = new System.Drawing.Size(160, 69);
             this.buttonObjaviOglas.TabIndex = 3;
@@ -120,6 +120,7 @@
             // 
             // pictureBoxSlikaKarte
             // 
+            this.pictureBoxSlikaKarte.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.pictureBoxSlikaKarte.Location = new System.Drawing.Point(645, 108);
             this.pictureBoxSlikaKarte.Name = "pictureBoxSlikaKarte";
             this.pictureBoxSlikaKarte.Size = new System.Drawing.Size(355, 431);
@@ -161,7 +162,7 @@
             this.Controls.Add(this.label2);
             this.Controls.Add(this.dataGridView1);
             this.ForeColor = System.Drawing.Color.Black;
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "ObjaviOglas";
             this.Text = "ObjaviOglas";
             this.Load += new System.EventHandler(this.ObjaviOglas_Load);

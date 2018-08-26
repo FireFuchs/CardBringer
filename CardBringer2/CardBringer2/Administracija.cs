@@ -24,5 +24,17 @@ namespace CardBringer2
         {
 
         }
+
+        private void buttonDodajNovuKartu_Click(object sender, EventArgs e)
+        {
+            var Administracija = new NovaKartaAdmin();
+            Administracija.Show();
+        }
+
+        private void buttonUlogeKorisnika_Click(object sender, EventArgs e)
+        {
+            var Administracija = new PromjenaUlogeKorisnika(_idKorisnik);
+            Administracija.Show();
+        }
     }
 }
