@@ -88,11 +88,30 @@ namespace CardBringer2
                 MessageBox.Show("Ne možete izbrisati sami sebe!", "Greška", Button);
                 return;
             }
-            var sql = $"DELETE korisnik WHERE idKorisnika = '{idKorisnik}';";
+            var sql = $"DELETE korisnikKarta WHERE idKorisnik = '{idKorisnik}';";
             var command = new SqlCommand(sql, db.Connection);
             dataAdapter.DeleteCommand = new SqlCommand(sql, db.Connection);
             dataAdapter.DeleteCommand.ExecuteNonQuery();
             command.Dispose();
+
+            sql = $"DELETE medjuspremnikKosarica WHERE idKorisnika = '{idKorisnik}';";
+            command = new SqlCommand(sql, db.Connection);
+            dataAdapter.DeleteCommand = new SqlCommand(sql, db.Connection);
+            dataAdapter.DeleteCommand.ExecuteNonQuery();
+            command.Dispose();
+
+            sql = $"DELETE wishlist WHERE idKorisnik = '{idKorisnik}';";
+            command = new SqlCommand(sql, db.Connection);
+            dataAdapter.DeleteCommand = new SqlCommand(sql, db.Connection);
+            dataAdapter.DeleteCommand.ExecuteNonQuery();
+            command.Dispose();
+
+            sql = $"DELETE korisnik WHERE idKorisnika = '{idKorisnik}';";
+            command = new SqlCommand(sql, db.Connection);
+            dataAdapter.DeleteCommand = new SqlCommand(sql, db.Connection);
+            dataAdapter.DeleteCommand.ExecuteNonQuery();
+            command.Dispose();
+
             db.Connection.Close();
             FormControls.LoadDatagridView(dataGridView1, _reloadSql);
             dataGridView1.Columns["idUloga"].Visible = false;
