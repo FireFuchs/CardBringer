@@ -66,7 +66,9 @@
     <Reference Include="Newtonsoft.Json, Version=6.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
       <HintPath>..\packages\Newtonsoft.Json.6.0.8\lib\net45\Newtonsoft.Json.dll</HintPath>
     </Reference>
-    <Reference Include="System" />
+    <Reference Include="System">
+      <HintPath>..\..\..\..\..\..\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.5.2\System.dll</HintPath>
+    </Reference>
     <Reference Include="System.Core" />
     <Reference Include="System.Spatial, Version=5.6.4.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
       <HintPath>..\packages\System.Spatial.5.6.4\lib\net40\System.Spatial.dll</HintPath>
@@ -82,123 +84,129 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Administracija.cs">
+    <Compile Include="Database\DB.cs" />
+    <Compile Include="Database\KartaDB.cs" />
+    <Compile Include="Database\KorisnikDB.cs" />
+    <Compile Include="Database\KosaricaDB.cs" />
+    <Compile Include="Database\OglasDB.cs" />
+    <Compile Include="Database\WishlistDB.cs" />
+    <Compile Include="Forme\Administracija.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Administracija.Designer.cs">
+    <Compile Include="Forme\Administracija.Designer.cs">
       <DependentUpon>Administracija.cs</DependentUpon>
     </Compile>
     <Compile Include="DbInteraction.cs" />
     <Compile Include="FormControls.cs" />
-    <Compile Include="Kosarica.cs">
+    <Compile Include="Forme\Kosarica.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Kosarica.Designer.cs">
+    <Compile Include="Forme\Kosarica.Designer.cs">
       <DependentUpon>Kosarica.cs</DependentUpon>
     </Compile>
-    <Compile Include="ListaZelja.cs">
+    <Compile Include="Forme\ListaZelja.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="ListaZelja.Designer.cs">
+    <Compile Include="Forme\ListaZelja.Designer.cs">
       <DependentUpon>ListaZelja.cs</DependentUpon>
     </Compile>
-    <Compile Include="MojeKupnje.cs">
+    <Compile Include="Forme\MojeKupnje.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="MojeKupnje.Designer.cs">
+    <Compile Include="Forme\MojeKupnje.Designer.cs">
       <DependentUpon>MojeKupnje.cs</DependentUpon>
     </Compile>
-    <Compile Include="MojProfil.cs">
+    <Compile Include="Forme\MojProfil.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="MojProfil.Designer.cs">
+    <Compile Include="Forme\MojProfil.Designer.cs">
       <DependentUpon>MojProfil.cs</DependentUpon>
     </Compile>
-    <Compile Include="NovaKartaAdmin.cs">
+    <Compile Include="Forme\NovaKartaAdmin.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="NovaKartaAdmin.Designer.cs">
+    <Compile Include="Forme\NovaKartaAdmin.Designer.cs">
       <DependentUpon>NovaKartaAdmin.cs</DependentUpon>
     </Compile>
-    <Compile Include="ObjaviOglas.cs">
+    <Compile Include="Forme\ObjaviOglas.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="ObjaviOglas.Designer.cs">
+    <Compile Include="Forme\ObjaviOglas.Designer.cs">
       <DependentUpon>ObjaviOglas.cs</DependentUpon>
     </Compile>
-    <Compile Include="Pocetna.cs">
+    <Compile Include="Forme\Pocetna.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Pocetna.Designer.cs">
+    <Compile Include="Forme\Pocetna.Designer.cs">
       <DependentUpon>Pocetna.cs</DependentUpon>
     </Compile>
-    <Compile Include="GlavniIzbornikForma.cs">
+    <Compile Include="Forme\GlavniIzbornikForma.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="GlavniIzbornikForma.Designer.cs">
+    <Compile Include="Forme\GlavniIzbornikForma.Designer.cs">
       <DependentUpon>GlavniIzbornikForma.cs</DependentUpon>
     </Compile>
     <Compile Include="HelpClass.cs" />
-    <Compile Include="HelpForm.cs">
+    <Compile Include="Forme\HelpForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="HelpForm.Designer.cs">
+    <Compile Include="Forme\HelpForm.Designer.cs">
       <DependentUpon>HelpForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="LoginRegisterForma.cs">
+    <Compile Include="Forme\LoginRegisterForma.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="LoginRegisterForma.Designer.cs">
+    <Compile Include="Forme\LoginRegisterForma.Designer.cs">
       <DependentUpon>LoginRegisterForma.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
-    <Compile Include="PromjenaUlogeKorisnika.cs">
+    <Compile Include="Forme\PromjenaUlogeKorisnika.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="PromjenaUlogeKorisnika.Designer.cs">
+    <Compile Include="Forme\PromjenaUlogeKorisnika.Designer.cs">
       <DependentUpon>PromjenaUlogeKorisnika.cs</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="UnosKartice.cs">
+    <Compile Include="Forme\UnosKartice.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="UnosKartice.Designer.cs">
+    <Compile Include="Forme\UnosKartice.Designer.cs">
       <DependentUpon>UnosKartice.cs</DependentUpon>
     </Compile>
-    <EmbeddedResource Include="Administracija.resx">
+    <EmbeddedResource Include="Forme\Administracija.resx">
       <DependentUpon>Administracija.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="GlavniIzbornikForma.resx">
+    <EmbeddedResource Include="Forme\GlavniIzbornikForma.resx">
       <DependentUpon>GlavniIzbornikForma.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="HelpForm.resx">
+    <EmbeddedResource Include="Forme\HelpForm.resx">
       <DependentUpon>HelpForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Kosarica.resx">
+    <EmbeddedResource Include="Forme\Kosarica.resx">
       <DependentUpon>Kosarica.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="ListaZelja.resx">
+    <EmbeddedResource Include="Forme\ListaZelja.resx">
       <DependentUpon>ListaZelja.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="LoginRegisterForma.resx">
+    <EmbeddedResource Include="Forme\LoginRegisterForma.resx">
       <DependentUpon>LoginRegisterForma.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="MojeKupnje.resx">
+    <EmbeddedResource Include="Forme\MojeKupnje.resx">
       <DependentUpon>MojeKupnje.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="MojProfil.resx">
+    <EmbeddedResource Include="Forme\MojProfil.resx">
       <DependentUpon>MojProfil.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="NovaKartaAdmin.resx">
+    <EmbeddedResource Include="Forme\NovaKartaAdmin.resx">
       <DependentUpon>NovaKartaAdmin.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="ObjaviOglas.resx">
+    <EmbeddedResource Include="Forme\ObjaviOglas.resx">
       <DependentUpon>ObjaviOglas.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Pocetna.resx">
+    <EmbeddedResource Include="Forme\Pocetna.resx">
       <DependentUpon>Pocetna.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="PromjenaUlogeKorisnika.resx">
+    <EmbeddedResource Include="Forme\PromjenaUlogeKorisnika.resx">
       <DependentUpon>PromjenaUlogeKorisnika.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
@@ -210,7 +218,7 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
-    <EmbeddedResource Include="UnosKartice.resx">
+    <EmbeddedResource Include="Forme\UnosKartice.resx">
       <DependentUpon>UnosKartice.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="packages.config" />

@@ -16,21 +16,21 @@ namespace CardBringer2
     {
         public static void LoadDatagridView(DataGridView dataGridView, string sql)
         {
-            var db = new DbInteraction();
-            db.Connection.Open();
+            //var db = new DbInteraction();
+            //db.Connection.Open();
 
             
-            var command = new SqlCommand(sql, db.Connection);
-            var dataReader = command.ExecuteReader();
-            var dt = new DataTable();
-            dt.Load(dataReader);
-            dataGridView.AutoGenerateColumns = true;
-            dataGridView.DataSource = dt;
-            dataGridView.Refresh();
+            //var command = new SqlCommand(sql, db.Connection);
+            //var dataReader = command.ExecuteReader();
+            //var dt = new DataTable();
+            //dt.Load(dataReader);
+            //dataGridView.AutoGenerateColumns = true;
+            //dataGridView.DataSource = dt;
+            //dataGridView.Refresh();
 
-            dataReader.Close();
-            command.Dispose();
-            db.Connection.Close();
+            //dataReader.Close();
+            //command.Dispose();
+            //db.Connection.Close();
         }
 
         public static MemoryStream DohvatiSlikuKarte(string imgName)
