@@ -25,6 +25,7 @@ namespace CardBringer2.Database
             idKorisnik = (int)dr["idKorisnik"];
             idKarta = (int)dr["idKarta"];
             kolicina = (int)dr["kolicina"];
+            dr.Close();
         }
 
         public int Spremi()

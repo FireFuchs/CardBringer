@@ -21,6 +21,7 @@ namespace CardBringer2.Database
             imeKarte = dr["imeKarte"].ToString();
             opisKarte = dr["opisKarte"].ToString();
             slikaKarte = dr["slikaKarte"].ToString();
+            dr.Close();
         }
 
         public int Spremi()

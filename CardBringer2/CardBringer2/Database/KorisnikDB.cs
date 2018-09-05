@@ -9,6 +9,8 @@ namespace CardBringer2.Database
 {
     class KorisnikDB
     {
+        public static KorisnikDB PrijavljeniKorisnik { get; set; }
+
         public int idKorisnika;
         public string ime;
         public string lozinka;
@@ -29,6 +31,7 @@ namespace CardBringer2.Database
             email = dr["email"].ToString();
             mjestoStanovanja = dr["mjestoStanovanja"].ToString();
             idUloga = (int)dr["idUloga"];
+            dr.Close();
         }
 
         public int Spremi()
@@ -58,6 +61,26 @@ namespace CardBringer2.Database
             }
             dr.Close();
             return lista;
+        }
+
+
+        public void Odjava()
+        {
+            PrijavljeniKorisnik = null;
+        }
+
+        public static KorisnikDB Prijava(string username, string password)
+        {
+            string sqlUpit = $"SELECT * FROM korisnik WHERE ime = '{username}' AND lozinka = '{password}';";
+            DbDataReader dr = DB.Instance.DohvatiDataReader(sqlUpit);
+            while (dr.Read())
+            {
+
+                PrijavljeniKorisnik = new KorisnikDB(dr);
+                return PrijavljeniKorisnik;
+            }
+            dr.Close();
+            return null;
         }
     }
 }

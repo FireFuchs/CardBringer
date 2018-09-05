@@ -24,7 +24,7 @@ namespace CardBringer2
 
         private void PromjenaUlogeKorisnika_Load(object sender, EventArgs e)
         {
-            FormControls.LoadDatagridView(dataGridView1, _reloadSql);
+            //FormControls.LoadDatagridView(dataGridView1, _reloadSql);
             dataGridView1.Columns["idUloga"].Visible = false;
         }
 
@@ -47,7 +47,7 @@ namespace CardBringer2
             dataAdapter.DeleteCommand.ExecuteNonQuery();
             command.Dispose();
             db.Connection.Close();
-            FormControls.LoadDatagridView(dataGridView1, _reloadSql);
+            //FormControls.LoadDatagridView(dataGridView1, _reloadSql);
             dataGridView1.Columns["idUloga"].Visible = false;
         }
 
@@ -71,7 +71,7 @@ namespace CardBringer2
             dataAdapter.DeleteCommand.ExecuteNonQuery();
             command.Dispose();
             db.Connection.Close();
-            FormControls.LoadDatagridView(dataGridView1, _reloadSql);
+            //FormControls.LoadDatagridView(dataGridView1, _reloadSql);
             dataGridView1.Columns["idUloga"].Visible = false;
         }
 
@@ -113,7 +113,7 @@ namespace CardBringer2
             command.Dispose();
 
             db.Connection.Close();
-            FormControls.LoadDatagridView(dataGridView1, _reloadSql);
+            //FormControls.LoadDatagridView(dataGridView1, _reloadSql);
             dataGridView1.Columns["idUloga"].Visible = false;
         }
     }

@@ -24,7 +24,7 @@ namespace CardBringer2
         private void MojeKupnje_Load(object sender, EventArgs e)
         {
             var sql = $"SELECT idKupnje, kolicinaKarata, ukupnaCijena, datum FROM obavljenaKupnja WHERE idKorisnik = '{_idKorisnika}'";
-            FormControls.LoadDatagridView(DataGridZaKupljene, sql);
+            //FormControls.LoadDatagridView(DataGridZaKupljene, sql);
         }
     }
 }

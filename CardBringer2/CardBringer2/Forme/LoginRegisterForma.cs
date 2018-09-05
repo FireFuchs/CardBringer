@@ -219,35 +219,13 @@ namespace CardBringer2
         {
             var username = unosKorisnickoImeLoginLoginRegisterForma.Text;
             var password = unosPasswordLoginLoginRegisterForma.Text;
-
-            var db = new DbInteraction();
-            db.Connection.Open();
-
-            var sql = $"SELECT lozinka FROM korisnik WHERE ime = '{username}';";
-            var command = new SqlCommand(sql, db.Connection);
-            var dataReader = command.ExecuteReader();
-            if (dataReader.HasRows)
+            if(KorisnikDB.Prijava(username, password) != null)
             {
-                dataReader.Read();
-                var realPassword = dataReader.GetString(0);
-                if (password == realPassword)
-                {
-                    OtvoriGlavnuFormu(username);
-                }
-                else
-                {
-                    const MessageBoxButtons button = MessageBoxButtons.OK;
-                    MessageBox.Show("Kriva lozinka", "Greška", button);
-                }
+                OtvoriGlavnuFormu();
+                return;
             }
-            else
-            {
-                const MessageBoxButtons button = MessageBoxButtons.OK;
-                MessageBox.Show("Ne postoji taj korisnik", "Greška", button);
-            }
-            dataReader.Close();
-            command.Dispose();
-            db.Connection.Close();
+            const MessageBoxButtons button = MessageBoxButtons.OK;
+            MessageBox.Show("Ne postoji taj korisnik", "Greška", button);
         }
 
         private void Register()
@@ -267,7 +245,8 @@ namespace CardBringer2
                 korisnik.mjestoStanovanja = mjestoStanovanja;
                 korisnik.Spremi();
 
-                OtvoriGlavnuFormu(username);
+                KorisnikDB.PrijavljeniKorisnik = korisnik;
+                OtvoriGlavnuFormu();
             }
             else
             {
@@ -276,20 +255,11 @@ namespace CardBringer2
             }
         }
 
-        private void OtvoriGlavnuFormu(string username)
+        private void OtvoriGlavnuFormu()
         {
-            var db = new DbInteraction();
-            db.Connection.Open();
-
-            var sql = $"SELECT idKorisnika FROM korisnik WHERE ime = '{username}';";
-            var command = new SqlCommand(sql, db.Connection);
-            var dataReader = command.ExecuteReader();
-            dataReader.Read();
-            var idKorisnika = dataReader.GetInt32(0);
-            var glavniFrm = new GlavniIzbornikForma(idKorisnika);
+            var glavniFrm = new GlavniIzbornikForma();
             glavniFrm.Show();
             this.Hide();
-            db.Connection.Close();
         }
 
         private void unosPasswordLoginLoginRegisterForma_TextChanged(object sender, EventArgs e)

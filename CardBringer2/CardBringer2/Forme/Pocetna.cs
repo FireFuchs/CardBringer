@@ -25,7 +25,7 @@ namespace CardBringer2
 
         private void Pocetna_Load(object sender, EventArgs e)
         {
-            FormControls.LoadDatagridView(dataGridView1, _reloadSql);
+            //FormControls.LoadDatagridView(dataGridView1, _reloadSql);
             //dataGridView1.Columns["slikaKarte"].Visible = false;
         }
         
@@ -113,14 +113,14 @@ namespace CardBringer2
             }
            
 
-            FormControls.LoadDatagridView(dataGridView1, _reloadSql);
+            //FormControls.LoadDatagridView(dataGridView1, _reloadSql);
             dataGridView1.Columns["slikaKarte"].Visible = false;
         }
         
 
         private void PocetnaResetGumb_Click(object sender, EventArgs e)
         {
-            FormControls.LoadDatagridView(dataGridView1, _reloadSql);
+            //FormControls.LoadDatagridView(dataGridView1, _reloadSql);
 
         }
         
@@ -133,8 +133,8 @@ namespace CardBringer2
             kolicinaKarata.Text = dataGridView1.SelectedRows[0].Cells[4].Value.ToString();
             prodavacKarte.Text = dataGridView1.SelectedRows[0].Cells[5].Value.ToString();
             opisKarte.Text = dataGridView1.SelectedRows[0].Cells[2].Value.ToString();
-            var slikaKarte = FormControls.DohvatiSlikuKarte(dataGridView1.SelectedRows[0].Cells[6].Value.ToString());
-            pictureBoxSlikaKarte.Image = Image.FromStream(slikaKarte);
+            //var slikaKarte = FormControls.DohvatiSlikuKarte(dataGridView1.SelectedRows[0].Cells[6].Value.ToString());
+            //pictureBoxSlikaKarte.Image = Image.FromStream(slikaKarte);
             pictureBoxSlikaKarte.SizeMode = PictureBoxSizeMode.StretchImage;
         }
 
@@ -155,7 +155,7 @@ namespace CardBringer2
         {
             var imeTrazenja = PocetnaPretragaText.Text;
             var sql = $"SELECT kk.idKorisnikKarta AS 'ID Ponude', kar.imeKarte AS 'Ime Karte' , kar.opisKarte AS 'Opis Karte', kk.cijena AS 'Cijena', kk.kolicina AS 'Kolicina', k.ime AS 'Ime Prodavača' FROM korisnikKarta kk JOIN karta kar ON kar.idKarta = kk.idKarta JOIN korisnik k ON kk.idKorisnik = k.idKorisnika WHERE kar.imeKarte LIKE '%{imeTrazenja}%';";
-            FormControls.LoadDatagridView(dataGridView1, sql);
+            //FormControls.LoadDatagridView(dataGridView1, sql);
         }
         
     }

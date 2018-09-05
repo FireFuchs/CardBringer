@@ -63,7 +63,7 @@ namespace CardBringer2
                 dataAdapter.UpdateCommand = new SqlCommand(sql, db.Connection);
                 dataAdapter.UpdateCommand.ExecuteNonQuery();
                 db.Connection.Close();
-                FormControls.LoadDatagridView(ListaZeljaDataGrid, _reloadSql);
+                //FormControls.LoadDatagridView(ListaZeljaDataGrid, _reloadSql);
             }
             else
             {
@@ -74,7 +74,7 @@ namespace CardBringer2
                 db.Connection.Close();
 
                 ListaZeljaDataGrid.DataSource = null;
-                FormControls.LoadDatagridView(ListaZeljaDataGrid, _reloadSql);
+                //FormControls.LoadDatagridView(ListaZeljaDataGrid, _reloadSql);
             }
         }
 
@@ -88,7 +88,7 @@ namespace CardBringer2
             command.ExecuteNonQuery();
             command.Dispose();
             db.Connection.Close();
-            FormControls.LoadDatagridView(ListaZeljaDataGrid, _reloadSql);
+            //FormControls.LoadDatagridView(ListaZeljaDataGrid, _reloadSql);
         }
         
         private void GumbResetListaZelja_Click(object sender, EventArgs e)
@@ -113,15 +113,15 @@ namespace CardBringer2
         {
             var kartaIme = ListaZeljaTrazi.Text;
             var sql = $"SELECT imeKarte, opisKarte FROM karta WHERE imeKarte LIKE '%{kartaIme}%';";
-            FormControls.LoadDatagridView(SveKarteDatagrid, sql);
-            FormControls.LoadDatagridView(ListaZeljaDataGrid, _reloadSql);
+            //FormControls.LoadDatagridView(SveKarteDatagrid, sql);
+            //FormControls.LoadDatagridView(ListaZeljaDataGrid, _reloadSql);
         }
 
         private void ListaZeljaLoadGridGlavni()
         {
             var sql = $"SELECT imeKarte, opisKarte FROM karta;";
-            FormControls.LoadDatagridView(SveKarteDatagrid, sql);
-            FormControls.LoadDatagridView(ListaZeljaDataGrid, _reloadSql);
+            //FormControls.LoadDatagridView(SveKarteDatagrid, sql);
+            //FormControls.LoadDatagridView(ListaZeljaDataGrid, _reloadSql);
         }
     }
 }

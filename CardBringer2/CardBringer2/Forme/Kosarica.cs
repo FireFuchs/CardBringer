@@ -75,7 +75,7 @@ namespace CardBringer2
         private void Refresaj()
         {
             var sql = $"SELECT  kart.slikaKarte, kart.imeKarte, kart.opisKarte, k.ime, kk.cijena, mk.kolicina, mk.datum, kk.idKorisnikKarta FROM karta kart join korisnikKarta kk on kart.idKarta = kk.idKarta join medjuspremnikKosarica mk on mk.idKorisnikKarta = kk.idKorisnikKarta join korisnik k on k.idKorisnika = kk.idKorisnik WHERE mk.idKorisnika = {_idKorisnik};";
-            FormControls.LoadDatagridView(dataGridView1, sql);
+            //FormControls.LoadDatagridView(dataGridView1, sql);
             //dataGridView1.Columns["slikaKarte"].Visible = false;
             //dataGridView1.Columns["idKorisnikKarta"].Visible = false;
             var sumaNovaca = 0;

@@ -55,7 +55,7 @@ namespace CardBringer2
 
         private void mojProfilToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            var noviMojProfil = new MojProfil(_idKorisnika);
+            var noviMojProfil = new MojProfil();
             noviMojProfil.MdiParent = this;
             noviMojProfil.WindowState = FormWindowState.Maximized;
             noviMojProfil.Show();

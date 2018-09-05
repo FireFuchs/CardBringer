@@ -28,7 +28,7 @@ namespace CardBringer2
 
         private void ObjaviOglas_Load(object sender, EventArgs e)
         {
-            FormControls.LoadDatagridView(dataGridView1, _reloadSql);
+            //FormControls.LoadDatagridView(dataGridView1, _reloadSql);
         }
         
         private void buttonObjaviOglas_Click(object sender, EventArgs e)
@@ -46,7 +46,7 @@ namespace CardBringer2
             dataAdapter.InsertCommand.ExecuteNonQuery();
             command.Dispose();
             db.Connection.Close();
-            FormControls.LoadDatagridView(dataGridView1, _reloadSql);
+            //FormControls.LoadDatagridView(dataGridView1, _reloadSql);
         }
 
         private void dataGridView1_RowEnter(object sender, DataGridViewCellEventArgs e)
@@ -67,8 +67,8 @@ namespace CardBringer2
             {
                 ImeKarte.Text = dataReader[0].ToString();
                 OpisKarte.Text = dataReader[1].ToString();
-                var slikaKarte = FormControls.DohvatiSlikuKarte(dataReader[2].ToString());
-                pictureBoxSlikaKarte.Image = Image.FromStream(slikaKarte);
+                //var slikaKarte = FormControls.DohvatiSlikuKarte(dataReader[2].ToString());
+                //pictureBoxSlikaKarte.Image = Image.FromStream(slikaKarte);
                 pictureBoxSlikaKarte.SizeMode = PictureBoxSizeMode.StretchImage;
             }
             command.Dispose();

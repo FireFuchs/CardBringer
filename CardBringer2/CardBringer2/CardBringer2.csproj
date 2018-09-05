@@ -84,6 +84,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="AzureStorageKarata.cs" />
     <Compile Include="Database\DB.cs" />
     <Compile Include="Database\KartaDB.cs" />
     <Compile Include="Database\KorisnikDB.cs" />
@@ -97,7 +98,6 @@
       <DependentUpon>Administracija.cs</DependentUpon>
     </Compile>
     <Compile Include="DbInteraction.cs" />
-    <Compile Include="FormControls.cs" />
     <Compile Include="Forme\Kosarica.cs">
       <SubType>Form</SubType>
     </Compile>

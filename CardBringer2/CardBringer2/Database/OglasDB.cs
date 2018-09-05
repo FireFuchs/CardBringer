@@ -27,6 +27,7 @@ namespace CardBringer2.Database
             idKarta = (int)dr["idKarta"];
             cijena = dr["cijena"].ToString();
             kolicina = (int)dr["kolicina"];
+            dr.Close();
         }
 
         public int Spremi()
@@ -56,6 +57,12 @@ namespace CardBringer2.Database
             }
             dr.Close();
             return lista;
+        }
+
+        public int Obrisi()
+        {
+            string sqlDelete = "DELETE FROM oglas WHERE idOglas = " + idOglas;
+            return DB.Instance.IzvrsiUpit(sqlDelete);
         }
     }
 }

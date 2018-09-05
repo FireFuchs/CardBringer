@@ -29,6 +29,7 @@ namespace CardBringer2.Database
             kolicina = (int) dr["kolicina"];
             datum = dr["datum"].ToString();
             kupljeno = (int) dr["kupljeno"];
+            dr.Close();
         }
 
         public int Spremi()
