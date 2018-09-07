@@ -45,8 +45,8 @@
             this.kolicinaKarata = new System.Windows.Forms.Label();
             this.opisKarte = new System.Windows.Forms.RichTextBox();
             this.pictureBoxSlikaKarte = new System.Windows.Forms.PictureBox();
-            this.oglasBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.PocetnaBrojKarataZaKosaricu = new System.Windows.Forms.TextBox();
+            this.oglasBindingSource = new System.Windows.Forms.BindingSource(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxSlikaKarte)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.oglasBindingSource)).BeginInit();
@@ -214,10 +214,6 @@
             this.pictureBoxSlikaKarte.TabIndex = 32;
             this.pictureBoxSlikaKarte.TabStop = false;
             // 
-            // oglasBindingSource
-            // 
-            this.oglasBindingSource.DataSource = typeof(CardBringer2.oglas);
-            // 
             // PocetnaBrojKarataZaKosaricu
             // 
             this.PocetnaBrojKarataZaKosaricu.Location = new System.Drawing.Point(676, 102);
@@ -225,6 +221,11 @@
             this.PocetnaBrojKarataZaKosaricu.Name = "PocetnaBrojKarataZaKosaricu";
             this.PocetnaBrojKarataZaKosaricu.Size = new System.Drawing.Size(84, 20);
             this.PocetnaBrojKarataZaKosaricu.TabIndex = 34;
+            this.PocetnaBrojKarataZaKosaricu.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.PocetnaBrojKarataZaKosaricu_KeyPress);
+            // 
+            // oglasBindingSource
+            // 
+            this.oglasBindingSource.DataSource = typeof(CardBringer2.oglas);
             // 
             // Pocetna
             // 

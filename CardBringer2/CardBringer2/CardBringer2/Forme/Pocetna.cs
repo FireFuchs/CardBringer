@@ -112,5 +112,12 @@ namespace CardBringer2
             dataGridView1.Columns["slikaKarte"].Visible = false;
             dataGridView1.Columns["aktivan"].Visible = false;
         }
+
+        private void PocetnaBrojKarataZaKosaricu_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if(!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar)){
+                e.Handled = true;
+            }
+        }
     }
 }

@@ -58,5 +58,21 @@ namespace CardBringer2
             pictureBoxSlikaKarte.Image = Image.FromStream(slikaKarte);
             pictureBoxSlikaKarte.SizeMode = PictureBoxSizeMode.StretchImage;
         }
+
+        private void unosCijeneKarteObjaviOglas_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar))
+            {
+                e.Handled = true;
+            }
+        }
+
+        private void unosKolicineKarteObjaviOglas_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar))
+            {
+                e.Handled = true;
+            }
+        }
     }
 }
