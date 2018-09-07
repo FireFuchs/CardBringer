@@ -46,6 +46,17 @@ namespace CardBringer2
             }
             return lista;
         }
+
+        public static List<karta> TraziKarte(string pretrazivaniString)
+        {
+            List<karta> karte = new List<karta>();
+            using (var context = new CardBringerDBEntities())
+            {
+                karte = new List<karta>(context.karta.Where(c => c.imeKarte.Contains(pretrazivaniString)).ToList());
+            }
+            return karte;
+        }
+
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<oglas> oglas { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]

@@ -39,23 +39,26 @@ namespace CardBringer2
         
         private void GumbResetListaZelja_Click(object sender, EventArgs e)
         {
+            SveKarteDatagrid.DataSource = karta.DohvatiKarte();
         }
 
         private void ListaZeljaButtonTrazi_Click(object sender, EventArgs e)
         {
-            Filter();
+            Trazi();
         }
 
         private void ListaZeljaTrazi_KeyDown(object sender, KeyEventArgs e)
         {
             if (e.KeyCode == Keys.Enter)
             {
-                Filter();
+                Trazi();
             }
         }
 
-        private void Filter()
+        private void Trazi()
         {
+            var pretrazivaniString = ListaZeljaTraziUSvimKartama.Text;
+            SveKarteDatagrid.DataSource = karta.TraziKarte(pretrazivaniString);
         }
 
         private void SveKarteDatagrid_RowEnter(object sender, DataGridViewCellEventArgs e)
