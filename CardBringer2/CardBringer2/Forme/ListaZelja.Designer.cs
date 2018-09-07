@@ -60,10 +60,9 @@
             // 
             // ListaZeljaGumbMakni
             // 
-            this.ListaZeljaGumbMakni.Location = new System.Drawing.Point(751, 178);
-            this.ListaZeljaGumbMakni.Margin = new System.Windows.Forms.Padding(4);
+            this.ListaZeljaGumbMakni.Location = new System.Drawing.Point(563, 145);
             this.ListaZeljaGumbMakni.Name = "ListaZeljaGumbMakni";
-            this.ListaZeljaGumbMakni.Size = new System.Drawing.Size(100, 28);
+            this.ListaZeljaGumbMakni.Size = new System.Drawing.Size(75, 23);
             this.ListaZeljaGumbMakni.TabIndex = 14;
             this.ListaZeljaGumbMakni.Text = "---> Makni";
             this.ListaZeljaGumbMakni.UseVisualStyleBackColor = true;
@@ -71,10 +70,9 @@
             // 
             // ListaZeljaButtonTrazi
             // 
-            this.ListaZeljaButtonTrazi.Location = new System.Drawing.Point(1020, 92);
-            this.ListaZeljaButtonTrazi.Margin = new System.Windows.Forms.Padding(4);
+            this.ListaZeljaButtonTrazi.Location = new System.Drawing.Point(765, 75);
             this.ListaZeljaButtonTrazi.Name = "ListaZeljaButtonTrazi";
-            this.ListaZeljaButtonTrazi.Size = new System.Drawing.Size(80, 28);
+            this.ListaZeljaButtonTrazi.Size = new System.Drawing.Size(60, 23);
             this.ListaZeljaButtonTrazi.TabIndex = 13;
             this.ListaZeljaButtonTrazi.Text = "Trazi!";
             this.ListaZeljaButtonTrazi.UseVisualStyleBackColor = true;
@@ -82,10 +80,9 @@
             // 
             // ListaZeljaGumbDodaj
             // 
-            this.ListaZeljaGumbDodaj.Location = new System.Drawing.Point(751, 142);
-            this.ListaZeljaGumbDodaj.Margin = new System.Windows.Forms.Padding(4);
+            this.ListaZeljaGumbDodaj.Location = new System.Drawing.Point(563, 115);
             this.ListaZeljaGumbDodaj.Name = "ListaZeljaGumbDodaj";
-            this.ListaZeljaGumbDodaj.Size = new System.Drawing.Size(100, 28);
+            this.ListaZeljaGumbDodaj.Size = new System.Drawing.Size(75, 23);
             this.ListaZeljaGumbDodaj.TabIndex = 12;
             this.ListaZeljaGumbDodaj.Text = "<--- Dodaj";
             this.ListaZeljaGumbDodaj.UseVisualStyleBackColor = true;
@@ -93,10 +90,9 @@
             // 
             // ListaZeljaTraziUSvimKartama
             // 
-            this.ListaZeljaTraziUSvimKartama.Location = new System.Drawing.Point(859, 95);
-            this.ListaZeljaTraziUSvimKartama.Margin = new System.Windows.Forms.Padding(4);
+            this.ListaZeljaTraziUSvimKartama.Location = new System.Drawing.Point(644, 77);
             this.ListaZeljaTraziUSvimKartama.Name = "ListaZeljaTraziUSvimKartama";
-            this.ListaZeljaTraziUSvimKartama.Size = new System.Drawing.Size(153, 22);
+            this.ListaZeljaTraziUSvimKartama.Size = new System.Drawing.Size(116, 20);
             this.ListaZeljaTraziUSvimKartama.TabIndex = 11;
             this.ListaZeljaTraziUSvimKartama.KeyDown += new System.Windows.Forms.KeyEventHandler(this.ListaZeljaTrazi_KeyDown);
             // 
@@ -112,11 +108,11 @@
             this.oglasDataGridViewTextBoxColumn,
             this.wishlistDataGridViewTextBoxColumn});
             this.SveKarteDatagrid.DataSource = this.kartaBindingSource;
-            this.SveKarteDatagrid.Location = new System.Drawing.Point(859, 142);
-            this.SveKarteDatagrid.Margin = new System.Windows.Forms.Padding(4);
+            this.SveKarteDatagrid.Location = new System.Drawing.Point(644, 115);
             this.SveKarteDatagrid.Name = "SveKarteDatagrid";
+            this.SveKarteDatagrid.ReadOnly = true;
             this.SveKarteDatagrid.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.SveKarteDatagrid.Size = new System.Drawing.Size(329, 187);
+            this.SveKarteDatagrid.Size = new System.Drawing.Size(247, 152);
             this.SveKarteDatagrid.TabIndex = 9;
             this.SveKarteDatagrid.RowEnter += new System.Windows.Forms.DataGridViewCellEventHandler(this.SveKarteDatagrid_RowEnter);
             // 
@@ -125,6 +121,7 @@
             this.idKartaDataGridViewTextBoxColumn.DataPropertyName = "idKarta";
             this.idKartaDataGridViewTextBoxColumn.HeaderText = "idKarta";
             this.idKartaDataGridViewTextBoxColumn.Name = "idKartaDataGridViewTextBoxColumn";
+            this.idKartaDataGridViewTextBoxColumn.ReadOnly = true;
             this.idKartaDataGridViewTextBoxColumn.Visible = false;
             // 
             // imeKarteDataGridViewTextBoxColumn
@@ -132,18 +129,21 @@
             this.imeKarteDataGridViewTextBoxColumn.DataPropertyName = "imeKarte";
             this.imeKarteDataGridViewTextBoxColumn.HeaderText = "Ime karte";
             this.imeKarteDataGridViewTextBoxColumn.Name = "imeKarteDataGridViewTextBoxColumn";
+            this.imeKarteDataGridViewTextBoxColumn.ReadOnly = true;
             // 
             // opisKarteDataGridViewTextBoxColumn
             // 
             this.opisKarteDataGridViewTextBoxColumn.DataPropertyName = "opisKarte";
             this.opisKarteDataGridViewTextBoxColumn.HeaderText = "Opis karte";
             this.opisKarteDataGridViewTextBoxColumn.Name = "opisKarteDataGridViewTextBoxColumn";
+            this.opisKarteDataGridViewTextBoxColumn.ReadOnly = true;
             // 
             // slikaKarteDataGridViewTextBoxColumn
             // 
             this.slikaKarteDataGridViewTextBoxColumn.DataPropertyName = "slikaKarte";
             this.slikaKarteDataGridViewTextBoxColumn.HeaderText = "slikaKarte";
             this.slikaKarteDataGridViewTextBoxColumn.Name = "slikaKarteDataGridViewTextBoxColumn";
+            this.slikaKarteDataGridViewTextBoxColumn.ReadOnly = true;
             this.slikaKarteDataGridViewTextBoxColumn.Visible = false;
             // 
             // oglasDataGridViewTextBoxColumn
@@ -151,6 +151,7 @@
             this.oglasDataGridViewTextBoxColumn.DataPropertyName = "oglas";
             this.oglasDataGridViewTextBoxColumn.HeaderText = "Oglas";
             this.oglasDataGridViewTextBoxColumn.Name = "oglasDataGridViewTextBoxColumn";
+            this.oglasDataGridViewTextBoxColumn.ReadOnly = true;
             this.oglasDataGridViewTextBoxColumn.Visible = false;
             // 
             // wishlistDataGridViewTextBoxColumn
@@ -158,6 +159,7 @@
             this.wishlistDataGridViewTextBoxColumn.DataPropertyName = "wishlist";
             this.wishlistDataGridViewTextBoxColumn.HeaderText = "wishlist";
             this.wishlistDataGridViewTextBoxColumn.Name = "wishlistDataGridViewTextBoxColumn";
+            this.wishlistDataGridViewTextBoxColumn.ReadOnly = true;
             this.wishlistDataGridViewTextBoxColumn.Visible = false;
             // 
             // kartaBindingSource
@@ -167,11 +169,10 @@
             // ListaZeljaDataGrid
             // 
             this.ListaZeljaDataGrid.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.ListaZeljaDataGrid.Location = new System.Drawing.Point(414, 142);
-            this.ListaZeljaDataGrid.Margin = new System.Windows.Forms.Padding(4);
+            this.ListaZeljaDataGrid.Location = new System.Drawing.Point(310, 115);
             this.ListaZeljaDataGrid.Name = "ListaZeljaDataGrid";
             this.ListaZeljaDataGrid.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.ListaZeljaDataGrid.Size = new System.Drawing.Size(329, 187);
+            this.ListaZeljaDataGrid.Size = new System.Drawing.Size(247, 152);
             this.ListaZeljaDataGrid.TabIndex = 10;
             this.ListaZeljaDataGrid.RowEnter += new System.Windows.Forms.DataGridViewCellEventHandler(this.ListaZeljaDataGrid_RowEnter);
             // 
@@ -179,10 +180,9 @@
             // 
             this.label2.AutoSize = true;
             this.label2.ForeColor = System.Drawing.Color.White;
-            this.label2.Location = new System.Drawing.Point(856, 121);
-            this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label2.Location = new System.Drawing.Point(642, 98);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(74, 17);
+            this.label2.Size = new System.Drawing.Size(57, 13);
             this.label2.TabIndex = 8;
             this.label2.Text = "Sve Karte:";
             // 
@@ -190,19 +190,17 @@
             // 
             this.label1.AutoSize = true;
             this.label1.ForeColor = System.Drawing.Color.White;
-            this.label1.Location = new System.Drawing.Point(411, 121);
-            this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label1.Location = new System.Drawing.Point(308, 98);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(125, 17);
+            this.label1.Size = new System.Drawing.Size(93, 13);
             this.label1.TabIndex = 7;
             this.label1.Text = "Karte na listi Zelja:";
             // 
             // GumbResetListaZelja
             // 
-            this.GumbResetListaZelja.Location = new System.Drawing.Point(1108, 92);
-            this.GumbResetListaZelja.Margin = new System.Windows.Forms.Padding(4);
+            this.GumbResetListaZelja.Location = new System.Drawing.Point(831, 75);
             this.GumbResetListaZelja.Name = "GumbResetListaZelja";
-            this.GumbResetListaZelja.Size = new System.Drawing.Size(80, 28);
+            this.GumbResetListaZelja.Size = new System.Drawing.Size(60, 23);
             this.GumbResetListaZelja.TabIndex = 15;
             this.GumbResetListaZelja.Text = "Reset";
             this.GumbResetListaZelja.UseVisualStyleBackColor = true;
@@ -212,26 +210,29 @@
             // 
             this.imeKarteListaZelja.AutoSize = true;
             this.imeKarteListaZelja.ForeColor = System.Drawing.Color.White;
-            this.imeKarteListaZelja.Location = new System.Drawing.Point(26, 529);
+            this.imeKarteListaZelja.Location = new System.Drawing.Point(20, 430);
+            this.imeKarteListaZelja.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.imeKarteListaZelja.Name = "imeKarteListaZelja";
-            this.imeKarteListaZelja.Size = new System.Drawing.Size(79, 17);
+            this.imeKarteListaZelja.Size = new System.Drawing.Size(61, 13);
             this.imeKarteListaZelja.TabIndex = 18;
             this.imeKarteListaZelja.Text = "Naziv karte";
             // 
             // opisKarteListaZelja
             // 
-            this.opisKarteListaZelja.Location = new System.Drawing.Point(29, 555);
+            this.opisKarteListaZelja.Location = new System.Drawing.Point(22, 451);
+            this.opisKarteListaZelja.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.opisKarteListaZelja.Name = "opisKarteListaZelja";
-            this.opisKarteListaZelja.Size = new System.Drawing.Size(355, 99);
+            this.opisKarteListaZelja.Size = new System.Drawing.Size(267, 81);
             this.opisKarteListaZelja.TabIndex = 17;
             this.opisKarteListaZelja.Text = "";
             // 
             // pictureBoxSlikaKarteListaZelja
             // 
             this.pictureBoxSlikaKarteListaZelja.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.pictureBoxSlikaKarteListaZelja.Location = new System.Drawing.Point(29, 92);
+            this.pictureBoxSlikaKarteListaZelja.Location = new System.Drawing.Point(22, 75);
+            this.pictureBoxSlikaKarteListaZelja.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.pictureBoxSlikaKarteListaZelja.Name = "pictureBoxSlikaKarteListaZelja";
-            this.pictureBoxSlikaKarteListaZelja.Size = new System.Drawing.Size(355, 431);
+            this.pictureBoxSlikaKarteListaZelja.Size = new System.Drawing.Size(267, 351);
             this.pictureBoxSlikaKarteListaZelja.TabIndex = 16;
             this.pictureBoxSlikaKarteListaZelja.TabStop = false;
             // 
@@ -239,35 +240,38 @@
             // 
             this.imeKarteSveKarte.AutoSize = true;
             this.imeKarteSveKarte.ForeColor = System.Drawing.Color.White;
-            this.imeKarteSveKarte.Location = new System.Drawing.Point(1216, 529);
+            this.imeKarteSveKarte.Location = new System.Drawing.Point(912, 430);
+            this.imeKarteSveKarte.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.imeKarteSveKarte.Name = "imeKarteSveKarte";
-            this.imeKarteSveKarte.Size = new System.Drawing.Size(79, 17);
+            this.imeKarteSveKarte.Size = new System.Drawing.Size(61, 13);
             this.imeKarteSveKarte.TabIndex = 21;
             this.imeKarteSveKarte.Text = "Naziv karte";
             // 
             // opisKarteSveKarte
             // 
-            this.opisKarteSveKarte.Location = new System.Drawing.Point(1219, 555);
+            this.opisKarteSveKarte.Location = new System.Drawing.Point(914, 451);
+            this.opisKarteSveKarte.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.opisKarteSveKarte.Name = "opisKarteSveKarte";
-            this.opisKarteSveKarte.Size = new System.Drawing.Size(355, 99);
+            this.opisKarteSveKarte.Size = new System.Drawing.Size(267, 81);
             this.opisKarteSveKarte.TabIndex = 20;
             this.opisKarteSveKarte.Text = "";
             // 
             // pictureBoxSlikaKarteSveKarte
             // 
             this.pictureBoxSlikaKarteSveKarte.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.pictureBoxSlikaKarteSveKarte.Location = new System.Drawing.Point(1219, 92);
+            this.pictureBoxSlikaKarteSveKarte.Location = new System.Drawing.Point(914, 75);
+            this.pictureBoxSlikaKarteSveKarte.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.pictureBoxSlikaKarteSveKarte.Name = "pictureBoxSlikaKarteSveKarte";
-            this.pictureBoxSlikaKarteSveKarte.Size = new System.Drawing.Size(355, 431);
+            this.pictureBoxSlikaKarteSveKarte.Size = new System.Drawing.Size(267, 351);
             this.pictureBoxSlikaKarteSveKarte.TabIndex = 19;
             this.pictureBoxSlikaKarteSveKarte.TabStop = false;
             // 
             // ListaZelja
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(53)))), ((int)(((byte)(53)))), ((int)(((byte)(53)))));
-            this.ClientSize = new System.Drawing.Size(1668, 742);
+            this.ClientSize = new System.Drawing.Size(1203, 603);
             this.Controls.Add(this.imeKarteSveKarte);
             this.Controls.Add(this.opisKarteSveKarte);
             this.Controls.Add(this.pictureBoxSlikaKarteSveKarte);
@@ -283,7 +287,6 @@
             this.Controls.Add(this.ListaZeljaDataGrid);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
-            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "ListaZelja";
             this.Text = "ListaZelja";
             this.Load += new System.EventHandler(this.ListaZelja_Load);
