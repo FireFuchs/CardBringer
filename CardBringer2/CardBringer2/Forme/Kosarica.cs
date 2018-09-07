@@ -63,7 +63,9 @@ namespace CardBringer2
             dgKarteUKosarici.Columns["ime"].HeaderText = "Prodavač";
             dgKarteUKosarici.Columns["idOglas"].Visible = false;
             dgKarteUKosarici.Columns["slikaKarte"].Visible = false;
-            dgKarteUKosarici.Columns["aktivan"].Visible = false;
+            dgKarteUKosarici.Columns["kupljeno"].Visible = false;
+            dgKarteUKosarici.Columns["idKosarica"].Visible = false;
+
         }
     }
 }
