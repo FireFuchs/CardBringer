@@ -27,6 +27,7 @@ namespace CardBringer2
         private void ObjaviOglas_Load(object sender, EventArgs e)
         {
             kartaBindingSource.DataSource = karta.DohvatiKarte();
+            dohvatiSadrzaj();
         }
 
         private void buttonObjaviOglas_Click(object sender, EventArgs e)
@@ -45,6 +46,26 @@ namespace CardBringer2
         }
 
         private void dataGridView1_RowEnter(object sender, DataGridViewCellEventArgs e)
+        {
+            dohvatiSadrzaj();
+        }
+
+        private void unosCijeneKarteObjaviOglas_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar) && (e.KeyChar != '.'))
+            {
+                e.Handled = true;
+            }
+        }
+
+        private void unosKolicineKarteObjaviOglas_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar))
+            {
+                e.Handled = true;
+            }
+        }
+        private void dohvatiSadrzaj()
         {
             if (dataGridView1.SelectedRows.Count <= 0) return;
             ImeKarte.Text = dataGridView1.SelectedRows[0].Cells[1].Value.ToString();

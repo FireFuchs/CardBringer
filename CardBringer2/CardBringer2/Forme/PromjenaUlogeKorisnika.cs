@@ -24,6 +24,7 @@ namespace CardBringer2
         private void PromjenaUlogeKorisnika_Load(object sender, EventArgs e)
         {
             dataGridView1.DataSource = korisnik.DohvatiKorisnike();
+            obradiDGV();
         }
 
         private void buttonDodajAdmina_Click(object sender, EventArgs e)
@@ -53,6 +54,16 @@ namespace CardBringer2
             var idKorisnik = (int)dataGridView1.SelectedRows[0].Cells["idKorisnika"].Value;
             korisnik.PromijeniUloguKorisnika(idKorisnik, 1);
             dataGridView1.DataSource = korisnik.DohvatiKorisnike();
+        }
+        private void obradiDGV()
+        {
+            if (dataGridView1.SelectedRows.Count <= 0) return;
+            dataGridView1.Columns["idUloga"].Visible = false;
+            dataGridView1.Columns["idKorisnika"].HeaderText = "ID Korisnika";
+            dataGridView1.Columns["ime"].HeaderText = "Korisničko ime";
+            dataGridView1.Columns["email"].HeaderText = "E-Mail";
+            dataGridView1.Columns["mjestoStanovanja"].HeaderText = "Adresa";
+            dataGridView1.Columns["nazivUloge"].HeaderText = "Uloga";
         }
     }
 }

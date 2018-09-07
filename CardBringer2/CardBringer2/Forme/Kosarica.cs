@@ -25,6 +25,7 @@ namespace CardBringer2
         {
             //prikazuje nekupljene 
             dgKarteUKosarici.DataSource = kosharica.DohvatiKosaricu(_nekupljeno);
+            obradiDGV();
         }
 
         private void GumbKupi_Click(object sender, EventArgs e)
@@ -50,6 +51,19 @@ namespace CardBringer2
             kosharica.UkloniStavkuKosarice(idKosarica);
             dgKarteUKosarici.DataSource = kosharica.DohvatiKosaricu(_nekupljeno);
 
+        }
+
+        private void obradiDGV()
+        {
+            if (dgKarteUKosarici.SelectedRows.Count <= 0) return;
+            dgKarteUKosarici.Columns["imeKarte"].HeaderText = "Ime karte";
+            dgKarteUKosarici.Columns["opisKarte"].HeaderText = "Opis karte";
+            dgKarteUKosarici.Columns["cijena"].HeaderText = "Cijena";
+            dgKarteUKosarici.Columns["kolicina"].HeaderText = "Količina";
+            dgKarteUKosarici.Columns["ime"].HeaderText = "Prodavač";
+            dgKarteUKosarici.Columns["idOglas"].Visible = false;
+            dgKarteUKosarici.Columns["slikaKarte"].Visible = false;
+            dgKarteUKosarici.Columns["aktivan"].Visible = false;
         }
     }
 }

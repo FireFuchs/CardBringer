@@ -51,5 +51,24 @@ namespace CardBringer2
             pictureBoxSlikaKarte.Image = Image.FromStream(slikaKarte);
             pictureBoxSlikaKarte.SizeMode = PictureBoxSizeMode.StretchImage;
         }
+
+        private void MojProfil_Load(object sender, EventArgs e)
+        {
+            obradiDGV();
+        }
+
+        private void obradiDGV()
+        {
+            if (dataGridView1.SelectedRows.Count <= 0) return;
+            dataGridView1.Columns["imeKarte"].HeaderText = "Ime karte";
+            dataGridView1.Columns["opisKarte"].HeaderText = "Opis karte";
+            dataGridView1.Columns["cijena"].HeaderText = "Cijena";
+            dataGridView1.Columns["kolicina"].HeaderText = "Količina";
+            dataGridView1.Columns["ime"].HeaderText = "Prodavač";
+            dataGridView1.Columns["idOglas"].Visible = false;
+            dataGridView1.Columns["slikaKarte"].Visible = false;
+            dataGridView1.Columns["aktivan"].Visible = false;
+
+        }
     }
 }

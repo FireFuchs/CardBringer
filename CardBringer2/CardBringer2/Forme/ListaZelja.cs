@@ -25,6 +25,8 @@ namespace CardBringer2
         {
             kartaBindingSource.DataSource = karta.DohvatiKarte();
             ListaZeljaDataGrid.DataSource = wishlist.DohvatiWishlist();
+            dohvatiSadrzaj();
+            obradiDGV();
         }
 
         private void ListaZeljaGumbDodaj_Click(object sender, EventArgs e)
@@ -83,6 +85,17 @@ namespace CardBringer2
         }
 
         private void ListaZeljaDataGrid_RowEnter(object sender, DataGridViewCellEventArgs e)
+        {
+            dohvatiSadrzaj();
+        }
+        private void obradiDGV()
+        {
+            if (ListaZeljaDataGrid.SelectedRows.Count <= 0) return;
+            ListaZeljaDataGrid.Columns["idWishlist"].Visible = false;
+            ListaZeljaDataGrid.Columns["slikaKarte"].Visible = false;
+            ListaZeljaDataGrid.Columns["idKorisnik"].Visible = false;
+        }
+        private void dohvatiSadrzaj()
         {
             if (ListaZeljaDataGrid.SelectedRows.Count <= 0) return;
             imeKarteListaZelja.Text = ListaZeljaDataGrid.SelectedRows[0].Cells[1].Value.ToString();

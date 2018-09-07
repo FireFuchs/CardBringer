@@ -23,10 +23,17 @@ namespace CardBringer2
         private void Pocetna_Load(object sender, EventArgs e)
         {
             dataGridView1.DataSource = oglas.DohvatiSveAktivneOglase();
+            obradiDGV();
         }
         
         private void PocetanGumbDodajUKosaricu_Click(object sender, EventArgs e)
         {
+            dodajUKosaricu();
+        }
+
+        private void dodajUKosaricu()
+        {
+
             string imeProdavaca;
             int brojKarataNaProdaju;
             int brojKarataZaKosaricu;
@@ -40,7 +47,7 @@ namespace CardBringer2
                 return;
             }
 
-            brojKarataNaProdaju = (int) dataGridView1.SelectedRows[0].Cells["kolicina"].Value;
+            brojKarataNaProdaju = (int)dataGridView1.SelectedRows[0].Cells["kolicina"].Value;
             brojKarataZaKosaricu = int.Parse(PocetnaBrojKarataZaKosaricu.Text);
             if (brojKarataZaKosaricu > brojKarataNaProdaju)
             {
@@ -60,7 +67,6 @@ namespace CardBringer2
 
             dataGridView1.DataSource = oglas.DohvatiSveAktivneOglase();
         }
-
         private void PocetnaResetGumb_Click(object sender, EventArgs e)
         {
             dataGridView1.DataSource = oglas.DohvatiSveAktivneOglase();
@@ -97,6 +103,36 @@ namespace CardBringer2
         {
             var pretrazivaniString = PocetnaPretragaText.Text;
             dataGridView1.DataSource = oglas.TraziOglase(pretrazivaniString);
+        }
+
+        private void obradiDGV()
+        {
+            if (dataGridView1.SelectedRows.Count <= 0) return;
+            dataGridView1.Columns["imeKarte"].HeaderText = "Ime karte";
+            dataGridView1.Columns["opisKarte"].HeaderText = "Opis karte";
+            dataGridView1.Columns["cijena"].HeaderText = "Cijena";
+            dataGridView1.Columns["kolicina"].HeaderText = "Količina";
+            dataGridView1.Columns["ime"].HeaderText = "Prodavač";
+            dataGridView1.Columns["idOglas"].Visible = false;
+            dataGridView1.Columns["slikaKarte"].Visible = false;
+            dataGridView1.Columns["aktivan"].Visible = false;
+        }
+
+        private void PocetnaBrojKarataZaKosaricu_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar))
+            {
+                e.Handled = true;
+            }
+            
+        }
+
+        private void PocetnaBrojKarataZaKosaricu_KeyDown(object sender, KeyEventArgs e)
+        {
+            if(e.KeyData == Keys.Enter)
+            {
+                dodajUKosaricu();
+            }
         }
     }
 }

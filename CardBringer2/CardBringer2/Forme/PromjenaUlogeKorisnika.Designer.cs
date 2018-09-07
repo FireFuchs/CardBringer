@@ -37,18 +37,20 @@
             // dataGridView1
             // 
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(12, 12);
+            this.dataGridView1.Location = new System.Drawing.Point(9, 10);
+            this.dataGridView1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.RowTemplate.Height = 24;
             this.dataGridView1.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dataGridView1.Size = new System.Drawing.Size(803, 426);
+            this.dataGridView1.Size = new System.Drawing.Size(602, 346);
             this.dataGridView1.TabIndex = 0;
             // 
             // buttonDodajAdmina
             // 
-            this.buttonDodajAdmina.Location = new System.Drawing.Point(844, 156);
+            this.buttonDodajAdmina.Location = new System.Drawing.Point(633, 127);
+            this.buttonDodajAdmina.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.buttonDodajAdmina.Name = "buttonDodajAdmina";
-            this.buttonDodajAdmina.Size = new System.Drawing.Size(169, 72);
+            this.buttonDodajAdmina.Size = new System.Drawing.Size(127, 58);
             this.buttonDodajAdmina.TabIndex = 1;
             this.buttonDodajAdmina.Text = "Daj administratorske privilegije";
             this.buttonDodajAdmina.UseVisualStyleBackColor = true;
@@ -56,9 +58,10 @@
             // 
             // buttonMakniAdmina
             // 
-            this.buttonMakniAdmina.Location = new System.Drawing.Point(844, 234);
+            this.buttonMakniAdmina.Location = new System.Drawing.Point(633, 190);
+            this.buttonMakniAdmina.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.buttonMakniAdmina.Name = "buttonMakniAdmina";
-            this.buttonMakniAdmina.Size = new System.Drawing.Size(169, 72);
+            this.buttonMakniAdmina.Size = new System.Drawing.Size(127, 58);
             this.buttonMakniAdmina.TabIndex = 1;
             this.buttonMakniAdmina.Text = "Makni administratorske privilegije";
             this.buttonMakniAdmina.UseVisualStyleBackColor = true;
@@ -66,12 +69,14 @@
             // 
             // PromjenaUlogeKorisnika
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1117, 450);
+            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(53)))), ((int)(((byte)(53)))), ((int)(((byte)(53)))));
+            this.ClientSize = new System.Drawing.Size(838, 366);
             this.Controls.Add(this.buttonMakniAdmina);
             this.Controls.Add(this.buttonDodajAdmina);
             this.Controls.Add(this.dataGridView1);
+            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.Name = "PromjenaUlogeKorisnika";
             this.Text = "PromjenaUlogeKorisnika";
             this.Load += new System.EventHandler(this.PromjenaUlogeKorisnika_Load);
