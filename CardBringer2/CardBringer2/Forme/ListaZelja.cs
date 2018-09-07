@@ -53,6 +53,7 @@ namespace CardBringer2
         private void GumbResetListaZelja_Click(object sender, EventArgs e)
         {
             SveKarteDatagrid.DataSource = karta.DohvatiKarte();
+            ListaZeljaTraziUSvimKartama.Text = "";
         }
 
         private void ListaZeljaButtonTrazi_Click(object sender, EventArgs e)
@@ -94,6 +95,8 @@ namespace CardBringer2
             ListaZeljaDataGrid.Columns["idWishlist"].Visible = false;
             ListaZeljaDataGrid.Columns["slikaKarte"].Visible = false;
             ListaZeljaDataGrid.Columns["idKorisnik"].Visible = false;
+            ListaZeljaDataGrid.Columns["imeKarte"].HeaderText = "Ime karte";
+            ListaZeljaDataGrid.Columns["opisKarte"].HeaderText = "Opis karte";
         }
         private void dohvatiSadrzaj()
         {
