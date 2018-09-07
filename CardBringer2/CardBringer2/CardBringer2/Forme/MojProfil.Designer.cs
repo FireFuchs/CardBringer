@@ -206,7 +206,7 @@
             // opisKarte
             // 
             this.opisKarte.Location = new System.Drawing.Point(831, 472);
-            this.opisKarte.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.opisKarte.Margin = new System.Windows.Forms.Padding(2);
             this.opisKarte.Name = "opisKarte";
             this.opisKarte.ReadOnly = true;
             this.opisKarte.Size = new System.Drawing.Size(267, 81);
@@ -217,7 +217,7 @@
             // 
             this.pictureBoxSlikaKarte.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.pictureBoxSlikaKarte.Location = new System.Drawing.Point(831, 96);
-            this.pictureBoxSlikaKarte.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.pictureBoxSlikaKarte.Margin = new System.Windows.Forms.Padding(2);
             this.pictureBoxSlikaKarte.Name = "pictureBoxSlikaKarte";
             this.pictureBoxSlikaKarte.Size = new System.Drawing.Size(267, 351);
             this.pictureBoxSlikaKarte.TabIndex = 30;
@@ -248,6 +248,7 @@
             this.Controls.Add(this.IDlabelUnchanged);
             this.Name = "MojProfil";
             this.Text = "MojProfil";
+            this.Load += new System.EventHandler(this.MojProfil_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxSlikaKarte)).EndInit();
             this.ResumeLayout(false);

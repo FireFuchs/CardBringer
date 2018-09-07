@@ -28,6 +28,11 @@ namespace CardBringer2
 
             dataGridView1.DataSource = oglas.DohvatiSvojeOglase();
             dataGridView1.DataSource = oglas.DohvatiSveAktivneOglase();
+            
+        }
+
+        private void MojProfil_Load(object sender, EventArgs e)
+        {
             obradiDGV();
         }
 
@@ -65,5 +70,7 @@ namespace CardBringer2
             dataGridView1.Columns["aktivan"].Visible = false;
 
         }
+
+        
     }
 }
