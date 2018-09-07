@@ -22,6 +22,15 @@ namespace CardBringer2
         public System.DateTime datum { get; set; }
         public byte kupljeno { get; set; }
 
+        //public static kosharica Dohvati(int idKosarica)
+        //{
+        //    kosharica k = new kosharica();
+        //    using (var context = new CardBringerDBEntities())
+        //    {
+        //        k = context.kosharica.SingleOrDefault(c => c.idKosarica == idKosarica);
+        //    }
+        //    return k;
+        //}
         public void Spremi()
         {
             this.datum = DateTime.Today;
@@ -30,7 +39,7 @@ namespace CardBringer2
             
             using (var context = new CardBringerDBEntities())
             {
-                var result = context.kosharica.SingleOrDefault(c => c.idOglas == this.idOglas);
+                var result = context.kosharica.SingleOrDefault(c => c.idOglas == this.idOglas && c.kupljeno == 0);
                 if (result != null)
                 {
                     result.kolicina += kolicina;
@@ -42,6 +51,7 @@ namespace CardBringer2
             }
         }
 
+
         public static void UkloniStavkuKosarice(int idKosarica)
         {
             using (var context = new CardBringerDBEntities())
@@ -52,6 +62,18 @@ namespace CardBringer2
                 context.SaveChanges();
             }
         }
+
+        public static void StavkaKupljenaIliNe(int idKosarica, byte kupljeno)
+        {
+            using (var context = new CardBringerDBEntities())
+            {
+                var result = context.kosharica.SingleOrDefault(c => c.idKosarica == idKosarica);
+                if (result == null) return;
+                result.kupljeno = kupljeno;
+                context.SaveChanges();
+            }
+        }
+
 
         public static List<object> DohvatiKosaricu(int kupljeno)
         {

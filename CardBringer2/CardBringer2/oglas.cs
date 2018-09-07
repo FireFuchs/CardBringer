@@ -30,6 +30,15 @@ namespace CardBringer2
         public int kolicina { get; set; }
         public byte aktivan { get; set; }
 
+        //public static oglas Dohvati(int idOglas)
+        //{
+        //    oglas o = new oglas();
+        //    using (var context = new CardBringerDBEntities())
+        //    {
+        //        o = context.oglas.SingleOrDefault(c => c.idOglas == idOglas);
+        //    }
+        //    return o;
+        //}
 
         public void Spremi()
         {
@@ -39,6 +48,26 @@ namespace CardBringer2
                 context.SaveChanges();
             }
         }
+
+        //public void UkloniOglas()
+        //{
+        //    using (var context = new CardBringerDBEntities())
+        //    {
+        //        context.oglas.Remove(this);
+        //        context.SaveChanges();
+        //    }
+        //}
+
+        //public static void DeaktivirajOglas(int idOglas)
+        //{
+        //    using (var context = new CardBringerDBEntities())
+        //    {
+        //        var result = context.oglas.SingleOrDefault(c => c.idOglas == idOglas && c.kolicina > 0);
+        //        if (result == null) return;
+        //        result.aktivan = 0;
+        //        context.SaveChanges();
+        //    }
+        //}
 
         public static void UpdateKolicinuUOglasu(int idOglas, int novaKolicina, bool vracanjeIzKosarice)
         {
@@ -62,7 +91,7 @@ namespace CardBringer2
         {
             using (var context = new CardBringerDBEntities())
             {
-                var result = context.oglas.SingleOrDefault(c => c.idOglas == id);
+                var result = context.oglas.SingleOrDefault(c => c.idOglas == id && c.kolicina == 0);
                 if (result == null) return;
                 result.aktivan = 0;
                 context.SaveChanges();

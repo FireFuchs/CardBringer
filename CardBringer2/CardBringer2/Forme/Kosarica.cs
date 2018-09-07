@@ -29,9 +29,17 @@ namespace CardBringer2
 
         private void GumbKupi_Click(object sender, EventArgs e)
         {
-            
+            int idKosarica = (int)dgKarteUKosarici.SelectedRows[0].Cells["idKosarica"].Value;
+            int idOglas = (int)dgKarteUKosarici.SelectedRows[0].Cells["idOglas"].Value;
+
+            // stavka kosarica se oznacava kao kupljena
+            kosharica.StavkaKupljenaIliNe(idKosarica, 1);
+            // ukoliko u oglasu vise nema kolicine, tj nema preostalih karata, deaktivira se
+            oglas.DeaktivirajOglas(idOglas);
+
+            dgKarteUKosarici.DataSource = kosharica.DohvatiKosaricu(_nekupljeno);
         }
-        
+
 
         private void GumbMakni(object sender, EventArgs e)
         {
