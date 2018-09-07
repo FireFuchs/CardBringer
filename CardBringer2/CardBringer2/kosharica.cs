@@ -22,6 +22,26 @@ namespace CardBringer2
         public System.DateTime datum { get; set; }
         public byte kupljeno { get; set; }
 
+        public void Spremi()
+        {
+            this.datum = DateTime.Today;
+            this.kupljeno = 0;
+            this.idKorisnika = korisnik.PrijavljeniKorisnik.idKorisnika;
+            
+            using (var context = new CardBringerDBEntities())
+            {
+                var result = context.kosharica.SingleOrDefault(c => c.idOglas == this.idOglas);
+                if (result != null)
+                {
+                    result.kolicina += kolicina;
+                    context.SaveChanges();
+                    return;
+                }
+                context.kosharica.Add(this);
+                context.SaveChanges();
+            }
+        }
+
         public static List<object> DohvatiKosaricu(int kupljeno)
         {
             List<object> lista = new List<object>();
@@ -43,13 +63,13 @@ namespace CardBringer2
                             s.imeKarte,
                             s.opisKarte,
                             t.s.cijena,
-                            t.s.kolicina,
+                            t.r.o.kolicina,
                             t.r.p.ime,
                             t.s.idOglas,
                             s.slikaKarte,
                             t.r.o.kupljeno
                         })
-                    .Where(c => c.ime == CardBringer2.korisnik.PrijavljeniKorisnik.ime && c.kupljeno == kupljeno)
+                    .Where(c => c.ime == korisnik.PrijavljeniKorisnik.ime && c.kupljeno == kupljeno)
                     .ToList();
 
                 foreach (var r in result)

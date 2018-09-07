@@ -46,6 +46,7 @@
             this.opisKarte = new System.Windows.Forms.RichTextBox();
             this.pictureBoxSlikaKarte = new System.Windows.Forms.PictureBox();
             this.oglasBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.PocetnaBrojKarataZaKosaricu = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxSlikaKarte)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.oglasBindingSource)).BeginInit();
@@ -53,7 +54,7 @@
             // 
             // PocetanGumbDodajUKosaricu
             // 
-            this.PocetanGumbDodajUKosaricu.Location = new System.Drawing.Point(903, 124);
+            this.PocetanGumbDodajUKosaricu.Location = new System.Drawing.Point(902, 154);
             this.PocetanGumbDodajUKosaricu.Margin = new System.Windows.Forms.Padding(4);
             this.PocetanGumbDodajUKosaricu.Name = "PocetanGumbDodajUKosaricu";
             this.PocetanGumbDodajUKosaricu.Size = new System.Drawing.Size(111, 59);
@@ -101,12 +102,12 @@
             // 
             this.PocetnaLabelSveKarte.AutoSize = true;
             this.PocetnaLabelSveKarte.ForeColor = System.Drawing.Color.White;
-            this.PocetnaLabelSveKarte.Location = new System.Drawing.Point(12, 73);
+            this.PocetnaLabelSveKarte.Location = new System.Drawing.Point(899, 105);
             this.PocetnaLabelSveKarte.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.PocetnaLabelSveKarte.Name = "PocetnaLabelSveKarte";
-            this.PocetnaLabelSveKarte.Size = new System.Drawing.Size(72, 17);
+            this.PocetnaLabelSveKarte.Size = new System.Drawing.Size(81, 17);
             this.PocetnaLabelSveKarte.TabIndex = 11;
-            this.PocetnaLabelSveKarte.Text = "Svi oglasi:";
+            this.PocetnaLabelSveKarte.Text = "Broj karata:";
             // 
             // PocetnaResetGumb
             // 
@@ -228,12 +229,20 @@
             // 
             this.oglasBindingSource.DataSource = typeof(CardBringer2.oglas);
             // 
+            // PocetnaBrojKarataZaKosaricu
+            // 
+            this.PocetnaBrojKarataZaKosaricu.Location = new System.Drawing.Point(902, 126);
+            this.PocetnaBrojKarataZaKosaricu.Name = "PocetnaBrojKarataZaKosaricu";
+            this.PocetnaBrojKarataZaKosaricu.Size = new System.Drawing.Size(111, 22);
+            this.PocetnaBrojKarataZaKosaricu.TabIndex = 34;
+            // 
             // Pocetna
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(53)))), ((int)(((byte)(53)))), ((int)(((byte)(53)))));
             this.ClientSize = new System.Drawing.Size(1668, 742);
+            this.Controls.Add(this.PocetnaBrojKarataZaKosaricu);
             this.Controls.Add(this.opisKarte);
             this.Controls.Add(this.pictureBoxSlikaKarte);
             this.Controls.Add(this.imeKarte);
@@ -282,5 +291,6 @@
         private System.Windows.Forms.BindingSource oglasBindingSource;
         private System.Windows.Forms.RichTextBox opisKarte;
         private System.Windows.Forms.PictureBox pictureBoxSlikaKarte;
+        private System.Windows.Forms.TextBox PocetnaBrojKarataZaKosaricu;
     }
 }

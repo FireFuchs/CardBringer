@@ -27,14 +27,39 @@ namespace CardBringer2
         
         private void PocetanGumbDodajUKosaricu_Click(object sender, EventArgs e)
         {
-            
-        }
+            string imeProdavaca;
+            int brojKarataNaProdaju;
+            int brojKarataZaKosaricu;
+            int idOglas;
+            int novaKolicina;
 
-        private void UpdatePocetnaDataGrid()
-        {
-            
+            imeProdavaca = dataGridView1.SelectedRows[0].Cells["ime"].Value.ToString();
+            if (imeProdavaca == korisnik.PrijavljeniKorisnik.ime)
+            {
+                MessageBox.Show("Ne možete kupiti vlastiti oglas!", "Greška", MessageBoxButtons.OK);
+                return;
+            }
+
+            brojKarataNaProdaju = (int) dataGridView1.SelectedRows[0].Cells["kolicina"].Value;
+            brojKarataZaKosaricu = int.Parse(PocetnaBrojKarataZaKosaricu.Text);
+            if (brojKarataZaKosaricu > brojKarataNaProdaju)
+            {
+                MessageBox.Show("Ne možete uzeti više karata nego što se prodaje!", "Greška", MessageBoxButtons.OK);
+                return;
+            }
+
+            idOglas = (int)dataGridView1.SelectedRows[0].Cells["idOglas"].Value;
+            novaKolicina = brojKarataNaProdaju - brojKarataZaKosaricu;
+            oglas.UpdateKolicinuUOglasu(idOglas, novaKolicina);
+
+            kosharica k = new kosharica();
+            k.idOglas = idOglas;
+            k.kolicina = brojKarataZaKosaricu;
+            k.Spremi();
+
+
+            dataGridView1.DataSource = oglas.DohvatiSveAktivneOglase();
         }
-        
 
         private void PocetnaResetGumb_Click(object sender, EventArgs e)
         {

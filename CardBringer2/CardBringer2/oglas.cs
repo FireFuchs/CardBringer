@@ -40,6 +40,17 @@ namespace CardBringer2
             }
         }
 
+        public static void UpdateKolicinuUOglasu(int idOglas, int novaKolicina)
+        {
+            using (var context = new CardBringerDBEntities())
+            {
+                var result = context.oglas.SingleOrDefault(c => c.idOglas == idOglas);
+                if (result == null) return;
+                result.kolicina = novaKolicina;
+                context.SaveChanges();
+            }
+        }
+
         public static void DeaktivirajOglas(int id)
         {
             using (var context = new CardBringerDBEntities())
@@ -73,7 +84,7 @@ namespace CardBringer2
                         s.slikaKarte,
                         r.o.aktivan
                     })
-                    .Where(c=> c.aktivan == 1)
+                    .Where(c=> c.aktivan == 1 && c.kolicina > 0)
                     .ToList();
 
                 foreach (var r in result)
