@@ -33,7 +33,7 @@ namespace CardBringer2
                             p.slikaKarte,
                             o.idKorisnik
                         })
-                    .Where(c => c.idKorisnik == CardBringer2.korisnik.PrijavljeniKorisnik.idKorisnika)
+                    .Where(c => c.idKorisnik == korisnik.PrijavljeniKorisnik.idKorisnika)
                     .ToList();
 
                 foreach (var r in result)
@@ -49,7 +49,7 @@ namespace CardBringer2
             using (var context = new CardBringerDBEntities())
             {
                 // Provjera postoji li navedena karta 
-                if (context.wishlist.Any(c => c.idKarta == this.idKarta)) return false;
+                if (context.wishlist.Any(c => c.idKarta == this.idKarta && c.idKorisnik == korisnik.PrijavljeniKorisnik.idKorisnika)) return false;
                 context.wishlist.Add(this);
                 context.SaveChanges();
             }
