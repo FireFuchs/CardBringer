@@ -31,7 +31,7 @@
             this.components = new System.ComponentModel.Container();
             this.ListaZeljaGumbMakni = new System.Windows.Forms.Button();
             this.ListaZeljaButtonTrazi = new System.Windows.Forms.Button();
-            this.button1 = new System.Windows.Forms.Button();
+            this.ListaZeljaGumbDodaj = new System.Windows.Forms.Button();
             this.ListaZeljaTraziUSvimKartama = new System.Windows.Forms.TextBox();
             this.SveKarteDatagrid = new System.Windows.Forms.DataGridView();
             this.idKartaDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -80,16 +80,16 @@
             this.ListaZeljaButtonTrazi.UseVisualStyleBackColor = true;
             this.ListaZeljaButtonTrazi.Click += new System.EventHandler(this.ListaZeljaButtonTrazi_Click);
             // 
-            // button1
+            // ListaZeljaGumbDodaj
             // 
-            this.button1.Location = new System.Drawing.Point(751, 142);
-            this.button1.Margin = new System.Windows.Forms.Padding(4);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(100, 28);
-            this.button1.TabIndex = 12;
-            this.button1.Text = "<--- Dodaj";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
+            this.ListaZeljaGumbDodaj.Location = new System.Drawing.Point(751, 142);
+            this.ListaZeljaGumbDodaj.Margin = new System.Windows.Forms.Padding(4);
+            this.ListaZeljaGumbDodaj.Name = "ListaZeljaGumbDodaj";
+            this.ListaZeljaGumbDodaj.Size = new System.Drawing.Size(100, 28);
+            this.ListaZeljaGumbDodaj.TabIndex = 12;
+            this.ListaZeljaGumbDodaj.Text = "<--- Dodaj";
+            this.ListaZeljaGumbDodaj.UseVisualStyleBackColor = true;
+            this.ListaZeljaGumbDodaj.Click += new System.EventHandler(this.ListaZeljaGumbDodaj_Click);
             // 
             // ListaZeljaTraziUSvimKartama
             // 
@@ -277,7 +277,7 @@
             this.Controls.Add(this.GumbResetListaZelja);
             this.Controls.Add(this.ListaZeljaGumbMakni);
             this.Controls.Add(this.ListaZeljaButtonTrazi);
-            this.Controls.Add(this.button1);
+            this.Controls.Add(this.ListaZeljaGumbDodaj);
             this.Controls.Add(this.ListaZeljaTraziUSvimKartama);
             this.Controls.Add(this.SveKarteDatagrid);
             this.Controls.Add(this.ListaZeljaDataGrid);
@@ -301,7 +301,7 @@
 
         private System.Windows.Forms.Button ListaZeljaGumbMakni;
         private System.Windows.Forms.Button ListaZeljaButtonTrazi;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button ListaZeljaGumbDodaj;
         private System.Windows.Forms.TextBox ListaZeljaTraziUSvimKartama;
         private System.Windows.Forms.DataGridView SveKarteDatagrid;
         private System.Windows.Forms.DataGridView ListaZeljaDataGrid;

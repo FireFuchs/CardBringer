@@ -44,6 +44,29 @@ namespace CardBringer2
             return lista;
         }
 
+        public bool Spremi()
+        {
+            using (var context = new CardBringerDBEntities())
+            {
+                // Provjera postoji li navedena karta 
+                if (context.wishlist.Any(c => c.idKarta == this.idKarta)) return false;
+                context.wishlist.Add(this);
+                context.SaveChanges();
+            }
+            return true;
+        }
+
+        public static void UkloniKartuSListeZelja(int id)
+        {
+            using (var context = new CardBringerDBEntities())
+            {
+                var result = context.wishlist.SingleOrDefault(c => c.idWishlist == id);
+                if (result == null) return;
+                context.wishlist.Remove(result);
+                context.SaveChanges();
+            }
+        }
+
         public virtual karta karta { get; set; }
         public virtual korisnik korisnik { get; set; }
     }

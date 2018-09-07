@@ -27,16 +27,27 @@ namespace CardBringer2
             ListaZeljaDataGrid.DataSource = wishlist.DohvatiWishlist();
         }
 
-        private void button1_Click(object sender, EventArgs e)
+        private void ListaZeljaGumbDodaj_Click(object sender, EventArgs e)
         {
-            
+            var idKarta = (int)SveKarteDatagrid.SelectedRows[0].Cells[0].Value;
+            wishlist w = new wishlist();
+            w.idKarta = idKarta;
+            w.idKorisnik = (int) korisnik.PrijavljeniKorisnik.idKorisnika;
+            if (!w.Spremi())
+            {
+                MessageBox.Show("Karta se već nalazi u listi želja!", "Greška", MessageBoxButtons.OK);
+                return;
+            }
+            ListaZeljaDataGrid.DataSource = wishlist.DohvatiWishlist();
         }
 
         private void ListaZeljaGumbMakni_Click(object sender, EventArgs e)
         {
-            
+            var idWishlist = (int)ListaZeljaDataGrid.SelectedRows[0].Cells["idWishlist"].Value;
+            wishlist.UkloniKartuSListeZelja(idWishlist);
+            ListaZeljaDataGrid.DataSource = wishlist.DohvatiWishlist();
         }
-        
+
         private void GumbResetListaZelja_Click(object sender, EventArgs e)
         {
             SveKarteDatagrid.DataSource = karta.DohvatiKarte();
@@ -80,5 +91,6 @@ namespace CardBringer2
             pictureBoxSlikaKarteListaZelja.Image = Image.FromStream(slikaKarte);
             pictureBoxSlikaKarteListaZelja.SizeMode = PictureBoxSizeMode.StretchImage;
         }
+
     }
 }
