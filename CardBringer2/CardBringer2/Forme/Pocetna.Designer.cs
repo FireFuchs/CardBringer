@@ -28,15 +28,14 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.PocetanGumbDodajUKosaricu = new System.Windows.Forms.Button();
             this.PocetnaPretragaText = new System.Windows.Forms.TextBox();
             this.PocetnaPretragaGumbTrazi = new System.Windows.Forms.Button();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.PocetnaLabelSveKarte = new System.Windows.Forms.Label();
             this.PocetnaResetGumb = new System.Windows.Forms.Button();
-            this.pictureBoxSlikaKarte = new System.Windows.Forms.PictureBox();
             this.label1 = new System.Windows.Forms.Label();
-            this.opisKarte = new System.Windows.Forms.RichTextBox();
             this.cijenaKarte = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.prodavacKarte = new System.Windows.Forms.Label();
@@ -44,8 +43,12 @@
             this.label2 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.kolicinaKarata = new System.Windows.Forms.Label();
+            this.opisKarte = new System.Windows.Forms.RichTextBox();
+            this.pictureBoxSlikaKarte = new System.Windows.Forms.PictureBox();
+            this.oglasBindingSource = new System.Windows.Forms.BindingSource(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxSlikaKarte)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.oglasBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // PocetanGumbDodajUKosaricu
@@ -101,9 +104,9 @@
             this.PocetnaLabelSveKarte.Location = new System.Drawing.Point(12, 73);
             this.PocetnaLabelSveKarte.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.PocetnaLabelSveKarte.Name = "PocetnaLabelSveKarte";
-            this.PocetnaLabelSveKarte.Size = new System.Drawing.Size(74, 17);
+            this.PocetnaLabelSveKarte.Size = new System.Drawing.Size(72, 17);
             this.PocetnaLabelSveKarte.TabIndex = 11;
-            this.PocetnaLabelSveKarte.Text = "Sve Karte:";
+            this.PocetnaLabelSveKarte.Text = "Svi oglasi:";
             // 
             // PocetnaResetGumb
             // 
@@ -116,41 +119,22 @@
             this.PocetnaResetGumb.UseVisualStyleBackColor = true;
             this.PocetnaResetGumb.Click += new System.EventHandler(this.PocetnaResetGumb_Click);
             // 
-            // pictureBoxSlikaKarte
-            // 
-            this.pictureBoxSlikaKarte.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.pictureBoxSlikaKarte.Location = new System.Drawing.Point(1221, 73);
-            this.pictureBoxSlikaKarte.Margin = new System.Windows.Forms.Padding(4);
-            this.pictureBoxSlikaKarte.Name = "pictureBoxSlikaKarte";
-            this.pictureBoxSlikaKarte.Size = new System.Drawing.Size(289, 350);
-            this.pictureBoxSlikaKarte.TabIndex = 18;
-            this.pictureBoxSlikaKarte.TabStop = false;
-            // 
             // label1
             // 
             this.label1.AutoSize = true;
             this.label1.ForeColor = System.Drawing.Color.White;
-            this.label1.Location = new System.Drawing.Point(1236, 602);
+            this.label1.Location = new System.Drawing.Point(1029, 613);
             this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(51, 17);
             this.label1.TabIndex = 19;
             this.label1.Text = "Cijena:";
             // 
-            // opisKarte
-            // 
-            this.opisKarte.Location = new System.Drawing.Point(1221, 431);
-            this.opisKarte.Margin = new System.Windows.Forms.Padding(4);
-            this.opisKarte.Name = "opisKarte";
-            this.opisKarte.Size = new System.Drawing.Size(288, 147);
-            this.opisKarte.TabIndex = 20;
-            this.opisKarte.Text = "";
-            // 
             // cijenaKarte
             // 
             this.cijenaKarte.AutoSize = true;
             this.cijenaKarte.ForeColor = System.Drawing.Color.White;
-            this.cijenaKarte.Location = new System.Drawing.Point(1297, 602);
+            this.cijenaKarte.Location = new System.Drawing.Point(1090, 613);
             this.cijenaKarte.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.cijenaKarte.Name = "cijenaKarte";
             this.cijenaKarte.Size = new System.Drawing.Size(46, 17);
@@ -161,7 +145,7 @@
             // 
             this.label3.AutoSize = true;
             this.label3.ForeColor = System.Drawing.Color.White;
-            this.label3.Location = new System.Drawing.Point(1217, 645);
+            this.label3.Location = new System.Drawing.Point(1010, 670);
             this.label3.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(72, 17);
@@ -172,7 +156,7 @@
             // 
             this.prodavacKarte.AutoSize = true;
             this.prodavacKarte.ForeColor = System.Drawing.Color.White;
-            this.prodavacKarte.Location = new System.Drawing.Point(1297, 645);
+            this.prodavacKarte.Location = new System.Drawing.Point(1090, 670);
             this.prodavacKarte.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.prodavacKarte.Name = "prodavacKarte";
             this.prodavacKarte.Size = new System.Drawing.Size(46, 17);
@@ -183,7 +167,7 @@
             // 
             this.imeKarte.AutoSize = true;
             this.imeKarte.ForeColor = System.Drawing.Color.White;
-            this.imeKarte.Location = new System.Drawing.Point(1297, 677);
+            this.imeKarte.Location = new System.Drawing.Point(1090, 587);
             this.imeKarte.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.imeKarte.Name = "imeKarte";
             this.imeKarte.Size = new System.Drawing.Size(46, 17);
@@ -194,7 +178,7 @@
             // 
             this.label2.AutoSize = true;
             this.label2.ForeColor = System.Drawing.Color.White;
-            this.label2.Location = new System.Drawing.Point(1217, 677);
+            this.label2.Location = new System.Drawing.Point(1010, 587);
             this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(70, 17);
@@ -205,7 +189,7 @@
             // 
             this.label4.AutoSize = true;
             this.label4.ForeColor = System.Drawing.Color.White;
-            this.label4.Location = new System.Drawing.Point(1236, 623);
+            this.label4.Location = new System.Drawing.Point(1029, 642);
             this.label4.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(61, 17);
@@ -216,12 +200,33 @@
             // 
             this.kolicinaKarata.AutoSize = true;
             this.kolicinaKarata.ForeColor = System.Drawing.Color.White;
-            this.kolicinaKarata.Location = new System.Drawing.Point(1297, 623);
+            this.kolicinaKarata.Location = new System.Drawing.Point(1090, 642);
             this.kolicinaKarata.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.kolicinaKarata.Name = "kolicinaKarata";
             this.kolicinaKarata.Size = new System.Drawing.Size(46, 17);
             this.kolicinaKarata.TabIndex = 19;
             this.kolicinaKarata.Text = "label1";
+            // 
+            // opisKarte
+            // 
+            this.opisKarte.Location = new System.Drawing.Point(1267, 587);
+            this.opisKarte.Name = "opisKarte";
+            this.opisKarte.Size = new System.Drawing.Size(355, 99);
+            this.opisKarte.TabIndex = 33;
+            this.opisKarte.Text = "";
+            // 
+            // pictureBoxSlikaKarte
+            // 
+            this.pictureBoxSlikaKarte.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.pictureBoxSlikaKarte.Location = new System.Drawing.Point(1267, 124);
+            this.pictureBoxSlikaKarte.Name = "pictureBoxSlikaKarte";
+            this.pictureBoxSlikaKarte.Size = new System.Drawing.Size(355, 431);
+            this.pictureBoxSlikaKarte.TabIndex = 32;
+            this.pictureBoxSlikaKarte.TabStop = false;
+            // 
+            // oglasBindingSource
+            // 
+            this.oglasBindingSource.DataSource = typeof(CardBringer2.oglas);
             // 
             // Pocetna
             // 
@@ -230,6 +235,7 @@
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(53)))), ((int)(((byte)(53)))), ((int)(((byte)(53)))));
             this.ClientSize = new System.Drawing.Size(1668, 742);
             this.Controls.Add(this.opisKarte);
+            this.Controls.Add(this.pictureBoxSlikaKarte);
             this.Controls.Add(this.imeKarte);
             this.Controls.Add(this.prodavacKarte);
             this.Controls.Add(this.label2);
@@ -238,7 +244,6 @@
             this.Controls.Add(this.cijenaKarte);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.label1);
-            this.Controls.Add(this.pictureBoxSlikaKarte);
             this.Controls.Add(this.PocetnaResetGumb);
             this.Controls.Add(this.PocetanGumbDodajUKosaricu);
             this.Controls.Add(this.PocetnaPretragaText);
@@ -252,6 +257,7 @@
             this.Load += new System.EventHandler(this.Pocetna_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxSlikaKarte)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.oglasBindingSource)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -265,9 +271,7 @@
         private System.Windows.Forms.DataGridView dataGridView1;
         private System.Windows.Forms.Label PocetnaLabelSveKarte;
         private System.Windows.Forms.Button PocetnaResetGumb;
-        private System.Windows.Forms.PictureBox pictureBoxSlikaKarte;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.RichTextBox opisKarte;
         private System.Windows.Forms.Label cijenaKarte;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label prodavacKarte;
@@ -275,5 +279,8 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label kolicinaKarata;
+        private System.Windows.Forms.BindingSource oglasBindingSource;
+        private System.Windows.Forms.RichTextBox opisKarte;
+        private System.Windows.Forms.PictureBox pictureBoxSlikaKarte;
     }
 }

@@ -14,86 +14,31 @@ namespace CardBringer2
     public partial class ListaZelja : Form
     {
 
-        private readonly int _idKorisnika;
-        private readonly string _reloadSql;
-
-        public ListaZelja(int id)
+    
+        public ListaZelja()
         {
             InitializeComponent();
-            _idKorisnika = id;
-            _reloadSql = $"SELECT kart.idKarta, kart.imeKarte, kart.opisKarte, kart.slikaKarte, w.kolicina FROM karta kart JOIN wishlist w ON w.idKarta = kart.idKarta JOIN korisnik k ON k.idKorisnika = w.idKorisnik WHERE idKorisnik = '{_idKorisnika}';";
             this.ControlBox = false;
         }
 
         private void ListaZelja_Load(object sender, EventArgs e)
         {
-            ListaZeljaLoadGridGlavni();
+            kartaBindingSource.DataSource = karta.DohvatiKarte();
+            ListaZeljaDataGrid.DataSource = wishlist.DohvatiWishlist();
         }
 
         private void button1_Click(object sender, EventArgs e)
         {
-            var kartaId = (int)SveKarteDatagrid.SelectedRows[0].Cells[0].Value;
-            var db = new DbInteraction();
-            db.Connection.Open();
-            var sql = $"SELECT COUNT(idKarta) FROM wishlist WHERE idKorisnik = '{_idKorisnika}' AND idKarta = '{kartaId}';";
-            var command = new SqlCommand(sql, db.Connection);
-            var dataReader = command.ExecuteReader();
-            var broj = 0;
-            while (dataReader.Read())
-            {
-                broj = dataReader.GetInt32(0);
-            }
-            dataReader.Close();
-            command.Dispose();
-            if (broj == 1)
-            {
-                var kolKarti = 0;
-                sql = $"SELECT kolicina FROM wishlist WHERE idKorisnik = '{_idKorisnika}' AND idKarta = '{kartaId}';";
-                command = new SqlCommand(sql, db.Connection);
-                dataReader = command.ExecuteReader();
-                while (dataReader.Read())
-                {
-                    kolKarti = dataReader.GetInt32(0);
-                }
-                kolKarti += 1;
-                dataReader.Close();
-                command.Dispose();
-                sql = $"UPDATE wishlist SET kolicina = '{kolKarti}' WHERE idKorisnik = '{_idKorisnika}' AND idKarta = '{kartaId}';";
-                var dataAdapter = new SqlDataAdapter();
-                dataAdapter.UpdateCommand = new SqlCommand(sql, db.Connection);
-                dataAdapter.UpdateCommand.ExecuteNonQuery();
-                db.Connection.Close();
-                //FormControls.LoadDatagridView(ListaZeljaDataGrid, _reloadSql);
-            }
-            else
-            {
-                var dataAdapter = new SqlDataAdapter();
-                sql = $"INSERT INTO wishlist (idKorisnik, idKarta, napomena, kolicina) VALUES('{_idKorisnika}','{kartaId}','{1}','{1}'); ";
-                dataAdapter.UpdateCommand = new SqlCommand(sql, db.Connection);
-                dataAdapter.UpdateCommand.ExecuteNonQuery();
-                db.Connection.Close();
-
-                ListaZeljaDataGrid.DataSource = null;
-                //FormControls.LoadDatagridView(ListaZeljaDataGrid, _reloadSql);
-            }
+            
         }
 
         private void ListaZeljaGumbMakni_Click(object sender, EventArgs e)
         {
-            var db = new DbInteraction();
-            db.Connection.Open();
-            var idKarte = (int)ListaZeljaDataGrid.SelectedRows[0].Cells[0].Value;
-            var sql = $"DELETE FROM wishlist WHERE idKorisnik = '{_idKorisnika}' AND idKarta = '{idKarte}';";
-            var command = new SqlCommand(sql, db.Connection);
-            command.ExecuteNonQuery();
-            command.Dispose();
-            db.Connection.Close();
-            //FormControls.LoadDatagridView(ListaZeljaDataGrid, _reloadSql);
+            
         }
         
         private void GumbResetListaZelja_Click(object sender, EventArgs e)
         {
-            ListaZeljaLoadGridGlavni();
         }
 
         private void ListaZeljaButtonTrazi_Click(object sender, EventArgs e)
@@ -111,17 +56,26 @@ namespace CardBringer2
 
         private void Filter()
         {
-            var kartaIme = ListaZeljaTrazi.Text;
-            var sql = $"SELECT imeKarte, opisKarte FROM karta WHERE imeKarte LIKE '%{kartaIme}%';";
-            //FormControls.LoadDatagridView(SveKarteDatagrid, sql);
-            //FormControls.LoadDatagridView(ListaZeljaDataGrid, _reloadSql);
         }
 
-        private void ListaZeljaLoadGridGlavni()
+        private void SveKarteDatagrid_RowEnter(object sender, DataGridViewCellEventArgs e)
         {
-            var sql = $"SELECT imeKarte, opisKarte FROM karta;";
-            //FormControls.LoadDatagridView(SveKarteDatagrid, sql);
-            //FormControls.LoadDatagridView(ListaZeljaDataGrid, _reloadSql);
+            if (SveKarteDatagrid.SelectedRows.Count <= 0) return;
+            imeKarteSveKarte.Text = SveKarteDatagrid.SelectedRows[0].Cells[1].Value.ToString();
+            opisKarteSveKarte.Text = SveKarteDatagrid.SelectedRows[0].Cells[2].Value.ToString();
+            var slikaKarte = AzureStorageKarata.DohvatiSlikuKarte(SveKarteDatagrid.SelectedRows[0].Cells[3].Value.ToString());
+            pictureBoxSlikaKarteSveKarte.Image = Image.FromStream(slikaKarte);
+            pictureBoxSlikaKarteSveKarte.SizeMode = PictureBoxSizeMode.StretchImage;
+        }
+
+        private void ListaZeljaDataGrid_RowEnter(object sender, DataGridViewCellEventArgs e)
+        {
+            if (ListaZeljaDataGrid.SelectedRows.Count <= 0) return;
+            imeKarteListaZelja.Text = ListaZeljaDataGrid.SelectedRows[0].Cells[1].Value.ToString();
+            opisKarteListaZelja.Text = ListaZeljaDataGrid.SelectedRows[0].Cells[2].Value.ToString();
+            var slikaKarte = AzureStorageKarata.DohvatiSlikuKarte(ListaZeljaDataGrid.SelectedRows[0].Cells[3].Value.ToString());
+            pictureBoxSlikaKarteListaZelja.Image = Image.FromStream(slikaKarte);
+            pictureBoxSlikaKarteListaZelja.SizeMode = PictureBoxSizeMode.StretchImage;
         }
     }
 }

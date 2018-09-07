@@ -31,7 +31,6 @@
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.buttonDodajAdmina = new System.Windows.Forms.Button();
             this.buttonMakniAdmina = new System.Windows.Forms.Button();
-            this.buttonIzbrisiKorisnika = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -65,22 +64,11 @@
             this.buttonMakniAdmina.UseVisualStyleBackColor = true;
             this.buttonMakniAdmina.Click += new System.EventHandler(this.buttonMakniAdmina_Click);
             // 
-            // buttonIzbrisiKorisnika
-            // 
-            this.buttonIzbrisiKorisnika.Location = new System.Drawing.Point(844, 312);
-            this.buttonIzbrisiKorisnika.Name = "buttonIzbrisiKorisnika";
-            this.buttonIzbrisiKorisnika.Size = new System.Drawing.Size(169, 72);
-            this.buttonIzbrisiKorisnika.TabIndex = 1;
-            this.buttonIzbrisiKorisnika.Text = "Izbriši korisnika";
-            this.buttonIzbrisiKorisnika.UseVisualStyleBackColor = true;
-            this.buttonIzbrisiKorisnika.Click += new System.EventHandler(this.buttonIzbrisiKorisnika_Click);
-            // 
             // PromjenaUlogeKorisnika
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1117, 450);
-            this.Controls.Add(this.buttonIzbrisiKorisnika);
             this.Controls.Add(this.buttonMakniAdmina);
             this.Controls.Add(this.buttonDodajAdmina);
             this.Controls.Add(this.dataGridView1);
@@ -97,6 +85,5 @@
         private System.Windows.Forms.DataGridView dataGridView1;
         private System.Windows.Forms.Button buttonDodajAdmina;
         private System.Windows.Forms.Button buttonMakniAdmina;
-        private System.Windows.Forms.Button buttonIzbrisiKorisnika;
     }
 }

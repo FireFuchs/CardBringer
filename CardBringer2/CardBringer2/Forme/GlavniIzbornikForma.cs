@@ -13,15 +13,9 @@ namespace CardBringer2
     public partial class GlavniIzbornikForma : Form
     {
         string _helpTekst = "Help glavne forme";
-        private readonly int _idKorisnika;
         public GlavniIzbornikForma()
         {
             InitializeComponent();
-        }
-        public GlavniIzbornikForma(int id)
-        {
-            InitializeComponent();
-            _idKorisnika = id;
         }
 
         private void GlavniIzbornikForma_KeyDown(object sender, KeyEventArgs e)
@@ -46,7 +40,7 @@ namespace CardBringer2
 
         private void početnaToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            var novaPocetna = new Pocetna(_idKorisnika);
+            var novaPocetna = new Pocetna();
             novaPocetna.MdiParent = this;
             novaPocetna.WindowState = FormWindowState.Maximized;
             novaPocetna.Show();
@@ -64,7 +58,7 @@ namespace CardBringer2
 
         private void košaricaToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            var novaKosarica = new Kosarica(_idKorisnika);
+            var novaKosarica = new Kosarica();
             novaKosarica.MdiParent = this;
             novaKosarica.WindowState = FormWindowState.Maximized;
             novaKosarica.Show();
@@ -73,7 +67,7 @@ namespace CardBringer2
 
         private void listaŽeljaToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            var novaListaZelja = new ListaZelja(_idKorisnika);
+            var novaListaZelja = new ListaZelja();
             novaListaZelja.MdiParent = this;
             novaListaZelja.WindowState = FormWindowState.Maximized;
             novaListaZelja.Show();
@@ -87,7 +81,7 @@ namespace CardBringer2
 
         private void GlavniIzbornikForma_Load(object sender, EventArgs e)
         {
-            var novaPocetna = new Pocetna(_idKorisnika);
+            var novaPocetna = new Pocetna();
             novaPocetna.MdiParent = this;
             novaPocetna.WindowState = FormWindowState.Maximized;
             novaPocetna.Show();
@@ -96,7 +90,7 @@ namespace CardBringer2
 
         private void dodajPonuduToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            var noviOglas = new ObjaviOglas(_idKorisnika);
+            var noviOglas = new ObjaviOglas();
             noviOglas.MdiParent = this;
             noviOglas.WindowState = FormWindowState.Maximized;
             noviOglas.Show();
@@ -105,7 +99,7 @@ namespace CardBringer2
 
         private void mojeKupnjeToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            var mojeKupnje = new MojeKupnje(_idKorisnika);
+            var mojeKupnje = new MojeKupnje();
             mojeKupnje.MdiParent = this;
             mojeKupnje.WindowState = FormWindowState.Maximized;
             mojeKupnje.Show();
@@ -114,7 +108,7 @@ namespace CardBringer2
 
         private void administratorToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            var Administracija = new Administracija(_idKorisnika);
+            var Administracija = new Administracija();
             Administracija.MdiParent = this;
             Administracija.WindowState = FormWindowState.Maximized;
             Administracija.Show();

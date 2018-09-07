@@ -12,7 +12,6 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using CardBringer2.Database;
 
 namespace CardBringer2
 {
@@ -38,11 +37,11 @@ namespace CardBringer2
 
         private void buttonSpremiKartu_Click(object sender, EventArgs e)
         {
-            var karta = new KartaDB();
-            karta.imeKarte = this.unosImeKarte.Text;
-            karta.opisKarte = this.unosOpisKarte.Text;
-            karta.slikaKarte = AzureStorageKarata.PrenesiSlikuKarte(_imgLocation);
-            karta.Spremi();
+            karta k = new karta();
+            k.imeKarte = unosImeKarte.Text;
+            k.opisKarte = this.unosOpisKarte.Text;
+            k.slikaKarte = AzureStorageKarata.PrenesiSlikuKarte(_imgLocation);
+            k.Spremi();
         }
     }
 }

@@ -12,11 +12,9 @@ namespace CardBringer2
 {
     public partial class Administracija : Form
     {
-        int _idKorisnik;
-        public Administracija(int id)
+        public Administracija()
         {
             InitializeComponent();
-            _idKorisnik = id;
             this.ControlBox = false;
         }
 
@@ -33,7 +31,7 @@ namespace CardBringer2
 
         private void buttonUlogeKorisnika_Click(object sender, EventArgs e)
         {
-            var Administracija = new PromjenaUlogeKorisnika(_idKorisnik);
+            var Administracija = new PromjenaUlogeKorisnika();
             Administracija.Show();
         }
     }

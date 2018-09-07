@@ -8,7 +8,6 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using CardBringer2.Database;
 
 namespace CardBringer2
 {
@@ -219,7 +218,9 @@ namespace CardBringer2
         {
             var username = unosKorisnickoImeLoginLoginRegisterForma.Text;
             var password = unosPasswordLoginLoginRegisterForma.Text;
-            if(KorisnikDB.Prijava(username, password) != null)
+            
+
+            if (korisnik.Prijava(username, password) != null)
             {
                 OtvoriGlavnuFormu();
                 return;
@@ -238,14 +239,13 @@ namespace CardBringer2
 
             if (password == rePassword)
             {
-                var korisnik = new KorisnikDB();
-                korisnik.ime = username;
-                korisnik.lozinka = password;
-                korisnik.email = email;
-                korisnik.mjestoStanovanja = mjestoStanovanja;
-                korisnik.Spremi();
-
-                KorisnikDB.PrijavljeniKorisnik = korisnik;
+                korisnik k = new korisnik();
+                k.ime = username;
+                k.lozinka = password;
+                k.email = email;
+                k.mjestoStanovanja = mjestoStanovanja;
+                k.idUloga = 1;
+                k.Registracija();
                 OtvoriGlavnuFormu();
             }
             else

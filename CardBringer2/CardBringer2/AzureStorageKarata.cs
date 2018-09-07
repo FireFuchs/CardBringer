@@ -9,6 +9,7 @@ using Microsoft.WindowsAzure.Storage.Blob;
 
 namespace CardBringer2
 {
+   
     internal class AzureStorageKarata
     {
         public static string PrenesiSlikuKarte(string imgLocation)
@@ -49,4 +50,5 @@ namespace CardBringer2
             return memoryStream;
         }
     }
+    
 }

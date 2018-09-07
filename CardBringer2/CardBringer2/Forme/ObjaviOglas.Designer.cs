@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
@@ -38,13 +39,30 @@
             this.pictureBoxSlikaKarte = new System.Windows.Forms.PictureBox();
             this.OpisKarte = new System.Windows.Forms.RichTextBox();
             this.ImeKarte = new System.Windows.Forms.Label();
+            this.kartaBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.idKartaDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.imeKarteDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.opisKarteDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.slikaKarteDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.oglasDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.wishlistDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxSlikaKarte)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.kartaBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // dataGridView1
             // 
+            this.dataGridView1.AutoGenerateColumns = false;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.idKartaDataGridViewTextBoxColumn,
+            this.imeKarteDataGridViewTextBoxColumn,
+            this.opisKarteDataGridViewTextBoxColumn,
+            this.slikaKarteDataGridViewTextBoxColumn,
+            this.oglasDataGridViewTextBoxColumn,
+            this.wishlistDataGridViewTextBoxColumn});
+            this.dataGridView1.DataSource = this.kartaBindingSource;
             this.dataGridView1.GridColor = System.Drawing.Color.Gray;
             this.dataGridView1.Location = new System.Drawing.Point(16, 108);
             this.dataGridView1.Margin = new System.Windows.Forms.Padding(4);
@@ -145,6 +163,50 @@
             this.ImeKarte.TabIndex = 8;
             this.ImeKarte.Text = "Naziv karte";
             // 
+            // kartaBindingSource
+            // 
+            this.kartaBindingSource.DataSource = typeof(CardBringer2.karta);
+            // 
+            // idKartaDataGridViewTextBoxColumn
+            // 
+            this.idKartaDataGridViewTextBoxColumn.DataPropertyName = "idKarta";
+            this.idKartaDataGridViewTextBoxColumn.HeaderText = "idKarta";
+            this.idKartaDataGridViewTextBoxColumn.Name = "idKartaDataGridViewTextBoxColumn";
+            this.idKartaDataGridViewTextBoxColumn.Visible = false;
+            // 
+            // imeKarteDataGridViewTextBoxColumn
+            // 
+            this.imeKarteDataGridViewTextBoxColumn.DataPropertyName = "imeKarte";
+            this.imeKarteDataGridViewTextBoxColumn.HeaderText = "Ime karte";
+            this.imeKarteDataGridViewTextBoxColumn.Name = "imeKarteDataGridViewTextBoxColumn";
+            // 
+            // opisKarteDataGridViewTextBoxColumn
+            // 
+            this.opisKarteDataGridViewTextBoxColumn.DataPropertyName = "opisKarte";
+            this.opisKarteDataGridViewTextBoxColumn.HeaderText = "Opis karte";
+            this.opisKarteDataGridViewTextBoxColumn.Name = "opisKarteDataGridViewTextBoxColumn";
+            // 
+            // slikaKarteDataGridViewTextBoxColumn
+            // 
+            this.slikaKarteDataGridViewTextBoxColumn.DataPropertyName = "slikaKarte";
+            this.slikaKarteDataGridViewTextBoxColumn.HeaderText = "slikaKarte";
+            this.slikaKarteDataGridViewTextBoxColumn.Name = "slikaKarteDataGridViewTextBoxColumn";
+            this.slikaKarteDataGridViewTextBoxColumn.Visible = false;
+            // 
+            // oglasDataGridViewTextBoxColumn
+            // 
+            this.oglasDataGridViewTextBoxColumn.DataPropertyName = "oglas";
+            this.oglasDataGridViewTextBoxColumn.HeaderText = "oglas";
+            this.oglasDataGridViewTextBoxColumn.Name = "oglasDataGridViewTextBoxColumn";
+            this.oglasDataGridViewTextBoxColumn.Visible = false;
+            // 
+            // wishlistDataGridViewTextBoxColumn
+            // 
+            this.wishlistDataGridViewTextBoxColumn.DataPropertyName = "wishlist";
+            this.wishlistDataGridViewTextBoxColumn.HeaderText = "wishlist";
+            this.wishlistDataGridViewTextBoxColumn.Name = "wishlistDataGridViewTextBoxColumn";
+            this.wishlistDataGridViewTextBoxColumn.Visible = false;
+            // 
             // ObjaviOglas
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -168,6 +230,7 @@
             this.Load += new System.EventHandler(this.ObjaviOglas_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxSlikaKarte)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.kartaBindingSource)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -185,5 +248,12 @@
         private System.Windows.Forms.PictureBox pictureBoxSlikaKarte;
         private System.Windows.Forms.RichTextBox OpisKarte;
         private System.Windows.Forms.Label ImeKarte;
+        private System.Windows.Forms.DataGridViewTextBoxColumn idKartaDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn imeKarteDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn opisKarteDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn slikaKarteDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn oglasDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn wishlistDataGridViewTextBoxColumn;
+        private System.Windows.Forms.BindingSource kartaBindingSource;
     }
 }

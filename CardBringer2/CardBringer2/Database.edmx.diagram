@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="4171d20428fb4310a02bd4681dcdb278" Name="Diagram1">
+        <EntityTypeShape EntityType="CardBringerDBModel.karta" Width="1.5" PointX="3" PointY="7.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="CardBringerDBModel.korisnik" Width="1.5" PointX="3" PointY="2.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="CardBringerDBModel.kosharica" Width="1.5" PointX="10.5" PointY="2.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="CardBringerDBModel.oglas" Width="1.5" PointX="5.25" PointY="2.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="CardBringerDBModel.uloga" Width="1.5" PointX="0.75" PointY="3" IsExpanded="true" />
+        <EntityTypeShape EntityType="CardBringerDBModel.wishlist" Width="1.5" PointX="8.25" PointY="2.75" IsExpanded="true" />
+        <AssociationConnector Association="CardBringerDBModel.fk_korisnikKarta_karta_1" ManuallyRouted="false" />
+        <AssociationConnector Association="CardBringerDBModel.fk_wishlist_karta_1" ManuallyRouted="false" />
+        <AssociationConnector Association="CardBringerDBModel.fk_korisnik_uloga_1" ManuallyRouted="false" />
+        <AssociationConnector Association="CardBringerDBModel.fk_korisnikKarta_korisnik_1" ManuallyRouted="false" />
+        <AssociationConnector Association="CardBringerDBModel.fk_medjuspremnikKosarica_korisnik_1" ManuallyRouted="false" />
+        <AssociationConnector Association="CardBringerDBModel.fk_wishlist_korisnik_1" ManuallyRouted="false" />
+        <AssociationConnector Association="CardBringerDBModel.fk_medjuspremnikKosarica_korisnikKarta_1" ManuallyRouted="false" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

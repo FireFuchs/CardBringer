@@ -42,7 +42,11 @@
             this.EmailLabelUnchanged = new System.Windows.Forms.Label();
             this.IDlabelUnchanged = new System.Windows.Forms.Label();
             this.buttonUkloniOglas = new System.Windows.Forms.Button();
+            this.imeKarte = new System.Windows.Forms.Label();
+            this.opisKarte = new System.Windows.Forms.RichTextBox();
+            this.pictureBoxSlikaKarte = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxSlikaKarte)).BeginInit();
             this.SuspendLayout();
             // 
             // KorisnikoveKarteLabelUnchanged
@@ -69,6 +73,7 @@
             this.dataGridView1.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dataGridView1.Size = new System.Drawing.Size(882, 401);
             this.dataGridView1.TabIndex = 27;
+            this.dataGridView1.RowEnter += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_RowEnter);
             // 
             // TipKorisnikaLabelUnchanged
             // 
@@ -201,12 +206,42 @@
             this.buttonUkloniOglas.UseVisualStyleBackColor = true;
             this.buttonUkloniOglas.Click += new System.EventHandler(this.buttonUkloniOglas_Click);
             // 
+            // imeKarte
+            // 
+            this.imeKarte.AutoSize = true;
+            this.imeKarte.ForeColor = System.Drawing.Color.White;
+            this.imeKarte.Location = new System.Drawing.Point(1105, 555);
+            this.imeKarte.Name = "imeKarte";
+            this.imeKarte.Size = new System.Drawing.Size(79, 17);
+            this.imeKarte.TabIndex = 32;
+            this.imeKarte.Text = "Naziv karte";
+            // 
+            // opisKarte
+            // 
+            this.opisKarte.Location = new System.Drawing.Point(1108, 581);
+            this.opisKarte.Name = "opisKarte";
+            this.opisKarte.Size = new System.Drawing.Size(355, 99);
+            this.opisKarte.TabIndex = 31;
+            this.opisKarte.Text = "";
+            // 
+            // pictureBoxSlikaKarte
+            // 
+            this.pictureBoxSlikaKarte.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.pictureBoxSlikaKarte.Location = new System.Drawing.Point(1108, 118);
+            this.pictureBoxSlikaKarte.Name = "pictureBoxSlikaKarte";
+            this.pictureBoxSlikaKarte.Size = new System.Drawing.Size(355, 431);
+            this.pictureBoxSlikaKarte.TabIndex = 30;
+            this.pictureBoxSlikaKarte.TabStop = false;
+            // 
             // MojProfil
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(53)))), ((int)(((byte)(53)))), ((int)(((byte)(53)))));
             this.ClientSize = new System.Drawing.Size(1604, 742);
+            this.Controls.Add(this.imeKarte);
+            this.Controls.Add(this.opisKarte);
+            this.Controls.Add(this.pictureBoxSlikaKarte);
             this.Controls.Add(this.buttonUkloniOglas);
             this.Controls.Add(this.KorisnikoveKarteLabelUnchanged);
             this.Controls.Add(this.dataGridView1);
@@ -225,6 +260,7 @@
             this.Name = "MojProfil";
             this.Text = "MojProfil";
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxSlikaKarte)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -246,5 +282,8 @@
         private System.Windows.Forms.Label EmailLabelUnchanged;
         private System.Windows.Forms.Label IDlabelUnchanged;
         private System.Windows.Forms.Button buttonUkloniOglas;
+        private System.Windows.Forms.Label imeKarte;
+        private System.Windows.Forms.RichTextBox opisKarte;
+        private System.Windows.Forms.PictureBox pictureBoxSlikaKarte;
     }
 }

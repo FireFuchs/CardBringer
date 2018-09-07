@@ -8,37 +8,48 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using CardBringer2.Database;
 
 namespace CardBringer2
 {
     public partial class MojProfil : Form
     {
-        private readonly string _reloadSql;
 
         public MojProfil()
         {
             InitializeComponent();
             this.ControlBox = false;
-            
-            if (KorisnikDB.PrijavljeniKorisnik == null) return;
-            MojProfilLabelID.Text = KorisnikDB.PrijavljeniKorisnik.idKorisnika.ToString();
-            MojProfilLabelNickname.Text = KorisnikDB.PrijavljeniKorisnik.ime;
-            MojProfilLabelEmail.Text = KorisnikDB.PrijavljeniKorisnik.email;
-            MojProfilLabelAdresa.Text = KorisnikDB.PrijavljeniKorisnik.mjestoStanovanja;
-            MojProfilLabelTipKorisnika.Text = KorisnikDB.PrijavljeniKorisnik.idUloga.ToString();
-            
-            dataGridView1.DataSource = OglasDB.DohvatiOglase();
+
+            if (korisnik.PrijavljeniKorisnik == null) return;
+            MojProfilLabelID.Text = korisnik.PrijavljeniKorisnik.idKorisnika.ToString();
+            MojProfilLabelNickname.Text = korisnik.PrijavljeniKorisnik.ime;
+            MojProfilLabelEmail.Text = korisnik.PrijavljeniKorisnik.email;
+            MojProfilLabelAdresa.Text = korisnik.PrijavljeniKorisnik.mjestoStanovanja;
+            MojProfilLabelTipKorisnika.Text = uloga.DohvatiNazivUloge(korisnik.PrijavljeniKorisnik.idUloga);
+
+            dataGridView1.DataSource = oglas.DohvatiSvojeOglase();
+
         }
 
         private void buttonUkloniOglas_Click(object sender, EventArgs e)
         {
             if (dataGridView1.SelectedRows.Count <= 0) return;
-            foreach (DataGridViewRow row in dataGridView1.SelectedRows)
-            {
-                OglasDB odabraniOglas= row.DataBoundItem as OglasDB;
-                odabraniOglas.Obrisi();
-            }
+            var idOglas = (int) dataGridView1.SelectedRows[0].Cells["idOglas"].Value;
+            oglas.DeaktivirajOglas(idOglas);
+
+            dataGridView1.DataSource = oglas.DohvatiSvojeOglase();
+            pictureBoxSlikaKarte.Image = null;
+            imeKarte.Text = "Naziv karte";
+            opisKarte.Text = null;
+        }
+
+        private void dataGridView1_RowEnter(object sender, DataGridViewCellEventArgs e)
+        {
+            if (dataGridView1.SelectedRows.Count <= 0) return;
+            imeKarte.Text = dataGridView1.SelectedRows[0].Cells[1].Value.ToString();
+            opisKarte.Text = dataGridView1.SelectedRows[0].Cells[2].Value.ToString();
+            var slikaKarte = AzureStorageKarata.DohvatiSlikuKarte(dataGridView1.SelectedRows[0].Cells["slikaKarte"].Value.ToString());
+            pictureBoxSlikaKarte.Image = Image.FromStream(slikaKarte);
+            pictureBoxSlikaKarte.SizeMode = PictureBoxSizeMode.StretchImage;
         }
     }
 }

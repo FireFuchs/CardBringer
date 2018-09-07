@@ -1,0 +1,472 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+    <Schema Namespace="CardBringerDBModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012.Azure" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="karta">
+          <Key>
+            <PropertyRef Name="idKarta" />
+          </Key>
+          <Property Name="idKarta" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="imeKarte" Type="varchar" MaxLength="255" Nullable="false" />
+          <Property Name="opisKarte" Type="text" Nullable="false" />
+          <Property Name="slikaKarte" Type="varchar" MaxLength="255" Nullable="false" />
+        </EntityType>
+        <EntityType Name="korisnik">
+          <Key>
+            <PropertyRef Name="idKorisnika" />
+          </Key>
+          <Property Name="idKorisnika" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="ime" Type="varchar" MaxLength="255" Nullable="false" />
+          <Property Name="lozinka" Type="varchar" MaxLength="255" Nullable="false" />
+          <Property Name="email" Type="varchar" MaxLength="255" Nullable="false" />
+          <Property Name="mjestoStanovanja" Type="varchar" MaxLength="255" Nullable="false" />
+          <Property Name="idUloga" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="kosharica">
+          <Key>
+            <PropertyRef Name="idKosarica" />
+          </Key>
+          <Property Name="idKosarica" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="idKorisnika" Type="int" Nullable="false" />
+          <Property Name="idOglas" Type="int" Nullable="false" />
+          <Property Name="kolicina" Type="int" Nullable="false" />
+          <Property Name="datum" Type="date" Nullable="false" />
+          <Property Name="kupljeno" Type="tinyint" Nullable="false" />
+        </EntityType>
+        <EntityType Name="oglas">
+          <Key>
+            <PropertyRef Name="idOglas" />
+          </Key>
+          <Property Name="idOglas" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="idKorisnik" Type="int" Nullable="false" />
+          <Property Name="idKarta" Type="int" Nullable="false" />
+          <Property Name="cijena" Type="money" Nullable="false" />
+          <Property Name="kolicina" Type="int" Nullable="false" />
+          <Property Name="aktivan" Type="tinyint" Nullable="false" />
+        </EntityType>
+        <EntityType Name="uloga">
+          <Key>
+            <PropertyRef Name="idUloga" />
+          </Key>
+          <Property Name="idUloga" Type="int" Nullable="false" />
+          <Property Name="nazivUloge" Type="varchar" MaxLength="20" Nullable="false" />
+        </EntityType>
+        <EntityType Name="wishlist">
+          <Key>
+            <PropertyRef Name="idWishlist" />
+          </Key>
+          <Property Name="idKorisnik" Type="int" Nullable="false" />
+          <Property Name="idKarta" Type="int" Nullable="false" />
+          <Property Name="idWishlist" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+        </EntityType>
+        <Association Name="fk_korisnik_uloga_1">
+          <End Role="uloga" Type="Self.uloga" Multiplicity="1" />
+          <End Role="korisnik" Type="Self.korisnik" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="uloga">
+              <PropertyRef Name="idUloga" />
+            </Principal>
+            <Dependent Role="korisnik">
+              <PropertyRef Name="idUloga" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="fk_korisnikKarta_karta_1">
+          <End Role="karta" Type="Self.karta" Multiplicity="1" />
+          <End Role="oglas" Type="Self.oglas" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="karta">
+              <PropertyRef Name="idKarta" />
+            </Principal>
+            <Dependent Role="oglas">
+              <PropertyRef Name="idKarta" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="fk_korisnikKarta_korisnik_1">
+          <End Role="korisnik" Type="Self.korisnik" Multiplicity="1" />
+          <End Role="oglas" Type="Self.oglas" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="korisnik">
+              <PropertyRef Name="idKorisnika" />
+            </Principal>
+            <Dependent Role="oglas">
+              <PropertyRef Name="idKorisnik" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="fk_medjuspremnikKosarica_korisnik_1">
+          <End Role="korisnik" Type="Self.korisnik" Multiplicity="1" />
+          <End Role="kosharica" Type="Self.kosharica" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="korisnik">
+              <PropertyRef Name="idKorisnika" />
+            </Principal>
+            <Dependent Role="kosharica">
+              <PropertyRef Name="idKorisnika" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="fk_medjuspremnikKosarica_korisnikKarta_1">
+          <End Role="oglas" Type="Self.oglas" Multiplicity="1" />
+          <End Role="kosharica" Type="Self.kosharica" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="oglas">
+              <PropertyRef Name="idOglas" />
+            </Principal>
+            <Dependent Role="kosharica">
+              <PropertyRef Name="idOglas" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="fk_wishlist_karta_1">
+          <End Role="karta" Type="Self.karta" Multiplicity="1" />
+          <End Role="wishlist" Type="Self.wishlist" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="karta">
+              <PropertyRef Name="idKarta" />
+            </Principal>
+            <Dependent Role="wishlist">
+              <PropertyRef Name="idKarta" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="fk_wishlist_korisnik_1">
+          <End Role="korisnik" Type="Self.korisnik" Multiplicity="1" />
+          <End Role="wishlist" Type="Self.wishlist" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="korisnik">
+              <PropertyRef Name="idKorisnika" />
+            </Principal>
+            <Dependent Role="wishlist">
+              <PropertyRef Name="idKorisnik" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="CardBringerDBModelStoreContainer">
+          <EntitySet Name="karta" EntityType="Self.karta" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="korisnik" EntityType="Self.korisnik" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="kosharica" EntityType="Self.kosharica" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="oglas" EntityType="Self.oglas" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="uloga" EntityType="Self.uloga" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="wishlist" EntityType="Self.wishlist" Schema="dbo" store:Type="Tables" />
+          <AssociationSet Name="fk_korisnik_uloga_1" Association="Self.fk_korisnik_uloga_1">
+            <End Role="uloga" EntitySet="uloga" />
+            <End Role="korisnik" EntitySet="korisnik" />
+          </AssociationSet>
+          <AssociationSet Name="fk_korisnikKarta_karta_1" Association="Self.fk_korisnikKarta_karta_1">
+            <End Role="karta" EntitySet="karta" />
+            <End Role="oglas" EntitySet="oglas" />
+          </AssociationSet>
+          <AssociationSet Name="fk_korisnikKarta_korisnik_1" Association="Self.fk_korisnikKarta_korisnik_1">
+            <End Role="korisnik" EntitySet="korisnik" />
+            <End Role="oglas" EntitySet="oglas" />
+          </AssociationSet>
+          <AssociationSet Name="fk_medjuspremnikKosarica_korisnik_1" Association="Self.fk_medjuspremnikKosarica_korisnik_1">
+            <End Role="korisnik" EntitySet="korisnik" />
+            <End Role="kosharica" EntitySet="kosharica" />
+          </AssociationSet>
+          <AssociationSet Name="fk_medjuspremnikKosarica_korisnikKarta_1" Association="Self.fk_medjuspremnikKosarica_korisnikKarta_1">
+            <End Role="oglas" EntitySet="oglas" />
+            <End Role="kosharica" EntitySet="kosharica" />
+          </AssociationSet>
+          <AssociationSet Name="fk_wishlist_karta_1" Association="Self.fk_wishlist_karta_1">
+            <End Role="karta" EntitySet="karta" />
+            <End Role="wishlist" EntitySet="wishlist" />
+          </AssociationSet>
+          <AssociationSet Name="fk_wishlist_korisnik_1" Association="Self.fk_wishlist_korisnik_1">
+            <End Role="korisnik" EntitySet="korisnik" />
+            <End Role="wishlist" EntitySet="wishlist" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema></edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="CardBringerDBModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="karta">
+          <Key>
+            <PropertyRef Name="idKarta" />
+          </Key>
+          <Property Name="idKarta" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="imeKarte" Type="String" MaxLength="255" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="opisKarte" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="slikaKarte" Type="String" MaxLength="255" FixedLength="false" Unicode="false" Nullable="false" />
+          <NavigationProperty Name="oglas" Relationship="Self.fk_korisnikKarta_karta_1" FromRole="karta" ToRole="oglas" />
+          <NavigationProperty Name="wishlist" Relationship="Self.fk_wishlist_karta_1" FromRole="karta" ToRole="wishlist" />
+        </EntityType>
+        <EntityType Name="korisnik">
+          <Key>
+            <PropertyRef Name="idKorisnika" />
+          </Key>
+          <Property Name="idKorisnika" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="ime" Type="String" MaxLength="255" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="lozinka" Type="String" MaxLength="255" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="email" Type="String" MaxLength="255" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="mjestoStanovanja" Type="String" MaxLength="255" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="idUloga" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="uloga" Relationship="Self.fk_korisnik_uloga_1" FromRole="korisnik" ToRole="uloga" />
+          <NavigationProperty Name="oglas" Relationship="Self.fk_korisnikKarta_korisnik_1" FromRole="korisnik" ToRole="oglas" />
+          <NavigationProperty Name="kosharica" Relationship="Self.fk_medjuspremnikKosarica_korisnik_1" FromRole="korisnik" ToRole="kosharica" />
+          <NavigationProperty Name="wishlist" Relationship="Self.fk_wishlist_korisnik_1" FromRole="korisnik" ToRole="wishlist" />
+        </EntityType>
+        <EntityType Name="kosharica">
+          <Key>
+            <PropertyRef Name="idKosarica" />
+          </Key>
+          <Property Name="idKosarica" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="idKorisnika" Type="Int32" Nullable="false" />
+          <Property Name="idOglas" Type="Int32" Nullable="false" />
+          <Property Name="kolicina" Type="Int32" Nullable="false" />
+          <Property Name="datum" Type="DateTime" Nullable="false" Precision="0" />
+          <Property Name="kupljeno" Type="Byte" Nullable="false" />
+          <NavigationProperty Name="korisnik" Relationship="Self.fk_medjuspremnikKosarica_korisnik_1" FromRole="kosharica" ToRole="korisnik" />
+          <NavigationProperty Name="oglas" Relationship="Self.fk_medjuspremnikKosarica_korisnikKarta_1" FromRole="kosharica" ToRole="oglas" />
+        </EntityType>
+        <EntityType Name="oglas">
+          <Key>
+            <PropertyRef Name="idOglas" />
+          </Key>
+          <Property Name="idOglas" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="idKorisnik" Type="Int32" Nullable="false" />
+          <Property Name="idKarta" Type="Int32" Nullable="false" />
+          <Property Name="cijena" Type="Decimal" Precision="19" Scale="4" Nullable="false" />
+          <Property Name="kolicina" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="karta" Relationship="Self.fk_korisnikKarta_karta_1" FromRole="oglas" ToRole="karta" />
+          <NavigationProperty Name="korisnik" Relationship="Self.fk_korisnikKarta_korisnik_1" FromRole="oglas" ToRole="korisnik" />
+          <NavigationProperty Name="kosharica" Relationship="Self.fk_medjuspremnikKosarica_korisnikKarta_1" FromRole="oglas" ToRole="kosharica" />
+          <Property Name="aktivan" Type="Byte" Nullable="false" />
+        </EntityType>
+        <EntityType Name="uloga">
+          <Key>
+            <PropertyRef Name="idUloga" />
+          </Key>
+          <Property Name="idUloga" Type="Int32" Nullable="false" />
+          <Property Name="nazivUloge" Type="String" MaxLength="20" FixedLength="false" Unicode="false" Nullable="false" />
+          <NavigationProperty Name="korisnik" Relationship="Self.fk_korisnik_uloga_1" FromRole="uloga" ToRole="korisnik" />
+        </EntityType>
+        <EntityType Name="wishlist">
+          <Key>
+            <PropertyRef Name="idWishlist" />
+          </Key>
+          <Property Name="idKorisnik" Type="Int32" Nullable="false" />
+          <Property Name="idKarta" Type="Int32" Nullable="false" />
+          <Property Name="idWishlist" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <NavigationProperty Name="karta" Relationship="Self.fk_wishlist_karta_1" FromRole="wishlist" ToRole="karta" />
+          <NavigationProperty Name="korisnik" Relationship="Self.fk_wishlist_korisnik_1" FromRole="wishlist" ToRole="korisnik" />
+        </EntityType>
+        <Association Name="fk_korisnikKarta_karta_1">
+          <End Role="karta" Type="Self.karta" Multiplicity="1" />
+          <End Role="oglas" Type="Self.oglas" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="karta">
+              <PropertyRef Name="idKarta" />
+            </Principal>
+            <Dependent Role="oglas">
+              <PropertyRef Name="idKarta" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="fk_wishlist_karta_1">
+          <End Role="karta" Type="Self.karta" Multiplicity="1" />
+          <End Role="wishlist" Type="Self.wishlist" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="karta">
+              <PropertyRef Name="idKarta" />
+            </Principal>
+            <Dependent Role="wishlist">
+              <PropertyRef Name="idKarta" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="fk_korisnik_uloga_1">
+          <End Role="uloga" Type="Self.uloga" Multiplicity="1" />
+          <End Role="korisnik" Type="Self.korisnik" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="uloga">
+              <PropertyRef Name="idUloga" />
+            </Principal>
+            <Dependent Role="korisnik">
+              <PropertyRef Name="idUloga" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="fk_korisnikKarta_korisnik_1">
+          <End Role="korisnik" Type="Self.korisnik" Multiplicity="1" />
+          <End Role="oglas" Type="Self.oglas" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="korisnik">
+              <PropertyRef Name="idKorisnika" />
+            </Principal>
+            <Dependent Role="oglas">
+              <PropertyRef Name="idKorisnik" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="fk_medjuspremnikKosarica_korisnik_1">
+          <End Role="korisnik" Type="Self.korisnik" Multiplicity="1" />
+          <End Role="kosharica" Type="Self.kosharica" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="korisnik">
+              <PropertyRef Name="idKorisnika" />
+            </Principal>
+            <Dependent Role="kosharica">
+              <PropertyRef Name="idKorisnika" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="fk_wishlist_korisnik_1">
+          <End Role="korisnik" Type="Self.korisnik" Multiplicity="1" />
+          <End Role="wishlist" Type="Self.wishlist" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="korisnik">
+              <PropertyRef Name="idKorisnika" />
+            </Principal>
+            <Dependent Role="wishlist">
+              <PropertyRef Name="idKorisnik" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="fk_medjuspremnikKosarica_korisnikKarta_1">
+          <End Role="oglas" Type="Self.oglas" Multiplicity="1" />
+          <End Role="kosharica" Type="Self.kosharica" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="oglas">
+              <PropertyRef Name="idOglas" />
+            </Principal>
+            <Dependent Role="kosharica">
+              <PropertyRef Name="idOglas" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="CardBringerDBEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="karta" EntityType="Self.karta" />
+          <EntitySet Name="korisnik" EntityType="Self.korisnik" />
+          <EntitySet Name="kosharica" EntityType="Self.kosharica" />
+          <EntitySet Name="oglas" EntityType="Self.oglas" />
+          <EntitySet Name="uloga" EntityType="Self.uloga" />
+          <EntitySet Name="wishlist" EntityType="Self.wishlist" />
+          <AssociationSet Name="fk_korisnikKarta_karta_1" Association="Self.fk_korisnikKarta_karta_1">
+            <End Role="karta" EntitySet="karta" />
+            <End Role="oglas" EntitySet="oglas" />
+          </AssociationSet>
+          <AssociationSet Name="fk_wishlist_karta_1" Association="Self.fk_wishlist_karta_1">
+            <End Role="karta" EntitySet="karta" />
+            <End Role="wishlist" EntitySet="wishlist" />
+          </AssociationSet>
+          <AssociationSet Name="fk_korisnik_uloga_1" Association="Self.fk_korisnik_uloga_1">
+            <End Role="uloga" EntitySet="uloga" />
+            <End Role="korisnik" EntitySet="korisnik" />
+          </AssociationSet>
+          <AssociationSet Name="fk_korisnikKarta_korisnik_1" Association="Self.fk_korisnikKarta_korisnik_1">
+            <End Role="korisnik" EntitySet="korisnik" />
+            <End Role="oglas" EntitySet="oglas" />
+          </AssociationSet>
+          <AssociationSet Name="fk_medjuspremnikKosarica_korisnik_1" Association="Self.fk_medjuspremnikKosarica_korisnik_1">
+            <End Role="korisnik" EntitySet="korisnik" />
+            <End Role="kosharica" EntitySet="kosharica" />
+          </AssociationSet>
+          <AssociationSet Name="fk_wishlist_korisnik_1" Association="Self.fk_wishlist_korisnik_1">
+            <End Role="korisnik" EntitySet="korisnik" />
+            <End Role="wishlist" EntitySet="wishlist" />
+          </AssociationSet>
+          <AssociationSet Name="fk_medjuspremnikKosarica_korisnikKarta_1" Association="Self.fk_medjuspremnikKosarica_korisnikKarta_1">
+            <End Role="oglas" EntitySet="oglas" />
+            <End Role="kosharica" EntitySet="kosharica" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="CardBringerDBModelStoreContainer" CdmEntityContainer="CardBringerDBEntities">
+          <EntitySetMapping Name="karta">
+            <EntityTypeMapping TypeName="CardBringerDBModel.karta">
+              <MappingFragment StoreEntitySet="karta">
+                <ScalarProperty Name="idKarta" ColumnName="idKarta" />
+                <ScalarProperty Name="imeKarte" ColumnName="imeKarte" />
+                <ScalarProperty Name="opisKarte" ColumnName="opisKarte" />
+                <ScalarProperty Name="slikaKarte" ColumnName="slikaKarte" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="korisnik">
+            <EntityTypeMapping TypeName="CardBringerDBModel.korisnik">
+              <MappingFragment StoreEntitySet="korisnik">
+                <ScalarProperty Name="idKorisnika" ColumnName="idKorisnika" />
+                <ScalarProperty Name="ime" ColumnName="ime" />
+                <ScalarProperty Name="lozinka" ColumnName="lozinka" />
+                <ScalarProperty Name="email" ColumnName="email" />
+                <ScalarProperty Name="mjestoStanovanja" ColumnName="mjestoStanovanja" />
+                <ScalarProperty Name="idUloga" ColumnName="idUloga" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="kosharica">
+            <EntityTypeMapping TypeName="CardBringerDBModel.kosharica">
+              <MappingFragment StoreEntitySet="kosharica">
+                <ScalarProperty Name="idKosarica" ColumnName="idKosarica" />
+                <ScalarProperty Name="idKorisnika" ColumnName="idKorisnika" />
+                <ScalarProperty Name="idOglas" ColumnName="idOglas" />
+                <ScalarProperty Name="kolicina" ColumnName="kolicina" />
+                <ScalarProperty Name="datum" ColumnName="datum" />
+                <ScalarProperty Name="kupljeno" ColumnName="kupljeno" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="oglas">
+            <EntityTypeMapping TypeName="CardBringerDBModel.oglas">
+              <MappingFragment StoreEntitySet="oglas">
+                <ScalarProperty Name="aktivan" ColumnName="aktivan" />
+                <ScalarProperty Name="idOglas" ColumnName="idOglas" />
+                <ScalarProperty Name="idKorisnik" ColumnName="idKorisnik" />
+                <ScalarProperty Name="idKarta" ColumnName="idKarta" />
+                <ScalarProperty Name="cijena" ColumnName="cijena" />
+                <ScalarProperty Name="kolicina" ColumnName="kolicina" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="uloga">
+            <EntityTypeMapping TypeName="CardBringerDBModel.uloga">
+              <MappingFragment StoreEntitySet="uloga">
+                <ScalarProperty Name="idUloga" ColumnName="idUloga" />
+                <ScalarProperty Name="nazivUloge" ColumnName="nazivUloge" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="wishlist">
+            <EntityTypeMapping TypeName="CardBringerDBModel.wishlist">
+              <MappingFragment StoreEntitySet="wishlist">
+                <ScalarProperty Name="idKorisnik" ColumnName="idKorisnik" />
+                <ScalarProperty Name="idKarta" ColumnName="idKarta" />
+                <ScalarProperty Name="idWishlist" ColumnName="idWishlist" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="false" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>
