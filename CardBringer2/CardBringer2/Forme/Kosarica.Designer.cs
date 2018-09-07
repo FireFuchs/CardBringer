@@ -33,12 +33,12 @@
             this.ukupnaCijenaLabela = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.KosaricaLabelCijenaUnchanged = new System.Windows.Forms.Label();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.dgKarteUKosarici = new System.Windows.Forms.DataGridView();
             this.label1 = new System.Windows.Forms.Label();
             this.GumbKupi = new System.Windows.Forms.Button();
             this.GumbKosaricaMakni = new System.Windows.Forms.Button();
             this.kosharicaBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgKarteUKosarici)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.kosharicaBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
@@ -86,16 +86,16 @@
             this.KosaricaLabelCijenaUnchanged.TabIndex = 8;
             this.KosaricaLabelCijenaUnchanged.Text = "Ukupna Cijena:";
             // 
-            // dataGridView1
+            // dgKarteUKosarici
             // 
-            this.dataGridView1.CausesValidation = false;
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(16, 89);
-            this.dataGridView1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dataGridView1.Size = new System.Drawing.Size(1007, 550);
-            this.dataGridView1.TabIndex = 4;
+            this.dgKarteUKosarici.CausesValidation = false;
+            this.dgKarteUKosarici.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgKarteUKosarici.Location = new System.Drawing.Point(16, 89);
+            this.dgKarteUKosarici.Margin = new System.Windows.Forms.Padding(4);
+            this.dgKarteUKosarici.Name = "dgKarteUKosarici";
+            this.dgKarteUKosarici.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dgKarteUKosarici.Size = new System.Drawing.Size(1007, 550);
+            this.dgKarteUKosarici.TabIndex = 4;
             // 
             // label1
             // 
@@ -111,7 +111,7 @@
             // GumbKupi
             // 
             this.GumbKupi.Location = new System.Drawing.Point(1053, 262);
-            this.GumbKupi.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.GumbKupi.Margin = new System.Windows.Forms.Padding(4);
             this.GumbKupi.Name = "GumbKupi";
             this.GumbKupi.Size = new System.Drawing.Size(152, 59);
             this.GumbKupi.TabIndex = 9;
@@ -122,7 +122,7 @@
             // GumbKosaricaMakni
             // 
             this.GumbKosaricaMakni.Location = new System.Drawing.Point(1053, 361);
-            this.GumbKosaricaMakni.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.GumbKosaricaMakni.Margin = new System.Windows.Forms.Padding(4);
             this.GumbKosaricaMakni.Name = "GumbKosaricaMakni";
             this.GumbKosaricaMakni.Size = new System.Drawing.Size(152, 59);
             this.GumbKosaricaMakni.TabIndex = 9;
@@ -146,13 +146,13 @@
             this.Controls.Add(this.ukupnaCijenaLabela);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.KosaricaLabelCijenaUnchanged);
-            this.Controls.Add(this.dataGridView1);
+            this.Controls.Add(this.dgKarteUKosarici);
             this.Controls.Add(this.label1);
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "Kosarica";
             this.Text = "Kosarica";
             this.Load += new System.EventHandler(this.Kosarica_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgKarteUKosarici)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.kosharicaBindingSource)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -165,7 +165,7 @@
         private System.Windows.Forms.Label ukupnaCijenaLabela;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label KosaricaLabelCijenaUnchanged;
-        private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.DataGridView dgKarteUKosarici;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Button GumbKupi;
         private System.Windows.Forms.Button GumbKosaricaMakni;

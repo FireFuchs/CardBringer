@@ -13,6 +13,7 @@ namespace CardBringer2
 {
     public partial class MojeKupnje : Form
     {
+        private readonly int _kupljeno = 1;
         public MojeKupnje()
         {
             InitializeComponent();
@@ -21,8 +22,8 @@ namespace CardBringer2
 
         private void MojeKupnje_Load(object sender, EventArgs e)
         {
-            int kupljeno = 1; // prikazuje kupljene
-            DataGridZaKupljene.DataSource = kosharica.DohvatiKosaricu(kupljeno);
+            // prikazuje kupljene
+            DataGridZaKupljene.DataSource = kosharica.DohvatiKosaricu(_kupljeno);
         }
     }
 }

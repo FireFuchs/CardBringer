@@ -40,13 +40,20 @@ namespace CardBringer2
             }
         }
 
-        public static void UpdateKolicinuUOglasu(int idOglas, int novaKolicina)
+        public static void UpdateKolicinuUOglasu(int idOglas, int novaKolicina, bool vracanjeIzKosarice)
         {
             using (var context = new CardBringerDBEntities())
             {
                 var result = context.oglas.SingleOrDefault(c => c.idOglas == idOglas);
                 if (result == null) return;
-                result.kolicina = novaKolicina;
+                if (vracanjeIzKosarice)
+                {
+                    result.kolicina += novaKolicina;
+                }
+                else
+                {
+                    result.kolicina = novaKolicina;
+                }
                 context.SaveChanges();
             }
         }

@@ -42,6 +42,17 @@ namespace CardBringer2
             }
         }
 
+        public static void UkloniStavkuKosarice(int idKosarica)
+        {
+            using (var context = new CardBringerDBEntities())
+            {
+                var result = context.kosharica.SingleOrDefault(c => c.idKosarica == idKosarica);
+                if (result == null) return;
+                context.kosharica.Remove(result);
+                context.SaveChanges();
+            }
+        }
+
         public static List<object> DohvatiKosaricu(int kupljeno)
         {
             List<object> lista = new List<object>();
@@ -67,7 +78,8 @@ namespace CardBringer2
                             t.r.p.ime,
                             t.s.idOglas,
                             s.slikaKarte,
-                            t.r.o.kupljeno
+                            t.r.o.kupljeno,
+                            t.r.o.idKosarica
                         })
                     .Where(c => c.ime == korisnik.PrijavljeniKorisnik.ime && c.kupljeno == kupljeno)
                     .ToList();

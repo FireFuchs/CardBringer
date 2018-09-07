@@ -13,6 +13,8 @@ namespace CardBringer2
 {
     public partial class Kosarica : Form
     {
+        private readonly int _nekupljeno = 0;
+
         public Kosarica()
         {
             InitializeComponent();
@@ -21,24 +23,25 @@ namespace CardBringer2
 
         private void Kosarica_Load(object sender, EventArgs e)
         {
-            int nekupljeno = 0;    //prikazuje nekupljene 
-            dataGridView1.DataSource = kosharica.DohvatiKosaricu(nekupljeno);
+            //prikazuje nekupljene 
+            dgKarteUKosarici.DataSource = kosharica.DohvatiKosaricu(_nekupljeno);
         }
 
         private void GumbKupi_Click(object sender, EventArgs e)
         {
             
-            
         }
-
-        private void Refresaj()
-        {
-           
-        }
+        
 
         private void GumbMakni(object sender, EventArgs e)
         {
-            
+            int idKosarica = (int)dgKarteUKosarici.SelectedRows[0].Cells["idKosarica"].Value;
+            int idOglas = (int)dgKarteUKosarici.SelectedRows[0].Cells["idOglas"].Value;
+            int kolicina = (int)dgKarteUKosarici.SelectedRows[0].Cells["kolicina"].Value;
+            oglas.UpdateKolicinuUOglasu(idOglas, kolicina, true);
+            kosharica.UkloniStavkuKosarice(idKosarica);
+            dgKarteUKosarici.DataSource = kosharica.DohvatiKosaricu(_nekupljeno);
+
         }
     }
 }

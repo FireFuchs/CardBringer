@@ -50,7 +50,7 @@ namespace CardBringer2
 
             idOglas = (int)dataGridView1.SelectedRows[0].Cells["idOglas"].Value;
             novaKolicina = brojKarataNaProdaju - brojKarataZaKosaricu;
-            oglas.UpdateKolicinuUOglasu(idOglas, novaKolicina);
+            oglas.UpdateKolicinuUOglasu(idOglas, novaKolicina, false);
 
             kosharica k = new kosharica();
             k.idOglas = idOglas;
