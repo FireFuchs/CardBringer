@@ -44,6 +44,7 @@ namespace CardBringer2
             int brojKarataZaKosaricu;
             int idOglas;
             int novaKolicina;
+
             imeProdavaca = dataGridView1.SelectedRows[0].Cells["ime"].Value.ToString();
             if (imeProdavaca == korisnik.PrijavljeniKorisnik.ime)
             {

@@ -245,13 +245,16 @@ namespace CardBringer2
                 k.email = email;
                 k.mjestoStanovanja = mjestoStanovanja;
                 k.idUloga = 1;
-                k.Registracija();
+                if (k.Registracija() == null)
+                {
+                    MessageBox.Show("Korisničko ime ili E-Mail je zauzet!", "Greška", MessageBoxButtons.OK);
+                    return;
+                }
                 OtvoriGlavnuFormu();
             }
             else
             {
-                const MessageBoxButtons button = MessageBoxButtons.OK;
-                MessageBox.Show("Lozinke se ne podudaraju", "Greška", button);
+                MessageBox.Show("Lozinke se ne podudaraju", "Greška", MessageBoxButtons.OK);
             }
         }
 

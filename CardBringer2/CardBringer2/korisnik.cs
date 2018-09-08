@@ -49,6 +49,8 @@ namespace CardBringer2
         {
             using (var context = new CardBringerDBEntities())
             {
+                var vecPostoji = context.korisnik.SingleOrDefault(c => c.ime == this.ime || c.email == this.email);
+                if (vecPostoji != null) return null; 
                 PrijavljeniKorisnik = context.korisnik.Add(this);
                 context.SaveChanges();
                 return PrijavljeniKorisnik;
