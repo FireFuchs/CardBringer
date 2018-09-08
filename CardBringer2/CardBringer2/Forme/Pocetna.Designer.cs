@@ -197,7 +197,7 @@
             // opisKarte
             // 
             this.opisKarte.Location = new System.Drawing.Point(950, 477);
-            this.opisKarte.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.opisKarte.Margin = new System.Windows.Forms.Padding(2);
             this.opisKarte.Name = "opisKarte";
             this.opisKarte.ReadOnly = true;
             this.opisKarte.Size = new System.Drawing.Size(267, 81);
@@ -208,7 +208,7 @@
             // 
             this.pictureBoxSlikaKarte.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.pictureBoxSlikaKarte.Location = new System.Drawing.Point(950, 101);
-            this.pictureBoxSlikaKarte.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.pictureBoxSlikaKarte.Margin = new System.Windows.Forms.Padding(2);
             this.pictureBoxSlikaKarte.Name = "pictureBoxSlikaKarte";
             this.pictureBoxSlikaKarte.Size = new System.Drawing.Size(267, 351);
             this.pictureBoxSlikaKarte.TabIndex = 32;
@@ -217,10 +217,11 @@
             // PocetnaBrojKarataZaKosaricu
             // 
             this.PocetnaBrojKarataZaKosaricu.Location = new System.Drawing.Point(676, 102);
-            this.PocetnaBrojKarataZaKosaricu.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.PocetnaBrojKarataZaKosaricu.Margin = new System.Windows.Forms.Padding(2);
             this.PocetnaBrojKarataZaKosaricu.Name = "PocetnaBrojKarataZaKosaricu";
             this.PocetnaBrojKarataZaKosaricu.Size = new System.Drawing.Size(84, 20);
             this.PocetnaBrojKarataZaKosaricu.TabIndex = 34;
+            this.PocetnaBrojKarataZaKosaricu.Text = "1";
             this.PocetnaBrojKarataZaKosaricu.KeyDown += new System.Windows.Forms.KeyEventHandler(this.PocetnaBrojKarataZaKosaricu_KeyDown);
             this.PocetnaBrojKarataZaKosaricu.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.PocetnaBrojKarataZaKosaricu_KeyPress);
             // 

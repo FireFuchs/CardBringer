@@ -31,6 +31,7 @@
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.buttonDodajAdmina = new System.Windows.Forms.Button();
             this.buttonMakniAdmina = new System.Windows.Forms.Button();
+            this.btnPromjenaUlogeKorisnikaHelp = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -38,7 +39,7 @@
             // 
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView1.Location = new System.Drawing.Point(9, 10);
-            this.dataGridView1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.dataGridView1.Margin = new System.Windows.Forms.Padding(2);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.RowTemplate.Height = 24;
             this.dataGridView1.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
@@ -48,7 +49,7 @@
             // buttonDodajAdmina
             // 
             this.buttonDodajAdmina.Location = new System.Drawing.Point(633, 127);
-            this.buttonDodajAdmina.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.buttonDodajAdmina.Margin = new System.Windows.Forms.Padding(2);
             this.buttonDodajAdmina.Name = "buttonDodajAdmina";
             this.buttonDodajAdmina.Size = new System.Drawing.Size(127, 58);
             this.buttonDodajAdmina.TabIndex = 1;
@@ -59,7 +60,7 @@
             // buttonMakniAdmina
             // 
             this.buttonMakniAdmina.Location = new System.Drawing.Point(633, 190);
-            this.buttonMakniAdmina.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.buttonMakniAdmina.Margin = new System.Windows.Forms.Padding(2);
             this.buttonMakniAdmina.Name = "buttonMakniAdmina";
             this.buttonMakniAdmina.Size = new System.Drawing.Size(127, 58);
             this.buttonMakniAdmina.TabIndex = 1;
@@ -67,19 +68,31 @@
             this.buttonMakniAdmina.UseVisualStyleBackColor = true;
             this.buttonMakniAdmina.Click += new System.EventHandler(this.buttonMakniAdmina_Click);
             // 
+            // btnPromjenaUlogeKorisnikaHelp
+            // 
+            this.btnPromjenaUlogeKorisnikaHelp.Location = new System.Drawing.Point(751, 12);
+            this.btnPromjenaUlogeKorisnikaHelp.Name = "btnPromjenaUlogeKorisnikaHelp";
+            this.btnPromjenaUlogeKorisnikaHelp.Size = new System.Drawing.Size(75, 23);
+            this.btnPromjenaUlogeKorisnikaHelp.TabIndex = 2;
+            this.btnPromjenaUlogeKorisnikaHelp.Text = "Help";
+            this.btnPromjenaUlogeKorisnikaHelp.UseVisualStyleBackColor = true;
+            this.btnPromjenaUlogeKorisnikaHelp.Click += new System.EventHandler(this.btnPromjenaUlogeKorisnikaHelp_Click);
+            // 
             // PromjenaUlogeKorisnika
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(53)))), ((int)(((byte)(53)))), ((int)(((byte)(53)))));
             this.ClientSize = new System.Drawing.Size(838, 366);
+            this.Controls.Add(this.btnPromjenaUlogeKorisnikaHelp);
             this.Controls.Add(this.buttonMakniAdmina);
             this.Controls.Add(this.buttonDodajAdmina);
             this.Controls.Add(this.dataGridView1);
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "PromjenaUlogeKorisnika";
             this.Text = "PromjenaUlogeKorisnika";
             this.Load += new System.EventHandler(this.PromjenaUlogeKorisnika_Load);
+            this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.PromjenaUlogeKorisnika_KeyDown);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.ResumeLayout(false);
 
@@ -90,5 +103,6 @@
         private System.Windows.Forms.DataGridView dataGridView1;
         private System.Windows.Forms.Button buttonDodajAdmina;
         private System.Windows.Forms.Button buttonMakniAdmina;
+        private System.Windows.Forms.Button btnPromjenaUlogeKorisnikaHelp;
     }
 }

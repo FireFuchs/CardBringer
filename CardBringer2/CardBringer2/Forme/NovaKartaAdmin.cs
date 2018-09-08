@@ -22,6 +22,7 @@ namespace CardBringer2
         {
             InitializeComponent();
             HelpClass.TrenutnaForma = 7;
+            this.KeyPreview = true;
         }
         private string _imgLocation = "";
 
@@ -44,5 +45,26 @@ namespace CardBringer2
             k.slikaKarte = AzureStorageKarata.PrenesiSlikuKarte(_imgLocation);
             k.Spremi();
         }
+
+        private void btnNovaKartaAdminHelp_Click(object sender, EventArgs e)
+        {
+            help();
+        }
+
+        private void NovaKartaAdmin_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.F1)
+            {
+                help();
+            }
+        }
+
+        private void help()
+        {
+            var help = new HelpForm();
+            help.Show();
+        }
+
+        
     }
 }

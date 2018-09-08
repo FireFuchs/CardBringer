@@ -28,38 +28,36 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.DataGridZaKupljene = new System.Windows.Forms.DataGridView();
-            ((System.ComponentModel.ISupportInitialize)(this.DataGridZaKupljene)).BeginInit();
+            this.dgvMojeKupnjeDatagrid = new System.Windows.Forms.DataGridView();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvMojeKupnjeDatagrid)).BeginInit();
             this.SuspendLayout();
             // 
-            // DataGridZaKupljene
+            // dgvMojeKupnjeDatagrid
             // 
-            this.DataGridZaKupljene.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.DataGridZaKupljene.Location = new System.Drawing.Point(81, 103);
-            this.DataGridZaKupljene.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.DataGridZaKupljene.Name = "DataGridZaKupljene";
-            this.DataGridZaKupljene.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.DataGridZaKupljene.Size = new System.Drawing.Size(944, 470);
-            this.DataGridZaKupljene.TabIndex = 0;
+            this.dgvMojeKupnjeDatagrid.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvMojeKupnjeDatagrid.Location = new System.Drawing.Point(61, 84);
+            this.dgvMojeKupnjeDatagrid.Name = "dgvMojeKupnjeDatagrid";
+            this.dgvMojeKupnjeDatagrid.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dgvMojeKupnjeDatagrid.Size = new System.Drawing.Size(708, 382);
+            this.dgvMojeKupnjeDatagrid.TabIndex = 0;
             // 
             // MojeKupnje
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(53)))), ((int)(((byte)(53)))), ((int)(((byte)(53)))));
-            this.ClientSize = new System.Drawing.Size(1668, 742);
-            this.Controls.Add(this.DataGridZaKupljene);
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.ClientSize = new System.Drawing.Size(1203, 603);
+            this.Controls.Add(this.dgvMojeKupnjeDatagrid);
             this.Name = "MojeKupnje";
             this.Text = "MojeKupnje";
             this.Load += new System.EventHandler(this.MojeKupnje_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.DataGridZaKupljene)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvMojeKupnjeDatagrid)).EndInit();
             this.ResumeLayout(false);
 
         }
 
         #endregion
 
-        private System.Windows.Forms.DataGridView DataGridZaKupljene;
+        private System.Windows.Forms.DataGridView dgvMojeKupnjeDatagrid;
     }
 }

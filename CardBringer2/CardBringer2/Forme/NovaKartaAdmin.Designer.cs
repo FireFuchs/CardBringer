@@ -35,15 +35,16 @@
             this.pictureBoxSlikaKarte = new System.Windows.Forms.PictureBox();
             this.buttonIzaberiSliku = new System.Windows.Forms.Button();
             this.unosOpisKarte = new System.Windows.Forms.RichTextBox();
+            this.btnNovaKartaAdminHelp = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxSlikaKarte)).BeginInit();
             this.SuspendLayout();
             // 
             // buttonSpremiKartu
             // 
-            this.buttonSpremiKartu.Location = new System.Drawing.Point(12, 565);
-            this.buttonSpremiKartu.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.buttonSpremiKartu.Location = new System.Drawing.Point(9, 459);
+            this.buttonSpremiKartu.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.buttonSpremiKartu.Name = "buttonSpremiKartu";
-            this.buttonSpremiKartu.Size = new System.Drawing.Size(595, 85);
+            this.buttonSpremiKartu.Size = new System.Drawing.Size(446, 69);
             this.buttonSpremiKartu.TabIndex = 1;
             this.buttonSpremiKartu.Text = "Spremi kartu";
             this.buttonSpremiKartu.UseVisualStyleBackColor = true;
@@ -53,9 +54,10 @@
             // 
             this.label1.AutoSize = true;
             this.label1.ForeColor = System.Drawing.Color.White;
-            this.label1.Location = new System.Drawing.Point(420, 122);
+            this.label1.Location = new System.Drawing.Point(314, 148);
+            this.label1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(70, 17);
+            this.label1.Size = new System.Drawing.Size(54, 13);
             this.label1.TabIndex = 2;
             this.label1.Text = "Ime karte:";
             // 
@@ -63,36 +65,37 @@
             // 
             this.label2.AutoSize = true;
             this.label2.ForeColor = System.Drawing.Color.White;
-            this.label2.Location = new System.Drawing.Point(420, 191);
+            this.label2.Location = new System.Drawing.Point(314, 204);
+            this.label2.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(77, 17);
+            this.label2.Size = new System.Drawing.Size(58, 13);
             this.label2.TabIndex = 3;
             this.label2.Text = "Opis karte:";
             // 
             // unosImeKarte
             // 
-            this.unosImeKarte.Location = new System.Drawing.Point(423, 150);
-            this.unosImeKarte.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.unosImeKarte.Location = new System.Drawing.Point(316, 171);
+            this.unosImeKarte.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.unosImeKarte.Name = "unosImeKarte";
-            this.unosImeKarte.Size = new System.Drawing.Size(184, 22);
+            this.unosImeKarte.Size = new System.Drawing.Size(139, 20);
             this.unosImeKarte.TabIndex = 4;
             // 
             // pictureBoxSlikaKarte
             // 
             this.pictureBoxSlikaKarte.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.pictureBoxSlikaKarte.Location = new System.Drawing.Point(12, 25);
-            this.pictureBoxSlikaKarte.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.pictureBoxSlikaKarte.Location = new System.Drawing.Point(9, 20);
+            this.pictureBoxSlikaKarte.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.pictureBoxSlikaKarte.Name = "pictureBoxSlikaKarte";
-            this.pictureBoxSlikaKarte.Size = new System.Drawing.Size(389, 521);
+            this.pictureBoxSlikaKarte.Size = new System.Drawing.Size(292, 424);
             this.pictureBoxSlikaKarte.TabIndex = 6;
             this.pictureBoxSlikaKarte.TabStop = false;
             // 
             // buttonIzaberiSliku
             // 
-            this.buttonIzaberiSliku.Location = new System.Drawing.Point(423, 25);
-            this.buttonIzaberiSliku.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.buttonIzaberiSliku.Location = new System.Drawing.Point(316, 69);
+            this.buttonIzaberiSliku.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.buttonIzaberiSliku.Name = "buttonIzaberiSliku";
-            this.buttonIzaberiSliku.Size = new System.Drawing.Size(184, 71);
+            this.buttonIzaberiSliku.Size = new System.Drawing.Size(138, 58);
             this.buttonIzaberiSliku.TabIndex = 7;
             this.buttonIzaberiSliku.Text = "Izaberi sliku";
             this.buttonIzaberiSliku.UseVisualStyleBackColor = true;
@@ -100,18 +103,31 @@
             // 
             // unosOpisKarte
             // 
-            this.unosOpisKarte.Location = new System.Drawing.Point(423, 217);
+            this.unosOpisKarte.Location = new System.Drawing.Point(316, 225);
+            this.unosOpisKarte.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.unosOpisKarte.Name = "unosOpisKarte";
-            this.unosOpisKarte.Size = new System.Drawing.Size(184, 269);
+            this.unosOpisKarte.ReadOnly = true;
+            this.unosOpisKarte.Size = new System.Drawing.Size(139, 219);
             this.unosOpisKarte.TabIndex = 8;
             this.unosOpisKarte.Text = "";
             // 
+            // btnNovaKartaAdminHelp
+            // 
+            this.btnNovaKartaAdminHelp.Location = new System.Drawing.Point(317, 20);
+            this.btnNovaKartaAdminHelp.Name = "btnNovaKartaAdminHelp";
+            this.btnNovaKartaAdminHelp.Size = new System.Drawing.Size(137, 23);
+            this.btnNovaKartaAdminHelp.TabIndex = 9;
+            this.btnNovaKartaAdminHelp.Text = "Help";
+            this.btnNovaKartaAdminHelp.UseVisualStyleBackColor = true;
+            this.btnNovaKartaAdminHelp.Click += new System.EventHandler(this.btnNovaKartaAdminHelp_Click);
+            // 
             // NovaKartaAdmin
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(48)))), ((int)(((byte)(48)))));
-            this.ClientSize = new System.Drawing.Size(621, 659);
+            this.ClientSize = new System.Drawing.Size(466, 535);
+            this.Controls.Add(this.btnNovaKartaAdminHelp);
             this.Controls.Add(this.unosOpisKarte);
             this.Controls.Add(this.buttonIzaberiSliku);
             this.Controls.Add(this.pictureBoxSlikaKarte);
@@ -119,9 +135,10 @@
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.buttonSpremiKartu);
-            this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.Name = "NovaKartaAdmin";
             this.Text = "NovaKartaAdmin";
+            this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.NovaKartaAdmin_KeyDown);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxSlikaKarte)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -136,5 +153,6 @@
         private System.Windows.Forms.PictureBox pictureBoxSlikaKarte;
         private System.Windows.Forms.Button buttonIzaberiSliku;
         private System.Windows.Forms.RichTextBox unosOpisKarte;
+        private System.Windows.Forms.Button btnNovaKartaAdminHelp;
     }
 }

@@ -15,7 +15,13 @@ namespace CardBringer2
         public HelpForm()
         {
             InitializeComponent();
-            izlazHelpTextHelpForm.Text = HelpClass.DohvatiHelpTekst();
+        }
+
+        private void HelpForm_Load(object sender, EventArgs e)
+        {
+            rtboxHelpFormaHelp.Text = HelpClass.DohvatiHelpTekst();
+            rtboxHelpFormaHelp.Select(rtboxHelpFormaHelp.SelectionStart, 0);
+
         }
     }
 }

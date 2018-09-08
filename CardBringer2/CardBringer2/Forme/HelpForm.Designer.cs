@@ -28,21 +28,24 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.izlazHelpTextHelpForm = new System.Windows.Forms.TextBox();
+            this.rtboxHelpFormaHelp = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
-            // izlazHelpTextHelpForm
+            // rtboxHelpFormaHelp
             // 
-            this.izlazHelpTextHelpForm.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(48)))), ((int)(((byte)(48)))));
-            this.izlazHelpTextHelpForm.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.izlazHelpTextHelpForm.ForeColor = System.Drawing.Color.White;
-            this.izlazHelpTextHelpForm.Location = new System.Drawing.Point(12, 44);
-            this.izlazHelpTextHelpForm.Multiline = true;
-            this.izlazHelpTextHelpForm.Name = "izlazHelpTextHelpForm";
-            this.izlazHelpTextHelpForm.ReadOnly = true;
-            this.izlazHelpTextHelpForm.Size = new System.Drawing.Size(596, 311);
-            this.izlazHelpTextHelpForm.TabIndex = 0;
+            this.rtboxHelpFormaHelp.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(48)))), ((int)(((byte)(48)))));
+            this.rtboxHelpFormaHelp.CausesValidation = false;
+            this.rtboxHelpFormaHelp.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.rtboxHelpFormaHelp.ForeColor = System.Drawing.Color.White;
+            this.rtboxHelpFormaHelp.Location = new System.Drawing.Point(12, 44);
+            this.rtboxHelpFormaHelp.Multiline = true;
+            this.rtboxHelpFormaHelp.Name = "rtboxHelpFormaHelp";
+            this.rtboxHelpFormaHelp.ReadOnly = true;
+            this.rtboxHelpFormaHelp.Size = new System.Drawing.Size(596, 311);
+            this.rtboxHelpFormaHelp.TabIndex = 5;
+            this.rtboxHelpFormaHelp.Text = "txt";
+            this.rtboxHelpFormaHelp.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // label1
             // 
@@ -52,7 +55,7 @@
             this.label1.Location = new System.Drawing.Point(273, 9);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(56, 25);
-            this.label1.TabIndex = 1;
+            this.label1.TabIndex = 0;
             this.label1.Text = "Help";
             // 
             // HelpForm
@@ -62,10 +65,11 @@
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(48)))), ((int)(((byte)(48)))));
             this.ClientSize = new System.Drawing.Size(620, 367);
             this.Controls.Add(this.label1);
-            this.Controls.Add(this.izlazHelpTextHelpForm);
+            this.Controls.Add(this.rtboxHelpFormaHelp);
             this.Name = "HelpForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "HelpForm";
+            this.Load += new System.EventHandler(this.HelpForm_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -73,6 +77,6 @@
 
         #endregion
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.TextBox izlazHelpTextHelpForm;
+        private System.Windows.Forms.TextBox rtboxHelpFormaHelp;
     }
 }

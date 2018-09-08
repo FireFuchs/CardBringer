@@ -18,7 +18,7 @@ namespace CardBringer2
         {
             InitializeComponent();
             HelpClass.TrenutnaForma = 10;
-
+            this.KeyPreview = true;
         }
 
         private void PromjenaUlogeKorisnika_Load(object sender, EventArgs e)
@@ -64,6 +64,25 @@ namespace CardBringer2
             dataGridView1.Columns["email"].HeaderText = "E-Mail";
             dataGridView1.Columns["mjestoStanovanja"].HeaderText = "Adresa";
             dataGridView1.Columns["nazivUloge"].HeaderText = "Uloga";
+        }
+
+        private void btnPromjenaUlogeKorisnikaHelp_Click(object sender, EventArgs e)
+        {
+            help();
+        }
+
+        private void PromjenaUlogeKorisnika_KeyDown(object sender, KeyEventArgs e)
+        {
+            if(e.KeyCode == Keys.F1)
+            {
+                help();
+            }
+        }
+
+        private void help()
+        {
+            var help = new HelpForm();
+            help.Show();
         }
     }
 }

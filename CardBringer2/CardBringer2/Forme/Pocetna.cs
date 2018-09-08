@@ -70,6 +70,7 @@ namespace CardBringer2
             k.Spremi();
 
             dataGridView1.DataSource = oglas.DohvatiSveAktivneOglase();
+            PocetnaBrojKarataZaKosaricu.Text = 1.ToString();
 
         }
         private void PocetnaResetGumb_Click(object sender, EventArgs e)

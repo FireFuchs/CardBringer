@@ -24,7 +24,22 @@ namespace CardBringer2
         private void MojeKupnje_Load(object sender, EventArgs e)
         {
             // prikazuje kupljene
-            DataGridZaKupljene.DataSource = kosharica.DohvatiKosaricu(_kupljeno);
+            dgvMojeKupnjeDatagrid.DataSource = kosharica.DohvatiKosaricu(_kupljeno);
+            obradiDGV();
+        }
+        private void obradiDGV()
+        {
+            if (dgvMojeKupnjeDatagrid.SelectedRows.Count <= 0) return;
+            dgvMojeKupnjeDatagrid.Columns["imeKarte"].HeaderText = "Ime karte";
+            dgvMojeKupnjeDatagrid.Columns["opisKarte"].HeaderText = "Opis karte";
+            dgvMojeKupnjeDatagrid.Columns["cijena"].HeaderText = "Cijena";
+            dgvMojeKupnjeDatagrid.Columns["kolicina"].HeaderText = "Količina";
+            dgvMojeKupnjeDatagrid.Columns["ime"].HeaderText = "Prodavač";
+            dgvMojeKupnjeDatagrid.Columns["idOglas"].Visible = false;
+            dgvMojeKupnjeDatagrid.Columns["slikaKarte"].Visible = false;
+            dgvMojeKupnjeDatagrid.Columns["kupljeno"].Visible = false;
+            dgvMojeKupnjeDatagrid.Columns["idKosarica"].Visible = false;
+
         }
     }
 }
