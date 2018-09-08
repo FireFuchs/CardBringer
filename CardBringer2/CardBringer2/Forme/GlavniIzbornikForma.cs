@@ -13,9 +13,11 @@ namespace CardBringer2
     public partial class GlavniIzbornikForma : Form
     {
         string _helpTekst = "Help glavne forme";
-        public GlavniIzbornikForma()
+        int? ulogaKorisnika = null;
+        public GlavniIzbornikForma(int idUloga)
         {
             InitializeComponent();
+            ulogaKorisnika = idUloga;
         }
 
         private void GlavniIzbornikForma_KeyDown(object sender, KeyEventArgs e)
@@ -24,7 +26,7 @@ namespace CardBringer2
             {
                 var help = new HelpClass(_helpTekst);
             }
-
+            
         }
 
         private void unosGumbHelpGlavniIzbornikForma_Click(object sender, EventArgs e)
@@ -54,6 +56,7 @@ namespace CardBringer2
             noviMojProfil.WindowState = FormWindowState.Maximized;
             noviMojProfil.Show();
             _helpTekst = "Help MojProfil stranice";
+            
         }
 
         private void košaricaToolStripMenuItem_Click(object sender, EventArgs e)
@@ -63,6 +66,7 @@ namespace CardBringer2
             novaKosarica.WindowState = FormWindowState.Maximized;
             novaKosarica.Show();
             _helpTekst = "Help Kosarice";
+            
         }
 
         private void listaŽeljaToolStripMenuItem_Click(object sender, EventArgs e)
@@ -86,6 +90,8 @@ namespace CardBringer2
             novaPocetna.WindowState = FormWindowState.Maximized;
             novaPocetna.Show();
             _helpTekst = "Help Početne stranice";
+            provjeraUloge();
+
         }
 
         private void dodajPonuduToolStripMenuItem_Click(object sender, EventArgs e)
@@ -113,6 +119,24 @@ namespace CardBringer2
             Administracija.WindowState = FormWindowState.Maximized;
             Administracija.Show();
             _helpTekst = "Help administracijske stranice";
+        }
+
+        private void provjeraUloge()
+        {
+            if (ulogaKorisnika < 1)
+            {
+                košaricaToolStripMenuItem.Visible = false;
+                mojProfilToolStripMenuItem.Visible = false;
+                dodajPonuduToolStripMenuItem.Visible = false;
+                listaŽeljaToolStripMenuItem.Visible = false;
+                mojeKupnjeToolStripMenuItem.Visible = false;
+                početnaToolStripMenuItem.Margin = new System.Windows.Forms.Padding(0, 0, 440, 0);
+            }
+            if (ulogaKorisnika < 2)
+            {
+                administratorToolStripMenuItem.Visible = false;
+                odjavaToolStripMenuItem.Margin = new System.Windows.Forms.Padding(350, 0, 0, 0);
+            }
         }
     }
 }

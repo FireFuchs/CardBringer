@@ -15,7 +15,7 @@ namespace CardBringer2
     {
         readonly string _helpTekst = "pocetna verzija help sustava, probni pokusaj";
 
-        readonly GlavniIzbornikForma _glavniFrm = new GlavniIzbornikForma();
+        readonly GlavniIzbornikForma _glavniFrm = new GlavniIzbornikForma(0);
 
         public LoginRegisterForma()
         {
@@ -222,7 +222,8 @@ namespace CardBringer2
 
             if (korisnik.Prijava(username, password) != null)
             {
-                OtvoriGlavnuFormu();
+                int idUlogeKorisnika = korisnik.PrijavljeniKorisnik.idUloga;
+                OtvoriGlavnuFormu(idUlogeKorisnika);
                 return;
             }
             const MessageBoxButtons button = MessageBoxButtons.OK;
@@ -246,7 +247,7 @@ namespace CardBringer2
                 k.mjestoStanovanja = mjestoStanovanja;
                 k.idUloga = 1;
                 k.Registracija();
-                OtvoriGlavnuFormu();
+                OtvoriGlavnuFormu(1);
             }
             else
             {
@@ -255,9 +256,10 @@ namespace CardBringer2
             }
         }
 
-        private void OtvoriGlavnuFormu()
+        private void OtvoriGlavnuFormu(int idulogeKorisnika)
         {
-            var glavniFrm = new GlavniIzbornikForma();
+            int idUlogKor = idulogeKorisnika;
+            var glavniFrm = new GlavniIzbornikForma(idUlogKor);
             glavniFrm.Show();
             this.Hide();
         }
