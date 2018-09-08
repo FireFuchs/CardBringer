@@ -43,6 +43,7 @@ namespace CardBringer2
             o.kolicina = kolicina;
             o.aktivan = 1;
             o.Spremi();
+            MessageBox.Show("Vaš oglas je uspješno objavljen", "Oglas objavljen", MessageBoxButtons.OK);
         }
 
         private void dataGridView1_RowEnter(object sender, DataGridViewCellEventArgs e)
