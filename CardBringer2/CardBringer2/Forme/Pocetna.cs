@@ -34,12 +34,16 @@ namespace CardBringer2
         private void dodajUKosaricu()
         {
 
+            if (dataGridView1.SelectedRows.Count <= 0)
+            {
+                MessageBox.Show("Nije odabran niti jedan oglas!", "Greška", MessageBoxButtons.OK);
+                return;
+            };
             string imeProdavaca;
             int brojKarataNaProdaju;
             int brojKarataZaKosaricu;
             int idOglas;
             int novaKolicina;
-
             imeProdavaca = dataGridView1.SelectedRows[0].Cells["ime"].Value.ToString();
             if (imeProdavaca == korisnik.PrijavljeniKorisnik.ime)
             {
@@ -64,12 +68,13 @@ namespace CardBringer2
             k.kolicina = brojKarataZaKosaricu;
             k.Spremi();
 
-
             dataGridView1.DataSource = oglas.DohvatiSveAktivneOglase();
+
         }
         private void PocetnaResetGumb_Click(object sender, EventArgs e)
         {
             dataGridView1.DataSource = oglas.DohvatiSveAktivneOglase();
+            obradiDGV();
         }
         
 

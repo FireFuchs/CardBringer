@@ -32,12 +32,11 @@ namespace CardBringer2
         {
             int idKosarica = (int)dgKarteUKosarici.SelectedRows[0].Cells["idKosarica"].Value;
             int idOglas = (int)dgKarteUKosarici.SelectedRows[0].Cells["idOglas"].Value;
-
+            int kolicina = (int)dgKarteUKosarici.SelectedRows[0].Cells["kolicina"].Value;
             // stavka kosarica se oznacava kao kupljena
             kosharica.StavkaKupljenaIliNe(idKosarica, 1);
             // ukoliko u oglasu vise nema kolicine, tj nema preostalih karata, deaktivira se
-            oglas.DeaktivirajOglas(idOglas);
-
+            if (kolicina == 0) oglas.DeaktivirajOglas(idOglas);
             dgKarteUKosarici.DataSource = kosharica.DohvatiKosaricu(_nekupljeno);
         }
 

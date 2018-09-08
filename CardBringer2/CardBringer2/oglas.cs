@@ -91,7 +91,7 @@ namespace CardBringer2
         {
             using (var context = new CardBringerDBEntities())
             {
-                var result = context.oglas.SingleOrDefault(c => c.idOglas == id && c.kolicina == 0);
+                var result = context.oglas.SingleOrDefault(c => c.idOglas == id);
                 if (result == null) return;
                 result.aktivan = 0;
                 context.SaveChanges();
@@ -158,7 +158,7 @@ namespace CardBringer2
                             s.slikaKarte,
                             r.o.aktivan
                         })
-                    .Where(c => c.ime == CardBringer2.korisnik.PrijavljeniKorisnik.ime && c.aktivan == 1)
+                    .Where(c => c.ime == CardBringer2.korisnik.PrijavljeniKorisnik.ime && c.kolicina > 0 && c.aktivan == 1)
                     .ToList();
 
                 foreach (var r in result)
@@ -196,7 +196,7 @@ namespace CardBringer2
                             s.slikaKarte,
                             r.o.aktivan
                         })
-                    .Where(c => c.imeKarte.Contains(pretrazivaniString) && c.aktivan == 1)
+                    .Where(c => c.imeKarte.Contains(pretrazivaniString) && c.kolicina > 0 && c.aktivan == 1)
                     .ToList();
 
                 foreach (var r in result)
