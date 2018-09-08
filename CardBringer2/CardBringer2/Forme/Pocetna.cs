@@ -16,8 +16,8 @@ namespace CardBringer2
         public Pocetna()
         {
             InitializeComponent();
+            HelpClass.TrenutnaForma = 9;
             this.ControlBox = false;
-            
         }
 
         private void Pocetna_Load(object sender, EventArgs e)

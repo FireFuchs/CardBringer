@@ -19,6 +19,7 @@ namespace CardBringer2
 
         public LoginRegisterForma()
         {
+            HelpClass.TrenutnaForma = 4;
             InitializeComponent();
             
         }
@@ -141,14 +142,16 @@ namespace CardBringer2
 
         private void unosGumbHelpLoginRegisterForma_Click(object sender, EventArgs e)
         {
-            var help = new HelpClass(_helpTekst);
+            var help = new HelpForm();
+            help.Show();
         }
 
         private void LoginRegisterForma_KeyDown(object sender, KeyEventArgs e)
         {
             if (e.KeyCode == Keys.F1)
             {
-                var help = new HelpClass(_helpTekst);
+                var help = new HelpForm();
+                help.Show();
             }
         }
 

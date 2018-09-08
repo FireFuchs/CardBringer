@@ -21,6 +21,7 @@ namespace CardBringer2
         public NovaKartaAdmin()
         {
             InitializeComponent();
+            HelpClass.TrenutnaForma = 7;
         }
         private string _imgLocation = "";
 

@@ -15,6 +15,7 @@ namespace CardBringer2
         public Administracija()
         {
             InitializeComponent();
+            HelpClass.TrenutnaForma = 1;
             this.ControlBox = false;
         }
 

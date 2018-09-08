@@ -18,6 +18,7 @@ namespace CardBringer2
         public Kosarica()
         {
             InitializeComponent();
+            HelpClass.TrenutnaForma = 2;
             this.ControlBox = false;
         }
 

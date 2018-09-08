@@ -18,7 +18,9 @@ namespace CardBringer2
         public ListaZelja()
         {
             InitializeComponent();
+            HelpClass.TrenutnaForma = 3;
             this.ControlBox = false;
+
         }
 
         private void ListaZelja_Load(object sender, EventArgs e)

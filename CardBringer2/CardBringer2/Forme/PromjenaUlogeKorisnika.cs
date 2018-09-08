@@ -14,11 +14,11 @@ namespace CardBringer2
     public partial class PromjenaUlogeKorisnika : Form
     {
         
-        private const MessageBoxButtons Button = MessageBoxButtons.OK;
         public PromjenaUlogeKorisnika()
         {
             InitializeComponent();
-            
+            HelpClass.TrenutnaForma = 10;
+
         }
 
         private void PromjenaUlogeKorisnika_Load(object sender, EventArgs e)
@@ -32,7 +32,7 @@ namespace CardBringer2
             var idUloga = (int)dataGridView1.SelectedRows[0].Cells["idUloga"].Value;
             if (idUloga == 2)
             {
-                MessageBox.Show("Korisnik već ima administratorske privilegije!", "Greška", Button);
+                MessageBox.Show("Korisnik već ima administratorske privilegije!", "Greška", MessageBoxButtons.OK);
                 return;
             }
             var idKorisnik = (int)dataGridView1.SelectedRows[0].Cells["idKorisnika"].Value;
@@ -47,7 +47,7 @@ namespace CardBringer2
             if (idUloga == 1)
             {
 
-                MessageBox.Show("Ne možete maknuti privilegije jer ih korisnik nema!", "Greška", Button);
+                MessageBox.Show("Ne možete maknuti privilegije jer ih korisnik nema!", "Greška", MessageBoxButtons.OK);
                 return;
             }
 

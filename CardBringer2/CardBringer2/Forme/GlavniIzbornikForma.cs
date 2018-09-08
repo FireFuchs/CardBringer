@@ -22,15 +22,16 @@ namespace CardBringer2
         {
             if (e.KeyCode == Keys.F1)
             {
-                var help = new HelpClass(_helpTekst);
+                var help = new HelpForm();
+                help.Show();
             }
             
         }
 
         private void unosGumbHelpGlavniIzbornikForma_Click(object sender, EventArgs e)
         {
-            var help = new HelpClass(_helpTekst);
-
+            var help = new HelpForm();
+            help.Show();
         }
 
         private void menuStrip1_ItemClicked(object sender, ToolStripItemClickedEventArgs e)

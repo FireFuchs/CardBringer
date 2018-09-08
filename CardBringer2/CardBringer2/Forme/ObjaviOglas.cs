@@ -21,6 +21,7 @@ namespace CardBringer2
         public ObjaviOglas()
         {
             InitializeComponent();
+            HelpClass.TrenutnaForma = 8;
             ControlBox = false;
         }
 

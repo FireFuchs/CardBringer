@@ -17,6 +17,7 @@ namespace CardBringer2
         public MojeKupnje()
         {
             InitializeComponent();
+            HelpClass.TrenutnaForma = 5;
             this.ControlBox = false;
         }
 

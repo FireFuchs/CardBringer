@@ -17,6 +17,7 @@ namespace CardBringer2
         public MojProfil()
         {
             InitializeComponent();
+            HelpClass.TrenutnaForma = 6;
             this.ControlBox = false;
 
             if (korisnik.PrijavljeniKorisnik == null) return;
