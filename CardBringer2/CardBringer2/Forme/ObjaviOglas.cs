@@ -38,7 +38,7 @@ namespace CardBringer2
         private void dohvatiSadrzaj()
         {
             if (dgvObjaviOglasSveKarte.SelectedRows.Count <= 0) return;
-            lvlObjaviOglasNazivKarte.Text = dgvObjaviOglasSveKarte.SelectedRows[0].Cells[1].Value.ToString();
+            lblObjaviOglasNazivKarte.Text = dgvObjaviOglasSveKarte.SelectedRows[0].Cells[1].Value.ToString();
             rtboxObjaviOglasOpisKarte.Text = dgvObjaviOglasSveKarte.SelectedRows[0].Cells[2].Value.ToString();
             var slikaKarte = AzureStorageKarata.DohvatiSlikuKarte(dgvObjaviOglasSveKarte.SelectedRows[0].Cells[3].Value.ToString());
             pboxObjaviOglasSlikaKarte.Image = Image.FromStream(slikaKarte);

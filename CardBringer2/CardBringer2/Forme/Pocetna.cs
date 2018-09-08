@@ -23,7 +23,7 @@ namespace CardBringer2
         private void Pocetna_Load(object sender, EventArgs e)
         {
             dgvPocetnaDatagridSviOglasi.DataSource = oglas.DohvatiSveAktivneOglase();
-            obradiDGV();
+            ObradiDgv();
         }
         
         private void dodajUKosaricu()
@@ -75,7 +75,7 @@ namespace CardBringer2
             dgvPocetnaDatagridSviOglasi.DataSource = oglas.TraziOglase(pretrazivaniString);
         }
 
-        private void obradiDGV()
+        private void ObradiDgv()
         {
             if (dgvPocetnaDatagridSviOglasi.SelectedRows.Count <= 0) return;
             dgvPocetnaDatagridSviOglasi.Columns["imeKarte"].HeaderText = "Ime karte";
@@ -121,7 +121,7 @@ namespace CardBringer2
         private void btnPocetnaResetgumb_Click(object sender, EventArgs e)
         {
             dgvPocetnaDatagridSviOglasi.DataSource = oglas.DohvatiSveAktivneOglase();
-            obradiDGV();
+            ObradiDgv();
         }
 
         private void dgvPocetnaDatagridSviOglasi_RowEnter(object sender, DataGridViewCellEventArgs e)

@@ -28,7 +28,7 @@ namespace CardBringer2
             kartaBindingSource.DataSource = karta.DohvatiKarte();
             dgvListaZeljaKarteNaListi.DataSource = wishlist.DohvatiWishlist();
             dohvatiSadrzaj();
-            obradiDGV();
+            ObradiDgv();
         }
 
         private void GumbResetListaZelja_Click(object sender, EventArgs e)
@@ -42,7 +42,7 @@ namespace CardBringer2
             var pretrazivaniString = tboxListaZeljaTraziSveKarteTbox.Text;
             dgvListaZeljaSveKarteDGV.DataSource = karta.TraziKarte(pretrazivaniString);
         }
-        private void obradiDGV()
+        private void ObradiDgv()
         {
             if (dgvListaZeljaKarteNaListi.SelectedRows.Count <= 0) return;
             dgvListaZeljaKarteNaListi.Columns["idWishlist"].Visible = false;
@@ -74,7 +74,7 @@ namespace CardBringer2
             }
             dgvListaZeljaKarteNaListi.DataSource = wishlist.DohvatiWishlist();
             dohvatiSadrzaj();
-            obradiDGV();
+            ObradiDgv();
         }
 
         private void ListaZeljaGumbMakni_Click(object sender, EventArgs e)
@@ -83,7 +83,7 @@ namespace CardBringer2
             wishlist.UkloniKartuSListeZelja(idWishlist);
             dgvListaZeljaKarteNaListi.DataSource = wishlist.DohvatiWishlist();
             dohvatiSadrzaj();
-            obradiDGV();
+            ObradiDgv();
         }
 
         private void dgvListaZeljaKarteNaListi_RowEnter(object sender, DataGridViewCellEventArgs e)

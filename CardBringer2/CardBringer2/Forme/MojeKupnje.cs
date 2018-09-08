@@ -25,9 +25,9 @@ namespace CardBringer2
         {
             // prikazuje kupljene
             dgvMojeKupnjeDatagrid.DataSource = kosharica.DohvatiKosaricu(_kupljeno);
-            obradiDGV();
+            ObradiDgv();
         }
-        private void obradiDGV()
+        private void ObradiDgv()
         {
             if (dgvMojeKupnjeDatagrid.SelectedRows.Count <= 0) return;
             dgvMojeKupnjeDatagrid.Columns["imeKarte"].HeaderText = "Ime karte";

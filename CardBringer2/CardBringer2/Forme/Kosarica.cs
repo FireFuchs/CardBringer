@@ -25,47 +25,52 @@ namespace CardBringer2
         private void Kosarica_Load(object sender, EventArgs e)
         {
             //prikazuje nekupljene 
-            dgvKosaricaDatagridview.DataSource = kosharica.DohvatiKosaricu(_nekupljeno);
-            obradiDGV();
+            dgvKosaricaStavkeKosarice.DataSource = kosharica.DohvatiKosaricu(_nekupljeno);
+            ObradiDgv();
         }
 
-        private void obradiDGV()
+        private void ObradiDgv()
         {
-            if (dgvKosaricaDatagridview.SelectedRows.Count <= 0) return;
-            dgvKosaricaDatagridview.Columns["imeKarte"].HeaderText = "Ime karte";
-            dgvKosaricaDatagridview.Columns["opisKarte"].HeaderText = "Opis karte";
-            dgvKosaricaDatagridview.Columns["cijena"].HeaderText = "Cijena";
-            dgvKosaricaDatagridview.Columns["kolicina"].HeaderText = "Količina";
-            dgvKosaricaDatagridview.Columns["ime"].HeaderText = "Prodavač";
-            dgvKosaricaDatagridview.Columns["idOglas"].Visible = false;
-            dgvKosaricaDatagridview.Columns["slikaKarte"].Visible = false;
-            dgvKosaricaDatagridview.Columns["kupljeno"].Visible = false;
-            dgvKosaricaDatagridview.Columns["idKosarica"].Visible = false;
+            if (dgvKosaricaStavkeKosarice.SelectedRows.Count <= 0) return;
+            dgvKosaricaStavkeKosarice.Columns["imeKarte"].HeaderText = "Ime karte";
+            dgvKosaricaStavkeKosarice.Columns["opisKarte"].HeaderText = "Opis karte";
+            dgvKosaricaStavkeKosarice.Columns["cijena"].HeaderText = "Cijena";
+            dgvKosaricaStavkeKosarice.Columns["kolicina"].HeaderText = "Količina";
+            dgvKosaricaStavkeKosarice.Columns["ime"].HeaderText = "Prodavač";
+            dgvKosaricaStavkeKosarice.Columns["idOglas"].Visible = false;
+            dgvKosaricaStavkeKosarice.Columns["slikaKarte"].Visible = false;
+            dgvKosaricaStavkeKosarice.Columns["kupljeno"].Visible = false;
+            dgvKosaricaStavkeKosarice.Columns["idKosarica"].Visible = false;
 
         }
 
         private void btnKosaricaKupi_Click(object sender, EventArgs e)
         {
-            int idKosarica = (int)dgvKosaricaDatagridview.SelectedRows[0].Cells["idKosarica"].Value;
-            int idOglas = (int)dgvKosaricaDatagridview.SelectedRows[0].Cells["idOglas"].Value;
-            int kolicina = (int)dgvKosaricaDatagridview.SelectedRows[0].Cells["kolicina"].Value;
+            if (dgvKosaricaStavkeKosarice.RowCount == 0)
+            {
+                MessageBox.Show("Vaša košarica je prazna.", "Greška", MessageBoxButtons.OK);
+                return;
+            }
+            int idKosarica = (int)dgvKosaricaStavkeKosarice.SelectedRows[0].Cells["idKosarica"].Value;
+            int idOglas = (int)dgvKosaricaStavkeKosarice.SelectedRows[0].Cells["idOglas"].Value;
+            int kolicina = (int)dgvKosaricaStavkeKosarice.SelectedRows[0].Cells["kolicina"].Value;
             var popup = new UnosKartice();
             popup.ShowDialog();
             // stavka kosarica se oznacava kao kupljena
             kosharica.StavkaKupljenaIliNe(idKosarica, 1);
             // ukoliko u oglasu vise nema kolicine, tj nema preostalih karata, deaktivira se
             if (kolicina == 0) oglas.DeaktivirajOglas(idOglas);
-            dgvKosaricaDatagridview.DataSource = kosharica.DohvatiKosaricu(_nekupljeno);
+            dgvKosaricaStavkeKosarice.DataSource = kosharica.DohvatiKosaricu(_nekupljeno);
         }
 
         private void btnKosaricaMakni_Click(object sender, EventArgs e)
         {
-            int idKosarica = (int)dgvKosaricaDatagridview.SelectedRows[0].Cells["idKosarica"].Value;
-            int idOglas = (int)dgvKosaricaDatagridview.SelectedRows[0].Cells["idOglas"].Value;
-            int kolicina = (int)dgvKosaricaDatagridview.SelectedRows[0].Cells["kolicina"].Value;
+            int idKosarica = (int)dgvKosaricaStavkeKosarice.SelectedRows[0].Cells["idKosarica"].Value;
+            int idOglas = (int)dgvKosaricaStavkeKosarice.SelectedRows[0].Cells["idOglas"].Value;
+            int kolicina = (int)dgvKosaricaStavkeKosarice.SelectedRows[0].Cells["kolicina"].Value;
             oglas.UpdateKolicinuUOglasu(idOglas, kolicina, true);
             kosharica.UkloniStavkuKosarice(idKosarica);
-            dgvKosaricaDatagridview.DataSource = kosharica.DohvatiKosaricu(_nekupljeno);
+            dgvKosaricaStavkeKosarice.DataSource = kosharica.DohvatiKosaricu(_nekupljeno);
         }
     }
 }

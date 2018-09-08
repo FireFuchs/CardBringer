@@ -33,10 +33,10 @@ namespace CardBringer2
 
         private void MojProfil_Load(object sender, EventArgs e)
         {
-            obradiDGV();
+            ObradiDgv();
         }
 
-        private void obradiDGV()
+        private void ObradiDgv()
         {
             if (dgvMojProfilMojiOglasi.SelectedRows.Count <= 0) return;
             dgvMojProfilMojiOglasi.Columns["imeKarte"].HeaderText = "Ime karte";

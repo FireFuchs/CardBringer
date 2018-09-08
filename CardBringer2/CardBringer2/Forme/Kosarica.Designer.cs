@@ -33,12 +33,12 @@
             this.lblKosaricaCijenaKarataCijena = new System.Windows.Forms.Label();
             this.lblKosaricaBrojKarata = new System.Windows.Forms.Label();
             this.KosaricaLabelCijenaUnchanged = new System.Windows.Forms.Label();
-            this.dgvKosaricaDatagridview = new System.Windows.Forms.DataGridView();
+            this.dgvKosaricaStavkeKosarice = new System.Windows.Forms.DataGridView();
             this.label1 = new System.Windows.Forms.Label();
             this.btnKosaricaKupi = new System.Windows.Forms.Button();
             this.btnKosaricaMakni = new System.Windows.Forms.Button();
             this.kosharicaBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            ((System.ComponentModel.ISupportInitialize)(this.dgvKosaricaDatagridview)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvKosaricaStavkeKosarice)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.kosharicaBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
@@ -46,9 +46,10 @@
             // 
             this.lblKosaricaBrojKarataBroj.AutoSize = true;
             this.lblKosaricaBrojKarataBroj.ForeColor = System.Drawing.Color.White;
-            this.lblKosaricaBrojKarataBroj.Location = new System.Drawing.Point(894, 145);
+            this.lblKosaricaBrojKarataBroj.Location = new System.Drawing.Point(1192, 178);
+            this.lblKosaricaBrojKarataBroj.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblKosaricaBrojKarataBroj.Name = "lblKosaricaBrojKarataBroj";
-            this.lblKosaricaBrojKarataBroj.Size = new System.Drawing.Size(10, 13);
+            this.lblKosaricaBrojKarataBroj.Size = new System.Drawing.Size(13, 17);
             this.lblKosaricaBrojKarataBroj.TabIndex = 5;
             this.lblKosaricaBrojKarataBroj.Text = "-";
             // 
@@ -56,9 +57,10 @@
             // 
             this.lblKosaricaCijenaKarataCijena.AutoSize = true;
             this.lblKosaricaCijenaKarataCijena.ForeColor = System.Drawing.Color.White;
-            this.lblKosaricaCijenaKarataCijena.Location = new System.Drawing.Point(894, 109);
+            this.lblKosaricaCijenaKarataCijena.Location = new System.Drawing.Point(1192, 134);
+            this.lblKosaricaCijenaKarataCijena.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblKosaricaCijenaKarataCijena.Name = "lblKosaricaCijenaKarataCijena";
-            this.lblKosaricaCijenaKarataCijena.Size = new System.Drawing.Size(10, 13);
+            this.lblKosaricaCijenaKarataCijena.Size = new System.Drawing.Size(13, 17);
             this.lblKosaricaCijenaKarataCijena.TabIndex = 6;
             this.lblKosaricaCijenaKarataCijena.Text = "-";
             // 
@@ -66,9 +68,10 @@
             // 
             this.lblKosaricaBrojKarata.AutoSize = true;
             this.lblKosaricaBrojKarata.ForeColor = System.Drawing.Color.White;
-            this.lblKosaricaBrojKarata.Location = new System.Drawing.Point(805, 145);
+            this.lblKosaricaBrojKarata.Location = new System.Drawing.Point(1073, 178);
+            this.lblKosaricaBrojKarata.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblKosaricaBrojKarata.Name = "lblKosaricaBrojKarata";
-            this.lblKosaricaBrojKarata.Size = new System.Drawing.Size(62, 13);
+            this.lblKosaricaBrojKarata.Size = new System.Drawing.Size(83, 17);
             this.lblKosaricaBrojKarata.TabIndex = 7;
             this.lblKosaricaBrojKarata.Text = "Broj Karata:";
             // 
@@ -76,37 +79,41 @@
             // 
             this.KosaricaLabelCijenaUnchanged.AutoSize = true;
             this.KosaricaLabelCijenaUnchanged.ForeColor = System.Drawing.Color.White;
-            this.KosaricaLabelCijenaUnchanged.Location = new System.Drawing.Point(787, 109);
+            this.KosaricaLabelCijenaUnchanged.Location = new System.Drawing.Point(1049, 134);
+            this.KosaricaLabelCijenaUnchanged.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.KosaricaLabelCijenaUnchanged.Name = "KosaricaLabelCijenaUnchanged";
-            this.KosaricaLabelCijenaUnchanged.Size = new System.Drawing.Size(80, 13);
+            this.KosaricaLabelCijenaUnchanged.Size = new System.Drawing.Size(104, 17);
             this.KosaricaLabelCijenaUnchanged.TabIndex = 8;
             this.KosaricaLabelCijenaUnchanged.Text = "Ukupna Cijena:";
             // 
-            // dgvKosaricaDatagridview
+            // dgvKosaricaStavkeKosarice
             // 
-            this.dgvKosaricaDatagridview.CausesValidation = false;
-            this.dgvKosaricaDatagridview.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvKosaricaDatagridview.Location = new System.Drawing.Point(12, 72);
-            this.dgvKosaricaDatagridview.Name = "dgvKosaricaDatagridview";
-            this.dgvKosaricaDatagridview.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvKosaricaDatagridview.Size = new System.Drawing.Size(755, 447);
-            this.dgvKosaricaDatagridview.TabIndex = 4;
+            this.dgvKosaricaStavkeKosarice.CausesValidation = false;
+            this.dgvKosaricaStavkeKosarice.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvKosaricaStavkeKosarice.Location = new System.Drawing.Point(16, 89);
+            this.dgvKosaricaStavkeKosarice.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.dgvKosaricaStavkeKosarice.Name = "dgvKosaricaStavkeKosarice";
+            this.dgvKosaricaStavkeKosarice.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dgvKosaricaStavkeKosarice.Size = new System.Drawing.Size(1007, 550);
+            this.dgvKosaricaStavkeKosarice.TabIndex = 4;
             // 
             // label1
             // 
             this.label1.AutoSize = true;
             this.label1.ForeColor = System.Drawing.Color.White;
-            this.label1.Location = new System.Drawing.Point(12, 56);
+            this.label1.Location = new System.Drawing.Point(16, 69);
+            this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(83, 13);
+            this.label1.Size = new System.Drawing.Size(110, 17);
             this.label1.TabIndex = 3;
             this.label1.Text = "Karte u košarici:";
             // 
             // btnKosaricaKupi
             // 
-            this.btnKosaricaKupi.Location = new System.Drawing.Point(790, 213);
+            this.btnKosaricaKupi.Location = new System.Drawing.Point(1053, 262);
+            this.btnKosaricaKupi.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btnKosaricaKupi.Name = "btnKosaricaKupi";
-            this.btnKosaricaKupi.Size = new System.Drawing.Size(114, 48);
+            this.btnKosaricaKupi.Size = new System.Drawing.Size(152, 59);
             this.btnKosaricaKupi.TabIndex = 9;
             this.btnKosaricaKupi.Text = "Kupi!!";
             this.btnKosaricaKupi.UseVisualStyleBackColor = true;
@@ -114,9 +121,10 @@
             // 
             // btnKosaricaMakni
             // 
-            this.btnKosaricaMakni.Location = new System.Drawing.Point(790, 293);
+            this.btnKosaricaMakni.Location = new System.Drawing.Point(1053, 361);
+            this.btnKosaricaMakni.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btnKosaricaMakni.Name = "btnKosaricaMakni";
-            this.btnKosaricaMakni.Size = new System.Drawing.Size(114, 48);
+            this.btnKosaricaMakni.Size = new System.Drawing.Size(152, 59);
             this.btnKosaricaMakni.TabIndex = 9;
             this.btnKosaricaMakni.Text = "Makni!";
             this.btnKosaricaMakni.UseVisualStyleBackColor = true;
@@ -128,22 +136,23 @@
             // 
             // Kosarica
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(53)))), ((int)(((byte)(53)))), ((int)(((byte)(53)))));
-            this.ClientSize = new System.Drawing.Size(1203, 603);
+            this.ClientSize = new System.Drawing.Size(1604, 742);
             this.Controls.Add(this.btnKosaricaMakni);
             this.Controls.Add(this.btnKosaricaKupi);
             this.Controls.Add(this.lblKosaricaBrojKarataBroj);
             this.Controls.Add(this.lblKosaricaCijenaKarataCijena);
             this.Controls.Add(this.lblKosaricaBrojKarata);
             this.Controls.Add(this.KosaricaLabelCijenaUnchanged);
-            this.Controls.Add(this.dgvKosaricaDatagridview);
+            this.Controls.Add(this.dgvKosaricaStavkeKosarice);
             this.Controls.Add(this.label1);
+            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.Name = "Kosarica";
             this.Text = "Kosarica";
             this.Load += new System.EventHandler(this.Kosarica_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.dgvKosaricaDatagridview)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvKosaricaStavkeKosarice)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.kosharicaBindingSource)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -156,7 +165,7 @@
         private System.Windows.Forms.Label lblKosaricaCijenaKarataCijena;
         private System.Windows.Forms.Label lblKosaricaBrojKarata;
         private System.Windows.Forms.Label KosaricaLabelCijenaUnchanged;
-        private System.Windows.Forms.DataGridView dgvKosaricaDatagridview;
+        private System.Windows.Forms.DataGridView dgvKosaricaStavkeKosarice;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Button btnKosaricaKupi;
         private System.Windows.Forms.Button btnKosaricaMakni;

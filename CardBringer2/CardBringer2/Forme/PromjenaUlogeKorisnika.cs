@@ -24,9 +24,9 @@ namespace CardBringer2
         private void PromjenaUlogeKorisnika_Load(object sender, EventArgs e)
         {
             dgvPromjenaUlogeKorisnikaSviKorisnici.DataSource = korisnik.DohvatiKorisnike();
-            obradiDGV();
+            ObradiDgv();
         }
-        private void obradiDGV()
+        private void ObradiDgv()
         {
             if (dgvPromjenaUlogeKorisnikaSviKorisnici.SelectedRows.Count <= 0) return;
             dgvPromjenaUlogeKorisnikaSviKorisnici.Columns["idUloga"].Visible = false;
