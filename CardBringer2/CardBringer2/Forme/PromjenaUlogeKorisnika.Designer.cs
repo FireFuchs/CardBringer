@@ -28,45 +28,45 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.buttonDodajAdmina = new System.Windows.Forms.Button();
-            this.buttonMakniAdmina = new System.Windows.Forms.Button();
+            this.dgvPromjenaUlogeKorisnikaSviKorisnici = new System.Windows.Forms.DataGridView();
+            this.btnPromjenaUlogeKorisnikaDajPrivilegije = new System.Windows.Forms.Button();
+            this.btnPromjenaUlogeKorisnikaOduzmiPrivilegije = new System.Windows.Forms.Button();
             this.btnPromjenaUlogeKorisnikaHelp = new System.Windows.Forms.Button();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvPromjenaUlogeKorisnikaSviKorisnici)).BeginInit();
             this.SuspendLayout();
             // 
-            // dataGridView1
+            // dgvPromjenaUlogeKorisnikaSviKorisnici
             // 
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(9, 10);
-            this.dataGridView1.Margin = new System.Windows.Forms.Padding(2);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.RowTemplate.Height = 24;
-            this.dataGridView1.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dataGridView1.Size = new System.Drawing.Size(602, 346);
-            this.dataGridView1.TabIndex = 0;
+            this.dgvPromjenaUlogeKorisnikaSviKorisnici.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvPromjenaUlogeKorisnikaSviKorisnici.Location = new System.Drawing.Point(9, 10);
+            this.dgvPromjenaUlogeKorisnikaSviKorisnici.Margin = new System.Windows.Forms.Padding(2);
+            this.dgvPromjenaUlogeKorisnikaSviKorisnici.Name = "dgvPromjenaUlogeKorisnikaSviKorisnici";
+            this.dgvPromjenaUlogeKorisnikaSviKorisnici.RowTemplate.Height = 24;
+            this.dgvPromjenaUlogeKorisnikaSviKorisnici.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dgvPromjenaUlogeKorisnikaSviKorisnici.Size = new System.Drawing.Size(602, 346);
+            this.dgvPromjenaUlogeKorisnikaSviKorisnici.TabIndex = 0;
             // 
-            // buttonDodajAdmina
+            // btnPromjenaUlogeKorisnikaDajPrivilegije
             // 
-            this.buttonDodajAdmina.Location = new System.Drawing.Point(633, 127);
-            this.buttonDodajAdmina.Margin = new System.Windows.Forms.Padding(2);
-            this.buttonDodajAdmina.Name = "buttonDodajAdmina";
-            this.buttonDodajAdmina.Size = new System.Drawing.Size(127, 58);
-            this.buttonDodajAdmina.TabIndex = 1;
-            this.buttonDodajAdmina.Text = "Daj administratorske privilegije";
-            this.buttonDodajAdmina.UseVisualStyleBackColor = true;
-            this.buttonDodajAdmina.Click += new System.EventHandler(this.buttonDodajAdmina_Click);
+            this.btnPromjenaUlogeKorisnikaDajPrivilegije.Location = new System.Drawing.Point(633, 127);
+            this.btnPromjenaUlogeKorisnikaDajPrivilegije.Margin = new System.Windows.Forms.Padding(2);
+            this.btnPromjenaUlogeKorisnikaDajPrivilegije.Name = "btnPromjenaUlogeKorisnikaDajPrivilegije";
+            this.btnPromjenaUlogeKorisnikaDajPrivilegije.Size = new System.Drawing.Size(127, 58);
+            this.btnPromjenaUlogeKorisnikaDajPrivilegije.TabIndex = 1;
+            this.btnPromjenaUlogeKorisnikaDajPrivilegije.Text = "Daj administratorske privilegije";
+            this.btnPromjenaUlogeKorisnikaDajPrivilegije.UseVisualStyleBackColor = true;
+            this.btnPromjenaUlogeKorisnikaDajPrivilegije.Click += new System.EventHandler(this.btnPromjenaUlogeKorisnikaDajPrivilegije_Click);
             // 
-            // buttonMakniAdmina
+            // btnPromjenaUlogeKorisnikaOduzmiPrivilegije
             // 
-            this.buttonMakniAdmina.Location = new System.Drawing.Point(633, 190);
-            this.buttonMakniAdmina.Margin = new System.Windows.Forms.Padding(2);
-            this.buttonMakniAdmina.Name = "buttonMakniAdmina";
-            this.buttonMakniAdmina.Size = new System.Drawing.Size(127, 58);
-            this.buttonMakniAdmina.TabIndex = 1;
-            this.buttonMakniAdmina.Text = "Makni administratorske privilegije";
-            this.buttonMakniAdmina.UseVisualStyleBackColor = true;
-            this.buttonMakniAdmina.Click += new System.EventHandler(this.buttonMakniAdmina_Click);
+            this.btnPromjenaUlogeKorisnikaOduzmiPrivilegije.Location = new System.Drawing.Point(633, 190);
+            this.btnPromjenaUlogeKorisnikaOduzmiPrivilegije.Margin = new System.Windows.Forms.Padding(2);
+            this.btnPromjenaUlogeKorisnikaOduzmiPrivilegije.Name = "btnPromjenaUlogeKorisnikaOduzmiPrivilegije";
+            this.btnPromjenaUlogeKorisnikaOduzmiPrivilegije.Size = new System.Drawing.Size(127, 58);
+            this.btnPromjenaUlogeKorisnikaOduzmiPrivilegije.TabIndex = 1;
+            this.btnPromjenaUlogeKorisnikaOduzmiPrivilegije.Text = "Makni administratorske privilegije";
+            this.btnPromjenaUlogeKorisnikaOduzmiPrivilegije.UseVisualStyleBackColor = true;
+            this.btnPromjenaUlogeKorisnikaOduzmiPrivilegije.Click += new System.EventHandler(this.btnPromjenaUlogeKorisnikaOduzmiPrivilegije_Click);
             // 
             // btnPromjenaUlogeKorisnikaHelp
             // 
@@ -85,24 +85,24 @@
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(53)))), ((int)(((byte)(53)))), ((int)(((byte)(53)))));
             this.ClientSize = new System.Drawing.Size(838, 366);
             this.Controls.Add(this.btnPromjenaUlogeKorisnikaHelp);
-            this.Controls.Add(this.buttonMakniAdmina);
-            this.Controls.Add(this.buttonDodajAdmina);
-            this.Controls.Add(this.dataGridView1);
+            this.Controls.Add(this.btnPromjenaUlogeKorisnikaOduzmiPrivilegije);
+            this.Controls.Add(this.btnPromjenaUlogeKorisnikaDajPrivilegije);
+            this.Controls.Add(this.dgvPromjenaUlogeKorisnikaSviKorisnici);
             this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "PromjenaUlogeKorisnika";
             this.Text = "PromjenaUlogeKorisnika";
             this.Load += new System.EventHandler(this.PromjenaUlogeKorisnika_Load);
             this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.PromjenaUlogeKorisnika_KeyDown);
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvPromjenaUlogeKorisnikaSviKorisnici)).EndInit();
             this.ResumeLayout(false);
 
         }
 
         #endregion
 
-        private System.Windows.Forms.DataGridView dataGridView1;
-        private System.Windows.Forms.Button buttonDodajAdmina;
-        private System.Windows.Forms.Button buttonMakniAdmina;
+        private System.Windows.Forms.DataGridView dgvPromjenaUlogeKorisnikaSviKorisnici;
+        private System.Windows.Forms.Button btnPromjenaUlogeKorisnikaDajPrivilegije;
+        private System.Windows.Forms.Button btnPromjenaUlogeKorisnikaOduzmiPrivilegije;
         private System.Windows.Forms.Button btnPromjenaUlogeKorisnikaHelp;
     }
 }

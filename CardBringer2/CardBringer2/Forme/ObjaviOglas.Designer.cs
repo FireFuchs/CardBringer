@@ -29,7 +29,7 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.dgvObjaviOglasSveKarte = new System.Windows.Forms.DataGridView();
             this.idKartaDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.imeKarteDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.opisKarteDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -37,39 +37,39 @@
             this.oglasDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.wishlistDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.kartaBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.label2 = new System.Windows.Forms.Label();
-            this.label1 = new System.Windows.Forms.Label();
-            this.unosCijeneKarteObjaviOglas = new System.Windows.Forms.TextBox();
-            this.label3 = new System.Windows.Forms.Label();
-            this.unosKolicineKarteObjaviOglas = new System.Windows.Forms.TextBox();
-            this.buttonObjaviOglas = new System.Windows.Forms.Button();
-            this.pictureBoxSlikaKarte = new System.Windows.Forms.PictureBox();
-            this.OpisKarte = new System.Windows.Forms.RichTextBox();
-            this.ImeKarte = new System.Windows.Forms.Label();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            this.lblObjaviOglasIzaberiKartu = new System.Windows.Forms.Label();
+            this.lblObjaviOglasUnesiCijenuKarte = new System.Windows.Forms.Label();
+            this.tboxObjaviOglasCijena = new System.Windows.Forms.TextBox();
+            this.lblObjaviOglasUnesiteKoličinuKarata = new System.Windows.Forms.Label();
+            this.tboxObjaviOglasKolicina = new System.Windows.Forms.TextBox();
+            this.btnObjaviOglasObjaviOglas = new System.Windows.Forms.Button();
+            this.pboxObjaviOglasSlikaKarte = new System.Windows.Forms.PictureBox();
+            this.rtboxObjaviOglasOpisKarte = new System.Windows.Forms.RichTextBox();
+            this.lvlObjaviOglasNazivKarte = new System.Windows.Forms.Label();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvObjaviOglasSveKarte)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.kartaBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxSlikaKarte)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pboxObjaviOglasSlikaKarte)).BeginInit();
             this.SuspendLayout();
             // 
-            // dataGridView1
+            // dgvObjaviOglasSveKarte
             // 
-            this.dataGridView1.AutoGenerateColumns = false;
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.dgvObjaviOglasSveKarte.AutoGenerateColumns = false;
+            this.dgvObjaviOglasSveKarte.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvObjaviOglasSveKarte.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.idKartaDataGridViewTextBoxColumn,
             this.imeKarteDataGridViewTextBoxColumn,
             this.opisKarteDataGridViewTextBoxColumn,
             this.slikaKarteDataGridViewTextBoxColumn,
             this.oglasDataGridViewTextBoxColumn,
             this.wishlistDataGridViewTextBoxColumn});
-            this.dataGridView1.DataSource = this.kartaBindingSource;
-            this.dataGridView1.GridColor = System.Drawing.Color.Gray;
-            this.dataGridView1.Location = new System.Drawing.Point(12, 88);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dataGridView1.Size = new System.Drawing.Size(446, 359);
-            this.dataGridView1.TabIndex = 5;
-            this.dataGridView1.RowEnter += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_RowEnter);
+            this.dgvObjaviOglasSveKarte.DataSource = this.kartaBindingSource;
+            this.dgvObjaviOglasSveKarte.GridColor = System.Drawing.Color.Gray;
+            this.dgvObjaviOglasSveKarte.Location = new System.Drawing.Point(12, 88);
+            this.dgvObjaviOglasSveKarte.Name = "dgvObjaviOglasSveKarte";
+            this.dgvObjaviOglasSveKarte.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dgvObjaviOglasSveKarte.Size = new System.Drawing.Size(446, 359);
+            this.dgvObjaviOglasSveKarte.TabIndex = 5;
+            this.dgvObjaviOglasSveKarte.RowEnter += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_RowEnter);
             // 
             // idKartaDataGridViewTextBoxColumn
             // 
@@ -115,96 +115,96 @@
             // 
             this.kartaBindingSource.DataSource = typeof(CardBringer2.karta);
             // 
-            // label2
+            // lblObjaviOglasIzaberiKartu
             // 
-            this.label2.AutoSize = true;
-            this.label2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(53)))), ((int)(((byte)(53)))), ((int)(((byte)(53)))));
-            this.label2.ForeColor = System.Drawing.Color.White;
-            this.label2.Location = new System.Drawing.Point(12, 68);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(77, 13);
-            this.label2.TabIndex = 2;
-            this.label2.Text = "Izaberite kartu:";
+            this.lblObjaviOglasIzaberiKartu.AutoSize = true;
+            this.lblObjaviOglasIzaberiKartu.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(53)))), ((int)(((byte)(53)))), ((int)(((byte)(53)))));
+            this.lblObjaviOglasIzaberiKartu.ForeColor = System.Drawing.Color.White;
+            this.lblObjaviOglasIzaberiKartu.Location = new System.Drawing.Point(12, 68);
+            this.lblObjaviOglasIzaberiKartu.Name = "lblObjaviOglasIzaberiKartu";
+            this.lblObjaviOglasIzaberiKartu.Size = new System.Drawing.Size(77, 13);
+            this.lblObjaviOglasIzaberiKartu.TabIndex = 2;
+            this.lblObjaviOglasIzaberiKartu.Text = "Izaberite kartu:";
             // 
-            // label1
+            // lblObjaviOglasUnesiCijenuKarte
             // 
-            this.label1.AutoSize = true;
-            this.label1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(53)))), ((int)(((byte)(53)))), ((int)(((byte)(53)))));
-            this.label1.ForeColor = System.Drawing.Color.White;
-            this.label1.Location = new System.Drawing.Point(103, 453);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(104, 13);
-            this.label1.TabIndex = 2;
-            this.label1.Text = "Unesite cijenu karte:";
+            this.lblObjaviOglasUnesiCijenuKarte.AutoSize = true;
+            this.lblObjaviOglasUnesiCijenuKarte.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(53)))), ((int)(((byte)(53)))), ((int)(((byte)(53)))));
+            this.lblObjaviOglasUnesiCijenuKarte.ForeColor = System.Drawing.Color.White;
+            this.lblObjaviOglasUnesiCijenuKarte.Location = new System.Drawing.Point(103, 453);
+            this.lblObjaviOglasUnesiCijenuKarte.Name = "lblObjaviOglasUnesiCijenuKarte";
+            this.lblObjaviOglasUnesiCijenuKarte.Size = new System.Drawing.Size(104, 13);
+            this.lblObjaviOglasUnesiCijenuKarte.TabIndex = 2;
+            this.lblObjaviOglasUnesiCijenuKarte.Text = "Unesite cijenu karte:";
             // 
-            // unosCijeneKarteObjaviOglas
+            // tboxObjaviOglasCijena
             // 
-            this.unosCijeneKarteObjaviOglas.Location = new System.Drawing.Point(211, 453);
-            this.unosCijeneKarteObjaviOglas.Name = "unosCijeneKarteObjaviOglas";
-            this.unosCijeneKarteObjaviOglas.Size = new System.Drawing.Size(120, 20);
-            this.unosCijeneKarteObjaviOglas.TabIndex = 1;
-            this.unosCijeneKarteObjaviOglas.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.unosCijeneKarteObjaviOglas_KeyPress);
+            this.tboxObjaviOglasCijena.Location = new System.Drawing.Point(211, 453);
+            this.tboxObjaviOglasCijena.Name = "tboxObjaviOglasCijena";
+            this.tboxObjaviOglasCijena.Size = new System.Drawing.Size(120, 20);
+            this.tboxObjaviOglasCijena.TabIndex = 1;
+            this.tboxObjaviOglasCijena.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.tboxObjaviOglasCijena_KeyPress);
             // 
-            // label3
+            // lblObjaviOglasUnesiteKoličinuKarata
             // 
-            this.label3.AutoSize = true;
-            this.label3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(53)))), ((int)(((byte)(53)))), ((int)(((byte)(53)))));
-            this.label3.ForeColor = System.Drawing.Color.White;
-            this.label3.Location = new System.Drawing.Point(88, 492);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(118, 13);
-            this.label3.TabIndex = 2;
-            this.label3.Text = "Unesite količinu karata:";
+            this.lblObjaviOglasUnesiteKoličinuKarata.AutoSize = true;
+            this.lblObjaviOglasUnesiteKoličinuKarata.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(53)))), ((int)(((byte)(53)))), ((int)(((byte)(53)))));
+            this.lblObjaviOglasUnesiteKoličinuKarata.ForeColor = System.Drawing.Color.White;
+            this.lblObjaviOglasUnesiteKoličinuKarata.Location = new System.Drawing.Point(88, 492);
+            this.lblObjaviOglasUnesiteKoličinuKarata.Name = "lblObjaviOglasUnesiteKoličinuKarata";
+            this.lblObjaviOglasUnesiteKoličinuKarata.Size = new System.Drawing.Size(118, 13);
+            this.lblObjaviOglasUnesiteKoličinuKarata.TabIndex = 2;
+            this.lblObjaviOglasUnesiteKoličinuKarata.Text = "Unesite količinu karata:";
             // 
-            // unosKolicineKarteObjaviOglas
+            // tboxObjaviOglasKolicina
             // 
-            this.unosKolicineKarteObjaviOglas.Location = new System.Drawing.Point(211, 492);
-            this.unosKolicineKarteObjaviOglas.Name = "unosKolicineKarteObjaviOglas";
-            this.unosKolicineKarteObjaviOglas.Size = new System.Drawing.Size(120, 20);
-            this.unosKolicineKarteObjaviOglas.TabIndex = 2;
-            this.unosKolicineKarteObjaviOglas.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.unosKolicineKarteObjaviOglas_KeyPress);
+            this.tboxObjaviOglasKolicina.Location = new System.Drawing.Point(211, 492);
+            this.tboxObjaviOglasKolicina.Name = "tboxObjaviOglasKolicina";
+            this.tboxObjaviOglasKolicina.Size = new System.Drawing.Size(120, 20);
+            this.tboxObjaviOglasKolicina.TabIndex = 2;
+            this.tboxObjaviOglasKolicina.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.tboxObjaviOglasKolicina_KeyPress);
             // 
-            // buttonObjaviOglas
+            // btnObjaviOglasObjaviOglas
             // 
-            this.buttonObjaviOglas.ForeColor = System.Drawing.Color.Black;
-            this.buttonObjaviOglas.Location = new System.Drawing.Point(338, 453);
-            this.buttonObjaviOglas.Name = "buttonObjaviOglas";
-            this.buttonObjaviOglas.Size = new System.Drawing.Size(120, 56);
-            this.buttonObjaviOglas.TabIndex = 3;
-            this.buttonObjaviOglas.Text = "Objavi Oglas";
-            this.buttonObjaviOglas.UseVisualStyleBackColor = true;
-            this.buttonObjaviOglas.Click += new System.EventHandler(this.buttonObjaviOglas_Click);
+            this.btnObjaviOglasObjaviOglas.ForeColor = System.Drawing.Color.Black;
+            this.btnObjaviOglasObjaviOglas.Location = new System.Drawing.Point(338, 453);
+            this.btnObjaviOglasObjaviOglas.Name = "btnObjaviOglasObjaviOglas";
+            this.btnObjaviOglasObjaviOglas.Size = new System.Drawing.Size(120, 56);
+            this.btnObjaviOglasObjaviOglas.TabIndex = 3;
+            this.btnObjaviOglasObjaviOglas.Text = "Objavi Oglas";
+            this.btnObjaviOglasObjaviOglas.UseVisualStyleBackColor = true;
+            this.btnObjaviOglasObjaviOglas.Click += new System.EventHandler(this.btnObjaviOglasObjaviOglas_Click);
             // 
-            // pictureBoxSlikaKarte
+            // pboxObjaviOglasSlikaKarte
             // 
-            this.pictureBoxSlikaKarte.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.pictureBoxSlikaKarte.Location = new System.Drawing.Point(484, 88);
-            this.pictureBoxSlikaKarte.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
-            this.pictureBoxSlikaKarte.Name = "pictureBoxSlikaKarte";
-            this.pictureBoxSlikaKarte.Size = new System.Drawing.Size(267, 351);
-            this.pictureBoxSlikaKarte.TabIndex = 6;
-            this.pictureBoxSlikaKarte.TabStop = false;
+            this.pboxObjaviOglasSlikaKarte.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.pboxObjaviOglasSlikaKarte.Location = new System.Drawing.Point(484, 88);
+            this.pboxObjaviOglasSlikaKarte.Margin = new System.Windows.Forms.Padding(2);
+            this.pboxObjaviOglasSlikaKarte.Name = "pboxObjaviOglasSlikaKarte";
+            this.pboxObjaviOglasSlikaKarte.Size = new System.Drawing.Size(267, 351);
+            this.pboxObjaviOglasSlikaKarte.TabIndex = 6;
+            this.pboxObjaviOglasSlikaKarte.TabStop = false;
             // 
-            // OpisKarte
+            // rtboxObjaviOglasOpisKarte
             // 
-            this.OpisKarte.Location = new System.Drawing.Point(484, 464);
-            this.OpisKarte.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
-            this.OpisKarte.Name = "OpisKarte";
-            this.OpisKarte.ReadOnly = true;
-            this.OpisKarte.Size = new System.Drawing.Size(267, 81);
-            this.OpisKarte.TabIndex = 7;
-            this.OpisKarte.Text = "";
+            this.rtboxObjaviOglasOpisKarte.Location = new System.Drawing.Point(484, 464);
+            this.rtboxObjaviOglasOpisKarte.Margin = new System.Windows.Forms.Padding(2);
+            this.rtboxObjaviOglasOpisKarte.Name = "rtboxObjaviOglasOpisKarte";
+            this.rtboxObjaviOglasOpisKarte.ReadOnly = true;
+            this.rtboxObjaviOglasOpisKarte.Size = new System.Drawing.Size(267, 81);
+            this.rtboxObjaviOglasOpisKarte.TabIndex = 7;
+            this.rtboxObjaviOglasOpisKarte.Text = "";
             // 
-            // ImeKarte
+            // lvlObjaviOglasNazivKarte
             // 
-            this.ImeKarte.AutoSize = true;
-            this.ImeKarte.ForeColor = System.Drawing.Color.White;
-            this.ImeKarte.Location = new System.Drawing.Point(482, 443);
-            this.ImeKarte.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.ImeKarte.Name = "ImeKarte";
-            this.ImeKarte.Size = new System.Drawing.Size(61, 13);
-            this.ImeKarte.TabIndex = 8;
-            this.ImeKarte.Text = "Naziv karte";
+            this.lvlObjaviOglasNazivKarte.AutoSize = true;
+            this.lvlObjaviOglasNazivKarte.ForeColor = System.Drawing.Color.White;
+            this.lvlObjaviOglasNazivKarte.Location = new System.Drawing.Point(482, 443);
+            this.lvlObjaviOglasNazivKarte.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.lvlObjaviOglasNazivKarte.Name = "lvlObjaviOglasNazivKarte";
+            this.lvlObjaviOglasNazivKarte.Size = new System.Drawing.Size(61, 13);
+            this.lvlObjaviOglasNazivKarte.TabIndex = 8;
+            this.lvlObjaviOglasNazivKarte.Text = "Naziv karte";
             // 
             // ObjaviOglas
             // 
@@ -212,23 +212,23 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(53)))), ((int)(((byte)(53)))), ((int)(((byte)(53)))));
             this.ClientSize = new System.Drawing.Size(1203, 603);
-            this.Controls.Add(this.ImeKarte);
-            this.Controls.Add(this.OpisKarte);
-            this.Controls.Add(this.pictureBoxSlikaKarte);
-            this.Controls.Add(this.buttonObjaviOglas);
-            this.Controls.Add(this.unosKolicineKarteObjaviOglas);
-            this.Controls.Add(this.label3);
-            this.Controls.Add(this.unosCijeneKarteObjaviOglas);
-            this.Controls.Add(this.label1);
-            this.Controls.Add(this.label2);
-            this.Controls.Add(this.dataGridView1);
+            this.Controls.Add(this.lvlObjaviOglasNazivKarte);
+            this.Controls.Add(this.rtboxObjaviOglasOpisKarte);
+            this.Controls.Add(this.pboxObjaviOglasSlikaKarte);
+            this.Controls.Add(this.btnObjaviOglasObjaviOglas);
+            this.Controls.Add(this.tboxObjaviOglasKolicina);
+            this.Controls.Add(this.lblObjaviOglasUnesiteKoličinuKarata);
+            this.Controls.Add(this.tboxObjaviOglasCijena);
+            this.Controls.Add(this.lblObjaviOglasUnesiCijenuKarte);
+            this.Controls.Add(this.lblObjaviOglasIzaberiKartu);
+            this.Controls.Add(this.dgvObjaviOglasSveKarte);
             this.ForeColor = System.Drawing.Color.Black;
             this.Name = "ObjaviOglas";
             this.Text = "ObjaviOglas";
             this.Load += new System.EventHandler(this.ObjaviOglas_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvObjaviOglasSveKarte)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.kartaBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxSlikaKarte)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pboxObjaviOglasSlikaKarte)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -236,16 +236,16 @@
 
         #endregion
 
-        private System.Windows.Forms.DataGridView dataGridView1;
-        private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.TextBox unosCijeneKarteObjaviOglas;
-        private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.TextBox unosKolicineKarteObjaviOglas;
-        private System.Windows.Forms.Button buttonObjaviOglas;
-        private System.Windows.Forms.PictureBox pictureBoxSlikaKarte;
-        private System.Windows.Forms.RichTextBox OpisKarte;
-        private System.Windows.Forms.Label ImeKarte;
+        private System.Windows.Forms.DataGridView dgvObjaviOglasSveKarte;
+        private System.Windows.Forms.Label lblObjaviOglasIzaberiKartu;
+        private System.Windows.Forms.Label lblObjaviOglasUnesiCijenuKarte;
+        private System.Windows.Forms.TextBox tboxObjaviOglasCijena;
+        private System.Windows.Forms.Label lblObjaviOglasUnesiteKoličinuKarata;
+        private System.Windows.Forms.TextBox tboxObjaviOglasKolicina;
+        private System.Windows.Forms.Button btnObjaviOglasObjaviOglas;
+        private System.Windows.Forms.PictureBox pboxObjaviOglasSlikaKarte;
+        private System.Windows.Forms.RichTextBox rtboxObjaviOglasOpisKarte;
+        private System.Windows.Forms.Label lvlObjaviOglasNazivKarte;
         private System.Windows.Forms.DataGridViewTextBoxColumn idKartaDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn imeKarteDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn opisKarteDataGridViewTextBoxColumn;

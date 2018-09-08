@@ -23,47 +23,18 @@ namespace CardBringer2
 
         private void PromjenaUlogeKorisnika_Load(object sender, EventArgs e)
         {
-            dataGridView1.DataSource = korisnik.DohvatiKorisnike();
+            dgvPromjenaUlogeKorisnikaSviKorisnici.DataSource = korisnik.DohvatiKorisnike();
             obradiDGV();
-        }
-
-        private void buttonDodajAdmina_Click(object sender, EventArgs e)
-        {
-            var idUloga = (int)dataGridView1.SelectedRows[0].Cells["idUloga"].Value;
-            if (idUloga == 2)
-            {
-                MessageBox.Show("Korisnik već ima administratorske privilegije!", "Greška", MessageBoxButtons.OK);
-                return;
-            }
-            var idKorisnik = (int)dataGridView1.SelectedRows[0].Cells["idKorisnika"].Value;
-            korisnik.PromijeniUloguKorisnika(idKorisnik, 2);
-            dataGridView1.DataSource = korisnik.DohvatiKorisnike();
-
-        }
-
-        private void buttonMakniAdmina_Click(object sender, EventArgs e)
-        {
-            var idUloga = (int)dataGridView1.SelectedRows[0].Cells[5].Value;
-            if (idUloga == 1)
-            {
-
-                MessageBox.Show("Ne možete maknuti privilegije jer ih korisnik nema!", "Greška", MessageBoxButtons.OK);
-                return;
-            }
-
-            var idKorisnik = (int)dataGridView1.SelectedRows[0].Cells["idKorisnika"].Value;
-            korisnik.PromijeniUloguKorisnika(idKorisnik, 1);
-            dataGridView1.DataSource = korisnik.DohvatiKorisnike();
         }
         private void obradiDGV()
         {
-            if (dataGridView1.SelectedRows.Count <= 0) return;
-            dataGridView1.Columns["idUloga"].Visible = false;
-            dataGridView1.Columns["idKorisnika"].HeaderText = "ID Korisnika";
-            dataGridView1.Columns["ime"].HeaderText = "Korisničko ime";
-            dataGridView1.Columns["email"].HeaderText = "E-Mail";
-            dataGridView1.Columns["mjestoStanovanja"].HeaderText = "Adresa";
-            dataGridView1.Columns["nazivUloge"].HeaderText = "Uloga";
+            if (dgvPromjenaUlogeKorisnikaSviKorisnici.SelectedRows.Count <= 0) return;
+            dgvPromjenaUlogeKorisnikaSviKorisnici.Columns["idUloga"].Visible = false;
+            dgvPromjenaUlogeKorisnikaSviKorisnici.Columns["idKorisnika"].HeaderText = "ID Korisnika";
+            dgvPromjenaUlogeKorisnikaSviKorisnici.Columns["ime"].HeaderText = "Korisničko ime";
+            dgvPromjenaUlogeKorisnikaSviKorisnici.Columns["email"].HeaderText = "E-Mail";
+            dgvPromjenaUlogeKorisnikaSviKorisnici.Columns["mjestoStanovanja"].HeaderText = "Adresa";
+            dgvPromjenaUlogeKorisnikaSviKorisnici.Columns["nazivUloge"].HeaderText = "Uloga";
         }
 
         private void btnPromjenaUlogeKorisnikaHelp_Click(object sender, EventArgs e)
@@ -83,6 +54,35 @@ namespace CardBringer2
         {
             var help = new HelpForm();
             help.Show();
+        }
+
+        private void btnPromjenaUlogeKorisnikaDajPrivilegije_Click(object sender, EventArgs e)
+        {
+            var idUloga = (int)dgvPromjenaUlogeKorisnikaSviKorisnici.SelectedRows[0].Cells["idUloga"].Value;
+            if (idUloga == 2)
+            {
+                MessageBox.Show("Korisnik već ima administratorske privilegije!", "Greška", MessageBoxButtons.OK);
+                return;
+            }
+            var idKorisnik = (int)dgvPromjenaUlogeKorisnikaSviKorisnici.SelectedRows[0].Cells["idKorisnika"].Value;
+            korisnik.PromijeniUloguKorisnika(idKorisnik, 2);
+            dgvPromjenaUlogeKorisnikaSviKorisnici.DataSource = korisnik.DohvatiKorisnike();
+
+        }
+
+        private void btnPromjenaUlogeKorisnikaOduzmiPrivilegije_Click(object sender, EventArgs e)
+        {
+            var idUloga = (int)dgvPromjenaUlogeKorisnikaSviKorisnici.SelectedRows[0].Cells[5].Value;
+            if (idUloga == 1)
+            {
+
+                MessageBox.Show("Ne možete maknuti privilegije jer ih korisnik nema!", "Greška", MessageBoxButtons.OK);
+                return;
+            }
+
+            var idKorisnik = (int)dgvPromjenaUlogeKorisnikaSviKorisnici.SelectedRows[0].Cells["idKorisnika"].Value;
+            korisnik.PromijeniUloguKorisnika(idKorisnik, 1);
+            dgvPromjenaUlogeKorisnikaSviKorisnici.DataSource = korisnik.DohvatiKorisnike();
         }
     }
 }

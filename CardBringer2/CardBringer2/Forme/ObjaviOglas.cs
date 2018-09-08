@@ -31,11 +31,41 @@ namespace CardBringer2
             dohvatiSadrzaj();
         }
 
-        private void buttonObjaviOglas_Click(object sender, EventArgs e)
+        private void dataGridView1_RowEnter(object sender, DataGridViewCellEventArgs e)
         {
-            var idKarta = (int)dataGridView1.SelectedRows[0].Cells[0].Value;
-            var cijena = Convert.ToDecimal(unosCijeneKarteObjaviOglas.Text);
-            var kolicina = Convert.ToInt32(unosKolicineKarteObjaviOglas.Text);
+            dohvatiSadrzaj();
+        }
+        private void dohvatiSadrzaj()
+        {
+            if (dgvObjaviOglasSveKarte.SelectedRows.Count <= 0) return;
+            lvlObjaviOglasNazivKarte.Text = dgvObjaviOglasSveKarte.SelectedRows[0].Cells[1].Value.ToString();
+            rtboxObjaviOglasOpisKarte.Text = dgvObjaviOglasSveKarte.SelectedRows[0].Cells[2].Value.ToString();
+            var slikaKarte = AzureStorageKarata.DohvatiSlikuKarte(dgvObjaviOglasSveKarte.SelectedRows[0].Cells[3].Value.ToString());
+            pboxObjaviOglasSlikaKarte.Image = Image.FromStream(slikaKarte);
+            pboxObjaviOglasSlikaKarte.SizeMode = PictureBoxSizeMode.StretchImage;
+        }
+
+        private void tboxObjaviOglasCijena_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar) && (e.KeyChar != '.'))
+            {
+                e.Handled = true;
+            }
+        }
+
+        private void tboxObjaviOglasKolicina_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar))
+            {
+                e.Handled = true;
+            }
+        }
+
+        private void btnObjaviOglasObjaviOglas_Click(object sender, EventArgs e)
+        {
+            var idKarta = (int)dgvObjaviOglasSveKarte.SelectedRows[0].Cells[0].Value;
+            var cijena = Convert.ToDecimal(tboxObjaviOglasCijena.Text);
+            var kolicina = Convert.ToInt32(tboxObjaviOglasKolicina.Text);
 
             oglas o = new oglas();
             o.idKorisnik = korisnik.PrijavljeniKorisnik.idKorisnika;
@@ -45,36 +75,6 @@ namespace CardBringer2
             o.aktivan = 1;
             o.Spremi();
             MessageBox.Show("Vaš oglas je uspješno objavljen", "Oglas objavljen", MessageBoxButtons.OK);
-        }
-
-        private void dataGridView1_RowEnter(object sender, DataGridViewCellEventArgs e)
-        {
-            dohvatiSadrzaj();
-        }
-
-        private void unosCijeneKarteObjaviOglas_KeyPress(object sender, KeyPressEventArgs e)
-        {
-            if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar) && (e.KeyChar != '.'))
-            {
-                e.Handled = true;
-            }
-        }
-
-        private void unosKolicineKarteObjaviOglas_KeyPress(object sender, KeyPressEventArgs e)
-        {
-            if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar))
-            {
-                e.Handled = true;
-            }
-        }
-        private void dohvatiSadrzaj()
-        {
-            if (dataGridView1.SelectedRows.Count <= 0) return;
-            ImeKarte.Text = dataGridView1.SelectedRows[0].Cells[1].Value.ToString();
-            OpisKarte.Text = dataGridView1.SelectedRows[0].Cells[2].Value.ToString();
-            var slikaKarte = AzureStorageKarata.DohvatiSlikuKarte(dataGridView1.SelectedRows[0].Cells[3].Value.ToString());
-            pictureBoxSlikaKarte.Image = Image.FromStream(slikaKarte);
-            pictureBoxSlikaKarte.SizeMode = PictureBoxSizeMode.StretchImage;
         }
     }
 }

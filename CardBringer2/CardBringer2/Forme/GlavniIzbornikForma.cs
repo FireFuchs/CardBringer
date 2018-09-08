@@ -34,11 +34,6 @@ namespace CardBringer2
             help.Show();
         }
 
-        private void menuStrip1_ItemClicked(object sender, ToolStripItemClickedEventArgs e)
-        {
-
-        }
-
         private void početnaToolStripMenuItem_Click(object sender, EventArgs e)
         {
             var novaPocetna = new Pocetna();
@@ -46,40 +41,6 @@ namespace CardBringer2
             novaPocetna.WindowState = FormWindowState.Maximized;
             novaPocetna.Show();
             _helpTekst = "Help Početne stranice";
-        }
-
-        private void mojProfilToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            var noviMojProfil = new MojProfil();
-            noviMojProfil.MdiParent = this;
-            noviMojProfil.WindowState = FormWindowState.Maximized;
-            noviMojProfil.Show();
-            _helpTekst = "Help MojProfil stranice";
-            
-        }
-
-        private void košaricaToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            var novaKosarica = new Kosarica();
-            novaKosarica.MdiParent = this;
-            novaKosarica.WindowState = FormWindowState.Maximized;
-            novaKosarica.Show();
-            _helpTekst = "Help Kosarice";
-            
-        }
-
-        private void listaŽeljaToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            var novaListaZelja = new ListaZelja();
-            novaListaZelja.MdiParent = this;
-            novaListaZelja.WindowState = FormWindowState.Maximized;
-            novaListaZelja.Show();
-            _helpTekst = "Help ListeŽelja";
-        }
-
-        private void odjavaToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            Application.Exit();
         }
 
         private void GlavniIzbornikForma_Load(object sender, EventArgs e)
@@ -98,7 +59,43 @@ namespace CardBringer2
 
         }
 
-        private void dodajPonuduToolStripMenuItem_Click(object sender, EventArgs e)
+        private void ProvjeraUloge(int idPrijavljenog)
+        {
+            if (idPrijavljenog < 1)
+            {
+                btnGlavniIzbornikFormaKosarica.Visible = false;
+                btnGlavniIzbornikFormaMojProfil.Visible = false;
+                btnGlavniIzbornikFormaObjaviOglase.Visible = false;
+                btnGlavniIzbornikFormaListaZelja.Visible = false;
+                btnGlavniIzbornikFormaMojeKupnje.Visible = false;
+                btnGlavniIzbornikFormaPocetna.Margin = new System.Windows.Forms.Padding(0, 0, 440, 0);
+            }
+            if (idPrijavljenog < 2)
+            {
+                btnGlavniIzbornikFormaAdministrator.Visible = false;
+                btnGlavniIzbornikFormaOdjava.Margin = new System.Windows.Forms.Padding(350, 0, 0, 0);
+            }
+        }
+
+        private void btnGlavniIzbornikFormaPocetna_Click(object sender, EventArgs e)
+        {
+            var novaPocetna = new Pocetna();
+            novaPocetna.MdiParent = this;
+            novaPocetna.WindowState = FormWindowState.Maximized;
+            novaPocetna.Show();
+            _helpTekst = "Help Početne stranice";
+        }
+
+        private void btnGlavniIzbornikFormaMojProfil_Click(object sender, EventArgs e)
+        {
+            var noviMojProfil = new MojProfil();
+            noviMojProfil.MdiParent = this;
+            noviMojProfil.WindowState = FormWindowState.Maximized;
+            noviMojProfil.Show();
+            _helpTekst = "Help MojProfil stranice";
+        }
+
+        private void btnGlavniIzbornikFormaObjaviOglase_Click(object sender, EventArgs e)
         {
             var noviOglas = new ObjaviOglas();
             noviOglas.MdiParent = this;
@@ -107,7 +104,25 @@ namespace CardBringer2
             _helpTekst = "Help Početne stranice";
         }
 
-        private void mojeKupnjeToolStripMenuItem_Click(object sender, EventArgs e)
+        private void btnGlavniIzbornikFormaKosarica_Click(object sender, EventArgs e)
+        {
+            var novaKosarica = new Kosarica();
+            novaKosarica.MdiParent = this;
+            novaKosarica.WindowState = FormWindowState.Maximized;
+            novaKosarica.Show();
+            _helpTekst = "Help Kosarice";
+        }
+
+        private void btnGlavniIzbornikFormaListaZelja_Click(object sender, EventArgs e)
+        {
+            var novaListaZelja = new ListaZelja();
+            novaListaZelja.MdiParent = this;
+            novaListaZelja.WindowState = FormWindowState.Maximized;
+            novaListaZelja.Show();
+            _helpTekst = "Help ListeŽelja";
+        }
+
+        private void btnGlavniIzbornikFormaMojeKupnje_Click(object sender, EventArgs e)
         {
             var mojeKupnje = new MojeKupnje();
             mojeKupnje.MdiParent = this;
@@ -116,31 +131,13 @@ namespace CardBringer2
             _helpTekst = "Help Početne stranice";
         }
 
-        private void administratorToolStripMenuItem_Click(object sender, EventArgs e)
+        private void btnGlavniIzbornikFormaAdministrator_Click(object sender, EventArgs e)
         {
             var Administracija = new Administracija();
             Administracija.MdiParent = this;
             Administracija.WindowState = FormWindowState.Maximized;
             Administracija.Show();
             _helpTekst = "Help administracijske stranice";
-        }
-
-        private void ProvjeraUloge(int idPrijavljenog)
-        {
-            if (idPrijavljenog < 1)
-            {
-                košaricaToolStripMenuItem.Visible = false;
-                mojProfilToolStripMenuItem.Visible = false;
-                dodajPonuduToolStripMenuItem.Visible = false;
-                listaŽeljaToolStripMenuItem.Visible = false;
-                mojeKupnjeToolStripMenuItem.Visible = false;
-                početnaToolStripMenuItem.Margin = new System.Windows.Forms.Padding(0, 0, 440, 0);
-            }
-            if (idPrijavljenog < 2)
-            {
-                administratorToolStripMenuItem.Visible = false;
-                odjavaToolStripMenuItem.Margin = new System.Windows.Forms.Padding(350, 0, 0, 0);
-            }
         }
     }
 }

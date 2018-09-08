@@ -22,19 +22,14 @@ namespace CardBringer2
 
         private void Pocetna_Load(object sender, EventArgs e)
         {
-            dataGridView1.DataSource = oglas.DohvatiSveAktivneOglase();
+            dgvPocetnaDatagridSviOglasi.DataSource = oglas.DohvatiSveAktivneOglase();
             obradiDGV();
         }
         
-        private void PocetanGumbDodajUKosaricu_Click(object sender, EventArgs e)
-        {
-            dodajUKosaricu();
-        }
-
         private void dodajUKosaricu()
         {
 
-            if (dataGridView1.SelectedRows.Count <= 0)
+            if (dgvPocetnaDatagridSviOglasi.SelectedRows.Count <= 0)
             {
                 MessageBox.Show("Nije odabran niti jedan oglas!", "Greška", MessageBoxButtons.OK);
                 return;
@@ -45,22 +40,22 @@ namespace CardBringer2
             int idOglas;
             int novaKolicina;
 
-            imeProdavaca = dataGridView1.SelectedRows[0].Cells["ime"].Value.ToString();
+            imeProdavaca = dgvPocetnaDatagridSviOglasi.SelectedRows[0].Cells["ime"].Value.ToString();
             if (imeProdavaca == korisnik.PrijavljeniKorisnik.ime)
             {
                 MessageBox.Show("Ne možete kupiti vlastiti oglas!", "Greška", MessageBoxButtons.OK);
                 return;
             }
 
-            brojKarataNaProdaju = (int)dataGridView1.SelectedRows[0].Cells["kolicina"].Value;
-            brojKarataZaKosaricu = int.Parse(PocetnaBrojKarataZaKosaricu.Text);
+            brojKarataNaProdaju = (int)dgvPocetnaDatagridSviOglasi.SelectedRows[0].Cells["kolicina"].Value;
+            brojKarataZaKosaricu = int.Parse(tboxPocetnaBrojKarataZaKosaricu.Text);
             if (brojKarataZaKosaricu > brojKarataNaProdaju)
             {
                 MessageBox.Show("Ne možete uzeti više karata nego što se prodaje!", "Greška", MessageBoxButtons.OK);
                 return;
             }
 
-            idOglas = (int)dataGridView1.SelectedRows[0].Cells["idOglas"].Value;
+            idOglas = (int)dgvPocetnaDatagridSviOglasi.SelectedRows[0].Cells["idOglas"].Value;
             novaKolicina = brojKarataNaProdaju - brojKarataZaKosaricu;
             oglas.UpdateKolicinuUOglasu(idOglas, novaKolicina, false);
 
@@ -69,60 +64,28 @@ namespace CardBringer2
             k.kolicina = brojKarataZaKosaricu;
             k.Spremi();
 
-            dataGridView1.DataSource = oglas.DohvatiSveAktivneOglase();
-            PocetnaBrojKarataZaKosaricu.Text = 1.ToString();
+            dgvPocetnaDatagridSviOglasi.DataSource = oglas.DohvatiSveAktivneOglase();
+            tboxPocetnaBrojKarataZaKosaricu.Text = 1.ToString();
 
-        }
-        private void PocetnaResetGumb_Click(object sender, EventArgs e)
-        {
-            dataGridView1.DataSource = oglas.DohvatiSveAktivneOglase();
-            obradiDGV();
-        }
-        
-
-        private void dataGridView1_RowEnter(object sender, DataGridViewCellEventArgs e)
-        {
-            if (dataGridView1.SelectedRows.Count <= 0) return;
-            imeKarte.Text = dataGridView1.SelectedRows[0].Cells["imeKarte"].Value.ToString();
-            cijenaKarte.Text = dataGridView1.SelectedRows[0].Cells["cijena"].Value.ToString();
-            kolicinaKarata.Text = dataGridView1.SelectedRows[0].Cells["kolicina"].Value.ToString();
-            prodavacKarte.Text = dataGridView1.SelectedRows[0].Cells["ime"].Value.ToString();
-            opisKarte.Text = dataGridView1.SelectedRows[0].Cells["opisKarte"].Value.ToString();
-            var slikaKarte = AzureStorageKarata.DohvatiSlikuKarte(dataGridView1.SelectedRows[0].Cells["slikaKarte"].Value.ToString());
-            pictureBoxSlikaKarte.Image = Image.FromStream(slikaKarte);
-            pictureBoxSlikaKarte.SizeMode = PictureBoxSizeMode.StretchImage;
-        }
-
-        private void PocetnaPretragaGumbTrazi_Click(object sender, EventArgs e)
-        {
-            Trazi();
-        }
-
-        private void PocetnaPretragaText_KeyDown(object sender, KeyEventArgs e)
-        {
-            if (e.KeyCode == Keys.Enter)
-            {
-                Trazi();
-            }
-        }
+        } 
 
         private void Trazi()
         {
-            var pretrazivaniString = PocetnaPretragaText.Text;
-            dataGridView1.DataSource = oglas.TraziOglase(pretrazivaniString);
+            var pretrazivaniString = tboxPocetnaPretragabox.Text;
+            dgvPocetnaDatagridSviOglasi.DataSource = oglas.TraziOglase(pretrazivaniString);
         }
 
         private void obradiDGV()
         {
-            if (dataGridView1.SelectedRows.Count <= 0) return;
-            dataGridView1.Columns["imeKarte"].HeaderText = "Ime karte";
-            dataGridView1.Columns["opisKarte"].HeaderText = "Opis karte";
-            dataGridView1.Columns["cijena"].HeaderText = "Cijena";
-            dataGridView1.Columns["kolicina"].HeaderText = "Količina";
-            dataGridView1.Columns["ime"].HeaderText = "Prodavač";
-            dataGridView1.Columns["idOglas"].Visible = false;
-            dataGridView1.Columns["slikaKarte"].Visible = false;
-            dataGridView1.Columns["aktivan"].Visible = false;
+            if (dgvPocetnaDatagridSviOglasi.SelectedRows.Count <= 0) return;
+            dgvPocetnaDatagridSviOglasi.Columns["imeKarte"].HeaderText = "Ime karte";
+            dgvPocetnaDatagridSviOglasi.Columns["opisKarte"].HeaderText = "Opis karte";
+            dgvPocetnaDatagridSviOglasi.Columns["cijena"].HeaderText = "Cijena";
+            dgvPocetnaDatagridSviOglasi.Columns["kolicina"].HeaderText = "Količina";
+            dgvPocetnaDatagridSviOglasi.Columns["ime"].HeaderText = "Prodavač";
+            dgvPocetnaDatagridSviOglasi.Columns["idOglas"].Visible = false;
+            dgvPocetnaDatagridSviOglasi.Columns["slikaKarte"].Visible = false;
+            dgvPocetnaDatagridSviOglasi.Columns["aktivan"].Visible = false;
         }
 
         private void PocetnaBrojKarataZaKosaricu_KeyPress(object sender, KeyPressEventArgs e)
@@ -140,6 +103,43 @@ namespace CardBringer2
             {
                 dodajUKosaricu();
             }
+        }
+
+        private void tboxPocetnaPretragabox_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                Trazi();
+            }
+        }
+
+        private void btnPocetnaTrazigumb_Click(object sender, EventArgs e)
+        {
+            Trazi();
+        }
+
+        private void btnPocetnaResetgumb_Click(object sender, EventArgs e)
+        {
+            dgvPocetnaDatagridSviOglasi.DataSource = oglas.DohvatiSveAktivneOglase();
+            obradiDGV();
+        }
+
+        private void dgvPocetnaDatagridSviOglasi_RowEnter(object sender, DataGridViewCellEventArgs e)
+        {
+            if (dgvPocetnaDatagridSviOglasi.SelectedRows.Count <= 0) return;
+            lblPocetnaIspisImeKarte.Text = dgvPocetnaDatagridSviOglasi.SelectedRows[0].Cells["imeKarte"].Value.ToString();
+            lblPocetnaIspisCijenaKarte.Text = dgvPocetnaDatagridSviOglasi.SelectedRows[0].Cells["cijena"].Value.ToString();
+            lblPocetnaIspisKolicina.Text = dgvPocetnaDatagridSviOglasi.SelectedRows[0].Cells["kolicina"].Value.ToString();
+            lblPocetnaIspisProdavac.Text = dgvPocetnaDatagridSviOglasi.SelectedRows[0].Cells["ime"].Value.ToString();
+            rtboxPocetnaOpisKarte.Text = dgvPocetnaDatagridSviOglasi.SelectedRows[0].Cells["opisKarte"].Value.ToString();
+            var slikaKarte = AzureStorageKarata.DohvatiSlikuKarte(dgvPocetnaDatagridSviOglasi.SelectedRows[0].Cells["slikaKarte"].Value.ToString());
+            pboxPocetnaSlikaKarte.Image = Image.FromStream(slikaKarte);
+            pboxPocetnaSlikaKarte.SizeMode = PictureBoxSizeMode.StretchImage;
+        }
+
+        private void btnPocetanGumbDodajUKosaricu_Click(object sender, EventArgs e)
+        {
+            dodajUKosaricu();
         }
     }
 }

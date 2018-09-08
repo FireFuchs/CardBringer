@@ -29,106 +29,98 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            this.KolicinaKarataLabela = new System.Windows.Forms.Label();
-            this.ukupnaCijenaLabela = new System.Windows.Forms.Label();
-            this.label4 = new System.Windows.Forms.Label();
+            this.lblKosaricaBrojKarataBroj = new System.Windows.Forms.Label();
+            this.lblKosaricaCijenaKarataCijena = new System.Windows.Forms.Label();
+            this.lblKosaricaBrojKarata = new System.Windows.Forms.Label();
             this.KosaricaLabelCijenaUnchanged = new System.Windows.Forms.Label();
-            this.dgKarteUKosarici = new System.Windows.Forms.DataGridView();
+            this.dgvKosaricaDatagridview = new System.Windows.Forms.DataGridView();
             this.label1 = new System.Windows.Forms.Label();
-            this.GumbKupi = new System.Windows.Forms.Button();
-            this.GumbKosaricaMakni = new System.Windows.Forms.Button();
+            this.btnKosaricaKupi = new System.Windows.Forms.Button();
+            this.btnKosaricaMakni = new System.Windows.Forms.Button();
             this.kosharicaBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            ((System.ComponentModel.ISupportInitialize)(this.dgKarteUKosarici)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvKosaricaDatagridview)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.kosharicaBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
-            // KolicinaKarataLabela
+            // lblKosaricaBrojKarataBroj
             // 
-            this.KolicinaKarataLabela.AutoSize = true;
-            this.KolicinaKarataLabela.ForeColor = System.Drawing.Color.White;
-            this.KolicinaKarataLabela.Location = new System.Drawing.Point(1192, 178);
-            this.KolicinaKarataLabela.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.KolicinaKarataLabela.Name = "KolicinaKarataLabela";
-            this.KolicinaKarataLabela.Size = new System.Drawing.Size(13, 17);
-            this.KolicinaKarataLabela.TabIndex = 5;
-            this.KolicinaKarataLabela.Text = "-";
+            this.lblKosaricaBrojKarataBroj.AutoSize = true;
+            this.lblKosaricaBrojKarataBroj.ForeColor = System.Drawing.Color.White;
+            this.lblKosaricaBrojKarataBroj.Location = new System.Drawing.Point(894, 145);
+            this.lblKosaricaBrojKarataBroj.Name = "lblKosaricaBrojKarataBroj";
+            this.lblKosaricaBrojKarataBroj.Size = new System.Drawing.Size(10, 13);
+            this.lblKosaricaBrojKarataBroj.TabIndex = 5;
+            this.lblKosaricaBrojKarataBroj.Text = "-";
             // 
-            // ukupnaCijenaLabela
+            // lblKosaricaCijenaKarataCijena
             // 
-            this.ukupnaCijenaLabela.AutoSize = true;
-            this.ukupnaCijenaLabela.ForeColor = System.Drawing.Color.White;
-            this.ukupnaCijenaLabela.Location = new System.Drawing.Point(1192, 134);
-            this.ukupnaCijenaLabela.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.ukupnaCijenaLabela.Name = "ukupnaCijenaLabela";
-            this.ukupnaCijenaLabela.Size = new System.Drawing.Size(13, 17);
-            this.ukupnaCijenaLabela.TabIndex = 6;
-            this.ukupnaCijenaLabela.Text = "-";
+            this.lblKosaricaCijenaKarataCijena.AutoSize = true;
+            this.lblKosaricaCijenaKarataCijena.ForeColor = System.Drawing.Color.White;
+            this.lblKosaricaCijenaKarataCijena.Location = new System.Drawing.Point(894, 109);
+            this.lblKosaricaCijenaKarataCijena.Name = "lblKosaricaCijenaKarataCijena";
+            this.lblKosaricaCijenaKarataCijena.Size = new System.Drawing.Size(10, 13);
+            this.lblKosaricaCijenaKarataCijena.TabIndex = 6;
+            this.lblKosaricaCijenaKarataCijena.Text = "-";
             // 
-            // label4
+            // lblKosaricaBrojKarata
             // 
-            this.label4.AutoSize = true;
-            this.label4.ForeColor = System.Drawing.Color.White;
-            this.label4.Location = new System.Drawing.Point(1073, 178);
-            this.label4.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(83, 17);
-            this.label4.TabIndex = 7;
-            this.label4.Text = "Broj Karata:";
+            this.lblKosaricaBrojKarata.AutoSize = true;
+            this.lblKosaricaBrojKarata.ForeColor = System.Drawing.Color.White;
+            this.lblKosaricaBrojKarata.Location = new System.Drawing.Point(805, 145);
+            this.lblKosaricaBrojKarata.Name = "lblKosaricaBrojKarata";
+            this.lblKosaricaBrojKarata.Size = new System.Drawing.Size(62, 13);
+            this.lblKosaricaBrojKarata.TabIndex = 7;
+            this.lblKosaricaBrojKarata.Text = "Broj Karata:";
             // 
             // KosaricaLabelCijenaUnchanged
             // 
             this.KosaricaLabelCijenaUnchanged.AutoSize = true;
             this.KosaricaLabelCijenaUnchanged.ForeColor = System.Drawing.Color.White;
-            this.KosaricaLabelCijenaUnchanged.Location = new System.Drawing.Point(1049, 134);
-            this.KosaricaLabelCijenaUnchanged.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.KosaricaLabelCijenaUnchanged.Location = new System.Drawing.Point(787, 109);
             this.KosaricaLabelCijenaUnchanged.Name = "KosaricaLabelCijenaUnchanged";
-            this.KosaricaLabelCijenaUnchanged.Size = new System.Drawing.Size(104, 17);
+            this.KosaricaLabelCijenaUnchanged.Size = new System.Drawing.Size(80, 13);
             this.KosaricaLabelCijenaUnchanged.TabIndex = 8;
             this.KosaricaLabelCijenaUnchanged.Text = "Ukupna Cijena:";
             // 
-            // dgKarteUKosarici
+            // dgvKosaricaDatagridview
             // 
-            this.dgKarteUKosarici.CausesValidation = false;
-            this.dgKarteUKosarici.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgKarteUKosarici.Location = new System.Drawing.Point(16, 89);
-            this.dgKarteUKosarici.Margin = new System.Windows.Forms.Padding(4);
-            this.dgKarteUKosarici.Name = "dgKarteUKosarici";
-            this.dgKarteUKosarici.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgKarteUKosarici.Size = new System.Drawing.Size(1007, 550);
-            this.dgKarteUKosarici.TabIndex = 4;
+            this.dgvKosaricaDatagridview.CausesValidation = false;
+            this.dgvKosaricaDatagridview.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvKosaricaDatagridview.Location = new System.Drawing.Point(12, 72);
+            this.dgvKosaricaDatagridview.Name = "dgvKosaricaDatagridview";
+            this.dgvKosaricaDatagridview.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dgvKosaricaDatagridview.Size = new System.Drawing.Size(755, 447);
+            this.dgvKosaricaDatagridview.TabIndex = 4;
             // 
             // label1
             // 
             this.label1.AutoSize = true;
             this.label1.ForeColor = System.Drawing.Color.White;
-            this.label1.Location = new System.Drawing.Point(16, 69);
-            this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label1.Location = new System.Drawing.Point(12, 56);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(110, 17);
+            this.label1.Size = new System.Drawing.Size(83, 13);
             this.label1.TabIndex = 3;
             this.label1.Text = "Karte u košarici:";
             // 
-            // GumbKupi
+            // btnKosaricaKupi
             // 
-            this.GumbKupi.Location = new System.Drawing.Point(1053, 262);
-            this.GumbKupi.Margin = new System.Windows.Forms.Padding(4);
-            this.GumbKupi.Name = "GumbKupi";
-            this.GumbKupi.Size = new System.Drawing.Size(152, 59);
-            this.GumbKupi.TabIndex = 9;
-            this.GumbKupi.Text = "Kupi!!";
-            this.GumbKupi.UseVisualStyleBackColor = true;
-            this.GumbKupi.Click += new System.EventHandler(this.GumbKupi_Click);
+            this.btnKosaricaKupi.Location = new System.Drawing.Point(790, 213);
+            this.btnKosaricaKupi.Name = "btnKosaricaKupi";
+            this.btnKosaricaKupi.Size = new System.Drawing.Size(114, 48);
+            this.btnKosaricaKupi.TabIndex = 9;
+            this.btnKosaricaKupi.Text = "Kupi!!";
+            this.btnKosaricaKupi.UseVisualStyleBackColor = true;
+            this.btnKosaricaKupi.Click += new System.EventHandler(this.btnKosaricaKupi_Click);
             // 
-            // GumbKosaricaMakni
+            // btnKosaricaMakni
             // 
-            this.GumbKosaricaMakni.Location = new System.Drawing.Point(1053, 361);
-            this.GumbKosaricaMakni.Margin = new System.Windows.Forms.Padding(4);
-            this.GumbKosaricaMakni.Name = "GumbKosaricaMakni";
-            this.GumbKosaricaMakni.Size = new System.Drawing.Size(152, 59);
-            this.GumbKosaricaMakni.TabIndex = 9;
-            this.GumbKosaricaMakni.Text = "Makni!";
-            this.GumbKosaricaMakni.UseVisualStyleBackColor = true;
-            this.GumbKosaricaMakni.Click += new System.EventHandler(this.GumbMakni);
+            this.btnKosaricaMakni.Location = new System.Drawing.Point(790, 293);
+            this.btnKosaricaMakni.Name = "btnKosaricaMakni";
+            this.btnKosaricaMakni.Size = new System.Drawing.Size(114, 48);
+            this.btnKosaricaMakni.TabIndex = 9;
+            this.btnKosaricaMakni.Text = "Makni!";
+            this.btnKosaricaMakni.UseVisualStyleBackColor = true;
+            this.btnKosaricaMakni.Click += new System.EventHandler(this.btnKosaricaMakni_Click);
             // 
             // kosharicaBindingSource
             // 
@@ -136,23 +128,22 @@
             // 
             // Kosarica
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(53)))), ((int)(((byte)(53)))), ((int)(((byte)(53)))));
-            this.ClientSize = new System.Drawing.Size(1668, 742);
-            this.Controls.Add(this.GumbKosaricaMakni);
-            this.Controls.Add(this.GumbKupi);
-            this.Controls.Add(this.KolicinaKarataLabela);
-            this.Controls.Add(this.ukupnaCijenaLabela);
-            this.Controls.Add(this.label4);
+            this.ClientSize = new System.Drawing.Size(1203, 603);
+            this.Controls.Add(this.btnKosaricaMakni);
+            this.Controls.Add(this.btnKosaricaKupi);
+            this.Controls.Add(this.lblKosaricaBrojKarataBroj);
+            this.Controls.Add(this.lblKosaricaCijenaKarataCijena);
+            this.Controls.Add(this.lblKosaricaBrojKarata);
             this.Controls.Add(this.KosaricaLabelCijenaUnchanged);
-            this.Controls.Add(this.dgKarteUKosarici);
+            this.Controls.Add(this.dgvKosaricaDatagridview);
             this.Controls.Add(this.label1);
-            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "Kosarica";
             this.Text = "Kosarica";
             this.Load += new System.EventHandler(this.Kosarica_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.dgKarteUKosarici)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvKosaricaDatagridview)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.kosharicaBindingSource)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -161,14 +152,14 @@
 
         #endregion
 
-        private System.Windows.Forms.Label KolicinaKarataLabela;
-        private System.Windows.Forms.Label ukupnaCijenaLabela;
-        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.Label lblKosaricaBrojKarataBroj;
+        private System.Windows.Forms.Label lblKosaricaCijenaKarataCijena;
+        private System.Windows.Forms.Label lblKosaricaBrojKarata;
         private System.Windows.Forms.Label KosaricaLabelCijenaUnchanged;
-        private System.Windows.Forms.DataGridView dgKarteUKosarici;
+        private System.Windows.Forms.DataGridView dgvKosaricaDatagridview;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Button GumbKupi;
-        private System.Windows.Forms.Button GumbKosaricaMakni;
+        private System.Windows.Forms.Button btnKosaricaKupi;
+        private System.Windows.Forms.Button btnKosaricaMakni;
         private System.Windows.Forms.BindingSource kosharicaBindingSource;
     }
 }

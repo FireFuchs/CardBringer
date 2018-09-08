@@ -24,128 +24,6 @@ namespace CardBringer2
             
         }
 
-        private void unosKorisnickoImeLoginLoginRegisterForma_Enter(object sender, EventArgs e)
-        {
-            if (unosKorisnickoImeLoginLoginRegisterForma.Text != "Korisnicko Ime") return;
-            unosKorisnickoImeLoginLoginRegisterForma.Text = "";
-            unosKorisnickoImeLoginLoginRegisterForma.ForeColor = Color.Black;
-        }
-
-        private void unosKorisnickoImeLoginLoginRegisterForma_Leave(object sender, EventArgs e)
-        {
-            if (unosKorisnickoImeLoginLoginRegisterForma.Text != "") return;
-            unosKorisnickoImeLoginLoginRegisterForma.Text = "Korisnicko Ime";
-            unosKorisnickoImeLoginLoginRegisterForma.ForeColor = Color.Gray;
-        }
-
-        private void unosPasswordLoginLoginRegisterForma_Enter(object sender, EventArgs e)
-        {
-            if (unosPasswordLoginLoginRegisterForma.Text != "Lozinka") return;
-            unosPasswordLoginLoginRegisterForma.Text = "";
-            unosPasswordLoginLoginRegisterForma.ForeColor = Color.Black;
-            unosPasswordLoginLoginRegisterForma.PasswordChar = '•';
-        }
-
-        private void unosPasswordLoginLoginRegisterForma_Leave(object sender, EventArgs e)
-        {
-            if (unosPasswordLoginLoginRegisterForma.Text != "") return;
-            unosPasswordLoginLoginRegisterForma.Text = "Lozinka";
-            unosPasswordLoginLoginRegisterForma.ForeColor = Color.Gray;
-            unosPasswordLoginLoginRegisterForma.PasswordChar = '\0';
-        }
-
-        private void unosEmailRegisterLoginRegisterForma_Enter(object sender, EventArgs e)
-        {
-            if (unosEmailRegisterLoginRegisterForma.Text != "E-Mail") return;
-            unosEmailRegisterLoginRegisterForma.Text = "";
-            unosEmailRegisterLoginRegisterForma.ForeColor = Color.Black;
-        }
-
-        private void unosEmailRegisterLoginRegisterForma_Leave(object sender, EventArgs e)
-        {
-            if (unosEmailRegisterLoginRegisterForma.Text != "") return;
-            unosEmailRegisterLoginRegisterForma.Text = "E-Mail";
-            unosEmailRegisterLoginRegisterForma.ForeColor = Color.Gray;
-        }
-
-        private void unosKorisnickoImeRegisterLoginRegisterForma_Enter(object sender, EventArgs e)
-        {
-            if (unosKorisnickoImeRegisterLoginRegisterForma.Text != "Korisnicko Ime") return;
-            unosKorisnickoImeRegisterLoginRegisterForma.Text = "";
-            unosKorisnickoImeRegisterLoginRegisterForma.ForeColor = Color.Black;
-        }
-
-        private void unosKorisnickoImeRegisterLoginRegisterForma_Leave(object sender, EventArgs e)
-        {
-            if (unosKorisnickoImeRegisterLoginRegisterForma.Text != "") return;
-            unosKorisnickoImeRegisterLoginRegisterForma.Text = "Korisnicko Ime";
-            unosKorisnickoImeRegisterLoginRegisterForma.ForeColor = Color.Gray;
-        }
-
-        private void unosPasswordRegisterLoginRegisterForma_Enter(object sender, EventArgs e)
-        {
-            if (unosPasswordRegisterLoginRegisterForma.Text != "Lozinka") return;
-            unosPasswordRegisterLoginRegisterForma.Text = "";
-            unosPasswordRegisterLoginRegisterForma.ForeColor = Color.Black;
-            unosPasswordRegisterLoginRegisterForma.PasswordChar = '•';
-        }
-
-        private void unosPasswordRegisterLoginRegisterForma_Leave(object sender, EventArgs e)
-        {
-            if (unosPasswordRegisterLoginRegisterForma.Text != "") return;
-            unosPasswordRegisterLoginRegisterForma.Text = "Lozinka";
-            unosPasswordRegisterLoginRegisterForma.ForeColor = Color.Gray;
-            unosPasswordRegisterLoginRegisterForma.PasswordChar = '\0';
-        }
-
-        private void unosPonovljeniPasswordRegisterLoginRegisterForma_Enter(object sender, EventArgs e)
-        {
-            if (unosPonovljeniPasswordRegisterLoginRegisterForma.Text != "Ponovljena Lozinka") return;
-            unosPonovljeniPasswordRegisterLoginRegisterForma.Text = "";
-            unosPonovljeniPasswordRegisterLoginRegisterForma.ForeColor = Color.Black;
-            unosPonovljeniPasswordRegisterLoginRegisterForma.PasswordChar = '•';
-        }
-
-        private void unosPonovljeniPasswordRegisterLoginRegisterForma_Leave(object sender, EventArgs e)
-        {
-            if (unosPonovljeniPasswordRegisterLoginRegisterForma.Text != "") return;
-            unosPonovljeniPasswordRegisterLoginRegisterForma.Text = "Ponovljena Lozinka";
-            unosPonovljeniPasswordRegisterLoginRegisterForma.ForeColor = Color.Gray;
-            unosPonovljeniPasswordRegisterLoginRegisterForma.PasswordChar = '\0';
-        }
-        private void unosMjestoStanovanjaRegisterLoginRegisterForma_Enter(object sender, EventArgs e)
-        {
-            if (unosMjestoStanovanjaRegisterLoginRegisterForma.Text != "Mjesto stanovanja") return;
-            unosMjestoStanovanjaRegisterLoginRegisterForma.Text = "";
-            unosMjestoStanovanjaRegisterLoginRegisterForma.ForeColor = Color.Black;
-        }
-
-        private void unosMjestoStanovanjaRegisterLoginRegisterForma_Leave(object sender, EventArgs e)
-        {
-            if (unosMjestoStanovanjaRegisterLoginRegisterForma.Text != "") return;
-            unosMjestoStanovanjaRegisterLoginRegisterForma.Text = "Mjesto stanovanja";
-            unosMjestoStanovanjaRegisterLoginRegisterForma.ForeColor = Color.Gray;
-        }
-
-        private void unosGumbLoginLoginRegisterForma_Click(object sender, EventArgs e)
-        {
-            Login();
-
-        }
-
-        private void unosGumbRegistrirajLoginRegisterForma_Click(object sender, EventArgs e)
-        {
-
-            Register();
-
-        }
-
-        private void unosGumbHelpLoginRegisterForma_Click(object sender, EventArgs e)
-        {
-            var help = new HelpForm();
-            help.Show();
-        }
-
         private void LoginRegisterForma_KeyDown(object sender, KeyEventArgs e)
         {
             if (e.KeyCode == Keys.F1)
@@ -161,66 +39,10 @@ namespace CardBringer2
             this.Hide();
         }
 
-        private void unosKorisnickoImeLoginLoginRegisterForma_KeyDown(object sender, KeyEventArgs e)
-        {
-            if(e.KeyCode == Keys.Enter)
-            {
-                Login();
-            }
-        }
-
-        private void unosPasswordLoginLoginRegisterForma_KeyDown(object sender, KeyEventArgs e)
-        {
-            if (e.KeyCode == Keys.Enter)
-            {
-                Login();
-            }
-        }
-
-        private void unosEmailRegisterLoginRegisterForma_KeyDown(object sender, KeyEventArgs e)
-        {
-            if (e.KeyCode == Keys.Enter)
-            {
-                Register();
-            }
-        }
-
-        private void unosKorisnickoImeRegisterLoginRegisterForma_KeyDown(object sender, KeyEventArgs e)
-        {
-            if (e.KeyCode == Keys.Enter)
-            {
-                Register();
-            }
-        }
-
-        private void unosPasswordRegisterLoginRegisterForma_KeyDown(object sender, KeyEventArgs e)
-        {
-            if (e.KeyCode == Keys.Enter)
-            {
-                Register();
-            }
-        }
-
-        private void unosPonovljeniPasswordRegisterLoginRegisterForma_KeyDown(object sender, KeyEventArgs e)
-        {
-            if (e.KeyCode == Keys.Enter)
-            {
-                Register();
-            }
-        }
-
-        private void unosMjestoStanovanjaRegisterLoginRegisterForma_KeyDown(object sender, KeyEventArgs e)
-        {
-            if (e.KeyCode == Keys.Enter)
-            {
-                Register();
-            }
-        }
-
         private void Login()
         {
-            var username = unosKorisnickoImeLoginLoginRegisterForma.Text;
-            var password = unosPasswordLoginLoginRegisterForma.Text;
+            var username = tboxLoginRegisterKorIme.Text;
+            var password = tboxLoginRegisterLozinka.Text;
             
 
             if (korisnik.Prijava(username, password) != null)
@@ -234,11 +56,11 @@ namespace CardBringer2
 
         private void Register()
         {
-            var email = unosEmailRegisterLoginRegisterForma.Text;
-            var username = unosKorisnickoImeRegisterLoginRegisterForma.Text;
-            var password = unosPasswordRegisterLoginRegisterForma.Text;
-            var rePassword = unosPonovljeniPasswordRegisterLoginRegisterForma.Text;
-            var mjestoStanovanja = unosMjestoStanovanjaRegisterLoginRegisterForma.Text;
+            var email = tboxLoginRegisterEmail.Text;
+            var username = btnLoginRegisterKorImeReg.Text;
+            var password = tboxLoginRegisterFormaLozinkaReg.Text;
+            var rePassword = tboxLoginRegisterPonovljenaLozinka.Text;
+            var mjestoStanovanja = tboxLoginRegisterMjestoStanovanja.Text;
 
             if (password == rePassword)
             {
@@ -268,9 +90,179 @@ namespace CardBringer2
             this.Hide();
         }
 
-        private void unosPasswordLoginLoginRegisterForma_TextChanged(object sender, EventArgs e)
+        private void btnLoginRegisterhelp_Click(object sender, EventArgs e)
         {
-            
+            var help = new HelpForm();
+            help.Show();
+        }
+
+        private void tboxLoginRegisterKorIme_Enter(object sender, EventArgs e)
+        {
+            if (tboxLoginRegisterKorIme.Text != "Korisnicko Ime") return;
+            tboxLoginRegisterKorIme.Text = "";
+            tboxLoginRegisterKorIme.ForeColor = Color.Black;
+        }
+
+        private void tboxLoginRegisterKorIme_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                Login();
+            }
+        }
+
+        private void tboxLoginRegisterKorIme_Leave(object sender, EventArgs e)
+        {
+            if (tboxLoginRegisterKorIme.Text != "") return;
+            tboxLoginRegisterKorIme.Text = "Korisnicko Ime";
+            tboxLoginRegisterKorIme.ForeColor = Color.Gray;
+        }
+
+        private void tboxLoginRegisterLozinka_Enter(object sender, EventArgs e)
+        {
+            if (tboxLoginRegisterLozinka.Text != "") return;
+            tboxLoginRegisterLozinka.Text = "Lozinka";
+            tboxLoginRegisterLozinka.ForeColor = Color.Gray;
+            tboxLoginRegisterLozinka.PasswordChar = '\0';
+        }
+
+        private void tboxLoginRegisterLozinka_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                Login();
+            }
+        }
+
+        private void tboxLoginRegisterLozinka_Leave(object sender, EventArgs e)
+        {
+            if (tboxLoginRegisterEmail.Text != "") return;
+            tboxLoginRegisterEmail.Text = "Lozinka";
+            tboxLoginRegisterEmail.ForeColor = Color.Gray;
+        }
+
+        private void btnLoginRegisterPrijava_Click(object sender, EventArgs e)
+        {
+            Login();
+        }
+
+        private void btnLoginRegisterKorImeReg_Enter(object sender, EventArgs e)
+        {
+            if (btnLoginRegisterKorImeReg.Text != "Korisnicko Ime") return;
+            btnLoginRegisterKorImeReg.Text = "";
+            btnLoginRegisterKorImeReg.ForeColor = Color.Black;
+        }
+
+        private void btnLoginRegisterKorImeReg_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                Register();
+            }
+        }
+
+        private void btnLoginRegisterKorImeReg_Leave(object sender, EventArgs e)
+        {
+            if (btnLoginRegisterKorImeReg.Text != "") return;
+            btnLoginRegisterKorImeReg.Text = "Korisnicko Ime";
+            btnLoginRegisterKorImeReg.ForeColor = Color.Gray;
+        }
+
+        private void tboxLoginRegisterFormaLozinkaReg_Enter(object sender, EventArgs e)
+        {
+            if (tboxLoginRegisterFormaLozinkaReg.Text != "Lozinka") return;
+            tboxLoginRegisterFormaLozinkaReg.Text = "";
+            tboxLoginRegisterFormaLozinkaReg.ForeColor = Color.Black;
+            tboxLoginRegisterFormaLozinkaReg.PasswordChar = '•';
+        }
+
+        private void tboxLoginRegisterFormaLozinkaReg_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                Register();
+            }
+        }
+
+        private void tboxLoginRegisterFormaLozinkaReg_Leave(object sender, EventArgs e)
+        {
+            if (tboxLoginRegisterFormaLozinkaReg.Text != "") return;
+            tboxLoginRegisterFormaLozinkaReg.Text = "Lozinka";
+            tboxLoginRegisterFormaLozinkaReg.ForeColor = Color.Gray;
+            tboxLoginRegisterFormaLozinkaReg.PasswordChar = '\0';
+        }
+
+        private void tboxLoginRegisterPonovljenaLozinka_Enter(object sender, EventArgs e)
+        {
+            if (tboxLoginRegisterPonovljenaLozinka.Text != "Ponovljena Lozinka") return;
+            tboxLoginRegisterPonovljenaLozinka.Text = "";
+            tboxLoginRegisterPonovljenaLozinka.ForeColor = Color.Black;
+            tboxLoginRegisterPonovljenaLozinka.PasswordChar = '•';
+        }
+
+        private void tboxLoginRegisterPonovljenaLozinka_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                Register();
+            }
+        }
+
+        private void tboxLoginRegisterPonovljenaLozinka_Leave(object sender, EventArgs e)
+        {
+            if (tboxLoginRegisterPonovljenaLozinka.Text != "") return;
+            tboxLoginRegisterPonovljenaLozinka.Text = "Ponovljena Lozinka";
+            tboxLoginRegisterPonovljenaLozinka.ForeColor = Color.Gray;
+            tboxLoginRegisterPonovljenaLozinka.PasswordChar = '\0';
+        }
+
+        private void tboxLoginRegisterMjestoStanovanja_Enter(object sender, EventArgs e)
+        {
+            if (tboxLoginRegisterMjestoStanovanja.Text != "Mjesto stanovanja") return;
+            tboxLoginRegisterMjestoStanovanja.Text = "";
+            tboxLoginRegisterMjestoStanovanja.ForeColor = Color.Black;
+        }
+
+        private void tboxLoginRegisterMjestoStanovanja_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                Register();
+            }
+        }
+
+        private void tboxLoginRegisterMjestoStanovanja_Leave(object sender, EventArgs e)
+        {
+            if (tboxLoginRegisterMjestoStanovanja.Text != "") return;
+            tboxLoginRegisterMjestoStanovanja.Text = "Mjesto stanovanja";
+            tboxLoginRegisterMjestoStanovanja.ForeColor = Color.Gray;
+        }
+
+        private void btnLoginRegisterRegister_Click(object sender, EventArgs e)
+        {
+            Register();
+        }
+
+        private void tboxLoginRegisterEmail_Enter(object sender, EventArgs e)
+        {
+            if (tboxLoginRegisterEmail.Text != "E-Mail") return;
+            tboxLoginRegisterEmail.Text = "";
+            tboxLoginRegisterEmail.ForeColor = Color.Black;
+        }
+
+        private void tboxLoginRegisterEmail_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                Register();
+            }
+        }
+
+        private void tboxLoginRegisterEmail_Leave(object sender, EventArgs e)
+        {
+            if (tboxLoginRegisterEmail.Text != "") return;
+            tboxLoginRegisterEmail.Text = "E-Mail";
+            tboxLoginRegisterEmail.ForeColor = Color.Gray;
         }
     }
     

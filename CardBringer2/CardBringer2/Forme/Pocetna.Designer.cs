@@ -29,201 +29,201 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            this.PocetanGumbDodajUKosaricu = new System.Windows.Forms.Button();
-            this.PocetnaPretragaText = new System.Windows.Forms.TextBox();
-            this.PocetnaPretragaGumbTrazi = new System.Windows.Forms.Button();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.PocetnaLabelSveKarte = new System.Windows.Forms.Label();
-            this.PocetnaResetGumb = new System.Windows.Forms.Button();
-            this.label1 = new System.Windows.Forms.Label();
-            this.cijenaKarte = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
-            this.prodavacKarte = new System.Windows.Forms.Label();
-            this.imeKarte = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
-            this.label4 = new System.Windows.Forms.Label();
-            this.kolicinaKarata = new System.Windows.Forms.Label();
-            this.opisKarte = new System.Windows.Forms.RichTextBox();
-            this.pictureBoxSlikaKarte = new System.Windows.Forms.PictureBox();
+            this.btnPocetanGumbDodajUKosaricu = new System.Windows.Forms.Button();
+            this.tboxPocetnaPretragabox = new System.Windows.Forms.TextBox();
+            this.btnPocetnaTrazigumb = new System.Windows.Forms.Button();
+            this.dgvPocetnaDatagridSviOglasi = new System.Windows.Forms.DataGridView();
+            this.lblPocetnaBrojKarata = new System.Windows.Forms.Label();
+            this.btnPocetnaResetgumb = new System.Windows.Forms.Button();
+            this.lblPocetnaCijenaKarte = new System.Windows.Forms.Label();
+            this.lblPocetnaIspisCijenaKarte = new System.Windows.Forms.Label();
+            this.lblPocetnaProdavac = new System.Windows.Forms.Label();
+            this.lblPocetnaIspisProdavac = new System.Windows.Forms.Label();
+            this.lblPocetnaIspisImeKarte = new System.Windows.Forms.Label();
+            this.lblPocetnaImeKarte = new System.Windows.Forms.Label();
+            this.lblPocetnaKolicina = new System.Windows.Forms.Label();
+            this.lblPocetnaIspisKolicina = new System.Windows.Forms.Label();
+            this.rtboxPocetnaOpisKarte = new System.Windows.Forms.RichTextBox();
+            this.pboxPocetnaSlikaKarte = new System.Windows.Forms.PictureBox();
             this.oglasBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.PocetnaBrojKarataZaKosaricu = new System.Windows.Forms.TextBox();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxSlikaKarte)).BeginInit();
+            this.tboxPocetnaBrojKarataZaKosaricu = new System.Windows.Forms.TextBox();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvPocetnaDatagridSviOglasi)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pboxPocetnaSlikaKarte)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.oglasBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
-            // PocetanGumbDodajUKosaricu
+            // btnPocetanGumbDodajUKosaricu
             // 
-            this.PocetanGumbDodajUKosaricu.Location = new System.Drawing.Point(676, 125);
-            this.PocetanGumbDodajUKosaricu.Name = "PocetanGumbDodajUKosaricu";
-            this.PocetanGumbDodajUKosaricu.Size = new System.Drawing.Size(83, 48);
-            this.PocetanGumbDodajUKosaricu.TabIndex = 15;
-            this.PocetanGumbDodajUKosaricu.Text = "U Kosaricu";
-            this.PocetanGumbDodajUKosaricu.UseVisualStyleBackColor = true;
-            this.PocetanGumbDodajUKosaricu.Click += new System.EventHandler(this.PocetanGumbDodajUKosaricu_Click);
+            this.btnPocetanGumbDodajUKosaricu.Location = new System.Drawing.Point(676, 125);
+            this.btnPocetanGumbDodajUKosaricu.Name = "btnPocetanGumbDodajUKosaricu";
+            this.btnPocetanGumbDodajUKosaricu.Size = new System.Drawing.Size(83, 48);
+            this.btnPocetanGumbDodajUKosaricu.TabIndex = 15;
+            this.btnPocetanGumbDodajUKosaricu.Text = "U Kosaricu";
+            this.btnPocetanGumbDodajUKosaricu.UseVisualStyleBackColor = true;
+            this.btnPocetanGumbDodajUKosaricu.Click += new System.EventHandler(this.btnPocetanGumbDodajUKosaricu_Click);
             // 
-            // PocetnaPretragaText
+            // tboxPocetnaPretragabox
             // 
-            this.PocetnaPretragaText.Location = new System.Drawing.Point(390, 61);
-            this.PocetnaPretragaText.Name = "PocetnaPretragaText";
-            this.PocetnaPretragaText.Size = new System.Drawing.Size(168, 20);
-            this.PocetnaPretragaText.TabIndex = 14;
-            this.PocetnaPretragaText.KeyDown += new System.Windows.Forms.KeyEventHandler(this.PocetnaPretragaText_KeyDown);
+            this.tboxPocetnaPretragabox.Location = new System.Drawing.Point(390, 61);
+            this.tboxPocetnaPretragabox.Name = "tboxPocetnaPretragabox";
+            this.tboxPocetnaPretragabox.Size = new System.Drawing.Size(168, 20);
+            this.tboxPocetnaPretragabox.TabIndex = 14;
+            this.tboxPocetnaPretragabox.KeyDown += new System.Windows.Forms.KeyEventHandler(this.tboxPocetnaPretragabox_KeyDown);
             // 
-            // PocetnaPretragaGumbTrazi
+            // btnPocetnaTrazigumb
             // 
-            this.PocetnaPretragaGumbTrazi.Location = new System.Drawing.Point(564, 59);
-            this.PocetnaPretragaGumbTrazi.Name = "PocetnaPretragaGumbTrazi";
-            this.PocetnaPretragaGumbTrazi.Size = new System.Drawing.Size(48, 23);
-            this.PocetnaPretragaGumbTrazi.TabIndex = 13;
-            this.PocetnaPretragaGumbTrazi.Text = "Trazi!";
-            this.PocetnaPretragaGumbTrazi.UseVisualStyleBackColor = true;
-            this.PocetnaPretragaGumbTrazi.Click += new System.EventHandler(this.PocetnaPretragaGumbTrazi_Click);
+            this.btnPocetnaTrazigumb.Location = new System.Drawing.Point(564, 59);
+            this.btnPocetnaTrazigumb.Name = "btnPocetnaTrazigumb";
+            this.btnPocetnaTrazigumb.Size = new System.Drawing.Size(48, 23);
+            this.btnPocetnaTrazigumb.TabIndex = 13;
+            this.btnPocetnaTrazigumb.Text = "Trazi!";
+            this.btnPocetnaTrazigumb.UseVisualStyleBackColor = true;
+            this.btnPocetnaTrazigumb.Click += new System.EventHandler(this.btnPocetnaTrazigumb_Click);
             // 
-            // dataGridView1
+            // dgvPocetnaDatagridSviOglasi
             // 
-            this.dataGridView1.AllowUserToAddRows = false;
-            this.dataGridView1.AllowUserToDeleteRows = false;
-            this.dataGridView1.CausesValidation = false;
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(12, 85);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.ReadOnly = true;
-            this.dataGridView1.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dataGridView1.Size = new System.Drawing.Size(659, 482);
-            this.dataGridView1.TabIndex = 12;
-            this.dataGridView1.RowEnter += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_RowEnter);
+            this.dgvPocetnaDatagridSviOglasi.AllowUserToAddRows = false;
+            this.dgvPocetnaDatagridSviOglasi.AllowUserToDeleteRows = false;
+            this.dgvPocetnaDatagridSviOglasi.CausesValidation = false;
+            this.dgvPocetnaDatagridSviOglasi.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvPocetnaDatagridSviOglasi.Location = new System.Drawing.Point(12, 85);
+            this.dgvPocetnaDatagridSviOglasi.Name = "dgvPocetnaDatagridSviOglasi";
+            this.dgvPocetnaDatagridSviOglasi.ReadOnly = true;
+            this.dgvPocetnaDatagridSviOglasi.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dgvPocetnaDatagridSviOglasi.Size = new System.Drawing.Size(659, 482);
+            this.dgvPocetnaDatagridSviOglasi.TabIndex = 12;
+            this.dgvPocetnaDatagridSviOglasi.RowEnter += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvPocetnaDatagridSviOglasi_RowEnter);
             // 
-            // PocetnaLabelSveKarte
+            // lblPocetnaBrojKarata
             // 
-            this.PocetnaLabelSveKarte.AutoSize = true;
-            this.PocetnaLabelSveKarte.ForeColor = System.Drawing.Color.White;
-            this.PocetnaLabelSveKarte.Location = new System.Drawing.Point(674, 85);
-            this.PocetnaLabelSveKarte.Name = "PocetnaLabelSveKarte";
-            this.PocetnaLabelSveKarte.Size = new System.Drawing.Size(61, 13);
-            this.PocetnaLabelSveKarte.TabIndex = 11;
-            this.PocetnaLabelSveKarte.Text = "Broj karata:";
+            this.lblPocetnaBrojKarata.AutoSize = true;
+            this.lblPocetnaBrojKarata.ForeColor = System.Drawing.Color.White;
+            this.lblPocetnaBrojKarata.Location = new System.Drawing.Point(674, 85);
+            this.lblPocetnaBrojKarata.Name = "lblPocetnaBrojKarata";
+            this.lblPocetnaBrojKarata.Size = new System.Drawing.Size(61, 13);
+            this.lblPocetnaBrojKarata.TabIndex = 11;
+            this.lblPocetnaBrojKarata.Text = "Broj karata:";
             // 
-            // PocetnaResetGumb
+            // btnPocetnaResetgumb
             // 
-            this.PocetnaResetGumb.Location = new System.Drawing.Point(618, 59);
-            this.PocetnaResetGumb.Name = "PocetnaResetGumb";
-            this.PocetnaResetGumb.Size = new System.Drawing.Size(53, 23);
-            this.PocetnaResetGumb.TabIndex = 16;
-            this.PocetnaResetGumb.Text = "Reset";
-            this.PocetnaResetGumb.UseVisualStyleBackColor = true;
-            this.PocetnaResetGumb.Click += new System.EventHandler(this.PocetnaResetGumb_Click);
+            this.btnPocetnaResetgumb.Location = new System.Drawing.Point(618, 59);
+            this.btnPocetnaResetgumb.Name = "btnPocetnaResetgumb";
+            this.btnPocetnaResetgumb.Size = new System.Drawing.Size(53, 23);
+            this.btnPocetnaResetgumb.TabIndex = 16;
+            this.btnPocetnaResetgumb.Text = "Reset";
+            this.btnPocetnaResetgumb.UseVisualStyleBackColor = true;
+            this.btnPocetnaResetgumb.Click += new System.EventHandler(this.btnPocetnaResetgumb_Click);
             // 
-            // label1
+            // lblPocetnaCijenaKarte
             // 
-            this.label1.AutoSize = true;
-            this.label1.ForeColor = System.Drawing.Color.White;
-            this.label1.Location = new System.Drawing.Point(772, 498);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(39, 13);
-            this.label1.TabIndex = 19;
-            this.label1.Text = "Cijena:";
+            this.lblPocetnaCijenaKarte.AutoSize = true;
+            this.lblPocetnaCijenaKarte.ForeColor = System.Drawing.Color.White;
+            this.lblPocetnaCijenaKarte.Location = new System.Drawing.Point(772, 498);
+            this.lblPocetnaCijenaKarte.Name = "lblPocetnaCijenaKarte";
+            this.lblPocetnaCijenaKarte.Size = new System.Drawing.Size(39, 13);
+            this.lblPocetnaCijenaKarte.TabIndex = 19;
+            this.lblPocetnaCijenaKarte.Text = "Cijena:";
             // 
-            // cijenaKarte
+            // lblPocetnaIspisCijenaKarte
             // 
-            this.cijenaKarte.AutoSize = true;
-            this.cijenaKarte.ForeColor = System.Drawing.Color.White;
-            this.cijenaKarte.Location = new System.Drawing.Point(818, 498);
-            this.cijenaKarte.Name = "cijenaKarte";
-            this.cijenaKarte.Size = new System.Drawing.Size(35, 13);
-            this.cijenaKarte.TabIndex = 19;
-            this.cijenaKarte.Text = "label1";
+            this.lblPocetnaIspisCijenaKarte.AutoSize = true;
+            this.lblPocetnaIspisCijenaKarte.ForeColor = System.Drawing.Color.White;
+            this.lblPocetnaIspisCijenaKarte.Location = new System.Drawing.Point(818, 498);
+            this.lblPocetnaIspisCijenaKarte.Name = "lblPocetnaIspisCijenaKarte";
+            this.lblPocetnaIspisCijenaKarte.Size = new System.Drawing.Size(35, 13);
+            this.lblPocetnaIspisCijenaKarte.TabIndex = 19;
+            this.lblPocetnaIspisCijenaKarte.Text = "label1";
             // 
-            // label3
+            // lblPocetnaProdavac
             // 
-            this.label3.AutoSize = true;
-            this.label3.ForeColor = System.Drawing.Color.White;
-            this.label3.Location = new System.Drawing.Point(758, 544);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(56, 13);
-            this.label3.TabIndex = 19;
-            this.label3.Text = "Prodavač:";
+            this.lblPocetnaProdavac.AutoSize = true;
+            this.lblPocetnaProdavac.ForeColor = System.Drawing.Color.White;
+            this.lblPocetnaProdavac.Location = new System.Drawing.Point(758, 544);
+            this.lblPocetnaProdavac.Name = "lblPocetnaProdavac";
+            this.lblPocetnaProdavac.Size = new System.Drawing.Size(56, 13);
+            this.lblPocetnaProdavac.TabIndex = 19;
+            this.lblPocetnaProdavac.Text = "Prodavač:";
             // 
-            // prodavacKarte
+            // lblPocetnaIspisProdavac
             // 
-            this.prodavacKarte.AutoSize = true;
-            this.prodavacKarte.ForeColor = System.Drawing.Color.White;
-            this.prodavacKarte.Location = new System.Drawing.Point(818, 544);
-            this.prodavacKarte.Name = "prodavacKarte";
-            this.prodavacKarte.Size = new System.Drawing.Size(35, 13);
-            this.prodavacKarte.TabIndex = 19;
-            this.prodavacKarte.Text = "label1";
+            this.lblPocetnaIspisProdavac.AutoSize = true;
+            this.lblPocetnaIspisProdavac.ForeColor = System.Drawing.Color.White;
+            this.lblPocetnaIspisProdavac.Location = new System.Drawing.Point(818, 544);
+            this.lblPocetnaIspisProdavac.Name = "lblPocetnaIspisProdavac";
+            this.lblPocetnaIspisProdavac.Size = new System.Drawing.Size(35, 13);
+            this.lblPocetnaIspisProdavac.TabIndex = 19;
+            this.lblPocetnaIspisProdavac.Text = "label1";
             // 
-            // imeKarte
+            // lblPocetnaIspisImeKarte
             // 
-            this.imeKarte.AutoSize = true;
-            this.imeKarte.ForeColor = System.Drawing.Color.White;
-            this.imeKarte.Location = new System.Drawing.Point(818, 477);
-            this.imeKarte.Name = "imeKarte";
-            this.imeKarte.Size = new System.Drawing.Size(35, 13);
-            this.imeKarte.TabIndex = 19;
-            this.imeKarte.Text = "label1";
+            this.lblPocetnaIspisImeKarte.AutoSize = true;
+            this.lblPocetnaIspisImeKarte.ForeColor = System.Drawing.Color.White;
+            this.lblPocetnaIspisImeKarte.Location = new System.Drawing.Point(818, 477);
+            this.lblPocetnaIspisImeKarte.Name = "lblPocetnaIspisImeKarte";
+            this.lblPocetnaIspisImeKarte.Size = new System.Drawing.Size(35, 13);
+            this.lblPocetnaIspisImeKarte.TabIndex = 19;
+            this.lblPocetnaIspisImeKarte.Text = "label1";
             // 
-            // label2
+            // lblPocetnaImeKarte
             // 
-            this.label2.AutoSize = true;
-            this.label2.ForeColor = System.Drawing.Color.White;
-            this.label2.Location = new System.Drawing.Point(758, 477);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(54, 13);
-            this.label2.TabIndex = 19;
-            this.label2.Text = "Ime karte:";
+            this.lblPocetnaImeKarte.AutoSize = true;
+            this.lblPocetnaImeKarte.ForeColor = System.Drawing.Color.White;
+            this.lblPocetnaImeKarte.Location = new System.Drawing.Point(758, 477);
+            this.lblPocetnaImeKarte.Name = "lblPocetnaImeKarte";
+            this.lblPocetnaImeKarte.Size = new System.Drawing.Size(54, 13);
+            this.lblPocetnaImeKarte.TabIndex = 19;
+            this.lblPocetnaImeKarte.Text = "Ime karte:";
             // 
-            // label4
+            // lblPocetnaKolicina
             // 
-            this.label4.AutoSize = true;
-            this.label4.ForeColor = System.Drawing.Color.White;
-            this.label4.Location = new System.Drawing.Point(772, 522);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(47, 13);
-            this.label4.TabIndex = 19;
-            this.label4.Text = "Količina:";
+            this.lblPocetnaKolicina.AutoSize = true;
+            this.lblPocetnaKolicina.ForeColor = System.Drawing.Color.White;
+            this.lblPocetnaKolicina.Location = new System.Drawing.Point(772, 522);
+            this.lblPocetnaKolicina.Name = "lblPocetnaKolicina";
+            this.lblPocetnaKolicina.Size = new System.Drawing.Size(47, 13);
+            this.lblPocetnaKolicina.TabIndex = 19;
+            this.lblPocetnaKolicina.Text = "Količina:";
             // 
-            // kolicinaKarata
+            // lblPocetnaIspisKolicina
             // 
-            this.kolicinaKarata.AutoSize = true;
-            this.kolicinaKarata.ForeColor = System.Drawing.Color.White;
-            this.kolicinaKarata.Location = new System.Drawing.Point(818, 522);
-            this.kolicinaKarata.Name = "kolicinaKarata";
-            this.kolicinaKarata.Size = new System.Drawing.Size(35, 13);
-            this.kolicinaKarata.TabIndex = 19;
-            this.kolicinaKarata.Text = "label1";
+            this.lblPocetnaIspisKolicina.AutoSize = true;
+            this.lblPocetnaIspisKolicina.ForeColor = System.Drawing.Color.White;
+            this.lblPocetnaIspisKolicina.Location = new System.Drawing.Point(818, 522);
+            this.lblPocetnaIspisKolicina.Name = "lblPocetnaIspisKolicina";
+            this.lblPocetnaIspisKolicina.Size = new System.Drawing.Size(35, 13);
+            this.lblPocetnaIspisKolicina.TabIndex = 19;
+            this.lblPocetnaIspisKolicina.Text = "label1";
             // 
-            // opisKarte
+            // rtboxPocetnaOpisKarte
             // 
-            this.opisKarte.Location = new System.Drawing.Point(950, 477);
-            this.opisKarte.Margin = new System.Windows.Forms.Padding(2);
-            this.opisKarte.Name = "opisKarte";
-            this.opisKarte.ReadOnly = true;
-            this.opisKarte.Size = new System.Drawing.Size(267, 81);
-            this.opisKarte.TabIndex = 33;
-            this.opisKarte.Text = "";
+            this.rtboxPocetnaOpisKarte.Location = new System.Drawing.Point(950, 477);
+            this.rtboxPocetnaOpisKarte.Margin = new System.Windows.Forms.Padding(2);
+            this.rtboxPocetnaOpisKarte.Name = "rtboxPocetnaOpisKarte";
+            this.rtboxPocetnaOpisKarte.ReadOnly = true;
+            this.rtboxPocetnaOpisKarte.Size = new System.Drawing.Size(267, 81);
+            this.rtboxPocetnaOpisKarte.TabIndex = 33;
+            this.rtboxPocetnaOpisKarte.Text = "";
             // 
-            // pictureBoxSlikaKarte
+            // pboxPocetnaSlikaKarte
             // 
-            this.pictureBoxSlikaKarte.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.pictureBoxSlikaKarte.Location = new System.Drawing.Point(950, 101);
-            this.pictureBoxSlikaKarte.Margin = new System.Windows.Forms.Padding(2);
-            this.pictureBoxSlikaKarte.Name = "pictureBoxSlikaKarte";
-            this.pictureBoxSlikaKarte.Size = new System.Drawing.Size(267, 351);
-            this.pictureBoxSlikaKarte.TabIndex = 32;
-            this.pictureBoxSlikaKarte.TabStop = false;
+            this.pboxPocetnaSlikaKarte.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.pboxPocetnaSlikaKarte.Location = new System.Drawing.Point(950, 101);
+            this.pboxPocetnaSlikaKarte.Margin = new System.Windows.Forms.Padding(2);
+            this.pboxPocetnaSlikaKarte.Name = "pboxPocetnaSlikaKarte";
+            this.pboxPocetnaSlikaKarte.Size = new System.Drawing.Size(267, 351);
+            this.pboxPocetnaSlikaKarte.TabIndex = 32;
+            this.pboxPocetnaSlikaKarte.TabStop = false;
             // 
-            // PocetnaBrojKarataZaKosaricu
+            // tboxPocetnaBrojKarataZaKosaricu
             // 
-            this.PocetnaBrojKarataZaKosaricu.Location = new System.Drawing.Point(676, 102);
-            this.PocetnaBrojKarataZaKosaricu.Margin = new System.Windows.Forms.Padding(2);
-            this.PocetnaBrojKarataZaKosaricu.Name = "PocetnaBrojKarataZaKosaricu";
-            this.PocetnaBrojKarataZaKosaricu.Size = new System.Drawing.Size(84, 20);
-            this.PocetnaBrojKarataZaKosaricu.TabIndex = 34;
-            this.PocetnaBrojKarataZaKosaricu.Text = "1";
-            this.PocetnaBrojKarataZaKosaricu.KeyDown += new System.Windows.Forms.KeyEventHandler(this.PocetnaBrojKarataZaKosaricu_KeyDown);
-            this.PocetnaBrojKarataZaKosaricu.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.PocetnaBrojKarataZaKosaricu_KeyPress);
+            this.tboxPocetnaBrojKarataZaKosaricu.Location = new System.Drawing.Point(676, 102);
+            this.tboxPocetnaBrojKarataZaKosaricu.Margin = new System.Windows.Forms.Padding(2);
+            this.tboxPocetnaBrojKarataZaKosaricu.Name = "tboxPocetnaBrojKarataZaKosaricu";
+            this.tboxPocetnaBrojKarataZaKosaricu.Size = new System.Drawing.Size(84, 20);
+            this.tboxPocetnaBrojKarataZaKosaricu.TabIndex = 34;
+            this.tboxPocetnaBrojKarataZaKosaricu.Text = "1";
+            this.tboxPocetnaBrojKarataZaKosaricu.KeyDown += new System.Windows.Forms.KeyEventHandler(this.PocetnaBrojKarataZaKosaricu_KeyDown);
+            this.tboxPocetnaBrojKarataZaKosaricu.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.PocetnaBrojKarataZaKosaricu_KeyPress);
             // 
             // Pocetna
             // 
@@ -231,29 +231,29 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(53)))), ((int)(((byte)(53)))), ((int)(((byte)(53)))));
             this.ClientSize = new System.Drawing.Size(1203, 603);
-            this.Controls.Add(this.PocetnaBrojKarataZaKosaricu);
-            this.Controls.Add(this.opisKarte);
-            this.Controls.Add(this.pictureBoxSlikaKarte);
-            this.Controls.Add(this.imeKarte);
-            this.Controls.Add(this.prodavacKarte);
-            this.Controls.Add(this.label2);
-            this.Controls.Add(this.label3);
-            this.Controls.Add(this.kolicinaKarata);
-            this.Controls.Add(this.cijenaKarte);
-            this.Controls.Add(this.label4);
-            this.Controls.Add(this.label1);
-            this.Controls.Add(this.PocetnaResetGumb);
-            this.Controls.Add(this.PocetanGumbDodajUKosaricu);
-            this.Controls.Add(this.PocetnaPretragaText);
-            this.Controls.Add(this.PocetnaPretragaGumbTrazi);
-            this.Controls.Add(this.dataGridView1);
-            this.Controls.Add(this.PocetnaLabelSveKarte);
+            this.Controls.Add(this.tboxPocetnaBrojKarataZaKosaricu);
+            this.Controls.Add(this.rtboxPocetnaOpisKarte);
+            this.Controls.Add(this.pboxPocetnaSlikaKarte);
+            this.Controls.Add(this.lblPocetnaIspisImeKarte);
+            this.Controls.Add(this.lblPocetnaIspisProdavac);
+            this.Controls.Add(this.lblPocetnaImeKarte);
+            this.Controls.Add(this.lblPocetnaProdavac);
+            this.Controls.Add(this.lblPocetnaIspisKolicina);
+            this.Controls.Add(this.lblPocetnaIspisCijenaKarte);
+            this.Controls.Add(this.lblPocetnaKolicina);
+            this.Controls.Add(this.lblPocetnaCijenaKarte);
+            this.Controls.Add(this.btnPocetnaResetgumb);
+            this.Controls.Add(this.btnPocetanGumbDodajUKosaricu);
+            this.Controls.Add(this.tboxPocetnaPretragabox);
+            this.Controls.Add(this.btnPocetnaTrazigumb);
+            this.Controls.Add(this.dgvPocetnaDatagridSviOglasi);
+            this.Controls.Add(this.lblPocetnaBrojKarata);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Name = "Pocetna";
             this.Text = "Pocetna";
             this.Load += new System.EventHandler(this.Pocetna_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxSlikaKarte)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvPocetnaDatagridSviOglasi)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pboxPocetnaSlikaKarte)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.oglasBindingSource)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -262,23 +262,23 @@
 
         #endregion
 
-        private System.Windows.Forms.Button PocetanGumbDodajUKosaricu;
-        private System.Windows.Forms.TextBox PocetnaPretragaText;
-        private System.Windows.Forms.Button PocetnaPretragaGumbTrazi;
-        private System.Windows.Forms.DataGridView dataGridView1;
-        private System.Windows.Forms.Label PocetnaLabelSveKarte;
-        private System.Windows.Forms.Button PocetnaResetGumb;
-        private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Label cijenaKarte;
-        private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.Label prodavacKarte;
-        private System.Windows.Forms.Label imeKarte;
-        private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.Label kolicinaKarata;
+        private System.Windows.Forms.Button btnPocetanGumbDodajUKosaricu;
+        private System.Windows.Forms.TextBox tboxPocetnaPretragabox;
+        private System.Windows.Forms.Button btnPocetnaTrazigumb;
+        private System.Windows.Forms.DataGridView dgvPocetnaDatagridSviOglasi;
+        private System.Windows.Forms.Label lblPocetnaBrojKarata;
+        private System.Windows.Forms.Button btnPocetnaResetgumb;
+        private System.Windows.Forms.Label lblPocetnaCijenaKarte;
+        private System.Windows.Forms.Label lblPocetnaIspisCijenaKarte;
+        private System.Windows.Forms.Label lblPocetnaProdavac;
+        private System.Windows.Forms.Label lblPocetnaIspisProdavac;
+        private System.Windows.Forms.Label lblPocetnaIspisImeKarte;
+        private System.Windows.Forms.Label lblPocetnaImeKarte;
+        private System.Windows.Forms.Label lblPocetnaKolicina;
+        private System.Windows.Forms.Label lblPocetnaIspisKolicina;
         private System.Windows.Forms.BindingSource oglasBindingSource;
-        private System.Windows.Forms.RichTextBox opisKarte;
-        private System.Windows.Forms.PictureBox pictureBoxSlikaKarte;
-        private System.Windows.Forms.TextBox PocetnaBrojKarataZaKosaricu;
+        private System.Windows.Forms.RichTextBox rtboxPocetnaOpisKarte;
+        private System.Windows.Forms.PictureBox pboxPocetnaSlikaKarte;
+        private System.Windows.Forms.TextBox tboxPocetnaBrojKarataZaKosaricu;
     }
 }

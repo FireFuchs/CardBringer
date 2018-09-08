@@ -26,26 +26,6 @@ namespace CardBringer2
         }
         private string _imgLocation = "";
 
-        private void buttonIzaberiSliku_Click(object sender, EventArgs e)
-        {
-            var dialog = new OpenFileDialog();
-            dialog.Filter = "Image files (*.jpg, *.jpeg, *.png) | *.jpg; *.jpeg; *.png";
-            if (dialog.ShowDialog() == DialogResult.OK)
-            {
-                _imgLocation = dialog.FileName.ToString();
-                pictureBoxSlikaKarte.ImageLocation = _imgLocation;
-            }
-        }
-
-        private void buttonSpremiKartu_Click(object sender, EventArgs e)
-        {
-            karta k = new karta();
-            k.imeKarte = unosImeKarte.Text;
-            k.opisKarte = this.unosOpisKarte.Text;
-            k.slikaKarte = AzureStorageKarata.PrenesiSlikuKarte(_imgLocation);
-            k.Spremi();
-        }
-
         private void btnNovaKartaAdminHelp_Click(object sender, EventArgs e)
         {
             help();
@@ -65,6 +45,24 @@ namespace CardBringer2
             help.Show();
         }
 
-        
+        private void btnNovaKartaAdminIzaberiSliku_Click(object sender, EventArgs e)
+        {
+            var dialog = new OpenFileDialog();
+            dialog.Filter = "Image files (*.jpg, *.jpeg, *.png) | *.jpg; *.jpeg; *.png";
+            if (dialog.ShowDialog() == DialogResult.OK)
+            {
+                _imgLocation = dialog.FileName.ToString();
+                pboxNovaKartaAdminSlikaKarte.ImageLocation = _imgLocation;
+            }
+        }
+
+        private void btnNovaKartaAdminSpremiKartu_Click(object sender, EventArgs e)
+        {
+            karta k = new karta();
+            k.imeKarte = tboxNovaKartaAdminImeKarte.Text;
+            k.opisKarte = this.rtboxNovaKartaAdminOpisKarte.Text;
+            k.slikaKarte = AzureStorageKarata.PrenesiSlikuKarte(_imgLocation);
+            k.Spremi();
+        }
     }
 }

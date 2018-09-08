@@ -32,12 +32,12 @@
             this.tboxUnoskarticeMjesec = new System.Windows.Forms.TextBox();
             this.tboxUnoskarticeGodina = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
-            this.textBox4 = new System.Windows.Forms.TextBox();
-            this.label2 = new System.Windows.Forms.Label();
+            this.tboxUnosKarticeKorisnikKartice = new System.Windows.Forms.TextBox();
+            this.lblUnosKarticeKorisnikKartice = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.tboxUnoskarticeCVV = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
-            this.button1 = new System.Windows.Forms.Button();
+            this.btnUnosKarticePlati = new System.Windows.Forms.Button();
             this.btnUnosKarticeOtkazi = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
@@ -74,25 +74,23 @@
             this.label1.Size = new System.Drawing.Size(63, 13);
             this.label1.TabIndex = 1;
             this.label1.Text = "Broj kartice:";
-            this.label1.Click += new System.EventHandler(this.label1_Click);
             // 
-            // textBox4
+            // tboxUnosKarticeKorisnikKartice
             // 
-            this.textBox4.Location = new System.Drawing.Point(12, 41);
-            this.textBox4.Name = "textBox4";
-            this.textBox4.Size = new System.Drawing.Size(299, 20);
-            this.textBox4.TabIndex = 0;
+            this.tboxUnosKarticeKorisnikKartice.Location = new System.Drawing.Point(12, 41);
+            this.tboxUnosKarticeKorisnikKartice.Name = "tboxUnosKarticeKorisnikKartice";
+            this.tboxUnosKarticeKorisnikKartice.Size = new System.Drawing.Size(299, 20);
+            this.tboxUnosKarticeKorisnikKartice.TabIndex = 0;
             // 
-            // label2
+            // lblUnosKarticeKorisnikKartice
             // 
-            this.label2.AutoSize = true;
-            this.label2.ForeColor = System.Drawing.Color.White;
-            this.label2.Location = new System.Drawing.Point(9, 25);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(82, 13);
-            this.label2.TabIndex = 1;
-            this.label2.Text = "Korisnik kartice:";
-            this.label2.Click += new System.EventHandler(this.label2_Click);
+            this.lblUnosKarticeKorisnikKartice.AutoSize = true;
+            this.lblUnosKarticeKorisnikKartice.ForeColor = System.Drawing.Color.White;
+            this.lblUnosKarticeKorisnikKartice.Location = new System.Drawing.Point(9, 25);
+            this.lblUnosKarticeKorisnikKartice.Name = "lblUnosKarticeKorisnikKartice";
+            this.lblUnosKarticeKorisnikKartice.Size = new System.Drawing.Size(82, 13);
+            this.lblUnosKarticeKorisnikKartice.TabIndex = 1;
+            this.lblUnosKarticeKorisnikKartice.Text = "Korisnik kartice:";
             // 
             // label3
             // 
@@ -103,7 +101,6 @@
             this.label3.Size = new System.Drawing.Size(72, 13);
             this.label3.TabIndex = 1;
             this.label3.Text = "Datum isteka:";
-            this.label3.Click += new System.EventHandler(this.label3_Click);
             // 
             // tboxUnoskarticeCVV
             // 
@@ -122,17 +119,16 @@
             this.label4.Size = new System.Drawing.Size(67, 13);
             this.label4.TabIndex = 1;
             this.label4.Text = "CVV Kartice:";
-            this.label4.Click += new System.EventHandler(this.label4_Click);
             // 
-            // button1
+            // btnUnosKarticePlati
             // 
-            this.button1.Location = new System.Drawing.Point(59, 177);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(116, 23);
-            this.button1.TabIndex = 5;
-            this.button1.Text = "Plati!";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
+            this.btnUnosKarticePlati.Location = new System.Drawing.Point(59, 177);
+            this.btnUnosKarticePlati.Name = "btnUnosKarticePlati";
+            this.btnUnosKarticePlati.Size = new System.Drawing.Size(116, 23);
+            this.btnUnosKarticePlati.TabIndex = 5;
+            this.btnUnosKarticePlati.Text = "Plati!";
+            this.btnUnosKarticePlati.UseVisualStyleBackColor = true;
+            this.btnUnosKarticePlati.Click += new System.EventHandler(this.btnUnosKarticePlati_Click);
             // 
             // btnUnosKarticeOtkazi
             // 
@@ -151,15 +147,15 @@
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(48)))), ((int)(((byte)(48)))));
             this.ClientSize = new System.Drawing.Size(359, 212);
             this.Controls.Add(this.btnUnosKarticeOtkazi);
-            this.Controls.Add(this.button1);
-            this.Controls.Add(this.label2);
+            this.Controls.Add(this.btnUnosKarticePlati);
+            this.Controls.Add(this.lblUnosKarticeKorisnikKartice);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.tboxUnoskarticeGodina);
             this.Controls.Add(this.tboxUnoskarticeCVV);
             this.Controls.Add(this.tboxUnoskarticeMjesec);
-            this.Controls.Add(this.textBox4);
+            this.Controls.Add(this.tboxUnosKarticeKorisnikKartice);
             this.Controls.Add(this.tboxUnoskarticeBrojKarice);
             this.Name = "UnosKartice";
             this.Text = "UnosKartice";
@@ -174,12 +170,12 @@
         private System.Windows.Forms.TextBox tboxUnoskarticeMjesec;
         private System.Windows.Forms.TextBox tboxUnoskarticeGodina;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.TextBox textBox4;
-        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.TextBox tboxUnosKarticeKorisnikKartice;
+        private System.Windows.Forms.Label lblUnosKarticeKorisnikKartice;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.TextBox tboxUnoskarticeCVV;
         private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button btnUnosKarticePlati;
         private System.Windows.Forms.Button btnUnosKarticeOtkazi;
     }
 }

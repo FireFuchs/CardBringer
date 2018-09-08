@@ -28,110 +28,110 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.KorisnikoveKarteLabelUnchanged = new System.Windows.Forms.Label();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.TipKorisnikaLabelUnchanged = new System.Windows.Forms.Label();
-            this.MojProfilLabelTipKorisnika = new System.Windows.Forms.Label();
-            this.MojProfilLabelAdresa = new System.Windows.Forms.Label();
-            this.MojProfilLabelNickname = new System.Windows.Forms.Label();
-            this.MojProfilLabelEmail = new System.Windows.Forms.Label();
-            this.MojProfilLabelID = new System.Windows.Forms.Label();
+            this.lblMojProfilObjavljeniOglasi = new System.Windows.Forms.Label();
+            this.dgvMojProfilMojiOglasi = new System.Windows.Forms.DataGridView();
+            this.lblMojProfilTipKorisnikaNochange = new System.Windows.Forms.Label();
+            this.lblMojProfilTipKorisnika = new System.Windows.Forms.Label();
+            this.lblMojProfilAdresa = new System.Windows.Forms.Label();
+            this.lblMojProfilNickname = new System.Windows.Forms.Label();
+            this.lblMojProfilEmail = new System.Windows.Forms.Label();
+            this.lblMojProfilID = new System.Windows.Forms.Label();
             this.label9 = new System.Windows.Forms.Label();
-            this.AdresaLabelUnchanged = new System.Windows.Forms.Label();
-            this.NicknameLabelUnchanged = new System.Windows.Forms.Label();
-            this.EmailLabelUnchanged = new System.Windows.Forms.Label();
-            this.IDlabelUnchanged = new System.Windows.Forms.Label();
-            this.buttonUkloniOglas = new System.Windows.Forms.Button();
-            this.imeKarte = new System.Windows.Forms.Label();
-            this.opisKarte = new System.Windows.Forms.RichTextBox();
-            this.pictureBoxSlikaKarte = new System.Windows.Forms.PictureBox();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxSlikaKarte)).BeginInit();
+            this.lblMojProfilAdresaNochange = new System.Windows.Forms.Label();
+            this.lblMojProfilNicknameNochange = new System.Windows.Forms.Label();
+            this.lblMojProfilEmailnNochange = new System.Windows.Forms.Label();
+            this.lblMojProfilIDnochange = new System.Windows.Forms.Label();
+            this.btnMojProfilUkloniOglas = new System.Windows.Forms.Button();
+            this.lblMojProfilNazivKarte = new System.Windows.Forms.Label();
+            this.rtboxListaZeljaOpisKarte = new System.Windows.Forms.RichTextBox();
+            this.pboxListaZeljaSlikaKarte = new System.Windows.Forms.PictureBox();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvMojProfilMojiOglasi)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pboxListaZeljaSlikaKarte)).BeginInit();
             this.SuspendLayout();
             // 
-            // KorisnikoveKarteLabelUnchanged
+            // lblMojProfilObjavljeniOglasi
             // 
-            this.KorisnikoveKarteLabelUnchanged.AutoSize = true;
-            this.KorisnikoveKarteLabelUnchanged.ForeColor = System.Drawing.Color.White;
-            this.KorisnikoveKarteLabelUnchanged.Location = new System.Drawing.Point(49, 216);
-            this.KorisnikoveKarteLabelUnchanged.Name = "KorisnikoveKarteLabelUnchanged";
-            this.KorisnikoveKarteLabelUnchanged.Size = new System.Drawing.Size(114, 13);
-            this.KorisnikoveKarteLabelUnchanged.TabIndex = 28;
-            this.KorisnikoveKarteLabelUnchanged.Text = "Oglasi koje ste objavili:";
+            this.lblMojProfilObjavljeniOglasi.AutoSize = true;
+            this.lblMojProfilObjavljeniOglasi.ForeColor = System.Drawing.Color.White;
+            this.lblMojProfilObjavljeniOglasi.Location = new System.Drawing.Point(49, 216);
+            this.lblMojProfilObjavljeniOglasi.Name = "lblMojProfilObjavljeniOglasi";
+            this.lblMojProfilObjavljeniOglasi.Size = new System.Drawing.Size(114, 13);
+            this.lblMojProfilObjavljeniOglasi.TabIndex = 28;
+            this.lblMojProfilObjavljeniOglasi.Text = "Oglasi koje ste objavili:";
             // 
-            // dataGridView1
+            // dgvMojProfilMojiOglasi
             // 
-            this.dataGridView1.AllowUserToAddRows = false;
-            this.dataGridView1.AllowUserToDeleteRows = false;
-            this.dataGridView1.CausesValidation = false;
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(48, 233);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.ReadOnly = true;
-            this.dataGridView1.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dataGridView1.Size = new System.Drawing.Size(662, 326);
-            this.dataGridView1.TabIndex = 27;
-            this.dataGridView1.RowEnter += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_RowEnter);
+            this.dgvMojProfilMojiOglasi.AllowUserToAddRows = false;
+            this.dgvMojProfilMojiOglasi.AllowUserToDeleteRows = false;
+            this.dgvMojProfilMojiOglasi.CausesValidation = false;
+            this.dgvMojProfilMojiOglasi.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvMojProfilMojiOglasi.Location = new System.Drawing.Point(48, 233);
+            this.dgvMojProfilMojiOglasi.Name = "dgvMojProfilMojiOglasi";
+            this.dgvMojProfilMojiOglasi.ReadOnly = true;
+            this.dgvMojProfilMojiOglasi.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dgvMojProfilMojiOglasi.Size = new System.Drawing.Size(662, 326);
+            this.dgvMojProfilMojiOglasi.TabIndex = 27;
+            this.dgvMojProfilMojiOglasi.RowEnter += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvMojProfilMojiOglasi_RowEnter);
             // 
-            // TipKorisnikaLabelUnchanged
+            // lblMojProfilTipKorisnikaNochange
             // 
-            this.TipKorisnikaLabelUnchanged.AutoSize = true;
-            this.TipKorisnikaLabelUnchanged.ForeColor = System.Drawing.Color.White;
-            this.TipKorisnikaLabelUnchanged.Location = new System.Drawing.Point(46, 180);
-            this.TipKorisnikaLabelUnchanged.Name = "TipKorisnikaLabelUnchanged";
-            this.TipKorisnikaLabelUnchanged.Size = new System.Drawing.Size(71, 13);
-            this.TipKorisnikaLabelUnchanged.TabIndex = 21;
-            this.TipKorisnikaLabelUnchanged.Text = "Tip Korisnika:";
+            this.lblMojProfilTipKorisnikaNochange.AutoSize = true;
+            this.lblMojProfilTipKorisnikaNochange.ForeColor = System.Drawing.Color.White;
+            this.lblMojProfilTipKorisnikaNochange.Location = new System.Drawing.Point(46, 180);
+            this.lblMojProfilTipKorisnikaNochange.Name = "lblMojProfilTipKorisnikaNochange";
+            this.lblMojProfilTipKorisnikaNochange.Size = new System.Drawing.Size(71, 13);
+            this.lblMojProfilTipKorisnikaNochange.TabIndex = 21;
+            this.lblMojProfilTipKorisnikaNochange.Text = "Tip Korisnika:";
             // 
-            // MojProfilLabelTipKorisnika
+            // lblMojProfilTipKorisnika
             // 
-            this.MojProfilLabelTipKorisnika.AutoSize = true;
-            this.MojProfilLabelTipKorisnika.ForeColor = System.Drawing.Color.White;
-            this.MojProfilLabelTipKorisnika.Location = new System.Drawing.Point(123, 180);
-            this.MojProfilLabelTipKorisnika.Name = "MojProfilLabelTipKorisnika";
-            this.MojProfilLabelTipKorisnika.Size = new System.Drawing.Size(10, 13);
-            this.MojProfilLabelTipKorisnika.TabIndex = 22;
-            this.MojProfilLabelTipKorisnika.Text = "-";
+            this.lblMojProfilTipKorisnika.AutoSize = true;
+            this.lblMojProfilTipKorisnika.ForeColor = System.Drawing.Color.White;
+            this.lblMojProfilTipKorisnika.Location = new System.Drawing.Point(123, 180);
+            this.lblMojProfilTipKorisnika.Name = "lblMojProfilTipKorisnika";
+            this.lblMojProfilTipKorisnika.Size = new System.Drawing.Size(10, 13);
+            this.lblMojProfilTipKorisnika.TabIndex = 22;
+            this.lblMojProfilTipKorisnika.Text = "-";
             // 
-            // MojProfilLabelAdresa
+            // lblMojProfilAdresa
             // 
-            this.MojProfilLabelAdresa.AutoSize = true;
-            this.MojProfilLabelAdresa.ForeColor = System.Drawing.Color.White;
-            this.MojProfilLabelAdresa.Location = new System.Drawing.Point(123, 153);
-            this.MojProfilLabelAdresa.Name = "MojProfilLabelAdresa";
-            this.MojProfilLabelAdresa.Size = new System.Drawing.Size(10, 13);
-            this.MojProfilLabelAdresa.TabIndex = 23;
-            this.MojProfilLabelAdresa.Text = "-";
+            this.lblMojProfilAdresa.AutoSize = true;
+            this.lblMojProfilAdresa.ForeColor = System.Drawing.Color.White;
+            this.lblMojProfilAdresa.Location = new System.Drawing.Point(123, 153);
+            this.lblMojProfilAdresa.Name = "lblMojProfilAdresa";
+            this.lblMojProfilAdresa.Size = new System.Drawing.Size(10, 13);
+            this.lblMojProfilAdresa.TabIndex = 23;
+            this.lblMojProfilAdresa.Text = "-";
             // 
-            // MojProfilLabelNickname
+            // lblMojProfilNickname
             // 
-            this.MojProfilLabelNickname.AutoSize = true;
-            this.MojProfilLabelNickname.ForeColor = System.Drawing.Color.White;
-            this.MojProfilLabelNickname.Location = new System.Drawing.Point(123, 96);
-            this.MojProfilLabelNickname.Name = "MojProfilLabelNickname";
-            this.MojProfilLabelNickname.Size = new System.Drawing.Size(10, 13);
-            this.MojProfilLabelNickname.TabIndex = 24;
-            this.MojProfilLabelNickname.Text = "-";
+            this.lblMojProfilNickname.AutoSize = true;
+            this.lblMojProfilNickname.ForeColor = System.Drawing.Color.White;
+            this.lblMojProfilNickname.Location = new System.Drawing.Point(123, 96);
+            this.lblMojProfilNickname.Name = "lblMojProfilNickname";
+            this.lblMojProfilNickname.Size = new System.Drawing.Size(10, 13);
+            this.lblMojProfilNickname.TabIndex = 24;
+            this.lblMojProfilNickname.Text = "-";
             // 
-            // MojProfilLabelEmail
+            // lblMojProfilEmail
             // 
-            this.MojProfilLabelEmail.AutoSize = true;
-            this.MojProfilLabelEmail.ForeColor = System.Drawing.Color.White;
-            this.MojProfilLabelEmail.Location = new System.Drawing.Point(123, 124);
-            this.MojProfilLabelEmail.Name = "MojProfilLabelEmail";
-            this.MojProfilLabelEmail.Size = new System.Drawing.Size(10, 13);
-            this.MojProfilLabelEmail.TabIndex = 25;
-            this.MojProfilLabelEmail.Text = "-";
+            this.lblMojProfilEmail.AutoSize = true;
+            this.lblMojProfilEmail.ForeColor = System.Drawing.Color.White;
+            this.lblMojProfilEmail.Location = new System.Drawing.Point(123, 124);
+            this.lblMojProfilEmail.Name = "lblMojProfilEmail";
+            this.lblMojProfilEmail.Size = new System.Drawing.Size(10, 13);
+            this.lblMojProfilEmail.TabIndex = 25;
+            this.lblMojProfilEmail.Text = "-";
             // 
-            // MojProfilLabelID
+            // lblMojProfilID
             // 
-            this.MojProfilLabelID.AutoSize = true;
-            this.MojProfilLabelID.ForeColor = System.Drawing.Color.White;
-            this.MojProfilLabelID.Location = new System.Drawing.Point(123, 67);
-            this.MojProfilLabelID.Name = "MojProfilLabelID";
-            this.MojProfilLabelID.Size = new System.Drawing.Size(10, 13);
-            this.MojProfilLabelID.TabIndex = 26;
-            this.MojProfilLabelID.Text = "-";
+            this.lblMojProfilID.AutoSize = true;
+            this.lblMojProfilID.ForeColor = System.Drawing.Color.White;
+            this.lblMojProfilID.Location = new System.Drawing.Point(123, 67);
+            this.lblMojProfilID.Name = "lblMojProfilID";
+            this.lblMojProfilID.Size = new System.Drawing.Size(10, 13);
+            this.lblMojProfilID.TabIndex = 26;
+            this.lblMojProfilID.Text = "-";
             // 
             // label9
             // 
@@ -141,87 +141,87 @@
             this.label9.Size = new System.Drawing.Size(0, 13);
             this.label9.TabIndex = 16;
             // 
-            // AdresaLabelUnchanged
+            // lblMojProfilAdresaNochange
             // 
-            this.AdresaLabelUnchanged.AutoSize = true;
-            this.AdresaLabelUnchanged.ForeColor = System.Drawing.Color.White;
-            this.AdresaLabelUnchanged.Location = new System.Drawing.Point(74, 153);
-            this.AdresaLabelUnchanged.Name = "AdresaLabelUnchanged";
-            this.AdresaLabelUnchanged.Size = new System.Drawing.Size(43, 13);
-            this.AdresaLabelUnchanged.TabIndex = 17;
-            this.AdresaLabelUnchanged.Text = "Adresa:";
+            this.lblMojProfilAdresaNochange.AutoSize = true;
+            this.lblMojProfilAdresaNochange.ForeColor = System.Drawing.Color.White;
+            this.lblMojProfilAdresaNochange.Location = new System.Drawing.Point(74, 153);
+            this.lblMojProfilAdresaNochange.Name = "lblMojProfilAdresaNochange";
+            this.lblMojProfilAdresaNochange.Size = new System.Drawing.Size(43, 13);
+            this.lblMojProfilAdresaNochange.TabIndex = 17;
+            this.lblMojProfilAdresaNochange.Text = "Adresa:";
             // 
-            // NicknameLabelUnchanged
+            // lblMojProfilNicknameNochange
             // 
-            this.NicknameLabelUnchanged.AutoSize = true;
-            this.NicknameLabelUnchanged.ForeColor = System.Drawing.Color.White;
-            this.NicknameLabelUnchanged.Location = new System.Drawing.Point(59, 96);
-            this.NicknameLabelUnchanged.Name = "NicknameLabelUnchanged";
-            this.NicknameLabelUnchanged.Size = new System.Drawing.Size(58, 13);
-            this.NicknameLabelUnchanged.TabIndex = 18;
-            this.NicknameLabelUnchanged.Text = "Nickname:";
+            this.lblMojProfilNicknameNochange.AutoSize = true;
+            this.lblMojProfilNicknameNochange.ForeColor = System.Drawing.Color.White;
+            this.lblMojProfilNicknameNochange.Location = new System.Drawing.Point(59, 96);
+            this.lblMojProfilNicknameNochange.Name = "lblMojProfilNicknameNochange";
+            this.lblMojProfilNicknameNochange.Size = new System.Drawing.Size(58, 13);
+            this.lblMojProfilNicknameNochange.TabIndex = 18;
+            this.lblMojProfilNicknameNochange.Text = "Nickname:";
             // 
-            // EmailLabelUnchanged
+            // lblMojProfilEmailnNochange
             // 
-            this.EmailLabelUnchanged.AutoSize = true;
-            this.EmailLabelUnchanged.ForeColor = System.Drawing.Color.White;
-            this.EmailLabelUnchanged.Location = new System.Drawing.Point(82, 124);
-            this.EmailLabelUnchanged.Name = "EmailLabelUnchanged";
-            this.EmailLabelUnchanged.Size = new System.Drawing.Size(35, 13);
-            this.EmailLabelUnchanged.TabIndex = 19;
-            this.EmailLabelUnchanged.Text = "Email:";
+            this.lblMojProfilEmailnNochange.AutoSize = true;
+            this.lblMojProfilEmailnNochange.ForeColor = System.Drawing.Color.White;
+            this.lblMojProfilEmailnNochange.Location = new System.Drawing.Point(82, 124);
+            this.lblMojProfilEmailnNochange.Name = "lblMojProfilEmailnNochange";
+            this.lblMojProfilEmailnNochange.Size = new System.Drawing.Size(35, 13);
+            this.lblMojProfilEmailnNochange.TabIndex = 19;
+            this.lblMojProfilEmailnNochange.Text = "Email:";
             // 
-            // IDlabelUnchanged
+            // lblMojProfilIDnochange
             // 
-            this.IDlabelUnchanged.AutoSize = true;
-            this.IDlabelUnchanged.ForeColor = System.Drawing.Color.White;
-            this.IDlabelUnchanged.Location = new System.Drawing.Point(96, 67);
-            this.IDlabelUnchanged.Name = "IDlabelUnchanged";
-            this.IDlabelUnchanged.Size = new System.Drawing.Size(21, 13);
-            this.IDlabelUnchanged.TabIndex = 20;
-            this.IDlabelUnchanged.Text = "ID:";
+            this.lblMojProfilIDnochange.AutoSize = true;
+            this.lblMojProfilIDnochange.ForeColor = System.Drawing.Color.White;
+            this.lblMojProfilIDnochange.Location = new System.Drawing.Point(96, 67);
+            this.lblMojProfilIDnochange.Name = "lblMojProfilIDnochange";
+            this.lblMojProfilIDnochange.Size = new System.Drawing.Size(21, 13);
+            this.lblMojProfilIDnochange.TabIndex = 20;
+            this.lblMojProfilIDnochange.Text = "ID:";
             // 
-            // buttonUkloniOglas
+            // btnMojProfilUkloniOglas
             // 
-            this.buttonUkloniOglas.ForeColor = System.Drawing.Color.Black;
-            this.buttonUkloniOglas.Location = new System.Drawing.Point(590, 171);
-            this.buttonUkloniOglas.Name = "buttonUkloniOglas";
-            this.buttonUkloniOglas.Size = new System.Drawing.Size(120, 56);
-            this.buttonUkloniOglas.TabIndex = 29;
-            this.buttonUkloniOglas.Text = "Ukloni oglas";
-            this.buttonUkloniOglas.UseVisualStyleBackColor = true;
-            this.buttonUkloniOglas.Click += new System.EventHandler(this.buttonUkloniOglas_Click);
+            this.btnMojProfilUkloniOglas.ForeColor = System.Drawing.Color.Black;
+            this.btnMojProfilUkloniOglas.Location = new System.Drawing.Point(590, 171);
+            this.btnMojProfilUkloniOglas.Name = "btnMojProfilUkloniOglas";
+            this.btnMojProfilUkloniOglas.Size = new System.Drawing.Size(120, 56);
+            this.btnMojProfilUkloniOglas.TabIndex = 29;
+            this.btnMojProfilUkloniOglas.Text = "Ukloni oglas";
+            this.btnMojProfilUkloniOglas.UseVisualStyleBackColor = true;
+            this.btnMojProfilUkloniOglas.Click += new System.EventHandler(this.btnMojProfilUkloniOglas_Click);
             // 
-            // imeKarte
+            // lblMojProfilNazivKarte
             // 
-            this.imeKarte.AutoSize = true;
-            this.imeKarte.ForeColor = System.Drawing.Color.White;
-            this.imeKarte.Location = new System.Drawing.Point(829, 451);
-            this.imeKarte.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.imeKarte.Name = "imeKarte";
-            this.imeKarte.Size = new System.Drawing.Size(61, 13);
-            this.imeKarte.TabIndex = 32;
-            this.imeKarte.Text = "Naziv karte";
+            this.lblMojProfilNazivKarte.AutoSize = true;
+            this.lblMojProfilNazivKarte.ForeColor = System.Drawing.Color.White;
+            this.lblMojProfilNazivKarte.Location = new System.Drawing.Point(829, 451);
+            this.lblMojProfilNazivKarte.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.lblMojProfilNazivKarte.Name = "lblMojProfilNazivKarte";
+            this.lblMojProfilNazivKarte.Size = new System.Drawing.Size(61, 13);
+            this.lblMojProfilNazivKarte.TabIndex = 32;
+            this.lblMojProfilNazivKarte.Text = "Naziv karte";
             // 
-            // opisKarte
+            // rtboxListaZeljaOpisKarte
             // 
-            this.opisKarte.Location = new System.Drawing.Point(831, 472);
-            this.opisKarte.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
-            this.opisKarte.Name = "opisKarte";
-            this.opisKarte.ReadOnly = true;
-            this.opisKarte.Size = new System.Drawing.Size(267, 81);
-            this.opisKarte.TabIndex = 31;
-            this.opisKarte.Text = "";
+            this.rtboxListaZeljaOpisKarte.Location = new System.Drawing.Point(831, 472);
+            this.rtboxListaZeljaOpisKarte.Margin = new System.Windows.Forms.Padding(2);
+            this.rtboxListaZeljaOpisKarte.Name = "rtboxListaZeljaOpisKarte";
+            this.rtboxListaZeljaOpisKarte.ReadOnly = true;
+            this.rtboxListaZeljaOpisKarte.Size = new System.Drawing.Size(267, 81);
+            this.rtboxListaZeljaOpisKarte.TabIndex = 31;
+            this.rtboxListaZeljaOpisKarte.Text = "";
             // 
-            // pictureBoxSlikaKarte
+            // pboxListaZeljaSlikaKarte
             // 
-            this.pictureBoxSlikaKarte.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.pictureBoxSlikaKarte.Location = new System.Drawing.Point(831, 96);
-            this.pictureBoxSlikaKarte.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
-            this.pictureBoxSlikaKarte.Name = "pictureBoxSlikaKarte";
-            this.pictureBoxSlikaKarte.Size = new System.Drawing.Size(267, 351);
-            this.pictureBoxSlikaKarte.TabIndex = 30;
-            this.pictureBoxSlikaKarte.TabStop = false;
+            this.pboxListaZeljaSlikaKarte.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.pboxListaZeljaSlikaKarte.Location = new System.Drawing.Point(831, 96);
+            this.pboxListaZeljaSlikaKarte.Margin = new System.Windows.Forms.Padding(2);
+            this.pboxListaZeljaSlikaKarte.Name = "pboxListaZeljaSlikaKarte";
+            this.pboxListaZeljaSlikaKarte.Size = new System.Drawing.Size(267, 351);
+            this.pboxListaZeljaSlikaKarte.TabIndex = 30;
+            this.pboxListaZeljaSlikaKarte.TabStop = false;
             // 
             // MojProfil
             // 
@@ -229,28 +229,28 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(53)))), ((int)(((byte)(53)))), ((int)(((byte)(53)))));
             this.ClientSize = new System.Drawing.Size(1203, 603);
-            this.Controls.Add(this.imeKarte);
-            this.Controls.Add(this.opisKarte);
-            this.Controls.Add(this.pictureBoxSlikaKarte);
-            this.Controls.Add(this.buttonUkloniOglas);
-            this.Controls.Add(this.KorisnikoveKarteLabelUnchanged);
-            this.Controls.Add(this.dataGridView1);
-            this.Controls.Add(this.TipKorisnikaLabelUnchanged);
-            this.Controls.Add(this.MojProfilLabelTipKorisnika);
-            this.Controls.Add(this.MojProfilLabelAdresa);
-            this.Controls.Add(this.MojProfilLabelNickname);
-            this.Controls.Add(this.MojProfilLabelEmail);
-            this.Controls.Add(this.MojProfilLabelID);
+            this.Controls.Add(this.lblMojProfilNazivKarte);
+            this.Controls.Add(this.rtboxListaZeljaOpisKarte);
+            this.Controls.Add(this.pboxListaZeljaSlikaKarte);
+            this.Controls.Add(this.btnMojProfilUkloniOglas);
+            this.Controls.Add(this.lblMojProfilObjavljeniOglasi);
+            this.Controls.Add(this.dgvMojProfilMojiOglasi);
+            this.Controls.Add(this.lblMojProfilTipKorisnikaNochange);
+            this.Controls.Add(this.lblMojProfilTipKorisnika);
+            this.Controls.Add(this.lblMojProfilAdresa);
+            this.Controls.Add(this.lblMojProfilNickname);
+            this.Controls.Add(this.lblMojProfilEmail);
+            this.Controls.Add(this.lblMojProfilID);
             this.Controls.Add(this.label9);
-            this.Controls.Add(this.AdresaLabelUnchanged);
-            this.Controls.Add(this.NicknameLabelUnchanged);
-            this.Controls.Add(this.EmailLabelUnchanged);
-            this.Controls.Add(this.IDlabelUnchanged);
+            this.Controls.Add(this.lblMojProfilAdresaNochange);
+            this.Controls.Add(this.lblMojProfilNicknameNochange);
+            this.Controls.Add(this.lblMojProfilEmailnNochange);
+            this.Controls.Add(this.lblMojProfilIDnochange);
             this.Name = "MojProfil";
             this.Text = "MojProfil";
             this.Load += new System.EventHandler(this.MojProfil_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxSlikaKarte)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvMojProfilMojiOglasi)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pboxListaZeljaSlikaKarte)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -258,22 +258,22 @@
 
         #endregion
 
-        private System.Windows.Forms.Label KorisnikoveKarteLabelUnchanged;
-        private System.Windows.Forms.DataGridView dataGridView1;
-        private System.Windows.Forms.Label TipKorisnikaLabelUnchanged;
-        private System.Windows.Forms.Label MojProfilLabelTipKorisnika;
-        private System.Windows.Forms.Label MojProfilLabelAdresa;
-        private System.Windows.Forms.Label MojProfilLabelNickname;
-        private System.Windows.Forms.Label MojProfilLabelEmail;
-        private System.Windows.Forms.Label MojProfilLabelID;
+        private System.Windows.Forms.Label lblMojProfilObjavljeniOglasi;
+        private System.Windows.Forms.DataGridView dgvMojProfilMojiOglasi;
+        private System.Windows.Forms.Label lblMojProfilTipKorisnikaNochange;
+        private System.Windows.Forms.Label lblMojProfilTipKorisnika;
+        private System.Windows.Forms.Label lblMojProfilAdresa;
+        private System.Windows.Forms.Label lblMojProfilNickname;
+        private System.Windows.Forms.Label lblMojProfilEmail;
+        private System.Windows.Forms.Label lblMojProfilID;
         private System.Windows.Forms.Label label9;
-        private System.Windows.Forms.Label AdresaLabelUnchanged;
-        private System.Windows.Forms.Label NicknameLabelUnchanged;
-        private System.Windows.Forms.Label EmailLabelUnchanged;
-        private System.Windows.Forms.Label IDlabelUnchanged;
-        private System.Windows.Forms.Button buttonUkloniOglas;
-        private System.Windows.Forms.Label imeKarte;
-        private System.Windows.Forms.RichTextBox opisKarte;
-        private System.Windows.Forms.PictureBox pictureBoxSlikaKarte;
+        private System.Windows.Forms.Label lblMojProfilAdresaNochange;
+        private System.Windows.Forms.Label lblMojProfilNicknameNochange;
+        private System.Windows.Forms.Label lblMojProfilEmailnNochange;
+        private System.Windows.Forms.Label lblMojProfilIDnochange;
+        private System.Windows.Forms.Button btnMojProfilUkloniOglas;
+        private System.Windows.Forms.Label lblMojProfilNazivKarte;
+        private System.Windows.Forms.RichTextBox rtboxListaZeljaOpisKarte;
+        private System.Windows.Forms.PictureBox pboxListaZeljaSlikaKarte;
     }
 }

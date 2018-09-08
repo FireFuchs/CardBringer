@@ -18,32 +18,6 @@ namespace CardBringer2
             this.ControlBox = false;
         }
 
-        private void button1_Click(object sender, EventArgs e)
-        {
-            System.Windows.Forms.MessageBox.Show("Plaćeno!");
-            this.Close();
-        }
-
-        private void label3_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label1_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label2_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label4_Click(object sender, EventArgs e)
-        {
-
-        }
-
         private void btnUnosKarticeOtkazi_Click(object sender, EventArgs e)
         {
             System.Windows.Forms.MessageBox.Show("Otkazano!");
@@ -80,6 +54,12 @@ namespace CardBringer2
             {
                 e.Handled = true;
             }
+        }
+
+        private void btnUnosKarticePlati_Click(object sender, EventArgs e)
+        {
+            System.Windows.Forms.MessageBox.Show("Plaćeno!");
+            this.Close();
         }
     }
 }

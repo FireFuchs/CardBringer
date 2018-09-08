@@ -32,14 +32,14 @@
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.unosGumbHelpGlavniIzbornikForma = new System.Windows.Forms.Button();
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
-            this.početnaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.mojProfilToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.dodajPonuduToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.košaricaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.listaŽeljaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.odjavaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.mojeKupnjeToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.administratorToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.btnGlavniIzbornikFormaPocetna = new System.Windows.Forms.ToolStripMenuItem();
+            this.btnGlavniIzbornikFormaMojProfil = new System.Windows.Forms.ToolStripMenuItem();
+            this.btnGlavniIzbornikFormaObjaviOglase = new System.Windows.Forms.ToolStripMenuItem();
+            this.btnGlavniIzbornikFormaKosarica = new System.Windows.Forms.ToolStripMenuItem();
+            this.btnGlavniIzbornikFormaListaZelja = new System.Windows.Forms.ToolStripMenuItem();
+            this.btnGlavniIzbornikFormaOdjava = new System.Windows.Forms.ToolStripMenuItem();
+            this.btnGlavniIzbornikFormaMojeKupnje = new System.Windows.Forms.ToolStripMenuItem();
+            this.btnGlavniIzbornikFormaAdministrator = new System.Windows.Forms.ToolStripMenuItem();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
@@ -72,14 +72,14 @@
             this.menuStrip1.Dock = System.Windows.Forms.DockStyle.None;
             this.menuStrip1.ImeMode = System.Windows.Forms.ImeMode.NoControl;
             this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.početnaToolStripMenuItem,
-            this.mojProfilToolStripMenuItem,
-            this.dodajPonuduToolStripMenuItem,
-            this.košaricaToolStripMenuItem,
-            this.listaŽeljaToolStripMenuItem,
-            this.odjavaToolStripMenuItem,
-            this.mojeKupnjeToolStripMenuItem,
-            this.administratorToolStripMenuItem});
+            this.btnGlavniIzbornikFormaPocetna,
+            this.btnGlavniIzbornikFormaMojProfil,
+            this.btnGlavniIzbornikFormaObjaviOglase,
+            this.btnGlavniIzbornikFormaKosarica,
+            this.btnGlavniIzbornikFormaListaZelja,
+            this.btnGlavniIzbornikFormaOdjava,
+            this.btnGlavniIzbornikFormaMojeKupnje,
+            this.btnGlavniIzbornikFormaAdministrator});
             this.menuStrip1.Location = new System.Drawing.Point(214, 3);
             this.menuStrip1.Name = "menuStrip1";
             this.menuStrip1.Padding = new System.Windows.Forms.Padding(5, 6, 350, 5);
@@ -87,81 +87,78 @@
             this.menuStrip1.Size = new System.Drawing.Size(1393, 50);
             this.menuStrip1.TabIndex = 11;
             this.menuStrip1.Text = "menuStrip1";
-            this.menuStrip1.ItemClicked += new System.Windows.Forms.ToolStripItemClickedEventHandler(this.menuStrip1_ItemClicked);
             // 
-            // početnaToolStripMenuItem
+            // btnGlavniIzbornikFormaPocetna
             // 
-            this.početnaToolStripMenuItem.AutoSize = false;
-            this.početnaToolStripMenuItem.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(178)))), ((int)(((byte)(255)))));
-            this.početnaToolStripMenuItem.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
-            this.početnaToolStripMenuItem.Name = "početnaToolStripMenuItem";
-            this.početnaToolStripMenuItem.Size = new System.Drawing.Size(71, 39);
-            this.početnaToolStripMenuItem.Text = "Početna";
-            this.početnaToolStripMenuItem.Click += new System.EventHandler(this.početnaToolStripMenuItem_Click);
+            this.btnGlavniIzbornikFormaPocetna.AutoSize = false;
+            this.btnGlavniIzbornikFormaPocetna.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(178)))), ((int)(((byte)(255)))));
+            this.btnGlavniIzbornikFormaPocetna.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
+            this.btnGlavniIzbornikFormaPocetna.Name = "btnGlavniIzbornikFormaPocetna";
+            this.btnGlavniIzbornikFormaPocetna.Size = new System.Drawing.Size(71, 39);
+            this.btnGlavniIzbornikFormaPocetna.Text = "Početna";
+            this.btnGlavniIzbornikFormaPocetna.Click += new System.EventHandler(this.btnGlavniIzbornikFormaPocetna_Click);
             // 
-            // mojProfilToolStripMenuItem
+            // btnGlavniIzbornikFormaMojProfil
             // 
-            this.mojProfilToolStripMenuItem.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(178)))), ((int)(((byte)(255)))));
-            this.mojProfilToolStripMenuItem.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
-            this.mojProfilToolStripMenuItem.Name = "mojProfilToolStripMenuItem";
-            this.mojProfilToolStripMenuItem.Size = new System.Drawing.Size(71, 39);
-            this.mojProfilToolStripMenuItem.Text = "Moj Profil";
-            this.mojProfilToolStripMenuItem.Click += new System.EventHandler(this.mojProfilToolStripMenuItem_Click);
+            this.btnGlavniIzbornikFormaMojProfil.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(178)))), ((int)(((byte)(255)))));
+            this.btnGlavniIzbornikFormaMojProfil.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
+            this.btnGlavniIzbornikFormaMojProfil.Name = "btnGlavniIzbornikFormaMojProfil";
+            this.btnGlavniIzbornikFormaMojProfil.Size = new System.Drawing.Size(71, 39);
+            this.btnGlavniIzbornikFormaMojProfil.Text = "Moj Profil";
+            this.btnGlavniIzbornikFormaMojProfil.Click += new System.EventHandler(this.btnGlavniIzbornikFormaMojProfil_Click);
             // 
-            // dodajPonuduToolStripMenuItem
+            // btnGlavniIzbornikFormaObjaviOglase
             // 
-            this.dodajPonuduToolStripMenuItem.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(178)))), ((int)(((byte)(255)))));
-            this.dodajPonuduToolStripMenuItem.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
-            this.dodajPonuduToolStripMenuItem.Name = "dodajPonuduToolStripMenuItem";
-            this.dodajPonuduToolStripMenuItem.Size = new System.Drawing.Size(86, 39);
-            this.dodajPonuduToolStripMenuItem.Text = "Objavi Oglas";
-            this.dodajPonuduToolStripMenuItem.Click += new System.EventHandler(this.dodajPonuduToolStripMenuItem_Click);
+            this.btnGlavniIzbornikFormaObjaviOglase.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(178)))), ((int)(((byte)(255)))));
+            this.btnGlavniIzbornikFormaObjaviOglase.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
+            this.btnGlavniIzbornikFormaObjaviOglase.Name = "btnGlavniIzbornikFormaObjaviOglase";
+            this.btnGlavniIzbornikFormaObjaviOglase.Size = new System.Drawing.Size(86, 39);
+            this.btnGlavniIzbornikFormaObjaviOglase.Text = "Objavi Oglas";
             // 
-            // košaricaToolStripMenuItem
+            // btnGlavniIzbornikFormaKosarica
             // 
-            this.košaricaToolStripMenuItem.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(178)))), ((int)(((byte)(255)))));
-            this.košaricaToolStripMenuItem.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
-            this.košaricaToolStripMenuItem.Name = "košaricaToolStripMenuItem";
-            this.košaricaToolStripMenuItem.Size = new System.Drawing.Size(63, 39);
-            this.košaricaToolStripMenuItem.Text = "Košarica";
-            this.košaricaToolStripMenuItem.Click += new System.EventHandler(this.košaricaToolStripMenuItem_Click);
+            this.btnGlavniIzbornikFormaKosarica.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(178)))), ((int)(((byte)(255)))));
+            this.btnGlavniIzbornikFormaKosarica.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
+            this.btnGlavniIzbornikFormaKosarica.Name = "btnGlavniIzbornikFormaKosarica";
+            this.btnGlavniIzbornikFormaKosarica.Size = new System.Drawing.Size(63, 39);
+            this.btnGlavniIzbornikFormaKosarica.Text = "Košarica";
+            this.btnGlavniIzbornikFormaKosarica.Click += new System.EventHandler(this.btnGlavniIzbornikFormaKosarica_Click);
             // 
-            // listaŽeljaToolStripMenuItem
+            // btnGlavniIzbornikFormaListaZelja
             // 
-            this.listaŽeljaToolStripMenuItem.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(178)))), ((int)(((byte)(255)))));
-            this.listaŽeljaToolStripMenuItem.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
-            this.listaŽeljaToolStripMenuItem.Name = "listaŽeljaToolStripMenuItem";
-            this.listaŽeljaToolStripMenuItem.Size = new System.Drawing.Size(71, 39);
-            this.listaŽeljaToolStripMenuItem.Text = "Lista Želja";
-            this.listaŽeljaToolStripMenuItem.Click += new System.EventHandler(this.listaŽeljaToolStripMenuItem_Click);
+            this.btnGlavniIzbornikFormaListaZelja.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(178)))), ((int)(((byte)(255)))));
+            this.btnGlavniIzbornikFormaListaZelja.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
+            this.btnGlavniIzbornikFormaListaZelja.Name = "btnGlavniIzbornikFormaListaZelja";
+            this.btnGlavniIzbornikFormaListaZelja.Size = new System.Drawing.Size(71, 39);
+            this.btnGlavniIzbornikFormaListaZelja.Text = "Lista Želja";
+            this.btnGlavniIzbornikFormaListaZelja.Click += new System.EventHandler(this.btnGlavniIzbornikFormaListaZelja_Click);
             // 
-            // odjavaToolStripMenuItem
+            // btnGlavniIzbornikFormaOdjava
             // 
-            this.odjavaToolStripMenuItem.Alignment = System.Windows.Forms.ToolStripItemAlignment.Right;
-            this.odjavaToolStripMenuItem.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(178)))), ((int)(((byte)(255)))));
-            this.odjavaToolStripMenuItem.Margin = new System.Windows.Forms.Padding(250, 0, 0, 0);
-            this.odjavaToolStripMenuItem.Name = "odjavaToolStripMenuItem";
-            this.odjavaToolStripMenuItem.Size = new System.Drawing.Size(56, 39);
-            this.odjavaToolStripMenuItem.Text = "Odjava";
-            this.odjavaToolStripMenuItem.Click += new System.EventHandler(this.odjavaToolStripMenuItem_Click);
+            this.btnGlavniIzbornikFormaOdjava.Alignment = System.Windows.Forms.ToolStripItemAlignment.Right;
+            this.btnGlavniIzbornikFormaOdjava.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(178)))), ((int)(((byte)(255)))));
+            this.btnGlavniIzbornikFormaOdjava.Margin = new System.Windows.Forms.Padding(250, 0, 0, 0);
+            this.btnGlavniIzbornikFormaOdjava.Name = "btnGlavniIzbornikFormaOdjava";
+            this.btnGlavniIzbornikFormaOdjava.Size = new System.Drawing.Size(56, 39);
+            this.btnGlavniIzbornikFormaOdjava.Text = "Odjava";
             // 
-            // mojeKupnjeToolStripMenuItem
+            // btnGlavniIzbornikFormaMojeKupnje
             // 
-            this.mojeKupnjeToolStripMenuItem.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(178)))), ((int)(((byte)(255)))));
-            this.mojeKupnjeToolStripMenuItem.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
-            this.mojeKupnjeToolStripMenuItem.Name = "mojeKupnjeToolStripMenuItem";
-            this.mojeKupnjeToolStripMenuItem.Size = new System.Drawing.Size(86, 39);
-            this.mojeKupnjeToolStripMenuItem.Text = "Moje Kupnje";
-            this.mojeKupnjeToolStripMenuItem.Click += new System.EventHandler(this.mojeKupnjeToolStripMenuItem_Click);
+            this.btnGlavniIzbornikFormaMojeKupnje.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(178)))), ((int)(((byte)(255)))));
+            this.btnGlavniIzbornikFormaMojeKupnje.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
+            this.btnGlavniIzbornikFormaMojeKupnje.Name = "btnGlavniIzbornikFormaMojeKupnje";
+            this.btnGlavniIzbornikFormaMojeKupnje.Size = new System.Drawing.Size(86, 39);
+            this.btnGlavniIzbornikFormaMojeKupnje.Text = "Moje Kupnje";
+            this.btnGlavniIzbornikFormaMojeKupnje.Click += new System.EventHandler(this.btnGlavniIzbornikFormaMojeKupnje_Click);
             // 
-            // administratorToolStripMenuItem
+            // btnGlavniIzbornikFormaAdministrator
             // 
-            this.administratorToolStripMenuItem.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(178)))), ((int)(((byte)(255)))));
-            this.administratorToolStripMenuItem.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
-            this.administratorToolStripMenuItem.Name = "administratorToolStripMenuItem";
-            this.administratorToolStripMenuItem.Size = new System.Drawing.Size(92, 39);
-            this.administratorToolStripMenuItem.Text = "Administrator";
-            this.administratorToolStripMenuItem.Click += new System.EventHandler(this.administratorToolStripMenuItem_Click);
+            this.btnGlavniIzbornikFormaAdministrator.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(178)))), ((int)(((byte)(255)))));
+            this.btnGlavniIzbornikFormaAdministrator.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
+            this.btnGlavniIzbornikFormaAdministrator.Name = "btnGlavniIzbornikFormaAdministrator";
+            this.btnGlavniIzbornikFormaAdministrator.Size = new System.Drawing.Size(92, 39);
+            this.btnGlavniIzbornikFormaAdministrator.Text = "Administrator";
+            this.btnGlavniIzbornikFormaAdministrator.Click += new System.EventHandler(this.btnGlavniIzbornikFormaAdministrator_Click);
             // 
             // GlavniIzbornikForma
             // 
@@ -192,13 +189,13 @@
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.Button unosGumbHelpGlavniIzbornikForma;
         private System.Windows.Forms.MenuStrip menuStrip1;
-        private System.Windows.Forms.ToolStripMenuItem početnaToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem mojProfilToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem košaricaToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem listaŽeljaToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem odjavaToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem dodajPonuduToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem mojeKupnjeToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem administratorToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem btnGlavniIzbornikFormaPocetna;
+        private System.Windows.Forms.ToolStripMenuItem btnGlavniIzbornikFormaMojProfil;
+        private System.Windows.Forms.ToolStripMenuItem btnGlavniIzbornikFormaKosarica;
+        private System.Windows.Forms.ToolStripMenuItem btnGlavniIzbornikFormaListaZelja;
+        private System.Windows.Forms.ToolStripMenuItem btnGlavniIzbornikFormaOdjava;
+        private System.Windows.Forms.ToolStripMenuItem btnGlavniIzbornikFormaObjaviOglase;
+        private System.Windows.Forms.ToolStripMenuItem btnGlavniIzbornikFormaMojeKupnje;
+        private System.Windows.Forms.ToolStripMenuItem btnGlavniIzbornikFormaAdministrator;
     }
 }
