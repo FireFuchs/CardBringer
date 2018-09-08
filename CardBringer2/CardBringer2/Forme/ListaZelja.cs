@@ -41,6 +41,7 @@ namespace CardBringer2
                 return;
             }
             ListaZeljaDataGrid.DataSource = wishlist.DohvatiWishlist();
+            dohvatiSadrzaj();
             obradiDGV();
         }
 
@@ -49,6 +50,7 @@ namespace CardBringer2
             var idWishlist = (int)ListaZeljaDataGrid.SelectedRows[0].Cells["idWishlist"].Value;
             wishlist.UkloniKartuSListeZelja(idWishlist);
             ListaZeljaDataGrid.DataSource = wishlist.DohvatiWishlist();
+            dohvatiSadrzaj();
             obradiDGV();
         }
 

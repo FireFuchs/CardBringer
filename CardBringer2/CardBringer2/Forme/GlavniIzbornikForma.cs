@@ -13,11 +13,9 @@ namespace CardBringer2
     public partial class GlavniIzbornikForma : Form
     {
         string _helpTekst = "Help glavne forme";
-        int? ulogaKorisnika = null;
-        public GlavniIzbornikForma(int idUloga)
+        public GlavniIzbornikForma()
         {
             InitializeComponent();
-            ulogaKorisnika = idUloga;
         }
 
         private void GlavniIzbornikForma_KeyDown(object sender, KeyEventArgs e)
@@ -90,7 +88,12 @@ namespace CardBringer2
             novaPocetna.WindowState = FormWindowState.Maximized;
             novaPocetna.Show();
             _helpTekst = "Help Početne stranice";
-            provjeraUloge();
+            if (korisnik.PrijavljeniKorisnik == null)
+            {
+                ProvjeraUloge(0);
+                return;
+            }
+            ProvjeraUloge((int)korisnik.PrijavljeniKorisnik.idUloga);
 
         }
 
@@ -121,9 +124,9 @@ namespace CardBringer2
             _helpTekst = "Help administracijske stranice";
         }
 
-        private void provjeraUloge()
+        private void ProvjeraUloge(int idPrijavljenog)
         {
-            if (ulogaKorisnika < 1)
+            if (idPrijavljenog < 1)
             {
                 košaricaToolStripMenuItem.Visible = false;
                 mojProfilToolStripMenuItem.Visible = false;
@@ -132,7 +135,7 @@ namespace CardBringer2
                 mojeKupnjeToolStripMenuItem.Visible = false;
                 početnaToolStripMenuItem.Margin = new System.Windows.Forms.Padding(0, 0, 440, 0);
             }
-            if (ulogaKorisnika < 2)
+            if (idPrijavljenog < 2)
             {
                 administratorToolStripMenuItem.Visible = false;
                 odjavaToolStripMenuItem.Margin = new System.Windows.Forms.Padding(350, 0, 0, 0);
