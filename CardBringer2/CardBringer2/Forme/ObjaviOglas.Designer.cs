@@ -69,7 +69,7 @@
             this.dgvObjaviOglasSveKarte.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvObjaviOglasSveKarte.Size = new System.Drawing.Size(446, 359);
             this.dgvObjaviOglasSveKarte.TabIndex = 5;
-            this.dgvObjaviOglasSveKarte.RowEnter += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_RowEnter);
+            this.dgvObjaviOglasSveKarte.RowEnter += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvObjaviOglasSveKarte_RowEnter);
             // 
             // idKartaDataGridViewTextBoxColumn
             // 
@@ -181,7 +181,7 @@
             // 
             this.pboxObjaviOglasSlikaKarte.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.pboxObjaviOglasSlikaKarte.Location = new System.Drawing.Point(484, 88);
-            this.pboxObjaviOglasSlikaKarte.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.pboxObjaviOglasSlikaKarte.Margin = new System.Windows.Forms.Padding(2);
             this.pboxObjaviOglasSlikaKarte.Name = "pboxObjaviOglasSlikaKarte";
             this.pboxObjaviOglasSlikaKarte.Size = new System.Drawing.Size(267, 351);
             this.pboxObjaviOglasSlikaKarte.TabIndex = 6;
@@ -190,7 +190,7 @@
             // rtboxObjaviOglasOpisKarte
             // 
             this.rtboxObjaviOglasOpisKarte.Location = new System.Drawing.Point(484, 464);
-            this.rtboxObjaviOglasOpisKarte.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.rtboxObjaviOglasOpisKarte.Margin = new System.Windows.Forms.Padding(2);
             this.rtboxObjaviOglasOpisKarte.Name = "rtboxObjaviOglasOpisKarte";
             this.rtboxObjaviOglasOpisKarte.ReadOnly = true;
             this.rtboxObjaviOglasOpisKarte.Size = new System.Drawing.Size(267, 81);

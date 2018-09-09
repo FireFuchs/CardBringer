@@ -90,7 +90,6 @@
             this.tboxLoginRegisterLozinka.Size = new System.Drawing.Size(214, 20);
             this.tboxLoginRegisterLozinka.TabIndex = 1;
             this.tboxLoginRegisterLozinka.Text = "Lozinka";
-            this.tboxLoginRegisterLozinka.TextChanged += new System.EventHandler(this.tboxLoginRegisterLozinka_TextChanged);
             this.tboxLoginRegisterLozinka.Enter += new System.EventHandler(this.tboxLoginRegisterLozinka_Enter);
             this.tboxLoginRegisterLozinka.KeyDown += new System.Windows.Forms.KeyEventHandler(this.tboxLoginRegisterLozinka_KeyDown);
             this.tboxLoginRegisterLozinka.Leave += new System.EventHandler(this.tboxLoginRegisterLozinka_Leave);

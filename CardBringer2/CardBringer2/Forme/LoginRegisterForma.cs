@@ -62,10 +62,11 @@ namespace CardBringer2
             var password = tboxLoginRegisterFormaLozinkaReg.Text;
             var rePassword = tboxLoginRegisterPonovljenaLozinka.Text;
             var mjestoStanovanja = tboxLoginRegisterMjestoStanovanja.Text;
+
+            // Provjera forme Email adrese, je li napisana kako treba biti
             bool validnaAdresa = IsValidEmail(email);
             if (IsValidEmail(email))
             {
-              //  pattern = 
                 if (password == rePassword)
                 {
                     korisnik k = new korisnik();
@@ -132,6 +133,8 @@ namespace CardBringer2
             if (tboxLoginRegisterLozinka.Text != "Lozinka") return;
             tboxLoginRegisterLozinka.Text = "";
             tboxLoginRegisterLozinka.ForeColor = Color.Black;
+            
+            // kada se upisuje password napravi da nisu slova i brojke nego točka
             tboxLoginRegisterLozinka.PasswordChar = '•';
         }
 
@@ -148,6 +151,8 @@ namespace CardBringer2
             if (tboxLoginRegisterLozinka.Text != "") return;
             tboxLoginRegisterLozinka.Text = "Lozinka";
             tboxLoginRegisterLozinka.ForeColor = Color.Gray;
+
+            // Ako se ne upiše ništa, vraća se u standardni oblik pisma, i nisu više točke
             tboxLoginRegisterLozinka.PasswordChar = '\0';
         }
 
@@ -183,6 +188,8 @@ namespace CardBringer2
             if (tboxLoginRegisterFormaLozinkaReg.Text != "Lozinka") return;
             tboxLoginRegisterFormaLozinkaReg.Text = "";
             tboxLoginRegisterFormaLozinkaReg.ForeColor = Color.Black;
+
+            // kada se upisuje password napravi da nisu slova i brojke nego točka
             tboxLoginRegisterFormaLozinkaReg.PasswordChar = '•';
         }
 
@@ -199,6 +206,7 @@ namespace CardBringer2
             if (tboxLoginRegisterFormaLozinkaReg.Text != "") return;
             tboxLoginRegisterFormaLozinkaReg.Text = "Lozinka";
             tboxLoginRegisterFormaLozinkaReg.ForeColor = Color.Gray;
+            // Ako se ne upiše ništa, vraća se u standardni oblik pisma, i nisu više točke
             tboxLoginRegisterFormaLozinkaReg.PasswordChar = '\0';
         }
 
@@ -207,6 +215,7 @@ namespace CardBringer2
             if (tboxLoginRegisterPonovljenaLozinka.Text != "Ponovljena Lozinka") return;
             tboxLoginRegisterPonovljenaLozinka.Text = "";
             tboxLoginRegisterPonovljenaLozinka.ForeColor = Color.Black;
+            // kada se upisuje password napravi da nisu slova i brojke nego točka
             tboxLoginRegisterPonovljenaLozinka.PasswordChar = '•';
         }
 
@@ -223,6 +232,7 @@ namespace CardBringer2
             if (tboxLoginRegisterPonovljenaLozinka.Text != "") return;
             tboxLoginRegisterPonovljenaLozinka.Text = "Ponovljena Lozinka";
             tboxLoginRegisterPonovljenaLozinka.ForeColor = Color.Gray;
+            // Ako se ne upiše ništa, vraća se u standardni oblik pisma, i nisu više točke
             tboxLoginRegisterPonovljenaLozinka.PasswordChar = '\0';
         }
 
@@ -276,6 +286,7 @@ namespace CardBringer2
         }
         private bool IsValidEmail(string email)
         {
+            
             try
             {
                 var addr = new MailAddress(email);
@@ -285,11 +296,6 @@ namespace CardBringer2
             {
                 return false;
             }
-        }
-
-        private void tboxLoginRegisterLozinka_TextChanged(object sender, EventArgs e)
-        {
-
         }
     }
     

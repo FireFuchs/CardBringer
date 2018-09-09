@@ -35,7 +35,6 @@
             // rtboxHelpFormaHelp
             // 
             this.rtboxHelpFormaHelp.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(48)))), ((int)(((byte)(48)))));
-            this.rtboxHelpFormaHelp.CausesValidation = false;
             this.rtboxHelpFormaHelp.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.rtboxHelpFormaHelp.ForeColor = System.Drawing.Color.White;
             this.rtboxHelpFormaHelp.Location = new System.Drawing.Point(12, 44);
@@ -45,7 +44,6 @@
             this.rtboxHelpFormaHelp.Size = new System.Drawing.Size(596, 311);
             this.rtboxHelpFormaHelp.TabIndex = 5;
             this.rtboxHelpFormaHelp.Text = "txt";
-            this.rtboxHelpFormaHelp.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // label1
             // 

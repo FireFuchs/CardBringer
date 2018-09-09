@@ -31,6 +31,8 @@ namespace CardBringer2
         }
         private void ObradiDgv()
         {
+
+            // Sakrije sve nepotrebne podatke, i preimenuje sve vidljive stupce
             if (dgvMojeKupnjeDatagrid.SelectedRows.Count <= 0) return;
             dgvMojeKupnjeDatagrid.Columns["cijena"].DefaultCellStyle.Format = "0.00";
             dgvMojeKupnjeDatagrid.Columns["imeKarte"].HeaderText = "Ime karte";

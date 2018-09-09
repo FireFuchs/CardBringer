@@ -24,13 +24,15 @@ namespace CardBringer2
 
         private void Kosarica_Load(object sender, EventArgs e)
         {
-            //prikazuje nekupljene 
+            // Dohvaća samo ne kupljene stavke koje su u košarici 
             dgvKosaricaStavkeKosarice.DataSource = kosharica.DohvatiKosaricu(_nekupljeno);
             ObradiDgv();
         }
 
         private void ObradiDgv()
         {
+
+            // Računanje i ispis ukupnog iznosa karata i koliko karata je u košarici u tom trenutku
             double cijena;
             int kolicina;
             double rezultat = 0;
@@ -45,6 +47,8 @@ namespace CardBringer2
             dgvKosaricaStavkeKosarice.Columns["cijena"].DefaultCellStyle.Format = "0.00";
             lblKosaricaCijenaKarataCijena.Text = rezultat.ToString();
             lblKosaricaBrojKarataBroj.Text = ukupnaKolicina.ToString();
+
+            // Sakrivanje nepotrebnih podataka iz datagrida dgvKosarica
             if (dgvKosaricaStavkeKosarice.SelectedRows.Count <= 0) return;
             dgvKosaricaStavkeKosarice.Columns["imeKarte"].HeaderText = "Ime karte";
             dgvKosaricaStavkeKosarice.Columns["opisKarte"].HeaderText = "Opis karte";
@@ -62,6 +66,7 @@ namespace CardBringer2
 
         private void btnKosaricaKupi_Click(object sender, EventArgs e)
         {
+            
             if (dgvKosaricaStavkeKosarice.RowCount == 0)
             {
                 MessageBox.Show("Vaša košarica je prazna.", "Greška", MessageBoxButtons.OK);
@@ -97,7 +102,7 @@ namespace CardBringer2
                 MessageBox.Show("Vaša košarica je prazna.", "Greška", MessageBoxButtons.OK);
                 return;
             }
-
+            // Miće odabranu stavku iz košarice i vraća ih u oglas iz kojeg su uzete
             int idKosarica = (int)dgvKosaricaStavkeKosarice.SelectedRows[0].Cells["idKosarica"].Value;
             int idOglas = (int)dgvKosaricaStavkeKosarice.SelectedRows[0].Cells["idOglas"].Value;
             int kolicina = (int)dgvKosaricaStavkeKosarice.SelectedRows[0].Cells["kolicina"].Value;

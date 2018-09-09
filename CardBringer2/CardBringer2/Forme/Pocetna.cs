@@ -50,6 +50,7 @@ namespace CardBringer2
                 return;
             }
 
+            // Provjera da Količina karata je pravilno unesena
             if (tboxPocetnaBrojKarataZaKosaricu.Text == "")
             {
                 MessageBox.Show("Ne možete dodati 0 karata!", "Greška", MessageBoxButtons.OK);
@@ -91,6 +92,7 @@ namespace CardBringer2
 
         private void ObradiDgv()
         {
+            // Sakrivanje svih nepotrebnih podataka, i preimenovanje podataka koji su vidljivi
             if (dgvPocetnaDatagridSviOglasi.SelectedRows.Count <= 0) return;
             dgvPocetnaDatagridSviOglasi.Columns["cijena"].DefaultCellStyle.Format = "0.00";
             dgvPocetnaDatagridSviOglasi.Columns["imeKarte"].HeaderText = "Ime karte";
@@ -141,6 +143,7 @@ namespace CardBringer2
 
         private void dgvPocetnaDatagridSviOglasi_RowEnter(object sender, DataGridViewCellEventArgs e)
         {
+            // Promjena detalja oglasa koji se nalazi na desnoj strani forme
             if (dgvPocetnaDatagridSviOglasi.SelectedRows.Count <= 0) return;
             lblPocetnaIspisImeKarte.Text = dgvPocetnaDatagridSviOglasi.SelectedRows[0].Cells["imeKarte"].Value.ToString();
             lblPocetnaIspisCijenaKarte.Text = dgvPocetnaDatagridSviOglasi.SelectedRows[0].Cells["cijena"].Value.ToString();
@@ -159,6 +162,7 @@ namespace CardBringer2
 
         private void sakrijGost()
         {
+            // Sakrivanje Text boxa i gumba za košaricu koje gost nebih trebao vidjeti
             if (korisnik.PrijavljeniKorisnik == null)
             {
                 lblPocetnaBrojKarata.Visible = false;

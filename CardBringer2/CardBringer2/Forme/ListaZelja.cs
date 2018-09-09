@@ -45,6 +45,7 @@ namespace CardBringer2
         }
         private void ObradiDgv()
         {
+            // Sakriva nepotrebne podatke iz Datagridviewa
             if (dgvListaZeljaKarteNaListi.SelectedRows.Count <= 0) return;
             dgvListaZeljaKarteNaListi.Columns["idWishlist"].Visible = false;
             dgvListaZeljaKarteNaListi.Columns["slikaKarte"].Visible = false;
@@ -54,6 +55,7 @@ namespace CardBringer2
         }
         private void DohvatiSadrzaj()
         {
+            // Dohvaćanje Potrebnih podataka iz baze podataka
             if (dgvListaZeljaKarteNaListi.SelectedRows.Count <= 0) return;
             lblListaZeljaImeKarte.Text = dgvListaZeljaKarteNaListi.SelectedRows[0].Cells[1].Value.ToString();
             rtboxListaZeljaOpisKarte.Text = dgvListaZeljaKarteNaListi.SelectedRows[0].Cells[2].Value.ToString();
@@ -113,6 +115,7 @@ namespace CardBringer2
 
         private void dgvListaZeljaSveKarteDGV_RowEnter(object sender, DataGridViewCellEventArgs e)
         {
+            // Dohvaćanje novih podataka kod promjene selekcije u Datagridviewu
             if (dgvListaZeljaSveKarteDGV.SelectedRows.Count <= 0) return;
             lblListaZeljaSveKarteIme.Text = dgvListaZeljaSveKarteDGV.SelectedRows[0].Cells[1].Value.ToString();
             rtboxListaZeljaOpisKarteSveKarte.Text = dgvListaZeljaSveKarteDGV.SelectedRows[0].Cells[2].Value.ToString();

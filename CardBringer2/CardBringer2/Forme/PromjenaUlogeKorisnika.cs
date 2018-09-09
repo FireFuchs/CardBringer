@@ -29,6 +29,7 @@ namespace CardBringer2
         }
         private void ObradiDgv()
         {
+            // Sakrivanje nepotrebnih podataka i preimenovanje vidljivih stupaca
             if (dgvPromjenaUlogeKorisnikaSviKorisnici.SelectedRows.Count <= 0) return;
             dgvPromjenaUlogeKorisnikaSviKorisnici.Columns["idUloga"].Visible = false;
             dgvPromjenaUlogeKorisnikaSviKorisnici.Columns["idKorisnika"].HeaderText = "ID Korisnika";

@@ -48,6 +48,7 @@ namespace CardBringer2
 
         private void btnNovaKartaAdminIzaberiSliku_Click(object sender, EventArgs e)
         {
+            // Otvara formu za dodavanje slike karte
             var dialog = new OpenFileDialog();
             dialog.Filter = "Image files (*.jpg, *.jpeg, *.png) | *.jpg; *.jpeg; *.png";
             if (dialog.ShowDialog() == DialogResult.OK)
@@ -59,6 +60,7 @@ namespace CardBringer2
 
         private void btnNovaKartaAdminSpremiKartu_Click(object sender, EventArgs e)
         {
+            // Sprema sve upisane podatke u bazu podataka
             karta k = new karta();
             k.imeKarte = tboxNovaKartaAdminImeKarte.Text;
             k.opisKarte = this.rtboxNovaKartaAdminOpisKarte.Text;

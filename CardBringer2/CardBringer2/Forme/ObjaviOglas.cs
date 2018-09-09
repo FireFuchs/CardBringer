@@ -32,12 +32,9 @@ namespace CardBringer2
             DohvatiSadrzaj();
         }
 
-        private void dataGridView1_RowEnter(object sender, DataGridViewCellEventArgs e)
-        {
-            DohvatiSadrzaj();
-        }
         private void DohvatiSadrzaj()
         {
+            // Dohvaća sve podatke potrebne za ovu formu
             if (dgvObjaviOglasSveKarte.SelectedRows.Count <= 0) return;
             lblObjaviOglasNazivKarte.Text = dgvObjaviOglasSveKarte.SelectedRows[0].Cells[1].Value.ToString();
             rtboxObjaviOglasOpisKarte.Text = dgvObjaviOglasSveKarte.SelectedRows[0].Cells[2].Value.ToString();
@@ -48,6 +45,7 @@ namespace CardBringer2
 
         private void tboxObjaviOglasCijena_KeyPress(object sender, KeyPressEventArgs e)
         {
+            // Omogućava samo upis brojki i točke
             if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar) && (e.KeyChar != '.'))
             {
                 e.Handled = true;
@@ -56,6 +54,7 @@ namespace CardBringer2
 
         private void tboxObjaviOglasKolicina_KeyPress(object sender, KeyPressEventArgs e)
         {
+            // Omogućava samo upis brojki
             if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar))
             {
                 e.Handled = true;
@@ -69,6 +68,7 @@ namespace CardBringer2
 
         private void objaviOglas()
         {
+            // Verificiranje da podatci koji su uneseni u textboxeve su prihvatljivi
             if (tboxObjaviOglasCijena.Text == "" || tboxObjaviOglasKolicina.Text == "")
             {
                 MessageBox.Show("Cijena ili količina su krivo uneseni", "Greška", MessageBoxButtons.OK);
@@ -107,6 +107,11 @@ namespace CardBringer2
             {
                 objaviOglas();
             }
+        }
+
+        private void dgvObjaviOglasSveKarte_RowEnter(object sender, DataGridViewCellEventArgs e)
+        {
+            DohvatiSadrzaj();
         }
     }
 }
