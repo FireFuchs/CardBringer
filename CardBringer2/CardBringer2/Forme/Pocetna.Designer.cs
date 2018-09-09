@@ -47,6 +47,7 @@
             this.pboxPocetnaSlikaKarte = new System.Windows.Forms.PictureBox();
             this.oglasBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.tboxPocetnaBrojKarataZaKosaricu = new System.Windows.Forms.TextBox();
+            this.lblPocetnaSviOglasiLabel = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dgvPocetnaDatagridSviOglasi)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pboxPocetnaSlikaKarte)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.oglasBindingSource)).BeginInit();
@@ -225,12 +226,23 @@
             this.tboxPocetnaBrojKarataZaKosaricu.KeyDown += new System.Windows.Forms.KeyEventHandler(this.PocetnaBrojKarataZaKosaricu_KeyDown);
             this.tboxPocetnaBrojKarataZaKosaricu.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.PocetnaBrojKarataZaKosaricu_KeyPress);
             // 
+            // lblPocetnaSviOglasiLabel
+            // 
+            this.lblPocetnaSviOglasiLabel.AutoSize = true;
+            this.lblPocetnaSviOglasiLabel.ForeColor = System.Drawing.Color.White;
+            this.lblPocetnaSviOglasiLabel.Location = new System.Drawing.Point(12, 64);
+            this.lblPocetnaSviOglasiLabel.Name = "lblPocetnaSviOglasiLabel";
+            this.lblPocetnaSviOglasiLabel.Size = new System.Drawing.Size(55, 13);
+            this.lblPocetnaSviOglasiLabel.TabIndex = 35;
+            this.lblPocetnaSviOglasiLabel.Text = "Svi oglasi:";
+            // 
             // Pocetna
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(53)))), ((int)(((byte)(53)))), ((int)(((byte)(53)))));
             this.ClientSize = new System.Drawing.Size(1203, 603);
+            this.Controls.Add(this.lblPocetnaSviOglasiLabel);
             this.Controls.Add(this.tboxPocetnaBrojKarataZaKosaricu);
             this.Controls.Add(this.rtboxPocetnaOpisKarte);
             this.Controls.Add(this.pboxPocetnaSlikaKarte);
@@ -280,5 +292,6 @@
         private System.Windows.Forms.RichTextBox rtboxPocetnaOpisKarte;
         private System.Windows.Forms.PictureBox pboxPocetnaSlikaKarte;
         private System.Windows.Forms.TextBox tboxPocetnaBrojKarataZaKosaricu;
+        private System.Windows.Forms.Label lblPocetnaSviOglasiLabel;
     }
 }

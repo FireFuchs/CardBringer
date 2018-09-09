@@ -31,6 +31,7 @@ namespace CardBringer2
         private void ObradiDgv()
         {
             if (dgvMojeKupnjeDatagrid.SelectedRows.Count <= 0) return;
+            dgvMojeKupnjeDatagrid.Columns["cijena"].DefaultCellStyle.Format = "0.00";
             dgvMojeKupnjeDatagrid.Columns["imeKarte"].HeaderText = "Ime karte";
             dgvMojeKupnjeDatagrid.Columns["opisKarte"].HeaderText = "Opis karte";
             dgvMojeKupnjeDatagrid.Columns["cijena"].HeaderText = "Cijena";

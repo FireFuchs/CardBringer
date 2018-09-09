@@ -39,6 +39,7 @@ namespace CardBringer2
         private void ObradiDgv()
         {
             if (dgvMojProfilMojiOglasi.SelectedRows.Count <= 0) return;
+            dgvMojProfilMojiOglasi.Columns["cijena"].DefaultCellStyle.Format = "0.00";
             dgvMojProfilMojiOglasi.Columns["imeKarte"].HeaderText = "Ime karte";
             dgvMojProfilMojiOglasi.Columns["opisKarte"].HeaderText = "Opis karte";
             dgvMojProfilMojiOglasi.Columns["cijena"].HeaderText = "Cijena";

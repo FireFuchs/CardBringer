@@ -63,10 +63,27 @@ namespace CardBringer2
 
         private void btnObjaviOglasObjaviOglas_Click(object sender, EventArgs e)
         {
+            objaviOglas();
+        }
+
+        private void tboxObjaviOglasCijena_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                objaviOglas();
+            }
+        }
+
+        private void objaviOglas()
+        {
             var idKarta = (int)dgvObjaviOglasSveKarte.SelectedRows[0].Cells[0].Value;
             var cijena = Convert.ToDecimal(tboxObjaviOglasCijena.Text);
             var kolicina = Convert.ToInt32(tboxObjaviOglasKolicina.Text);
-
+            if (cijena <= 0 || kolicina <= 0)
+            {
+                MessageBox.Show("Cijena ili količina su krivo uneseni", "Greška", MessageBoxButtons.OK);
+                return;
+            }
             oglas o = new oglas();
             o.idKorisnik = korisnik.PrijavljeniKorisnik.idKorisnika;
             o.idKarta = idKarta;
@@ -75,6 +92,14 @@ namespace CardBringer2
             o.aktivan = 1;
             o.Spremi();
             MessageBox.Show("Vaš oglas je uspješno objavljen", "Oglas objavljen", MessageBoxButtons.OK);
+        }
+
+        private void tboxObjaviOglasKolicina_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                objaviOglas();
+            }
         }
     }
 }
