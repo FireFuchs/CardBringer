@@ -24,7 +24,7 @@ namespace CardBringer2
 
         private void Kosarica_Load(object sender, EventArgs e)
         {
-            // Dohvaća samo ne kupljene stavke koje su u košarici 
+            // Dohvaća samo nekupljene stavke koje su u košarici 
             dgvKosaricaStavkeKosarice.DataSource = kosharica.DohvatiKosaricu(_nekupljeno);
             ObradiDgv();
         }
@@ -45,7 +45,7 @@ namespace CardBringer2
                 ukupnaKolicina += kolicina;
             }
             dgvKosaricaStavkeKosarice.Columns["cijena"].DefaultCellStyle.Format = "0.00";
-            lblKosaricaCijenaKarataCijena.Text = rezultat.ToString();
+            lblKosaricaCijenaKarataCijena.Text = String.Format("{0:0.00}", rezultat);
             lblKosaricaBrojKarataBroj.Text = ukupnaKolicina.ToString();
 
             // Sakrivanje nepotrebnih podataka iz datagrida dgvKosarica
@@ -84,9 +84,9 @@ namespace CardBringer2
                 idKosarica = (int)stavka.Cells["idKosarica"].Value;
                 idOglas = (int)stavka.Cells["idOglas"].Value;
                 kolicina = (int)stavka.Cells["kolicina"].Value;
-                // stavka kosarica se oznacava kao kupljena
+                // Stavka košarice se označava kao kupljena
                 kosharica.StavkaKupljenaIliNe(idKosarica, 1);
-                // ukoliko u oglasu vise nema kolicine, tj nema preostalih karata, deaktivira se
+                // Ukoliko u oglasu više nema količine, tj nema preostalih karata, deaktivira se
                 if (kolicina == 0) oglas.DeaktivirajOglas(idOglas);
                 
             }
@@ -102,7 +102,7 @@ namespace CardBringer2
                 MessageBox.Show("Vaša košarica je prazna.", "Greška", MessageBoxButtons.OK);
                 return;
             }
-            // Miće odabranu stavku iz košarice i vraća ih u oglas iz kojeg su uzete
+            // Miče odabranu stavku iz košarice i vraća ih u oglas iz kojeg su uzete
             int idKosarica = (int)dgvKosaricaStavkeKosarice.SelectedRows[0].Cells["idKosarica"].Value;
             int idOglas = (int)dgvKosaricaStavkeKosarice.SelectedRows[0].Cells["idOglas"].Value;
             int kolicina = (int)dgvKosaricaStavkeKosarice.SelectedRows[0].Cells["kolicina"].Value;

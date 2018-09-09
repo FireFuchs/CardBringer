@@ -78,7 +78,8 @@ namespace CardBringer2
                             o,
                             p
                         })
-                    .Where(c => c.p.idKorisnika == korisnik.PrijavljeniKorisnik.idKorisnika)
+                    // Dohvaća košarice samo prijavljenog korisnika
+                    .Where(c => c.p.idKorisnika == korisnik.PrijavljeniKorisnik.idKorisnika) 
                     .Join(context.oglas, r => r.o.idOglas, s => s.idOglas,
                         (r, s) => new {
                             r,
@@ -92,11 +93,10 @@ namespace CardBringer2
                     .Join(context.korisnik, v => v.t.s.idKorisnik, z => z.idKorisnika, 
                         (v,z) => new
                         {
-                            // v.t.r.o  - korisnikova ko�arica
-                            // v.t.s    - oglas stavke u ko�arici korisnika
-                            // v.u      - karta koja pripada oglasu iz stavke u ko�arici
+                            // v.t.r.o  - korisnikova košarica
+                            // v.t.s    - oglas stavke u košarici korisnika
+                            // v.u      - karta koja pripada oglasu iz stavke u košarici
                             // z        - korisnik koji je objavio oglas
-                            
 
                             v.u.imeKarte,
                             v.u.opisKarte,

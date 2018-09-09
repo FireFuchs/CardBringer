@@ -56,10 +56,10 @@ namespace CardBringer2
 
         }
 
-        private void ProvjeraUloge(int idPrijavljenog)
+        private void ProvjeraUloge(int idUloga)
         {
             // Ako je korisnik gost onda skrivaju se svi gumbi za pristup ostalim formama
-            if (idPrijavljenog < 1)
+            if (idUloga < 1)
             {
                 btnGlavniIzbornikFormaKosarica.Visible = false;
                 btnGlavniIzbornikFormaMojProfil.Visible = false;
@@ -69,8 +69,8 @@ namespace CardBringer2
                 btnGlavniIzbornikFormaPocetna.Margin = new System.Windows.Forms.Padding(0, 0, 440, 0);
             }
 
-            // Ako je krisnik obićan korisnik  onda se sakriva gumb za pristup administracijskoj formi 
-            if (idPrijavljenog < 2)
+            // Ako korisnik nije administrator onda se sakriva gumb za pristup administracijskoj formi 
+            if (idUloga < 2)
             {
                 btnGlavniIzbornikFormaAdministrator.Visible = false;
                 btnGlavniIzbornikFormaOdjava.Margin = new System.Windows.Forms.Padding(350, 0, 0, 0);

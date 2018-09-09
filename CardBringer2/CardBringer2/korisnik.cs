@@ -35,6 +35,7 @@ namespace CardBringer2
         {
             PrijavljeniKorisnik = null;
         }
+
         public static korisnik Prijava(string username, string password)
         {
             korisnik k;

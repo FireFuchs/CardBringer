@@ -68,7 +68,7 @@ namespace CardBringer2
 
         private void objaviOglas()
         {
-            // Verificiranje da podatci koji su uneseni u textboxeve su prihvatljivi
+            // Verificiranje da podaci koji su uneseni u textboxeve su prihvatljivi
             if (tboxObjaviOglasCijena.Text == "" || tboxObjaviOglasKolicina.Text == "")
             {
                 MessageBox.Show("Cijena ili količina su krivo uneseni", "Greška", MessageBoxButtons.OK);

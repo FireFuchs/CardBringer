@@ -25,7 +25,7 @@ namespace CardBringer2
 
         private void MojeKupnje_Load(object sender, EventArgs e)
         {
-            // prikazuje kupljene
+            // Prikazuje kupljene oglase u košarici
             dgvMojeKupnjeDatagrid.DataSource = kosharica.DohvatiKosaricu(_kupljeno);
             ObradiDgv();
         }

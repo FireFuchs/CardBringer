@@ -74,7 +74,7 @@ namespace CardBringer2
 
         private void pojedinostiKarte()
         {
-            // Popunjava podjedinosti o karti koji se nalaze na desnom dijelu forme
+            // Popunjava pojedinosti o karti koje se nalaze na desnom dijelu forme
             if (dgvMojProfilMojiOglasi.SelectedRows.Count <= 0) return;
             lblMojProfilNazivKarte.Text = dgvMojProfilMojiOglasi.SelectedRows[0].Cells["imeKarte"].Value.ToString();
             rtboxListaZeljaOpisKarte.Text = dgvMojProfilMojiOglasi.SelectedRows[0].Cells["opisKarte"].Value.ToString();

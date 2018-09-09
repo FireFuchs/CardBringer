@@ -94,7 +94,7 @@ namespace Help
 
                 Login i Register forma se sastoji od dva dijela
                 Login/Prijava dio(Gornji) i
-                Register/Registriranje dio(Dolnji)
+                Register/Registriranje dio(Donji)
 
 
                 Login/Prijava Dio

@@ -30,16 +30,6 @@ namespace CardBringer2
         public int kolicina { get; set; }
         public byte aktivan { get; set; }
 
-        //public static oglas Dohvati(int idOglas)
-        //{
-        //    oglas o = new oglas();
-        //    using (var context = new CardBringerDBEntities())
-        //    {
-        //        o = context.oglas.SingleOrDefault(c => c.idOglas == idOglas);
-        //    }
-        //    return o;
-        //}
-
         public void Spremi()
         {
             using (var context = new CardBringerDBEntities())
@@ -104,6 +94,9 @@ namespace CardBringer2
                     })
                     .Join(context.karta, r => r.o.idKarta, s => s.idKarta,
                     (r, s) => new {
+                        // s    - karta oglasa
+                        // r.o  - oglas
+                        // r.p  - korisnik koji je objavio oglas
                         s.imeKarte,
                         s.opisKarte,
                         r.o.cijena,
@@ -142,6 +135,9 @@ namespace CardBringer2
                         })
                     .Join(context.karta, r => r.o.idKarta, s => s.idKarta,
                         (r, s) => new {
+                            // s    - karta oglasa
+                            // r.o  - oglas
+                            // r.p  - korisnik koji je objavio oglas
                             s.imeKarte,
                             s.opisKarte,
                             r.o.cijena,
@@ -180,6 +176,9 @@ namespace CardBringer2
                         })
                     .Join(context.karta, r => r.o.idKarta, s => s.idKarta,
                         (r, s) => new {
+                            // s    - karta oglasa
+                            // r.o  - oglas
+                            // r.p  - korisnik koji je objavio oglas
                             s.imeKarte,
                             s.opisKarte,
                             r.o.cijena,

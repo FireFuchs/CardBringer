@@ -92,7 +92,7 @@ namespace CardBringer2
 
         private void ObradiDgv()
         {
-            // Sakrivanje svih nepotrebnih podataka, i preimenovanje podataka koji su vidljivi
+            // Sakrivanje svih nepotrebnih podataka i preimenovanje podataka koji su vidljivi
             if (dgvPocetnaDatagridSviOglasi.SelectedRows.Count <= 0) return;
             dgvPocetnaDatagridSviOglasi.Columns["cijena"].DefaultCellStyle.Format = "0.00";
             dgvPocetnaDatagridSviOglasi.Columns["imeKarte"].HeaderText = "Ime karte";
@@ -143,10 +143,10 @@ namespace CardBringer2
 
         private void dgvPocetnaDatagridSviOglasi_RowEnter(object sender, DataGridViewCellEventArgs e)
         {
-            // Promjena detalja oglasa koji se nalazi na desnoj strani forme
+            // Promjena detalja oglasa koji se nalaze na desnoj strani forme
             if (dgvPocetnaDatagridSviOglasi.SelectedRows.Count <= 0) return;
             lblPocetnaIspisImeKarte.Text = dgvPocetnaDatagridSviOglasi.SelectedRows[0].Cells["imeKarte"].Value.ToString();
-            lblPocetnaIspisCijenaKarte.Text = dgvPocetnaDatagridSviOglasi.SelectedRows[0].Cells["cijena"].Value.ToString();
+            lblPocetnaIspisCijenaKarte.Text = String.Format("{0:0.00}",dgvPocetnaDatagridSviOglasi.SelectedRows[0].Cells["cijena"].Value);
             lblPocetnaIspisKolicina.Text = dgvPocetnaDatagridSviOglasi.SelectedRows[0].Cells["kolicina"].Value.ToString();
             lblPocetnaIspisProdavac.Text = dgvPocetnaDatagridSviOglasi.SelectedRows[0].Cells["ime"].Value.ToString();
             rtboxPocetnaOpisKarte.Text = dgvPocetnaDatagridSviOglasi.SelectedRows[0].Cells["opisKarte"].Value.ToString();
@@ -162,7 +162,7 @@ namespace CardBringer2
 
         private void sakrijGost()
         {
-            // Sakrivanje Text boxa i gumba za košaricu koje gost nebih trebao vidjeti
+            // Sakrivanje textboxa i gumba za košaricu koje gost ne bi trebao vidjeti
             if (korisnik.PrijavljeniKorisnik == null)
             {
                 lblPocetnaBrojKarata.Visible = false;

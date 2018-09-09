@@ -31,12 +31,7 @@ namespace CardBringer2
             DohvatiSadrzaj();
             ObradiDgv();
         }
-
-        private void GumbResetListaZelja_Click(object sender, EventArgs e)
-        {
-            dgvListaZeljaSveKarteDGV.DataSource = karta.DohvatiKarte();
-            tboxListaZeljaTraziSveKarteTbox.Text = "";
-        }
+        
 
         private void Trazi()
         {

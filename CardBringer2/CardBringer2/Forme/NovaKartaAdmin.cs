@@ -60,7 +60,7 @@ namespace CardBringer2
 
         private void btnNovaKartaAdminSpremiKartu_Click(object sender, EventArgs e)
         {
-            // Sprema sve upisane podatke u bazu podataka
+            // Sprema sve upisane podatke u bazu podataka te sliku uploada na Azure Storage
             karta k = new karta();
             k.imeKarte = tboxNovaKartaAdminImeKarte.Text;
             k.opisKarte = this.rtboxNovaKartaAdminOpisKarte.Text;
