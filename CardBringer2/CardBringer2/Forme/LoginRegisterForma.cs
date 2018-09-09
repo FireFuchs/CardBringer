@@ -13,7 +13,6 @@ namespace CardBringer2
 {
     public partial class LoginRegisterForma : Form
     {
-        readonly string _helpTekst = "pocetna verzija help sustava, probni pokusaj";
 
         readonly GlavniIzbornikForma _glavniFrm = new GlavniIzbornikForma();
 

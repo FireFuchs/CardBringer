@@ -28,18 +28,18 @@ namespace CardBringer2
 
         private void btnNovaKartaAdminHelp_Click(object sender, EventArgs e)
         {
-            help();
+            Help();
         }
 
         private void NovaKartaAdmin_KeyDown(object sender, KeyEventArgs e)
         {
             if (e.KeyCode == Keys.F1)
             {
-                help();
+                Help();
             }
         }
 
-        private void help()
+        private static void Help()
         {
             var help = new HelpForm();
             help.Show();

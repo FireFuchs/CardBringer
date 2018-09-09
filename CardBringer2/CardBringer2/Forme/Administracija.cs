@@ -26,14 +26,14 @@ namespace CardBringer2
 
         private void buttonDodajNovuKartu_Click(object sender, EventArgs e)
         {
-            var Administracija = new NovaKartaAdmin();
-            Administracija.Show();
+            var administracija = new NovaKartaAdmin();
+            administracija.Show();
         }
 
         private void buttonUlogeKorisnika_Click(object sender, EventArgs e)
         {
-            var Administracija = new PromjenaUlogeKorisnika();
-            Administracija.Show();
+            var administracija = new PromjenaUlogeKorisnika();
+            administracija.Show();
         }
     }
 }

@@ -13,7 +13,8 @@ namespace CardBringer2
 {
     public partial class MojeKupnje : Form
     {
-        private readonly int _kupljeno = 1;
+        private const int _kupljeno = 1;
+
         public MojeKupnje()
         {
             InitializeComponent();

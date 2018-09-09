@@ -28,14 +28,14 @@ namespace CardBringer2
         private void ObjaviOglas_Load(object sender, EventArgs e)
         {
             kartaBindingSource.DataSource = karta.DohvatiKarte();
-            dohvatiSadrzaj();
+            DohvatiSadrzaj();
         }
 
         private void dataGridView1_RowEnter(object sender, DataGridViewCellEventArgs e)
         {
-            dohvatiSadrzaj();
+            DohvatiSadrzaj();
         }
-        private void dohvatiSadrzaj()
+        private void DohvatiSadrzaj()
         {
             if (dgvObjaviOglasSveKarte.SelectedRows.Count <= 0) return;
             lblObjaviOglasNazivKarte.Text = dgvObjaviOglasSveKarte.SelectedRows[0].Cells[1].Value.ToString();

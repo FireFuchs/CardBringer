@@ -12,7 +12,6 @@ namespace CardBringer2
 {
     public partial class GlavniIzbornikForma : Form
     {
-        string _helpTekst = "Help glavne forme";
         public GlavniIzbornikForma()
         {
             InitializeComponent();
@@ -40,7 +39,6 @@ namespace CardBringer2
             novaPocetna.MdiParent = this;
             novaPocetna.WindowState = FormWindowState.Maximized;
             novaPocetna.Show();
-            _helpTekst = "Help Početne stranice";
         }
 
         private void GlavniIzbornikForma_Load(object sender, EventArgs e)
@@ -49,13 +47,12 @@ namespace CardBringer2
             novaPocetna.MdiParent = this;
             novaPocetna.WindowState = FormWindowState.Maximized;
             novaPocetna.Show();
-            _helpTekst = "Help Početne stranice";
             if (korisnik.PrijavljeniKorisnik == null)
             {
                 ProvjeraUloge(0);
                 return;
             }
-            ProvjeraUloge((int)korisnik.PrijavljeniKorisnik.idUloga);
+            ProvjeraUloge(korisnik.PrijavljeniKorisnik.idUloga);
 
         }
 
@@ -83,7 +80,6 @@ namespace CardBringer2
             novaPocetna.MdiParent = this;
             novaPocetna.WindowState = FormWindowState.Maximized;
             novaPocetna.Show();
-            _helpTekst = "Help Početne stranice";
         }
 
         private void btnGlavniIzbornikFormaMojProfil_Click(object sender, EventArgs e)
@@ -92,7 +88,6 @@ namespace CardBringer2
             noviMojProfil.MdiParent = this;
             noviMojProfil.WindowState = FormWindowState.Maximized;
             noviMojProfil.Show();
-            _helpTekst = "Help MojProfil stranice";
         }
 
         private void btnGlavniIzbornikFormaObjaviOglase_Click(object sender, EventArgs e)
@@ -101,7 +96,6 @@ namespace CardBringer2
             noviOglas.MdiParent = this;
             noviOglas.WindowState = FormWindowState.Maximized;
             noviOglas.Show();
-            _helpTekst = "Help Početne stranice";
         }
 
         private void btnGlavniIzbornikFormaKosarica_Click(object sender, EventArgs e)
@@ -110,7 +104,6 @@ namespace CardBringer2
             novaKosarica.MdiParent = this;
             novaKosarica.WindowState = FormWindowState.Maximized;
             novaKosarica.Show();
-            _helpTekst = "Help Kosarice";
         }
 
         private void btnGlavniIzbornikFormaListaZelja_Click(object sender, EventArgs e)
@@ -119,7 +112,6 @@ namespace CardBringer2
             novaListaZelja.MdiParent = this;
             novaListaZelja.WindowState = FormWindowState.Maximized;
             novaListaZelja.Show();
-            _helpTekst = "Help ListeŽelja";
         }
 
         private void btnGlavniIzbornikFormaMojeKupnje_Click(object sender, EventArgs e)
@@ -128,16 +120,14 @@ namespace CardBringer2
             mojeKupnje.MdiParent = this;
             mojeKupnje.WindowState = FormWindowState.Maximized;
             mojeKupnje.Show();
-            _helpTekst = "Help Početne stranice";
         }
 
         private void btnGlavniIzbornikFormaAdministrator_Click(object sender, EventArgs e)
         {
-            var Administracija = new Administracija();
-            Administracija.MdiParent = this;
-            Administracija.WindowState = FormWindowState.Maximized;
-            Administracija.Show();
-            _helpTekst = "Help administracijske stranice";
+            var administracija = new Administracija();
+            administracija.MdiParent = this;
+            administracija.WindowState = FormWindowState.Maximized;
+            administracija.Show();
         }
     }
 }

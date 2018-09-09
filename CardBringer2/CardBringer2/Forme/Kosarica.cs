@@ -13,8 +13,7 @@ namespace CardBringer2
 {
     public partial class Kosarica : Form
     {
-        private readonly int _nekupljeno = 0;
-
+        private const int _nekupljeno = 0;
         public Kosarica()
         {
             InitializeComponent();

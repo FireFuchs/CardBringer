@@ -26,7 +26,7 @@ namespace CardBringer2
             ObradiDgv();
         }
         
-        private void dodajUKosaricu()
+        private void DodajUKosaricu()
         {
 
             if (dgvPocetnaDatagridSviOglasi.SelectedRows.Count <= 0)
@@ -101,7 +101,7 @@ namespace CardBringer2
         {
             if(e.KeyData == Keys.Enter)
             {
-                dodajUKosaricu();
+                DodajUKosaricu();
             }
         }
 
@@ -139,7 +139,7 @@ namespace CardBringer2
 
         private void btnPocetanGumbDodajUKosaricu_Click(object sender, EventArgs e)
         {
-            dodajUKosaricu();
+            DodajUKosaricu();
         }
     }
 }
