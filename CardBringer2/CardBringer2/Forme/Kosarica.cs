@@ -44,6 +44,7 @@ namespace CardBringer2
 
         }
 
+
         private void btnKosaricaKupi_Click(object sender, EventArgs e)
         {
             if (dgvKosaricaStavkeKosarice.RowCount == 0)
@@ -51,20 +52,36 @@ namespace CardBringer2
                 MessageBox.Show("Vaša košarica je prazna.", "Greška", MessageBoxButtons.OK);
                 return;
             }
-            int idKosarica = (int)dgvKosaricaStavkeKosarice.SelectedRows[0].Cells["idKosarica"].Value;
-            int idOglas = (int)dgvKosaricaStavkeKosarice.SelectedRows[0].Cells["idOglas"].Value;
-            int kolicina = (int)dgvKosaricaStavkeKosarice.SelectedRows[0].Cells["kolicina"].Value;
+
+            int idKosarica;
+            int idOglas;
+            int kolicina;
             var popup = new UnosKartice();
             popup.ShowDialog();
-            // stavka kosarica se oznacava kao kupljena
-            kosharica.StavkaKupljenaIliNe(idKosarica, 1);
-            // ukoliko u oglasu vise nema kolicine, tj nema preostalih karata, deaktivira se
-            if (kolicina == 0) oglas.DeaktivirajOglas(idOglas);
+
+            foreach (DataGridViewRow stavka in dgvKosaricaStavkeKosarice.Rows)
+            {
+                idKosarica = (int)stavka.Cells["idKosarica"].Value;
+                idOglas = (int)stavka.Cells["idOglas"].Value;
+                kolicina = (int)stavka.Cells["kolicina"].Value;
+                // stavka kosarica se oznacava kao kupljena
+                kosharica.StavkaKupljenaIliNe(idKosarica, 1);
+                // ukoliko u oglasu vise nema kolicine, tj nema preostalih karata, deaktivira se
+                if (kolicina == 0) oglas.DeaktivirajOglas(idOglas);
+            }
+
             dgvKosaricaStavkeKosarice.DataSource = kosharica.DohvatiKosaricu(_nekupljeno);
         }
 
+
         private void btnKosaricaMakni_Click(object sender, EventArgs e)
         {
+            if (dgvKosaricaStavkeKosarice.RowCount == 0)
+            {
+                MessageBox.Show("Vaša košarica je prazna.", "Greška", MessageBoxButtons.OK);
+                return;
+            }
+
             int idKosarica = (int)dgvKosaricaStavkeKosarice.SelectedRows[0].Cells["idKosarica"].Value;
             int idOglas = (int)dgvKosaricaStavkeKosarice.SelectedRows[0].Cells["idOglas"].Value;
             int kolicina = (int)dgvKosaricaStavkeKosarice.SelectedRows[0].Cells["kolicina"].Value;
