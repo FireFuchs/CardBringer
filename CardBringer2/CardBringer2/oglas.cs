@@ -44,30 +44,23 @@ namespace CardBringer2
         {
             using (var context = new CardBringerDBEntities())
             {
+                var o = (context.oglas.FirstOrDefault(c =>
+                    c.idKarta == this.idKarta 
+                    && c.idKorisnik == korisnik.PrijavljeniKorisnik.idKorisnika 
+                    && c.aktivan == 1
+                    && c.cijena == this.cijena));
+
+                if (o != null)
+                {
+                    o.kolicina += this.kolicina;
+                    context.SaveChanges();
+                    return;
+                }
+
                 context.oglas.Add(this);
                 context.SaveChanges();
             }
         }
-
-        //public void UkloniOglas()
-        //{
-        //    using (var context = new CardBringerDBEntities())
-        //    {
-        //        context.oglas.Remove(this);
-        //        context.SaveChanges();
-        //    }
-        //}
-
-        //public static void DeaktivirajOglas(int idOglas)
-        //{
-        //    using (var context = new CardBringerDBEntities())
-        //    {
-        //        var result = context.oglas.SingleOrDefault(c => c.idOglas == idOglas && c.kolicina > 0);
-        //        if (result == null) return;
-        //        result.aktivan = 0;
-        //        context.SaveChanges();
-        //    }
-        //}
 
         public static void UpdateKolicinuUOglasu(int idOglas, int novaKolicina, bool vracanjeIzKosarice)
         {

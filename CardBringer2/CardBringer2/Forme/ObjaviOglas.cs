@@ -63,6 +63,12 @@ namespace CardBringer2
 
         private void btnObjaviOglasObjaviOglas_Click(object sender, EventArgs e)
         {
+            if (string.IsNullOrWhiteSpace(tboxObjaviOglasCijena.Text) ||
+                string.IsNullOrWhiteSpace(tboxObjaviOglasKolicina.Text))
+            {
+                MessageBox.Show("Niste unijeli podatke o oglasu!", "Greška", MessageBoxButtons.OK);
+                return;
+            }
             var idKarta = (int)dgvObjaviOglasSveKarte.SelectedRows[0].Cells[0].Value;
             var cijena = Convert.ToDecimal(tboxObjaviOglasCijena.Text);
             var kolicina = Convert.ToInt32(tboxObjaviOglasKolicina.Text);

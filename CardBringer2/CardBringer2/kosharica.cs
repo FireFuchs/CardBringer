@@ -21,16 +21,8 @@ namespace CardBringer2
         public int kolicina { get; set; }
         public System.DateTime datum { get; set; }
         public byte kupljeno { get; set; }
+        
 
-        //public static kosharica Dohvati(int idKosarica)
-        //{
-        //    kosharica k = new kosharica();
-        //    using (var context = new CardBringerDBEntities())
-        //    {
-        //        k = context.kosharica.SingleOrDefault(c => c.idKosarica == idKosarica);
-        //    }
-        //    return k;
-        //}
         public void Spremi()
         {
             this.datum = DateTime.Today;
@@ -86,24 +78,38 @@ namespace CardBringer2
                             o,
                             p
                         })
+                    .Where(c => c.p.idKorisnika == korisnik.PrijavljeniKorisnik.idKorisnika)
                     .Join(context.oglas, r => r.o.idOglas, s => s.idOglas,
                         (r, s) => new {
                             r,
                             s
                         })
                     .Join(context.karta, t => t.s.idKarta, u => u.idKarta,
-                        (t, s) => new {
-                            s.imeKarte,
-                            s.opisKarte,
-                            t.s.cijena,
-                            t.r.o.kolicina,
-                            t.r.p.ime,
-                            t.s.idOglas,
-                            s.slikaKarte,
-                            t.r.o.kupljeno,
-                            t.r.o.idKosarica
+                        (t, u) => new {
+                            t,
+                            u
                         })
-                    .Where(c => c.ime == korisnik.PrijavljeniKorisnik.ime && c.kupljeno == kupljeno)
+                    .Join(context.korisnik, v => v.t.s.idKorisnik, z => z.idKorisnika, 
+                        (v,z) => new
+                        {
+                            // v.t.r.o  - korisnikova košarica
+                            // v.t.s    - oglas stavke u košarici korisnika
+                            // v.u      - karta koja pripada oglasu iz stavke u košarici
+                            // z        - korisnik koji je objavio oglas
+                            
+
+                            v.u.imeKarte,
+                            v.u.opisKarte,
+                            v.t.s.cijena,
+                            v.t.r.o.kolicina,
+                            z.ime,
+
+                            v.t.s.idOglas,
+                            v.u.slikaKarte,
+                            v.t.r.o.kupljeno,
+                            v.t.r.o.idKosarica
+                        })
+                    .Where(c => c.kupljeno == kupljeno)
                     .ToList();
 
                 foreach (var r in result)
