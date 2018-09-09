@@ -120,10 +120,10 @@ namespace CardBringer2
 
         private void tboxLoginRegisterLozinka_Enter(object sender, EventArgs e)
         {
-            if (tboxLoginRegisterLozinka.Text != "") return;
-            tboxLoginRegisterLozinka.Text = "Lozinka";
-            tboxLoginRegisterLozinka.ForeColor = Color.Gray;
-            tboxLoginRegisterLozinka.PasswordChar = '\0';
+            if (tboxLoginRegisterLozinka.Text != "Lozinka") return;
+            tboxLoginRegisterLozinka.Text = "";
+            tboxLoginRegisterLozinka.ForeColor = Color.Black;
+            tboxLoginRegisterLozinka.PasswordChar = '•';
         }
 
         private void tboxLoginRegisterLozinka_KeyDown(object sender, KeyEventArgs e)
