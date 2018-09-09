@@ -7,6 +7,7 @@ using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Net.Mail;
 using System.Windows.Forms;
 
 namespace CardBringer2
@@ -60,25 +61,33 @@ namespace CardBringer2
             var password = tboxLoginRegisterFormaLozinkaReg.Text;
             var rePassword = tboxLoginRegisterPonovljenaLozinka.Text;
             var mjestoStanovanja = tboxLoginRegisterMjestoStanovanja.Text;
-
-            if (password == rePassword)
+            bool validnaAdresa = IsValidEmail(email);
+            if (IsValidEmail(email))
             {
-                korisnik k = new korisnik();
-                k.ime = username;
-                k.lozinka = password;
-                k.email = email;
-                k.mjestoStanovanja = mjestoStanovanja;
-                k.idUloga = 1;
-                if (k.Registracija() == null)
+              //  pattern = 
+                if (password == rePassword)
                 {
-                    MessageBox.Show("Korisničko ime ili E-Mail je zauzet!", "Greška", MessageBoxButtons.OK);
-                    return;
+                    korisnik k = new korisnik();
+                    k.ime = username;
+                    k.lozinka = password;
+                    k.email = email;
+                    k.mjestoStanovanja = mjestoStanovanja;
+                    k.idUloga = 1;
+                    if (k.Registracija() == null)
+                    {
+                        MessageBox.Show("Korisničko ime ili E-Mail je zauzet!", "Greška", MessageBoxButtons.OK);
+                        return;
+                    }
+                    OtvoriGlavnuFormu();
                 }
-                OtvoriGlavnuFormu();
+                else
+                {
+                    MessageBox.Show("Lozinke se ne podudaraju", "Greška", MessageBoxButtons.OK);
+                }
             }
             else
             {
-                MessageBox.Show("Lozinke se ne podudaraju", "Greška", MessageBoxButtons.OK);
+                MessageBox.Show("Pogrešna forma E-Maila", "Greška", MessageBoxButtons.OK);
             }
         }
 
@@ -135,9 +144,10 @@ namespace CardBringer2
 
         private void tboxLoginRegisterLozinka_Leave(object sender, EventArgs e)
         {
-            if (tboxLoginRegisterEmail.Text != "") return;
-            tboxLoginRegisterEmail.Text = "Lozinka";
-            tboxLoginRegisterEmail.ForeColor = Color.Gray;
+            if (tboxLoginRegisterLozinka.Text != "") return;
+            tboxLoginRegisterLozinka.Text = "Lozinka";
+            tboxLoginRegisterLozinka.ForeColor = Color.Gray;
+            tboxLoginRegisterLozinka.PasswordChar = '\0';
         }
 
         private void btnLoginRegisterPrijava_Click(object sender, EventArgs e)
@@ -262,6 +272,23 @@ namespace CardBringer2
             if (tboxLoginRegisterEmail.Text != "") return;
             tboxLoginRegisterEmail.Text = "E-Mail";
             tboxLoginRegisterEmail.ForeColor = Color.Gray;
+        }
+        private bool IsValidEmail(string email)
+        {
+            try
+            {
+                var addr = new MailAddress(email);
+                return true;
+            }
+            catch
+            {
+                return false;
+            }
+        }
+
+        private void tboxLoginRegisterLozinka_TextChanged(object sender, EventArgs e)
+        {
+
         }
     }
     

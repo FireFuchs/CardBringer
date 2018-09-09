@@ -92,9 +92,9 @@ namespace CardBringer2
                     .Join(context.korisnik, v => v.t.s.idKorisnik, z => z.idKorisnika, 
                         (v,z) => new
                         {
-                            // v.t.r.o  - korisnikova košarica
-                            // v.t.s    - oglas stavke u košarici korisnika
-                            // v.u      - karta koja pripada oglasu iz stavke u košarici
+                            // v.t.r.o  - korisnikova koï¿½arica
+                            // v.t.s    - oglas stavke u koï¿½arici korisnika
+                            // v.u      - karta koja pripada oglasu iz stavke u koï¿½arici
                             // z        - korisnik koji je objavio oglas
                             
 

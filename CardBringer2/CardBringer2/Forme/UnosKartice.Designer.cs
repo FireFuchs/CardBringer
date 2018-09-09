@@ -38,7 +38,6 @@
             this.tboxUnoskarticeCVV = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
             this.btnUnosKarticePlati = new System.Windows.Forms.Button();
-            this.btnUnosKarticeOtkazi = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // tboxUnoskarticeBrojKarice
@@ -122,7 +121,7 @@
             // 
             // btnUnosKarticePlati
             // 
-            this.btnUnosKarticePlati.Location = new System.Drawing.Point(59, 177);
+            this.btnUnosKarticePlati.Location = new System.Drawing.Point(125, 177);
             this.btnUnosKarticePlati.Name = "btnUnosKarticePlati";
             this.btnUnosKarticePlati.Size = new System.Drawing.Size(116, 23);
             this.btnUnosKarticePlati.TabIndex = 5;
@@ -130,23 +129,12 @@
             this.btnUnosKarticePlati.UseVisualStyleBackColor = true;
             this.btnUnosKarticePlati.Click += new System.EventHandler(this.btnUnosKarticePlati_Click);
             // 
-            // btnUnosKarticeOtkazi
-            // 
-            this.btnUnosKarticeOtkazi.Location = new System.Drawing.Point(181, 177);
-            this.btnUnosKarticeOtkazi.Name = "btnUnosKarticeOtkazi";
-            this.btnUnosKarticeOtkazi.Size = new System.Drawing.Size(116, 23);
-            this.btnUnosKarticeOtkazi.TabIndex = 5;
-            this.btnUnosKarticeOtkazi.Text = "Otkaži!";
-            this.btnUnosKarticeOtkazi.UseVisualStyleBackColor = true;
-            this.btnUnosKarticeOtkazi.Click += new System.EventHandler(this.btnUnosKarticeOtkazi_Click);
-            // 
             // UnosKartice
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(48)))), ((int)(((byte)(48)))));
             this.ClientSize = new System.Drawing.Size(359, 212);
-            this.Controls.Add(this.btnUnosKarticeOtkazi);
             this.Controls.Add(this.btnUnosKarticePlati);
             this.Controls.Add(this.lblUnosKarticeKorisnikKartice);
             this.Controls.Add(this.label4);
@@ -176,6 +164,5 @@
         private System.Windows.Forms.TextBox tboxUnoskarticeCVV;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Button btnUnosKarticePlati;
-        private System.Windows.Forms.Button btnUnosKarticeOtkazi;
     }
 }

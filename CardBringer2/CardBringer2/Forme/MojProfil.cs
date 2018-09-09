@@ -60,13 +60,19 @@ namespace CardBringer2
             pboxListaZeljaSlikaKarte.Image = null;
             lblMojProfilNazivKarte.Text = "Naziv karte";
             rtboxListaZeljaOpisKarte.Text = null;
+            pojedinostiKarte();
         }
 
         private void dgvMojProfilMojiOglasi_RowEnter(object sender, DataGridViewCellEventArgs e)
         {
+            pojedinostiKarte();
+        }
+
+        private void pojedinostiKarte()
+        {
             if (dgvMojProfilMojiOglasi.SelectedRows.Count <= 0) return;
-            lblMojProfilNazivKarte.Text = dgvMojProfilMojiOglasi.SelectedRows[0].Cells[1].Value.ToString();
-            rtboxListaZeljaOpisKarte.Text = dgvMojProfilMojiOglasi.SelectedRows[0].Cells[2].Value.ToString();
+            lblMojProfilNazivKarte.Text = dgvMojProfilMojiOglasi.SelectedRows[0].Cells["imeKarte"].Value.ToString();
+            rtboxListaZeljaOpisKarte.Text = dgvMojProfilMojiOglasi.SelectedRows[0].Cells["opisKarte"].Value.ToString();
             var slikaKarte = AzureStorageKarata.DohvatiSlikuKarte(dgvMojProfilMojiOglasi.SelectedRows[0].Cells["slikaKarte"].Value.ToString());
             pboxListaZeljaSlikaKarte.Image = Image.FromStream(slikaKarte);
             pboxListaZeljaSlikaKarte.SizeMode = PictureBoxSizeMode.StretchImage;
