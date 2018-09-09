@@ -106,7 +106,6 @@
             this.rtboxNovaKartaAdminOpisKarte.Location = new System.Drawing.Point(316, 225);
             this.rtboxNovaKartaAdminOpisKarte.Margin = new System.Windows.Forms.Padding(2);
             this.rtboxNovaKartaAdminOpisKarte.Name = "rtboxNovaKartaAdminOpisKarte";
-            this.rtboxNovaKartaAdminOpisKarte.ReadOnly = true;
             this.rtboxNovaKartaAdminOpisKarte.Size = new System.Drawing.Size(139, 219);
             this.rtboxNovaKartaAdminOpisKarte.TabIndex = 8;
             this.rtboxNovaKartaAdminOpisKarte.Text = "";

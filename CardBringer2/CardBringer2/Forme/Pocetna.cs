@@ -24,6 +24,7 @@ namespace CardBringer2
         {
             dgvPocetnaDatagridSviOglasi.DataSource = oglas.DohvatiSveAktivneOglase();
             ObradiDgv();
+            sakrijGost();
         }
         
         private void DodajUKosaricu()
@@ -47,8 +48,19 @@ namespace CardBringer2
                 return;
             }
 
+            if (tboxPocetnaBrojKarataZaKosaricu.Text == "")
+            {
+                MessageBox.Show("Ne možete dodati 0 karata!", "Greška", MessageBoxButtons.OK);
+                return;
+            }
+
             brojKarataNaProdaju = (int)dgvPocetnaDatagridSviOglasi.SelectedRows[0].Cells["kolicina"].Value;
             brojKarataZaKosaricu = int.Parse(tboxPocetnaBrojKarataZaKosaricu.Text);
+            if (brojKarataZaKosaricu <= 0)
+            {
+                MessageBox.Show("Ne možete dodati 0 karata!", "Greška", MessageBoxButtons.OK);
+                return;
+            }
             if (brojKarataZaKosaricu > brojKarataNaProdaju)
             {
                 MessageBox.Show("Ne možete uzeti više karata nego što se prodaje!", "Greška", MessageBoxButtons.OK);
@@ -78,6 +90,7 @@ namespace CardBringer2
         private void ObradiDgv()
         {
             if (dgvPocetnaDatagridSviOglasi.SelectedRows.Count <= 0) return;
+            dgvPocetnaDatagridSviOglasi.Columns["cijena"].DefaultCellStyle.Format = "0.00";
             dgvPocetnaDatagridSviOglasi.Columns["imeKarte"].HeaderText = "Ime karte";
             dgvPocetnaDatagridSviOglasi.Columns["opisKarte"].HeaderText = "Opis karte";
             dgvPocetnaDatagridSviOglasi.Columns["cijena"].HeaderText = "Cijena";
@@ -140,6 +153,16 @@ namespace CardBringer2
         private void btnPocetanGumbDodajUKosaricu_Click(object sender, EventArgs e)
         {
             DodajUKosaricu();
+        }
+
+        private void sakrijGost()
+        {
+            if (korisnik.PrijavljeniKorisnik == null)
+            {
+                lblPocetnaBrojKarata.Visible = false;
+                tboxPocetnaBrojKarataZaKosaricu.Visible = false;
+                btnPocetanGumbDodajUKosaricu.Visible = false;
+            }
         }
     }
 }

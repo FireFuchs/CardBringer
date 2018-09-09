@@ -41,6 +41,7 @@ namespace CardBringer2
                 rezultat = rezultat + (cijena * kolicina);
                 ukupnaKolicina += kolicina;
             }
+            dgvKosaricaStavkeKosarice.Columns["cijena"].DefaultCellStyle.Format = "0.00";
             lblKosaricaCijenaKarataCijena.Text = rezultat.ToString();
             lblKosaricaBrojKarataBroj.Text = ukupnaKolicina.ToString();
             if (dgvKosaricaStavkeKosarice.SelectedRows.Count <= 0) return;
