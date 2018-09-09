@@ -4,10 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace CardBringer2
+namespace Help
 {
-
-    static class HelpClass
+    public static class HelpClass
     {
         public static int TrenutnaForma = 0;
         private static readonly IDictionary<int, string> tekstoviHelpa = new Dictionary<int, string>()
@@ -62,7 +61,5 @@ namespace CardBringer2
         {
             return tekstoviHelpa[TrenutnaForma];
         }
-
     }
-
 }
