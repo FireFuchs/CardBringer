@@ -30,6 +30,19 @@ namespace CardBringer2
 
         private void ObradiDgv()
         {
+            double cijena;
+            int kolicina;
+            double rezultat = 0;
+            int ukupnaKolicina = 0; 
+            foreach (DataGridViewRow stavka in dgvKosaricaStavkeKosarice.Rows)
+            {
+                cijena = Convert.ToDouble(stavka.Cells["cijena"].Value);
+                kolicina = (int)stavka.Cells["kolicina"].Value;
+                rezultat = rezultat + (cijena * kolicina);
+                ukupnaKolicina += kolicina;
+            }
+            lblKosaricaCijenaKarataCijena.Text = rezultat.ToString();
+            lblKosaricaBrojKarataBroj.Text = ukupnaKolicina.ToString();
             if (dgvKosaricaStavkeKosarice.SelectedRows.Count <= 0) return;
             dgvKosaricaStavkeKosarice.Columns["imeKarte"].HeaderText = "Ime karte";
             dgvKosaricaStavkeKosarice.Columns["opisKarte"].HeaderText = "Opis karte";
@@ -40,6 +53,7 @@ namespace CardBringer2
             dgvKosaricaStavkeKosarice.Columns["slikaKarte"].Visible = false;
             dgvKosaricaStavkeKosarice.Columns["kupljeno"].Visible = false;
             dgvKosaricaStavkeKosarice.Columns["idKosarica"].Visible = false;
+            
 
         }
 
@@ -67,6 +81,7 @@ namespace CardBringer2
                 kosharica.StavkaKupljenaIliNe(idKosarica, 1);
                 // ukoliko u oglasu vise nema kolicine, tj nema preostalih karata, deaktivira se
                 if (kolicina == 0) oglas.DeaktivirajOglas(idOglas);
+                
             }
 
             dgvKosaricaStavkeKosarice.DataSource = kosharica.DohvatiKosaricu(_nekupljeno);

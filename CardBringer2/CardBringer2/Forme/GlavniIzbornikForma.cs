@@ -129,5 +129,10 @@ namespace CardBringer2
             administracija.WindowState = FormWindowState.Maximized;
             administracija.Show();
         }
+
+        private void btnGlavniIzbornikFormaOdjava_Click(object sender, EventArgs e)
+        {
+            Application.Exit();
+        }
     }
 }

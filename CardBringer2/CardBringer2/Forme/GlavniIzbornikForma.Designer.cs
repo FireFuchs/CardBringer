@@ -114,6 +114,7 @@
             this.btnGlavniIzbornikFormaObjaviOglase.Name = "btnGlavniIzbornikFormaObjaviOglase";
             this.btnGlavniIzbornikFormaObjaviOglase.Size = new System.Drawing.Size(86, 39);
             this.btnGlavniIzbornikFormaObjaviOglase.Text = "Objavi Oglas";
+            this.btnGlavniIzbornikFormaObjaviOglase.Click += new System.EventHandler(this.btnGlavniIzbornikFormaObjaviOglase_Click);
             // 
             // btnGlavniIzbornikFormaKosarica
             // 
@@ -141,6 +142,7 @@
             this.btnGlavniIzbornikFormaOdjava.Name = "btnGlavniIzbornikFormaOdjava";
             this.btnGlavniIzbornikFormaOdjava.Size = new System.Drawing.Size(56, 39);
             this.btnGlavniIzbornikFormaOdjava.Text = "Odjava";
+            this.btnGlavniIzbornikFormaOdjava.Click += new System.EventHandler(this.btnGlavniIzbornikFormaOdjava_Click);
             // 
             // btnGlavniIzbornikFormaMojeKupnje
             // 
